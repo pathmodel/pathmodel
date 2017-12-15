@@ -289,7 +289,7 @@ numberBonds(MoleculeName, AtomNumber, NumberOfBonds) :-  NumberOfBonds=#sum{2, S
 																1, SecondAtomNumber: link(MoleculeName, BoundType, AtomNumber, SecondAtomNumber), BoundType != double;
 																1, SecondAtomNumber: link(MoleculeName, BoundType, SecondAtomNumber, AtomNumber), BoundType != double}; atom(MoleculeName, AtomNumber).
 																
-% numberHydrogens provies the number of hydrogens associated with each atoms.
+% numberHydrogens provides the number of hydrogens associated with each atoms.
 % numberHydrogens(MoleculeName, AtomNumber, number of Hydrogen bonded with the atom)
 numberHydrogens(MoleculeName, AtomNumber, ValenceNumber - NumberOfBonds) :- numberBonds(MoleculeName, AtomNumber, NumberOfBonds), component(MoleculeName, AtomNumber, AtomeType), valence(AtomeType, ValenceNumber).
 
