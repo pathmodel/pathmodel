@@ -268,6 +268,25 @@ sidechain(M,1,End):-  component(M,End,carb); component(M,End+1,A); A!=carb; comp
 %sidechain(M,Start1+1,End):-  component(M,End,carb), component(M,End+1,A), A!=carb, 
 %	component(M,Start1,B), B!=carb, Start1>0, component(M,X,carb): X=Start1+1..End-1.
 
+% Definition of modified sterane
+% class(MoleculeName, DomainName)
+% Based on the wikipedia structure: https://fr.wikipedia.org/wiki/St%C3%A9rane#/media/File:Steran_num_ABCD.svg
+% I add some bonds (compared to the real sterane) to go to the 23 carbone.
+% One exception the bound between carbone 7 and carbone 8 has variable for the bond type to include the 7-dehydrocholesterol
+% because of the double bond instead of the simple.
+class(MoleculeName, sterane) :- component(MoleculeName,1..23,carb),
+									link(MoleculeName,simple,1,2), link(MoleculeName,simple,1,10), link(MoleculeName,simple,2,3),
+									link(MoleculeName,simple,3,4), link(MoleculeName,simple,4,5), link(MoleculeName,double,5,6),
+									link(MoleculeName,simple,5,10), link(MoleculeName,simple,6,7), link(MoleculeName,BondType,7,8),
+									link(MoleculeName,simple,8,9), link(MoleculeName,simple,8,14), link(MoleculeName,simple,9,10),
+									link(MoleculeName,simple,9,11), link(MoleculeName,simple,11,12), link(MoleculeName,simple,12,13),
+									link(MoleculeName,simple,13,14), link(MoleculeName,simple,13,17), link(MoleculeName,simple,14,15),
+									link(MoleculeName,simple,15,16), link(MoleculeName,simple,16,17), link(MoleculeName,simpleR,17,20),
+									link(MoleculeName,simpleS,20,21), link(MoleculeName,simple,20,22), link(MoleculeName,simple,22,23).
+
+% componentClass(DomainName, NumberOfAtom)
+componentClass(sterane,1..23).
+
 %* Definition of atomic masses
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
@@ -360,12 +379,18 @@ need_reaction(dehydration, "porphyra-334", before, 19).
 
 % Rule to infer new punctual reactions: metabolite Y can be the product of metabolite X by reaction R 
 % if all their needed atoms are present, and if all other atoms of X and Y are the same
-
+%*
 newreaction(R,P1,P2):- need_reaction(R,P3,before,N); reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
 	component(P1,I,A):component(P3,I,A),I=1..N-1; component(P2,I,A):component(P4,I,A),I=1..N-1;
 	component(P1,I,A):component(P2,I,A),I>=N; component(P2,I,A):component(P1,I,A),I>=N; 
 	link(P1,T,I,J):link(P3,T,I,J),I=1..N-1; link(P2,T,I,J):link(P4,T,I,J),I=1..N-1; 
 	link(P1,T,I,J):link(P2,T,I,J),I>=N; link(P2,T,I,J):link(P1,T,I,J),I>=N.
+*%
+newreaction(R,P1,P2):- need_reaction(R,P3,before,N); reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
+	component(P1,I,A):component(P3,I,A),componentClass(sterane,I); component(P2,I,A):component(P4,I,A),componentClass(sterane,I);
+	component(P1,I,A):component(P2,I,A),not componentClass(sterane,I); component(P2,I,A):component(P1,I,A),not componentClass(sterane,I);
+	link(P1,T,I,J):link(P3,T,I,J),componentClass(sterane,I); link(P2,T,I,J):link(P4,T,I,J),componentClass(sterane,I);
+	link(P1,T,I,J):link(P2,T,I,J),not componentClass(sterane,I); link(P2,T,I,J):link(P1,T,I,J),not componentClass(sterane,I).
 
 % Defining the result of generic reactions
 
