@@ -134,6 +134,32 @@ link("22-dehydrocholesterol",simpleS,20,21). link("22-dehydrocholesterol",simple
 link("22-dehydrocholesterol",simple,23,24). link("22-dehydrocholesterol",simple,24,25). link("22-dehydrocholesterol",simple,25,26).
 link("22-dehydrocholesterol",simple,25,27).
 
+component("6α-hydroxycholest-4-ene-3-one",1..27,carb). component("6α-hydroxycholest-4-ene-3-one",28..29,oxyg).
+link("6α-hydroxycholest-4-ene-3-one",simple,1,2). link("6α-hydroxycholest-4-ene-3-one",simple,1,10). link("6α-hydroxycholest-4-ene-3-one",simple,2,3).
+link("6α-hydroxycholest-4-ene-3-one",simple,3,4). link("6α-hydroxycholest-4-ene-3-one",double,3,28). link("6α-hydroxycholest-4-ene-3-one",simple,4,5).
+link("6α-hydroxycholest-4-ene-3-one",double,5,6). link("6α-hydroxycholest-4-ene-3-one",simple,5,10). link("6α-hydroxycholest-4-ene-3-one",simple,6,7).
+link("6α-hydroxycholest-4-ene-3-one",simple,6,7). link("6α-hydroxycholest-4-ene-3-one",simpleS,6,29). link("6α-hydroxycholest-4-ene-3-one",simple,7,8).
+link("6α-hydroxycholest-4-ene-3-one",simple,8,9). link("6α-hydroxycholest-4-ene-3-one",simple,8,14). link("6α-hydroxycholest-4-ene-3-one",simple,9,10).
+link("6α-hydroxycholest-4-ene-3-one",simple,9,11). link("6α-hydroxycholest-4-ene-3-one",simpleR,10,19). link("6α-hydroxycholest-4-ene-3-one",simple,11,12).
+link("6α-hydroxycholest-4-ene-3-one",simple,12,13). link("6α-hydroxycholest-4-ene-3-one",simple,13,14).  link("6α-hydroxycholest-4-ene-3-one",simple,14,15).
+link("6α-hydroxycholest-4-ene-3-one",simple,15,16). link("6α-hydroxycholest-4-ene-3-one",simple,16,17). link("6α-hydroxycholest-4-ene-3-one",simple,13,17).
+link("6α-hydroxycholest-4-ene-3-one",simpleR,13,18). link("6α-hydroxycholest-4-ene-3-one",simpleR,17,20). link("6α-hydroxycholest-4-ene-3-one",simpleS,20,21).
+link("6α-hydroxycholest-4-ene-3-one",simple,20,22). link("6α-hydroxycholest-4-ene-3-one",simple,22,23). link("6α-hydroxycholest-4-ene-3-one",simple,23,24).
+link("6α-hydroxycholest-4-ene-3-one",simple,24,25). link("6α-hydroxycholest-4-ene-3-one",simple,25,26). link("6α-hydroxycholest-4-ene-3-one",simple,25,27).
+
+component("6α-hydroxycholest-4,22-diene-3-one",1..27,carb). component("6α-hydroxycholest-4,22-diene-3-one",28..29,oxyg).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,1,2). link("6α-hydroxycholest-4,22-diene-3-one",simple,1,10). link("6α-hydroxycholest-4,22-diene-3-one",simple,2,3).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,3,4). link("6α-hydroxycholest-4,22-diene-3-one",double,3,28). link("6α-hydroxycholest-4,22-diene-3-one",simple,4,5).
+link("6α-hydroxycholest-4,22-diene-3-one",double,5,6). link("6α-hydroxycholest-4,22-diene-3-one",simple,5,10). link("6α-hydroxycholest-4,22-diene-3-one",simple,6,7).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,6,7). link("6α-hydroxycholest-4,22-diene-3-one",simpleS,6,29). link("6α-hydroxycholest-4,22-diene-3-one",simple,7,8).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,8,9). link("6α-hydroxycholest-4,22-diene-3-one",simple,8,14). link("6α-hydroxycholest-4,22-diene-3-one",simple,9,10).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,9,11). link("6α-hydroxycholest-4,22-diene-3-one",simpleR,10,19). link("6α-hydroxycholest-4,22-diene-3-one",simple,11,12).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,12,13). link("6α-hydroxycholest-4,22-diene-3-one",simple,13,14).  link("6α-hydroxycholest-4,22-diene-3-one",simple,14,15).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,15,16). link("6α-hydroxycholest-4,22-diene-3-one",simple,16,17). link("6α-hydroxycholest-4,22-diene-3-one",simple,13,17).
+link("6α-hydroxycholest-4,22-diene-3-one",simpleR,13,18). link("6α-hydroxycholest-4,22-diene-3-one",simpleR,17,20). link("6α-hydroxycholest-4,22-diene-3-one",simpleS,20,21).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,20,22). link("6α-hydroxycholest-4,22-diene-3-one",double,22,23). link("6α-hydroxycholest-4,22-diene-3-one",simple,23,24).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,24,25). link("6α-hydroxycholest-4,22-diene-3-one",simple,25,26). link("6α-hydroxycholest-4,22-diene-3-one",simple,25,27).
+
 component("glycine",1..2,carb). component("glycine",3..4,oxyg). component("glycine",5,nitr). 
 link("glycine",simple,1,2). link("glycine",simple,1,5). link("glycine",double,2,3).
 link("glycine",simple,2,4). 
@@ -370,9 +396,9 @@ difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtom
 not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="hypothetic_MMA_1", MoleculeName2="asterina-330".
 
 difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,direct):- link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber),
-not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="porphyra-334", MoleculeName2="z-palythenic acid".
+not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="6α-hydroxycholest-4-ene-3-one", MoleculeName2="sitosterol".
 difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,reverse):- link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
-not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="porphyra-334", MoleculeName2="z-palythenic acid".
+not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="6α-hydroxycholest-4-ene-3-one", MoleculeName2="sitosterol".
 
 % Punctual Reactions that need all atoms before/after a certain number of a given coumpound to occur
 
