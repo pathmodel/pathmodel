@@ -314,8 +314,8 @@ class(MoleculeName, steraneSkeleton) :- class(MoleculeName, sterane), component(
 									link(MoleculeName,BondType,22,23).
 
 % componentClass(DomainName, NumberOfAtom)
-componentClass(sterane,1..17).
-componentClass(steraneSkeleton,1..23).
+componentClass(sterane,1..17,17).
+componentClass(steraneSkeleton,1..23,23).
 
 %* Definition of atomic masses
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -405,12 +405,14 @@ not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeNa
 % Punctual Reactions that need all atoms before/after a certain number of a given coumpound to occur
 
 % concerning c-22-desaturation, has to have everything before C22, like in sitosterol
-need_reaction(c22_desaturation, "sitosterol", before, 23).
+need_reaction(c22_desaturation, "sitosterol", before, 22).
 % OK for Chondrus, but will need to be reformulated for other red algae - see sterols-phylopaths.pdf
 need_reaction(dehydration, "porphyra-334", before, 19).
 
 % Rule to infer new punctual reactions: metabolite Y can be the product of metabolite X by reaction R 
 % if all their needed atoms are present, and if all other atoms of X and Y are the same
+% Check if all the molecule have a domain in common.
+% But it needs a domain compatible with the reaction.
 %*
 newreaction(R,P1,P2):- need_reaction(R,P3,before,N); reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
 	component(P1,I,A):component(P3,I,A),I=1..N-1; component(P2,I,A):component(P4,I,A),I=1..N-1;
@@ -418,11 +420,12 @@ newreaction(R,P1,P2):- need_reaction(R,P3,before,N); reaction(R,P3,P4); output_m
 	link(P1,T,I,J):link(P3,T,I,J),I=1..N-1; link(P2,T,I,J):link(P4,T,I,J),I=1..N-1; 
 	link(P1,T,I,J):link(P2,T,I,J),I>=N; link(P2,T,I,J):link(P1,T,I,J),I>=N.
 *%
-newreaction(R,P1,P2):- need_reaction(R,P3,before,N); reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
-	component(P1,I,A):component(P3,I,A),componentClass(steraneSkeleton,I); component(P2,I,A):component(P4,I,A),componentClass(steraneSkeleton,I);
-	component(P1,I,A):component(P2,I,A),not componentClass(steraneSkeleton,I); component(P2,I,A):component(P1,I,A),not componentClass(steraneSkeleton,I);
-	link(P1,T,I,J):link(P3,T,I,J),componentClass(steraneSkeleton,I); link(P2,T,I,J):link(P4,T,I,J),componentClass(steraneSkeleton,I);
-	link(P1,T,I,J):link(P2,T,I,J),not componentClass(steraneSkeleton,I); link(P2,T,I,J):link(P1,T,I,J),not componentClass(steraneSkeleton,I).
+newreaction(R,P1,P2):- reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
+	class(P1,Domain);class(P2,Domain);class(P3,Domain);class(P4,Domain);
+	component(P1,I,A):component(P3,I,A),componentClass(Domain,I,Imax),A<=Imax; component(P2,I,A):component(P4,I,A),componentClass(Domain,I,Imax),A<=Imax;
+	component(P1,I,A):component(P2,I,A),not componentClass(Domain,I,_); component(P2,I,A):component(P1,I,A),not componentClass(Domain,I,_);
+	link(P1,T,I,J):link(P3,T,I,J),componentClass(Domain,I,Imax),J<=Imax; link(P2,T,I,J):link(P4,T,I,J),componentClass(Domain,I,Imax),J<=Imax;
+	link(P1,T,I,J):link(P2,T,I,J),not componentClass(Domain,I,_); link(P2,T,I,J):link(P1,T,I,J),not componentClass(Domain,I,_).
 
 % Defining the result of generic reactions
 
