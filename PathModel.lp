@@ -313,9 +313,15 @@ class(MoleculeName, steraneSkeleton) :- class(MoleculeName, sterane), component(
 									link(MoleculeName,simpleR,17,20), link(MoleculeName,simpleS,20,21), link(MoleculeName,simple,20,22),
 									link(MoleculeName,BondType,22,23).
 
+% Definition of a cyclohexene
+class(MoleculeName, cyclohexene) :- component(MoleculeName,1..6,carb),
+									link(MoleculeName,double,1,2), link(MoleculeName,simple,2,3), link(MoleculeName,simple,3,4),
+									link(MoleculeName,simple,4,5), link(MoleculeName,simple,5,6), link(MoleculeName,simple,1,6).
+
 % componentClass(DomainName, NumberOfAtom)
 componentClass(sterane,1..17,17).
 componentClass(steraneSkeleton,1..23,23).
+componentClass(cyclohexene,1..6,6).
 
 %* Definition of atomic masses
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
