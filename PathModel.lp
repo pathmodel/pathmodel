@@ -269,16 +269,16 @@ link("palythene",simple,9,13). link("palythene",simple,8,14). link("palythene",s
 link("palythene",double,15,16). link("palythene",simple,15,17). link("palythene",simple,10,18).
 link("palythene",double,18,19). link("palythene",simpleZ,19,20).
 
-component("hypothetic_MMA_1",1..7,carb). component("hypothetic_MMA_1",8,nitr). component("hypothetic_MMA_1",9,oxyg).
-component("hypothetic_MMA_1",10,nitr). component("hypothetic_MMA_1",11..12,oxyg). component("hypothetic_MMA_1",13..15,carb).
-component("hypothetic_MMA_1",16..17,oxyg). component("hypothetic_MMA_1",18..19,carb).
-link("hypothetic_MMA_1",double,1,2). link("hypothetic_MMA_1",simple,2,3). link("hypothetic_MMA_1",simple,3,4).
-link("hypothetic_MMA_1",simple,4,5). link("hypothetic_MMA_1",simple,5,6). link("hypothetic_MMA_1",simple,1,6).
-link("hypothetic_MMA_1",simple,5,7). link("hypothetic_MMA_1",double,3,10). link("hypothetic_MMA_1",simple,1,8).
-link("hypothetic_MMA_1",simple,5,12). link("hypothetic_MMA_1",simple,7,11). link("hypothetic_MMA_1",simple,2,9).
-link("hypothetic_MMA_1",simple,9,13). link("hypothetic_MMA_1",simple,8,14). link("hypothetic_MMA_1",simple,14,15). 
-link("hypothetic_MMA_1",double,15,16). link("hypothetic_MMA_1",simple,15,17). link("hypothetic_MMA_1",simple,10,18).
-link("hypothetic_MMA_1",double,18,19).
+component("hypothetic_MAA_1",1..7,carb). component("hypothetic_MAA_1",8,nitr). component("hypothetic_MAA_1",9,oxyg).
+component("hypothetic_MAA_1",10,nitr). component("hypothetic_MAA_1",11..12,oxyg). component("hypothetic_MAA_1",13..15,carb).
+component("hypothetic_MAA_1",16..17,oxyg). component("hypothetic_MAA_1",18..19,carb).
+link("hypothetic_MAA_1",double,1,2). link("hypothetic_MAA_1",simple,2,3). link("hypothetic_MAA_1",simple,3,4).
+link("hypothetic_MAA_1",simple,4,5). link("hypothetic_MAA_1",simple,5,6). link("hypothetic_MAA_1",simple,1,6).
+link("hypothetic_MAA_1",simple,5,7). link("hypothetic_MAA_1",double,3,10). link("hypothetic_MAA_1",simple,1,8).
+link("hypothetic_MAA_1",simple,5,12). link("hypothetic_MAA_1",simple,7,11). link("hypothetic_MAA_1",simple,2,9).
+link("hypothetic_MAA_1",simple,9,13). link("hypothetic_MAA_1",simple,8,14). link("hypothetic_MAA_1",simple,14,15).
+link("hypothetic_MAA_1",double,15,16). link("hypothetic_MAA_1",simple,15,17). link("hypothetic_MAA_1",simple,10,18).
+link("hypothetic_MAA_1",double,18,19).
 
 %* General definitions
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -358,8 +358,10 @@ moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, Nu
 % moleculeMZ(MoleculeName, M/Q ratio*10000)
 % Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Q ratio divide the M/Q ratio by 10 0000.
 % Approximation like at PubChem: 120110*NumberCarbon + 10080*NumberHydrogen + 159990*NumberOxygen + 140070*NumberNitrogen
-% 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen
-moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+% 120107*NumberCarbon + 100794*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen
+% 1200960*NumberCarbon + 100784*NumberHydrogen + 1599903*NumberOxygen + 1400643*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
+% 1201160*NumberCarbon + 100811*NumberHydrogen + 1599977*NumberOxygen + 1400728*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
+moleculeMZ(MoleculeName, 120110*NumberCarbon + 10080*NumberHydrogen + 159990*NumberOxygen + 140070*NumberNitrogen) :- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
 
 %* Known reactions
@@ -411,9 +413,9 @@ not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeNa
 % Punctual Reactions that need all atoms before/after a certain number of a given coumpound to occur
 
 % concerning c-22-desaturation, has to have everything before C22, like in sitosterol
-need_reaction(c22_desaturation, "sitosterol", before, 22).
+need_reaction(c22_desaturation, "sitosterol", before, 22, 23).
 % OK for Chondrus, but will need to be reformulated for other red algae - see sterols-phylopaths.pdf
-need_reaction(dehydration, "porphyra-334", before, 19).
+need_reaction(dehydration, "porphyra-334", before, 18, 20).
 
 % Rule to infer new punctual reactions: metabolite Y can be the product of metabolite X by reaction R 
 % if all their needed atoms are present, and if all other atoms of X and Y are the same
@@ -426,12 +428,14 @@ newreaction(R,P1,P2):- need_reaction(R,P3,before,N); reaction(R,P3,P4); output_m
 	link(P1,T,I,J):link(P3,T,I,J),I=1..N-1; link(P2,T,I,J):link(P4,T,I,J),I=1..N-1; 
 	link(P1,T,I,J):link(P2,T,I,J),I>=N; link(P2,T,I,J):link(P1,T,I,J),I>=N.
 *%
-newreaction(R,P1,P2):- reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
+newreaction(R,P1,P2):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
 	class(P1,Domain);class(P2,Domain);class(P3,Domain);class(P4,Domain);
 	component(P1,I,A):component(P3,I,A),componentClass(Domain,I,Imax),A<=Imax; component(P2,I,A):component(P4,I,A),componentClass(Domain,I,Imax),A<=Imax;
-	component(P1,I,A):component(P2,I,A),not componentClass(Domain,I,_); component(P2,I,A):component(P1,I,A),not componentClass(Domain,I,_);
+	component(P1,X,A):component(P3,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=U; component(P2,X,A):component(P4,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=U;
+	component(P1,I,A):component(P2,I,A),not componentClass(Domain,I,_),I>U; component(P2,I,A):component(P1,I,A),not componentClass(Domain,I,_),I>U;
 	link(P1,T,I,J):link(P3,T,I,J),componentClass(Domain,I,Imax),J<=Imax; link(P2,T,I,J):link(P4,T,I,J),componentClass(Domain,I,Imax),J<=Imax;
-	link(P1,T,I,J):link(P2,T,I,J),not componentClass(Domain,I,_); link(P2,T,I,J):link(P1,T,I,J),not componentClass(Domain,I,_).
+	link(P1,T,X,J):link(P3,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=U; link(P2,T,X,J):link(P4,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=U;
+	link(P1,T,I,J):link(P2,T,I,J),not componentClass(Domain,I,_),I>U; link(P2,T,I,J):link(P1,T,I,J),not componentClass(Domain,I,_),I>U.
 
 % Defining the result of generic reactions
 
