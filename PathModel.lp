@@ -445,8 +445,7 @@ newreaction(R,P1,P2):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output
 
 % all atoms from R are mapped to P
 component(P,I,A):- reaction(c22_desaturation,R,P); component(R,I,A).
-% the 20-22 link is transformed from simple in R to double in P
-% Change made by Arnaud: correction from 20-22 to 22-23
+% the 22-23 link is transformed from simple in R to double in P
 link(P,double,22,23):-reaction(c22_desaturation,R,P); link(R,simple,22,23).
 % all other links from R are mapped to P
 link(P,T,I,J):-reaction(c22_desaturation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,T,22,23).
