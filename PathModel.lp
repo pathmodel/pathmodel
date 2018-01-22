@@ -1,6 +1,7 @@
  %*
 Search of metabolic pathways
 allowing to reach  output metabolites from a set of input metabolites
+*%
 
 %*
 Data
@@ -17,6 +18,9 @@ Describing the starting set of metabolites
 component(Compound name, Atom number, Atom type).
 link(Compound name, Chemical bond type, Atom number1, Greater Atom number2).
 *%
+
+% Sterol
+% TO DO: move from IUPAC nomenclature 1976 to IUPAC nomenclature 1989
 
 component("sitosterol",1..29,carb). component("sitosterol",32,oxyg).
 link("sitosterol",simple,1,2). link("sitosterol",simple,1,10). link("sitosterol",simple,2,3).
@@ -148,6 +152,8 @@ link("6α-hydroxycholest-4,22-diene-3-one",simpleR,13,18). link("6α-hydroxychol
 link("6α-hydroxycholest-4,22-diene-3-one",simple,20,22). link("6α-hydroxycholest-4,22-diene-3-one",double,22,23). link("6α-hydroxycholest-4,22-diene-3-one",simple,23,24).
 link("6α-hydroxycholest-4,22-diene-3-one",simple,24,25). link("6α-hydroxycholest-4,22-diene-3-one",simple,25,26). link("6α-hydroxycholest-4,22-diene-3-one",simple,25,27).
 
+% Amino acids
+
 component("glycine",1..2,carb). component("glycine",3..4,oxyg). component("glycine",5,nitr). 
 link("glycine",simple,1,2). link("glycine",simple,1,5). link("glycine",double,2,3).
 link("glycine",simple,2,4). 
@@ -164,6 +170,8 @@ link("threonine",simple,2,5). link("threonine",simple,2,6). link("threonine",sim
 link("threonine",simple,6,8). 
 
 aminoacid(glycine;serine;threonine).
+
+% Mycosporine-like amino acids
 
 component("mycosporin-glycine",1..7,carb). component("mycosporin-glycine",8,nitr). component("mycosporin-glycine",9..12,oxyg).
 component("mycosporin-glycine",13..15,carb). component("mycosporin-glycine",16..17,oxyg).
@@ -296,11 +304,6 @@ class(MoleculeName, sterane) :- component(MoleculeName,1..17,carb),
 									link(MoleculeName,simple,13,14), link(MoleculeName,simple,13,17), link(MoleculeName,simple,14,15),
 									link(MoleculeName,simple,15,16), link(MoleculeName,simple,16,17).
 
-% Definition of a sterol skeleton (having a branch going to the 23 carbone)
-class(MoleculeName, steraneSkeleton) :- class(MoleculeName, sterane), component(MoleculeName,18..23,carb), 
-									link(MoleculeName,simpleR,17,20), link(MoleculeName,simpleS,20,21), link(MoleculeName,simple,20,22),
-									link(MoleculeName,BondType,22,23).
-
 % Definition of a cyclohexene
 class(MoleculeName, cyclohexene) :- component(MoleculeName,1..6,carb),
 									link(MoleculeName,double,1,2), link(MoleculeName,simple,2,3), link(MoleculeName,simple,3,4),
@@ -308,7 +311,6 @@ class(MoleculeName, cyclohexene) :- component(MoleculeName,1..6,carb),
 
 % componentClass(DomainName, NumberOfAtom)
 componentClass(sterane,1..17,17).
-componentClass(steraneSkeleton,1..23,23).
 componentClass(cyclohexene,1..6,6).
 
 %* Definition of atomic masses
@@ -357,11 +359,12 @@ moleculeMZ(MoleculeName, 120110*NumberCarbon + 10080*NumberHydrogen + 159990*Num
 reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound 2 , Active site atom number], Resulting compound)
 *%
 
+% Create an hypothetic reaction to put "6α-hydroxycholest-4-ene-3-one" as an output_metabolite
+reaction(hypothetic_reaction, "something", "6α-hydroxycholest-4-ene-3-one").
+
 % Known reactions in Chondrus (inferred from other organisms)
 
 % delta7reduction of 7-dehydrocholesterol gives cholesterol
-reaction(delta7reduction, "something", "6α-hydroxycholest-4-ene-3-one").
-
 reaction(delta7reduction, "7-dehydrocholesterol", "cholesterol").
 
 reaction(delta24reduction,"24-methylenecholesterol", "24-epicampesterol").
@@ -403,6 +406,7 @@ not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeNa
 % concerning c-22-desaturation, has to have everything before C22, like in sitosterol
 need_reaction(c22_desaturation, "sitosterol", before, 22, 23).
 % OK for Chondrus, but will need to be reformulated for other red algae - see sterols-phylopaths.pdf
+
 need_reaction(dehydration, "porphyra-334", before, 18, 20).
 
 % Rule to infer new punctual reactions: metabolite Y can be the product of metabolite X by reaction R 
@@ -515,7 +519,8 @@ component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,
 #show input_metabolite/1.
 #show output_metabolite/1.
 #show reaction/3.
-#show newreaction/3.
+show newreaction/3.
+show moleculeMZ/2.
 
 %* Expected output
 
