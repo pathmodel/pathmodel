@@ -519,8 +519,8 @@ component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,
 #show input_metabolite/1.
 #show output_metabolite/1.
 #show reaction/3.
-show newreaction/3.
-show moleculeMZ/2.
+#show newreaction/3.
+#show moleculeMZ/2.
 
 %* Expected output
 
