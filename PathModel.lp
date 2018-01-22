@@ -2,22 +2,6 @@
 Search of metabolic pathways
 allowing to reach  output metabolites from a set of input metabolites
 
-% Call
-lancer le programme avec:  ./gringo  PathModel_gringo3_v2.1.lp |./clasp -n 0
-cd C:\Documents and Settings\jnicolas\Mes documents\potsdam\ASP\markov
-..\bin\clingo4.5.4 PathModel_gringo4_v2.4.lp  --verbose=1 -n 0
-..\bin\clingopyth52.exe PathModel_gringo4_v2.6.lp  -n 0
-
-cd /Users/gmarkov/Documents/phylometab/PathModel/
-/Applications
-
-% Input:
-component(Compound name, Atom number, Atom type).
-link(Compound name, Chemical bond type, Atom number1, Greater Atom number2).
-
-% Coloration syntaxique dans Smultron: Logtalk
-*%
-
 %*
 Data
 Chemical variable:
@@ -29,7 +13,11 @@ valence(carb, 4). valence(nitr, 3). valence(oxyg, 2).
 %*
 Data
 Describing the starting set of metabolites
+
+component(Compound name, Atom number, Atom type).
+link(Compound name, Chemical bond type, Atom number1, Greater Atom number2).
 *%
+
 component("sitosterol",1..29,carb). component("sitosterol",32,oxyg).
 link("sitosterol",simple,1,2). link("sitosterol",simple,1,10). link("sitosterol",simple,2,3).
 link("sitosterol",simple,3,4). link("sitosterol",simpleR,3,32). link("sitosterol",simple,4,5).
@@ -537,9 +525,9 @@ newreaction(c22_desaturation,"cholesterol", "22-dehydrocholesterol"). #### Alrea
 newreaction(dehydration,"palythinol","palythine").
 
 # Hypothese 2 (minimize unkown reaction types)
-newreaction(dehydration,"asterina-330","new_MMA").
-newreaction(dehydration,"new_MAA","palythine").
-new_MAA
-mz(new_MAA)=270,2836
+newreaction(dehydration,"asterina-330","hypothetic_MAA_1"). #### Already OK
+newreaction(dehydration,"hypothetic_MAA_1","palythine").
+hypothetic_MAA_1
+mz(hypothetic_MAA_1)=270,2836  #### Find 270,2850 (issue with the number after the decimal for Hydrogen/Carbon/Nitrogen/Oxygen?)
 
 *%
