@@ -9,6 +9,40 @@ link(Compound name, Chemical bond type, Atom number1, Greater Atom number2).
 % Sterol
 % TO DO: move from IUPAC nomenclature 1976 to IUPAC nomenclature 1989
 
+component("cycloartenol",1..27,carb). component("cycloartenol",30..31,carb). component("cycloartenol",32,oxyg).
+component("cycloartenol",33,carb).
+link("cycloartenol",simple,1,2). link("cycloartenol",simple,1,10). link("cycloartenol",simple,2,3).
+link("cycloartenol",simple,3,4). link("cycloartenol",simpleR,3,32). link("cycloartenol",simple,4,5).
+link("cycloartenol",simpleR,4,30). link("cycloartenol",simpleS,4,31).
+link("cycloartenol",simple,5,6). link("cycloartenol",simple,5,10). link("cycloartenol",simple,6,7).
+link("cycloartenol",simple,7,8). link("cycloartenol",simple,8,9). link("cycloartenol",simple,8,14).
+link("cycloartenol",simple,9,10). link("cycloartenol",simple,9,11).link("cycloartenol",simpleR,9,19).
+link("cycloartenol",simpleR,10,19).
+link("cycloartenol",simple,11,12). link("cycloartenol",simple,12,13). link("cycloartenol",simple,13,14).
+link("cycloartenol",simple,14,15). link("cycloartenol",simpleS,14,33).
+link("cycloartenol",simple,15,16). link("cycloartenol",simple,16,17).
+link("cycloartenol",simple,13,17). link("cycloartenol",simpleR,13,18). link("cycloartenol",simpleR,17,20).
+link("cycloartenol",simpleS,20,21). link("cycloartenol",simple,20,22). link("cycloartenol",simple,22,23).
+link("cycloartenol",simple,23,24). link("cycloartenol",double,24,25). link("cycloartenol",simple,25,26).
+link("cycloartenol",simple,25,27).
+
+component("cycloartanol",1..27,carb). component("cycloartanol",30..31,carb). component("cycloartanol",32,oxyg).
+component("cycloartanol",33,carb).
+link("cycloartanol",simple,1,2). link("cycloartanol",simple,1,10). link("cycloartanol",simple,2,3).
+link("cycloartanol",simple,3,4). link("cycloartanol",simpleR,3,32). link("cycloartanol",simple,4,5).
+link("cycloartanol",simpleR,4,30). link("cycloartanol",simpleS,4,31).
+link("cycloartanol",simple,5,6). link("cycloartanol",simple,5,10). link("cycloartanol",simple,6,7).
+link("cycloartanol",simple,7,8). link("cycloartanol",simple,8,9). link("cycloartanol",simple,8,14).
+link("cycloartanol",simple,9,10). link("cycloartanol",simple,9,11).link("cycloartanol",simpleR,9,19).
+link("cycloartanol",simpleR,10,19).
+link("cycloartanol",simple,11,12). link("cycloartanol",simple,12,13). link("cycloartanol",simple,13,14).
+link("cycloartanol",simple,14,15). link("cycloartanol",simpleS,14,33).
+link("cycloartanol",simple,15,16). link("cycloartanol",simple,16,17).
+link("cycloartanol",simple,13,17). link("cycloartanol",simpleR,13,18). link("cycloartanol",simpleR,17,20).
+link("cycloartanol",simpleS,20,21). link("cycloartanol",simple,20,22). link("cycloartanol",simple,22,23).
+link("cycloartanol",simple,23,24). link("cycloartanol",simple,24,25). link("cycloartanol",simple,25,26).
+link("cycloartanol",simple,25,27).
+
 component("sitosterol",1..29,carb). component("sitosterol",32,oxyg).
 link("sitosterol",simple,1,2). link("sitosterol",simple,1,10). link("sitosterol",simple,2,3).
 link("sitosterol",simple,3,4). link("sitosterol",simpleR,3,32). link("sitosterol",simple,4,5).
