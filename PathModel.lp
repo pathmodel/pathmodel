@@ -132,13 +132,24 @@ newreaction(R,P1,P2):- need_reaction(R,P3,before,N); reaction(R,P3,P4); output_m
 	link(P1,T,I,J):link(P2,T,I,J),I>=N; link(P2,T,I,J):link(P1,T,I,J),I>=N.
 *%
 newreaction(R,P1,P2):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
+	% Check if the four molecules have the same domain.
 	class(P1,Domain);class(P2,Domain);class(P3,Domain);class(P4,Domain);
+	% Check if atoms in the domain are the same between P1/P3 and P2/P4. (Now useless with the Domain?)
 	component(P1,I,A):component(P3,I,A),componentClass(Domain,I,Imax),A<=Imax; component(P2,I,A):component(P4,I,A),componentClass(Domain,I,Imax),A<=Imax;
+	% Check if atoms between the domain and the reaction are the same between P1/P3 and P2/P4.
 	component(P1,X,A):component(P3,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=U; component(P2,X,A):component(P4,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=U;
+	% Check if atoms after the reaction are the same between P1/P2.
 	component(P1,I,A):component(P2,I,A),not componentClass(Domain,I,_),I>U; component(P2,I,A):component(P1,I,A),not componentClass(Domain,I,_),I>U;
+	% Check if atoms around the domain are identiques between P1 and P2.
+	component(P1,I,A):component(P2,I,A),componentClass(Domain,I,_); component(P2,I,A):component(P1,I,A),componentClass(Domain,I,_);
+	% Check if links in the domain are the same between P1/P3 and P2/P4. (Now useless with the Domain?)
 	link(P1,T,I,J):link(P3,T,I,J),componentClass(Domain,I,Imax),J<=Imax; link(P2,T,I,J):link(P4,T,I,J),componentClass(Domain,I,Imax),J<=Imax;
+	% Check if links between the domain and the reaction are the same between P1/P3 and P2/P4.
 	link(P1,T,X,J):link(P3,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=U; link(P2,T,X,J):link(P4,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=U;
-	link(P1,T,I,J):link(P2,T,I,J),not componentClass(Domain,I,_),I>U; link(P2,T,I,J):link(P1,T,I,J),not componentClass(Domain,I,_),I>U.
+	% Check if links after the reaction are the same between P1/P2.
+	link(P1,T,I,J):link(P2,T,I,J),not componentClass(Domain,I,_),I>U; link(P2,T,I,J):link(P1,T,I,J),not componentClass(Domain,I,_),I>U;
+	% Check if links around the domain are identiques between P1 and P2.
+	link(P1,T,I,J):link(P2,T,I,J),componentClass(Domain,I,_); link(P2,T,I,J):link(P1,T,I,J),componentClass(Domain,I,_).
 
 % Defining the result of generic reactions
 
