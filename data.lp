@@ -7,45 +7,38 @@ link(Compound name, Chemical bond type, Atom number1, Greater Atom number2).
 *%
 
 % Sterol
-% TO DO: move from IUPAC nomenclature 1976 to IUPAC nomenclature 1989
 
-component("cycloartenol",1..27,carb). component("cycloartenol",30..31,carb). component("cycloartenol",32,oxyg).
-component("cycloartenol",33,carb).
+component("cycloartenol",1..30,carb). component("cycloartenol",31,oxyg).
 link("cycloartenol",simple,1,2). link("cycloartenol",simple,1,10). link("cycloartenol",simple,2,3).
-link("cycloartenol",simple,3,4). link("cycloartenol",simpleR,3,32). link("cycloartenol",simple,4,5).
-link("cycloartenol",simpleR,4,30). link("cycloartenol",simpleS,4,31).
-link("cycloartenol",simple,5,6). link("cycloartenol",simple,5,10). link("cycloartenol",simple,6,7).
-link("cycloartenol",simple,7,8). link("cycloartenol",simple,8,9). link("cycloartenol",simple,8,14).
-link("cycloartenol",simple,9,10). link("cycloartenol",simple,9,11).link("cycloartenol",simpleR,9,19).
-link("cycloartenol",simpleR,10,19).
+link("cycloartenol",simple,3,4). link("cycloartenol",simpleR,3,31). link("cycloartenol",simple,4,5).
+link("cycloartenol",simpleR,4,29). link("cycloartenol",simpleS,4,28). link("cycloartenol",simple,5,6).
+link("cycloartenol",simple,5,10). link("cycloartenol",simple,6,7). link("cycloartenol",simple,7,8).
+link("cycloartenol",simple,8,9). link("cycloartenol",simple,8,14). link("cycloartenol",simple,9,10).
+link("cycloartenol",simple,9,11).link("cycloartenol",simpleR,9,19). link("cycloartenol",simpleR,10,19).
 link("cycloartenol",simple,11,12). link("cycloartenol",simple,12,13). link("cycloartenol",simple,13,14).
-link("cycloartenol",simple,14,15). link("cycloartenol",simpleS,14,33).
-link("cycloartenol",simple,15,16). link("cycloartenol",simple,16,17).
-link("cycloartenol",simple,13,17). link("cycloartenol",simpleR,13,18). link("cycloartenol",simpleR,17,20).
-link("cycloartenol",simpleS,20,21). link("cycloartenol",simple,20,22). link("cycloartenol",simple,22,23).
-link("cycloartenol",simple,23,24). link("cycloartenol",double,24,25). link("cycloartenol",simple,25,26).
-link("cycloartenol",simple,25,27).
+link("cycloartenol",simple,14,15). link("cycloartenol",simpleS,14,30). link("cycloartenol",simple,15,16).
+link("cycloartenol",simple,16,17). link("cycloartenol",simple,13,17). link("cycloartenol",simpleR,13,18).
+link("cycloartenol",simpleR,17,20). link("cycloartenol",simpleS,20,21). link("cycloartenol",simple,20,22).
+link("cycloartenol",simple,22,23). link("cycloartenol",simple,23,24). link("cycloartenol",double,24,25).
+link("cycloartenol",simple,25,26). link("cycloartenol",simple,25,27).
 
-component("cycloartanol",1..27,carb). component("cycloartanol",30..31,carb). component("cycloartanol",32,oxyg).
-component("cycloartanol",33,carb).
+component("cycloartanol",1..30,carb). component("cycloartanol",31,oxyg).
 link("cycloartanol",simple,1,2). link("cycloartanol",simple,1,10). link("cycloartanol",simple,2,3).
-link("cycloartanol",simple,3,4). link("cycloartanol",simpleR,3,32). link("cycloartanol",simple,4,5).
-link("cycloartanol",simpleR,4,30). link("cycloartanol",simpleS,4,31).
-link("cycloartanol",simple,5,6). link("cycloartanol",simple,5,10). link("cycloartanol",simple,6,7).
-link("cycloartanol",simple,7,8). link("cycloartanol",simple,8,9). link("cycloartanol",simple,8,14).
-link("cycloartanol",simple,9,10). link("cycloartanol",simple,9,11).link("cycloartanol",simpleR,9,19).
-link("cycloartanol",simpleR,10,19).
+link("cycloartanol",simple,3,4). link("cycloartanol",simpleR,3,31). link("cycloartanol",simple,4,5).
+link("cycloartanol",simpleR,4,29). link("cycloartanol",simpleS,4,28). link("cycloartanol",simple,5,6).
+link("cycloartanol",simple,5,10). link("cycloartanol",simple,6,7). link("cycloartanol",simple,7,8).
+link("cycloartanol",simple,8,9). link("cycloartanol",simple,8,14). link("cycloartanol",simple,9,10).
+link("cycloartanol",simple,9,11).link("cycloartanol",simpleR,9,19). link("cycloartanol",simpleR,10,19).
 link("cycloartanol",simple,11,12). link("cycloartanol",simple,12,13). link("cycloartanol",simple,13,14).
-link("cycloartanol",simple,14,15). link("cycloartanol",simpleS,14,33).
-link("cycloartanol",simple,15,16). link("cycloartanol",simple,16,17).
-link("cycloartanol",simple,13,17). link("cycloartanol",simpleR,13,18). link("cycloartanol",simpleR,17,20).
-link("cycloartanol",simpleS,20,21). link("cycloartanol",simple,20,22). link("cycloartanol",simple,22,23).
-link("cycloartanol",simple,23,24). link("cycloartanol",simple,24,25). link("cycloartanol",simple,25,26).
-link("cycloartanol",simple,25,27).
+link("cycloartanol",simple,14,15). link("cycloartanol",simpleS,14,30). link("cycloartanol",simple,15,16).
+link("cycloartanol",simple,16,17). link("cycloartanol",simple,13,17). link("cycloartanol",simpleR,13,18).
+link("cycloartanol",simpleR,17,20). link("cycloartanol",simpleS,20,21). link("cycloartanol",simple,20,22).
+link("cycloartanol",simple,22,23). link("cycloartanol",simple,23,24). link("cycloartanol",simple,24,25).
+link("cycloartanol",simple,25,26). link("cycloartanol",simple,25,27).
 
-component("sitosterol",1..29,carb). component("sitosterol",32,oxyg).
+component("sitosterol",1..27,carb). component("sitosterol",241..242,carb). component("sitosterol",31,oxyg).
 link("sitosterol",simple,1,2). link("sitosterol",simple,1,10). link("sitosterol",simple,2,3).
-link("sitosterol",simple,3,4). link("sitosterol",simpleR,3,32). link("sitosterol",simple,4,5).
+link("sitosterol",simple,3,4). link("sitosterol",simpleR,3,31). link("sitosterol",simple,4,5).
 link("sitosterol",double,5,6). link("sitosterol",simple,5,10). link("sitosterol",simple,6,7).
 link("sitosterol",simple,7,8). link("sitosterol",simple,8,9). link("sitosterol",simple,8,14).
 link("sitosterol",simple,9,10).  link("sitosterol",simple,9,11). link("sitosterol",simpleR,10,19).
@@ -54,11 +47,11 @@ link("sitosterol",simple,13,17). link("sitosterol",simpleR,13,18). link("sitoste
 link("sitosterol",simple,15,16). link("sitosterol",simple,16,17). link("sitosterol",simpleR,17,20).
 link("sitosterol",simpleS,20,21). link("sitosterol",simple,20,22). link("sitosterol",simple,22,23).
 link("sitosterol",simple,23,24). link("sitosterol",simple,24,25). link("sitosterol",simple,25,26).
-link("sitosterol",simple,25,27). link("sitosterol",simpleR,24,28). link("sitosterol",simple,28,29).
+link("sitosterol",simple,25,27). link("sitosterol",simpleR,24,241). link("sitosterol",simple,28,242).
 
-component("stigmasterol",1..29,carb). component("stigmasterol",32,oxyg).
+component("stigmasterol",1..27,carb). component("stigmasterol",241..242,carb). component("stigmasterol",31,oxyg).
 link("stigmasterol",simple,1,2). link("stigmasterol",simple,1,10). link("stigmasterol",simple,2,3).
-link("stigmasterol",simple,3,4). link("stigmasterol",simpleR,3,32). link("stigmasterol",simple,4,5).
+link("stigmasterol",simple,3,4). link("stigmasterol",simpleR,3,31). link("stigmasterol",simple,4,5).
 link("stigmasterol",double,5,6). link("stigmasterol",simple,5,10). link("stigmasterol",simple,6,7).
 link("stigmasterol",simple,7,8). link("stigmasterol",simple,8,9). link("stigmasterol",simple,8,14).
 link("stigmasterol",simple,9,10).  link("stigmasterol",simple,9,11). link("stigmasterol",simpleR,10,19).
@@ -67,11 +60,11 @@ link("stigmasterol",simple,13,17). link("stigmasterol",simpleR,13,18). link("sti
 link("stigmasterol",simple,15,16). link("stigmasterol",simple,16,17). link("stigmasterol",simpleR,17,20).
 link("stigmasterol",simpleS,20,21). link("stigmasterol",simple,20,22). link("stigmasterol",double,22,23).
 link("stigmasterol",simple,23,24). link("stigmasterol",simple,24,25). link("stigmasterol",simple,25,26).
-link("stigmasterol",simple,25,27). link("stigmasterol",simpleR,24,28). link("stigmasterol",simple,28,29).
+link("stigmasterol",simple,25,27). link("stigmasterol",simpleR,24,241). link("stigmasterol",simple,241,242).
 
-component("24-methylenecholesterol",1..28,carb). component("24-methylenecholesterol",32,oxyg).
+component("24-methylenecholesterol",1..27,carb). component("24-methylenecholesterol",241,carb). component("24-methylenecholesterol",31,oxyg).
 link("24-methylenecholesterol",simple,1,2). link("24-methylenecholesterol",simple,1,10). link("24-methylenecholesterol",simple,2,3).
-link("24-methylenecholesterol",simple,3,4). link("24-methylenecholesterol",simpleR,3,32). link("24-methylenecholesterol",simple,4,5).
+link("24-methylenecholesterol",simple,3,4). link("24-methylenecholesterol",simpleR,3,31). link("24-methylenecholesterol",simple,4,5).
 link("24-methylenecholesterol",double,5,6). link("24-methylenecholesterol",simple,5,10). link("24-methylenecholesterol",simple,6,7).
 link("24-methylenecholesterol",simple,7,8). link("24-methylenecholesterol",simple,8,9). link("24-methylenecholesterol",simple,8,14).
 link("24-methylenecholesterol",simple,9,10). link("24-methylenecholesterol",simple,9,11). link("24-methylenecholesterol",simpleR,10,19).
@@ -80,11 +73,11 @@ link("24-methylenecholesterol",simple,14,15). link("24-methylenecholesterol",sim
 link("24-methylenecholesterol",simple,13,17). link("24-methylenecholesterol",simpleR,13,18). link("24-methylenecholesterol",simpleR,17,20).
 link("24-methylenecholesterol",simpleS,20,21). link("24-methylenecholesterol",simple,20,22). link("24-methylenecholesterol",simple,22,23).
 link("24-methylenecholesterol",simple,23,24). link("24-methylenecholesterol",simple,24,25). link("24-methylenecholesterol",simple,25,26).
-link("24-methylenecholesterol",simple,25,27). link("24-methylenecholesterol",double,24,28).
+link("24-methylenecholesterol",simple,25,27). link("24-methylenecholesterol",double,24,241).
 
-component("24-epicampesterol",1..28,carb). component("24-epicampesterol",32,oxyg).
+component("24-epicampesterol",1..27,carb). component("24-epicampesterol",241,carb). component("24-epicampesterol",31,oxyg).
 link("24-epicampesterol",simple,1,2). link("24-epicampesterol",simple,1,10). link("24-epicampesterol",simple,2,3).
-link("24-epicampesterol",simple,3,4). link("24-epicampesterol",simpleR,3,32). link("24-epicampesterol",simple,4,5).
+link("24-epicampesterol",simple,3,4). link("24-epicampesterol",simpleR,3,31). link("24-epicampesterol",simple,4,5).
 link("24-epicampesterol",double,5,6). link("24-epicampesterol",simple,5,10). link("24-epicampesterol",simple,6,7).
 link("24-epicampesterol",simple,7,8). link("24-epicampesterol",simple,8,9). link("24-epicampesterol",simple,8,14).
 link("24-epicampesterol",simple,9,10). link("24-epicampesterol",simple,9,11). link("24-epicampesterol",simpleR,10,19).
@@ -93,11 +86,11 @@ link("24-epicampesterol",simple,14,15). link("24-epicampesterol",simple,15,16). 
 link("24-epicampesterol",simple,13,17). link("24-epicampesterol",simpleR,13,18). link("24-epicampesterol",simpleR,17,20).
 link("24-epicampesterol",simpleS,20,21). link("24-epicampesterol",simple,20,22). link("24-epicampesterol",simple,22,23).
 link("24-epicampesterol",simple,23,24). link("24-epicampesterol",simple,24,25). link("24-epicampesterol",simple,25,26).
-link("24-epicampesterol",simple,25,27). link("24-epicampesterol",simpleR,24,28).
+link("24-epicampesterol",simple,25,27). link("24-epicampesterol",simpleR,24,241).
 
-component("brassicasterol",1..28,carb). component("brassicasterol",32,oxyg).
+component("brassicasterol",1..28,carb). component("brassicasterol",241,carb). component("brassicasterol",31,oxyg).
 link("brassicasterol",simple,1,2). link("brassicasterol",simple,1,10). link("brassicasterol",simple,2,3).
-link("brassicasterol",simple,3,4). link("brassicasterol",simpleR,3,32). link("brassicasterol",simple,4,5).
+link("brassicasterol",simple,3,4). link("brassicasterol",simpleR,3,31). link("brassicasterol",simple,4,5).
 link("brassicasterol",double,5,6). link("brassicasterol",simple,5,10). link("brassicasterol",simple,6,7).
 link("brassicasterol",simple,7,8). link("brassicasterol",simple,8,9). link("brassicasterol",simple,8,14).
 link("brassicasterol",simple,9,10). link("brassicasterol",simple,9,11). link("brassicasterol",simpleR,10,19).
@@ -106,11 +99,11 @@ link("brassicasterol",simple,14,15). link("brassicasterol",simple,15,16). link("
 link("brassicasterol",simple,13,17). link("brassicasterol",simpleR,13,18). link("brassicasterol",simpleR,17,20).
 link("brassicasterol",simpleS,20,21). link("brassicasterol",simple,20,22). link("brassicasterol",double,22,23).
 link("brassicasterol",simple,23,24). link("brassicasterol",simple,24,25). link("brassicasterol",simple,25,26).
-link("brassicasterol",simple,25,27). link("brassicasterol",simpleR,24,28).
+link("brassicasterol",simple,25,27). link("brassicasterol",simpleR,24,241).
 
-component("7-dehydrocholesterol",1..27,carb). component("7-dehydrocholesterol",32,oxyg).
+component("7-dehydrocholesterol",1..27,carb). component("7-dehydrocholesterol",31,oxyg).
 link("7-dehydrocholesterol",simple,1,2). link("7-dehydrocholesterol",simple,1,10). link("7-dehydrocholesterol",simple,2,3).
-link("7-dehydrocholesterol",simple,3,4). link("7-dehydrocholesterol",simpleR,3,32). link("7-dehydrocholesterol",simple,4,5).
+link("7-dehydrocholesterol",simple,3,4). link("7-dehydrocholesterol",simpleR,3,31). link("7-dehydrocholesterol",simple,4,5).
 link("7-dehydrocholesterol",double,5,6). link("7-dehydrocholesterol",simple,5,10). link("7-dehydrocholesterol",simple,6,7).
 link("7-dehydrocholesterol",double,7,8). link("7-dehydrocholesterol",simple,8,9). link("7-dehydrocholesterol",simple,8,14).
 link("7-dehydrocholesterol",simple,9,10). link("7-dehydrocholesterol",simple,9,11). link("7-dehydrocholesterol",simpleR,10,19).
@@ -121,9 +114,9 @@ link("7-dehydrocholesterol",simpleS,20,21). link("7-dehydrocholesterol",simple,2
 link("7-dehydrocholesterol",simple,23,24). link("7-dehydrocholesterol",simple,24,25). link("7-dehydrocholesterol",simple,25,26).
 link("7-dehydrocholesterol",simple,25,27).
 
-component("cholesterol",1..27,carb). component("cholesterol",32,oxyg).
+component("cholesterol",1..27,carb). component("cholesterol",31,oxyg).
 link("cholesterol",simple,1,2). link("cholesterol",simple,1,10). link("cholesterol",simple,2,3).
-link("cholesterol",simple,3,4). link("cholesterol",simpleR,3,32). link("cholesterol",simple,4,5).
+link("cholesterol",simple,3,4). link("cholesterol",simpleR,3,31). link("cholesterol",simple,4,5).
 link("cholesterol",double,5,6). link("cholesterol",simple,5,10). link("cholesterol",simple,6,7).
 link("cholesterol",simple,7,8). link("cholesterol",simple,8,9). link("cholesterol",simple,8,14).
 link("cholesterol",simple,9,10). link("cholesterol",simple,9,11). link("cholesterol",simpleR,10,19).
@@ -134,9 +127,9 @@ link("cholesterol",simpleS,20,21). link("cholesterol",simple,20,22). link("chole
 link("cholesterol",simple,23,24). link("cholesterol",simple,24,25). link("cholesterol",simple,25,26).
 link("cholesterol",simple,25,27).
 
-component("22-dehydrocholesterol",1..27,carb). component("22-dehydrocholesterol",32,oxyg).
+component("22-dehydrocholesterol",1..27,carb). component("22-dehydrocholesterol",31,oxyg).
 link("22-dehydrocholesterol",simple,1,2). link("22-dehydrocholesterol",simple,1,10). link("22-dehydrocholesterol",simple,2,3).
-link("22-dehydrocholesterol",simple,3,4). link("22-dehydrocholesterol",simpleR,3,32). link("22-dehydrocholesterol",simple,4,5).
+link("22-dehydrocholesterol",simple,3,4). link("22-dehydrocholesterol",simpleR,3,31). link("22-dehydrocholesterol",simple,4,5).
 link("22-dehydrocholesterol",double,5,6). link("22-dehydrocholesterol",simple,5,10). link("22-dehydrocholesterol",simple,6,7).
 link("22-dehydrocholesterol",simple,7,8). link("22-dehydrocholesterol",simple,8,9). link("22-dehydrocholesterol",simple,8,14).
 link("22-dehydrocholesterol",simple,9,10). link("22-dehydrocholesterol",simple,9,11). link("22-dehydrocholesterol",simpleR,10,19).
@@ -147,11 +140,11 @@ link("22-dehydrocholesterol",simpleS,20,21). link("22-dehydrocholesterol",simple
 link("22-dehydrocholesterol",simple,23,24). link("22-dehydrocholesterol",simple,24,25). link("22-dehydrocholesterol",simple,25,26).
 link("22-dehydrocholesterol",simple,25,27).
 
-component("6α-hydroxycholest-4-ene-3-one",1..27,carb). component("6α-hydroxycholest-4-ene-3-one",32..33,oxyg).
+component("6α-hydroxycholest-4-ene-3-one",1..27,carb). component("6α-hydroxycholest-4-ene-3-one",31..32,oxyg).
 link("6α-hydroxycholest-4-ene-3-one",simple,1,2). link("6α-hydroxycholest-4-ene-3-one",simple,1,10). link("6α-hydroxycholest-4-ene-3-one",simple,2,3).
-link("6α-hydroxycholest-4-ene-3-one",simple,3,4). link("6α-hydroxycholest-4-ene-3-one",double,3,32). link("6α-hydroxycholest-4-ene-3-one",simple,4,5).
+link("6α-hydroxycholest-4-ene-3-one",simple,3,4). link("6α-hydroxycholest-4-ene-3-one",double,3,31). link("6α-hydroxycholest-4-ene-3-one",simple,4,5).
 link("6α-hydroxycholest-4-ene-3-one",double,5,6). link("6α-hydroxycholest-4-ene-3-one",simple,5,10). link("6α-hydroxycholest-4-ene-3-one",simple,6,7).
-link("6α-hydroxycholest-4-ene-3-one",simple,6,7). link("6α-hydroxycholest-4-ene-3-one",simpleS,6,33). link("6α-hydroxycholest-4-ene-3-one",simple,7,8).
+link("6α-hydroxycholest-4-ene-3-one",simple,6,7). link("6α-hydroxycholest-4-ene-3-one",simpleS,6,32). link("6α-hydroxycholest-4-ene-3-one",simple,7,8).
 link("6α-hydroxycholest-4-ene-3-one",simple,8,9). link("6α-hydroxycholest-4-ene-3-one",simple,8,14). link("6α-hydroxycholest-4-ene-3-one",simple,9,10).
 link("6α-hydroxycholest-4-ene-3-one",simple,9,11). link("6α-hydroxycholest-4-ene-3-one",simpleR,10,19). link("6α-hydroxycholest-4-ene-3-one",simple,11,12).
 link("6α-hydroxycholest-4-ene-3-one",simple,12,13). link("6α-hydroxycholest-4-ene-3-one",simple,13,14).  link("6α-hydroxycholest-4-ene-3-one",simple,14,15).
@@ -160,11 +153,11 @@ link("6α-hydroxycholest-4-ene-3-one",simpleR,13,18). link("6α-hydroxycholest-4
 link("6α-hydroxycholest-4-ene-3-one",simple,20,22). link("6α-hydroxycholest-4-ene-3-one",simple,22,23). link("6α-hydroxycholest-4-ene-3-one",simple,23,24).
 link("6α-hydroxycholest-4-ene-3-one",simple,24,25). link("6α-hydroxycholest-4-ene-3-one",simple,25,26). link("6α-hydroxycholest-4-ene-3-one",simple,25,27).
 
-component("6α-hydroxycholest-4,22-diene-3-one",1..27,carb). component("6α-hydroxycholest-4,22-diene-3-one",32..33,oxyg).
+component("6α-hydroxycholest-4,22-diene-3-one",1..27,carb). component("6α-hydroxycholest-4,22-diene-3-one",31..32,oxyg).
 link("6α-hydroxycholest-4,22-diene-3-one",simple,1,2). link("6α-hydroxycholest-4,22-diene-3-one",simple,1,10). link("6α-hydroxycholest-4,22-diene-3-one",simple,2,3).
-link("6α-hydroxycholest-4,22-diene-3-one",simple,3,4). link("6α-hydroxycholest-4,22-diene-3-one",double,3,32). link("6α-hydroxycholest-4,22-diene-3-one",simple,4,5).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,3,4). link("6α-hydroxycholest-4,22-diene-3-one",double,3,31). link("6α-hydroxycholest-4,22-diene-3-one",simple,4,5).
 link("6α-hydroxycholest-4,22-diene-3-one",double,5,6). link("6α-hydroxycholest-4,22-diene-3-one",simple,5,10). link("6α-hydroxycholest-4,22-diene-3-one",simple,6,7).
-link("6α-hydroxycholest-4,22-diene-3-one",simple,6,7). link("6α-hydroxycholest-4,22-diene-3-one",simpleS,6,33). link("6α-hydroxycholest-4,22-diene-3-one",simple,7,8).
+link("6α-hydroxycholest-4,22-diene-3-one",simple,6,7). link("6α-hydroxycholest-4,22-diene-3-one",simpleS,6,32). link("6α-hydroxycholest-4,22-diene-3-one",simple,7,8).
 link("6α-hydroxycholest-4,22-diene-3-one",simple,8,9). link("6α-hydroxycholest-4,22-diene-3-one",simple,8,14). link("6α-hydroxycholest-4,22-diene-3-one",simple,9,10).
 link("6α-hydroxycholest-4,22-diene-3-one",simple,9,11). link("6α-hydroxycholest-4,22-diene-3-one",simpleR,10,19). link("6α-hydroxycholest-4,22-diene-3-one",simple,11,12).
 link("6α-hydroxycholest-4,22-diene-3-one",simple,12,13). link("6α-hydroxycholest-4,22-diene-3-one",simple,13,14).  link("6α-hydroxycholest-4,22-diene-3-one",simple,14,15).
