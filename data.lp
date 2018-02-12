@@ -290,27 +290,6 @@ link("hypothetic_MAA_1",simple,9,13). link("hypothetic_MAA_1",simple,8,14). link
 link("hypothetic_MAA_1",double,15,16). link("hypothetic_MAA_1",simple,15,17). link("hypothetic_MAA_1",simple,10,18).
 link("hypothetic_MAA_1",double,18,19).
 
-component("hypothetic_MAA_2",1..7,carb). component("hypothetic_MAA_2",8,nitr). component("hypothetic_MAA_2",9,oxyg).
-component("hypothetic_MAA_2",10,nitr). component("hypothetic_MAA_2",11..12,oxyg). component("hypothetic_MAA_2",13..15,carb).
-component("hypothetic_MAA_2",16..17,oxyg). component("hypothetic_MAA_2",18..19,carb).
-link("hypothetic_MAA_2",double,1,2). link("hypothetic_MAA_2",simple,2,3). link("hypothetic_MAA_2",simple,3,4).
-link("hypothetic_MAA_2",simple,4,5). link("hypothetic_MAA_2",simple,5,6). link("hypothetic_MAA_2",simple,1,6).
-link("hypothetic_MAA_2",simple,5,7). link("hypothetic_MAA_2",double,3,10). link("hypothetic_MAA_2",simple,1,8).
-link("hypothetic_MAA_2",simple,5,12). link("hypothetic_MAA_2",simple,7,11). link("hypothetic_MAA_2",simple,2,9).
-link("hypothetic_MAA_2",simple,9,13). link("hypothetic_MAA_2",simple,8,14). link("hypothetic_MAA_2",simple,14,15).
-link("hypothetic_MAA_2",double,15,16). link("hypothetic_MAA_2",simple,15,17). link("hypothetic_MAA_2",simple,10,18).
-link("hypothetic_MAA_2",simple,18,19).
-
-component("hypothetic_MAA_3",1..7,carb). component("hypothetic_MAA_3",8,nitr). component("hypothetic_MAA_3",9,oxyg).
-component("hypothetic_MAA_3",10,nitr). component("hypothetic_MAA_3",11..12,oxyg). component("hypothetic_MAA_3",13..15,carb).
-component("hypothetic_MAA_3",16..17,oxyg). component("hypothetic_MAA_3",18,carb).
-link("hypothetic_MAA_3",double,1,2). link("hypothetic_MAA_3",simple,2,3). link("hypothetic_MAA_3",simple,3,4).
-link("hypothetic_MAA_3",simple,4,5). link("hypothetic_MAA_3",simple,5,6). link("hypothetic_MAA_3",simple,1,6).
-link("hypothetic_MAA_3",simple,5,7). link("hypothetic_MAA_3",double,3,10). link("hypothetic_MAA_3",simple,1,8).
-link("hypothetic_MAA_3",simple,5,12). link("hypothetic_MAA_3",simple,7,11). link("hypothetic_MAA_3",simple,2,9).
-link("hypothetic_MAA_3",simple,9,13). link("hypothetic_MAA_3",simple,8,14). link("hypothetic_MAA_3",simple,14,15).
-link("hypothetic_MAA_3",double,15,16). link("hypothetic_MAA_3",simple,15,17). link("hypothetic_MAA_3",simple,10,18).
-
 %* Known reactions
 %%%%%%%%%%%%%%%%%%%
 reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound 2 , Active site atom number], Resulting compound)
