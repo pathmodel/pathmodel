@@ -102,7 +102,7 @@ link("24-epicampesterol",simpleS,20,21). link("24-epicampesterol",simple,20,22).
 link("24-epicampesterol",simple,23,24). link("24-epicampesterol",simple,24,25). link("24-epicampesterol",simple,25,26).
 link("24-epicampesterol",simple,25,27). link("24-epicampesterol",simpleR,24,241).
 
-component("brassicasterol",1..28,carb). component("brassicasterol",241,carb). component("brassicasterol",31,oxyg).
+component("brassicasterol",1..27,carb). component("brassicasterol",241,carb). component("brassicasterol",31,oxyg).
 link("brassicasterol",simple,1,2). link("brassicasterol",simple,1,10). link("brassicasterol",simple,2,3).
 link("brassicasterol",simple,3,4). link("brassicasterol",simpleR,3,31). link("brassicasterol",simple,4,5).
 link("brassicasterol",double,5,6). link("brassicasterol",simple,5,10). link("brassicasterol",simple,6,7).

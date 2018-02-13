@@ -181,9 +181,9 @@ link(P,T,I,J):-reaction(delta7reduction,R,P); link(R,T,I,J); link(R,T,I,J); not 
 % all atoms from R are mapped to P
 component(P,I,A):- reaction(delta24reduction,R,P); component(R,I,A).
 % the 24-29 link is transformed from double in R to simple in P
-link(P,simple,24,28):-reaction(delta24reduction,R,P); link(R,double,24,28).
+link(P,simple,24,241):-reaction(delta24reduction,R,P); link(R,double,24,241).
 % all other links from R are mapped to P
-link(P,T,I,J):-reaction(delta24reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,T,24,28).
+link(P,T,I,J):-reaction(delta24reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,T,24,241).
 
 % Compound P resulting from the hydrogenation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
