@@ -36,6 +36,20 @@ link("cycloartanol",simpleR,17,20). link("cycloartanol",simpleS,20,21). link("cy
 link("cycloartanol",simple,22,23). link("cycloartanol",simple,23,24). link("cycloartanol",simple,24,25).
 link("cycloartanol",simple,25,26). link("cycloartanol",simple,25,27).
 
+component("31-norcycloartanol",1..28,carb). component("31-norcycloartanol",30,carb). component("31-norcycloartanol",31,oxyg).
+link("31-norcycloartanol",simple,1,2). link("31-norcycloartanol",simple,1,10). link("31-norcycloartanol",simple,2,3).
+link("31-norcycloartanol",simple,3,4). link("31-norcycloartanol",simpleR,3,31). link("31-norcycloartanol",simple,4,5).
+link("31-norcycloartanol",simpleS,4,28). link("31-norcycloartanol",simple,5,6). link("31-norcycloartanol",simple,5,10).
+link("31-norcycloartanol",simple,6,7). link("31-norcycloartanol",simple,7,8). link("31-norcycloartanol",simple,8,9).
+link("31-norcycloartanol",simple,8,14). link("31-norcycloartanol",simple,9,10). link("31-norcycloartanol",simple,9,11).
+link("31-norcycloartanol",simpleR,9,19). link("31-norcycloartanol",simpleR,10,19). link("31-norcycloartanol",simple,11,12).
+link("31-norcycloartanol",simple,12,13). link("31-norcycloartanol",simple,13,14). link("31-norcycloartanol",simple,14,15).
+link("31-norcycloartanol",simpleS,14,30). link("31-norcycloartanol",simple,15,16). link("31-norcycloartanol",simple,16,17).
+link("31-norcycloartanol",simple,13,17). link("31-norcycloartanol",simpleR,13,18). link("31-norcycloartanol",simpleR,17,20).
+link("31-norcycloartanol",simpleS,20,21). link("31-norcycloartanol",simple,20,22). link("31-norcycloartanol",simple,22,23).
+link("31-norcycloartanol",simple,23,24). link("31-norcycloartanol",simple,24,25). link("31-norcycloartanol",simple,25,26).
+link("31-norcycloartanol",simple,25,27).
+
 component("sitosterol",1..27,carb). component("sitosterol",241..242,carb). component("sitosterol",31,oxyg).
 link("sitosterol",simple,1,2). link("sitosterol",simple,1,10). link("sitosterol",simple,2,3).
 link("sitosterol",simple,3,4). link("sitosterol",simpleR,3,31). link("sitosterol",simple,4,5).
