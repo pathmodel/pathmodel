@@ -32,19 +32,25 @@ Based on the wikipedia structure: https://fr.wikipedia.org/wiki/St%C3%A9rane#/me
 One exception the bound between carbone 7 and carbone 8 has variable for the bond type to include the 7-dehydrocholesterol
 because of the double bond instead of the simple.
 *%
-class(MoleculeName, sterane) :- component(MoleculeName,1..17,carb),
-									link(MoleculeName,simple,1,2), link(MoleculeName,simple,1,10), link(MoleculeName,simple,2,3),
-									link(MoleculeName,simple,3,4), link(MoleculeName,simple,4,5), link(MoleculeName,double,5,6),
-									link(MoleculeName,simple,5,10), link(MoleculeName,simple,6,7), link(MoleculeName,BondType,7,8),
-									link(MoleculeName,simple,8,9), link(MoleculeName,simple,8,14), link(MoleculeName,simple,9,10),
-									link(MoleculeName,simple,9,11), link(MoleculeName,simple,11,12), link(MoleculeName,simple,12,13),
-									link(MoleculeName,simple,13,14), link(MoleculeName,simple,13,17), link(MoleculeName,simple,14,15),
-									link(MoleculeName,simple,15,16), link(MoleculeName,simple,16,17).
+class(MoleculeName, sterane) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,carb),
+									component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,carb), component(MoleculeName,Atome6,carb),
+									component(MoleculeName,Atome7,carb), component(MoleculeName,Atome8,carb), component(MoleculeName,Atome9,carb),
+									component(MoleculeName,Atome10,carb), component(MoleculeName,Atome11,carb), component(MoleculeName,Atome12,carb),
+									component(MoleculeName,Atome13,carb), component(MoleculeName,Atome14,carb), component(MoleculeName,Atome15,carb),
+									component(MoleculeName,Atome16,carb), component(MoleculeName,Atome17,carb),
+									link(MoleculeName,simple,Atome1,Atome2), link(MoleculeName,simple,Atome1,Atome10), link(MoleculeName,simple,Atome2,Atome3),
+									link(MoleculeName,simple,Atome3,Atome4), link(MoleculeName,simple,Atome4,Atome5), link(MoleculeName,double,Atome5,Atome6),
+									link(MoleculeName,simple,Atome5,Atome10), link(MoleculeName,simple,Atome6,Atome7), link(MoleculeName,BondType,Atome7,Atome8),
+									link(MoleculeName,simple,Atome8,Atome9), link(MoleculeName,simple,Atome8,Atome14), link(MoleculeName,simple,Atome9,Atome10),
+									link(MoleculeName,simple,Atome9,Atome11), link(MoleculeName,simple,Atome11,Atome12), link(MoleculeName,simple,Atome12,Atome13),
+									link(MoleculeName,simple,Atome13,Atome14), link(MoleculeName,simple,Atome13,Atome17), link(MoleculeName,simple,Atome14,Atome15),
+									link(MoleculeName,simple,Atome15,Atome16), link(MoleculeName,simple,Atome16,Atome17).
 
 % Definition of a cyclohexene
-class(MoleculeName, cyclohexene) :- component(MoleculeName,1..6,carb),
-									link(MoleculeName,double,1,2), link(MoleculeName,simple,2,3), link(MoleculeName,simple,3,4),
-									link(MoleculeName,simple,4,5), link(MoleculeName,simple,5,6), link(MoleculeName,simple,1,6).
+class(MoleculeName, cyclohexene) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,carb),
+									component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,carb), component(MoleculeName,Atome6,carb),
+									link(MoleculeName,double,Atome1,Atome2), link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome3,Atome4),
+									link(MoleculeName,simple,Atome4,Atome5), link(MoleculeName,simple,Atome5,Atome6), link(MoleculeName,simple,Atome1,Atome6).
 
 % componentClass(DomainName, NumberOfAtom)
 componentClass(sterane,1..17,17).
