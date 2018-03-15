@@ -52,6 +52,32 @@ class(MoleculeName, cyclohexene) :- component(MoleculeName,Atome1,carb), compone
 									link(MoleculeName,double,Atome1,Atome2), link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome3,Atome4),
 									link(MoleculeName,simple,Atome4,Atome5), link(MoleculeName,simple,Atome5,Atome6), link(MoleculeName,simple,Atome1,Atome6).
 
+class(MoleculeName, glycine, Atome5) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
+								component(MoleculeName,Atome4,oxyg), component(MoleculeName,Atome5,nitr),
+								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,double,Atome2,Atome4),
+								link(MoleculeName,simple,Atome5,Atome1), not class(MoleculeName, threonine, Atome5), not class(MoleculeName, serine, Atome5).
+
+
+class(MoleculeName, threonine, Atome7) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
+								component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,oxyg), component(MoleculeName,Atome6,oxyg),
+								component(MoleculeName,Atome7,nitr), component(MoleculeName,Atome8,carb),
+								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome2,Atome8),
+								link(MoleculeName,simple,Atome1,Atome4),
+								link(MoleculeName,double,Atome4,Atome5), link(MoleculeName,simple,Atome4,Atome6), link(MoleculeName,simple,Atome7,Atome1).
+
+
+class(MoleculeName, serine, Atome7) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
+								component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,oxyg), component(MoleculeName,Atome6,oxyg),
+								component(MoleculeName,Atome7,nitr),
+								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome1,Atome4),
+								link(MoleculeName,double,Atome4,Atome5), link(MoleculeName,simple,Atome4,Atome6), link(MoleculeName,simple,Atome7,Atome1),
+								Atome2 != Atome4, not class(MoleculeName, threonine, Atome7).
+
+class(MoleculeName, ethanolamine, Atome7) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
+								component(MoleculeName,Atome7,nitr),
+								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome7,Atome1),
+								not class(MoleculeName, threonine, Atome7), not class(MoleculeName, serine, Atome7), not class(MoleculeName, glycine, Atome7).
+
 % componentClass(DomainName, NumberOfAtom)
 componentClass(sterane,1..17,17).
 componentClass(cyclohexene,1..6,6).
@@ -94,7 +120,7 @@ moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, Nu
 % 120107*NumberCarbon + 100794*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen
 % 1200960*NumberCarbon + 100784*NumberHydrogen + 1599903*NumberOxygen + 1400643*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
 % 1201160*NumberCarbon + 100811*NumberHydrogen + 1599977*NumberOxygen + 1400728*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
-moleculeMZ(MoleculeName, 120110*NumberCarbon + 10080*NumberHydrogen + 159990*NumberOxygen + 140070*NumberNitrogen) :- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
 
 %* Definition of input and output from reaction
@@ -142,16 +168,20 @@ newreaction(R,P1,P2):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output
 	class(P1,Domain);class(P2,Domain);class(P3,Domain);class(P4,Domain);
 	% Check if atoms in the domain are the same between P1/P3 and P2/P4. (Now useless with the Domain?)
 	component(P1,I,A):component(P3,I,A),componentClass(Domain,I,Imax),A<=Imax; component(P2,I,A):component(P4,I,A),componentClass(Domain,I,Imax),A<=Imax;
-	% Check if atoms between the domain and the reaction are the same between P1/P3 and P2/P4.
-	component(P1,X,A):component(P3,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=U; component(P2,X,A):component(P4,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=U;
+	% Check if atoms between the domain and the reaction are the same between P1/P2.
+	component(P1,X,A):component(P2,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=N; component(P2,X,A):component(P1,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=N;
+	% Check if atoms in the reaction are the same between P1/P3 and P3/P4.
+	component(P1,X,A):component(P3,X,_),componentClass(Domain,_,Imax),X=N..U; component(P2,X,A):component(P4,X,_),componentClass(Domain,_,Imax),X=N..U;
 	% Check if atoms after the reaction are the same between P1/P2.
 	component(P1,I,A):component(P2,I,A),not componentClass(Domain,I,_),I>U; component(P2,I,A):component(P1,I,A),not componentClass(Domain,I,_),I>U;
 	% Check if atoms around the domain are identiques between P1 and P2.
 	component(P1,I,A):component(P2,I,A),componentClass(Domain,I,_); component(P2,I,A):component(P1,I,A),componentClass(Domain,I,_);
 	% Check if links in the domain are the same between P1/P3 and P2/P4. (Now useless with the Domain?)
 	link(P1,T,I,J):link(P3,T,I,J),componentClass(Domain,I,Imax),J<=Imax; link(P2,T,I,J):link(P4,T,I,J),componentClass(Domain,I,Imax),J<=Imax;
-	% Check if links between the domain and the reaction are the same between P1/P3 and P2/P4.
-	link(P1,T,X,J):link(P3,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=U; link(P2,T,X,J):link(P4,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=U;
+	% Check if links between the domain and the reaction are the same between P1/P2.
+	link(P1,T,X,J):link(P2,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=N; link(P2,T,X,J):link(P1,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=N;
+	% Check if links in the reaction are the same between P1/P3 and P2/P4.
+	link(P1,T,X,J):link(P3,T,X,J),componentClass(Domain,_,Imax),X=N..U; link(P2,T,X,J):link(P4,T,X,J),componentClass(Domain,_,Imax),X=N..U;
 	% Check if links after the reaction are the same between P1/P2.
 	link(P1,T,I,J):link(P2,T,I,J),not componentClass(Domain,I,_),I>U; link(P2,T,I,J):link(P1,T,I,J),not componentClass(Domain,I,_),I>U;
 	% Check if links around the domain are identiques between P1 and P2.
