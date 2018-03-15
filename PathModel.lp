@@ -281,6 +281,8 @@ component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,
 #show moleculeMZ/2.
 
 %* Expected output
+Implement incremential mode.
+Implement Cycloartenol -> cholesterol pathways.
 
 newreaction(c22_desaturation,"cholesterol", "22-dehydrocholesterol"). #### Already OK
 
@@ -288,9 +290,11 @@ newreaction(c22_desaturation,"cholesterol", "22-dehydrocholesterol"). #### Alrea
 newreaction(dehydration,"palythinol","palythine").
 
 # Hypothese 2 (minimize unkown reaction types)
-newreaction(dehydration,"asterina-330","hypothetic_MAA_1"). #### Already OK
-newreaction(dehydration,"hypothetic_MAA_1","palythine").
+newreaction(decarboxylation,"shinorine","asterina-330").
+newreaction(dehydration,"asterina-330","hypothetic_MAA_1").
 hypothetic_MAA_1
-mz(hypothetic_MAA_1)=270,2836  #### Find 270,2850 (issue with the number after the decimal for Hydrogen/Carbon/Nitrogen/Oxygen?)
-
+newreaction(decarboxylation,"porphyra-334","hypothetic_MAA_2").
+hypothetic_MAA_2
+mz(hypothetic_MAA_1)=270,2720  #### Alreayd OK
+mz(hypothetic_MAA_2)=302,3117
 *%
