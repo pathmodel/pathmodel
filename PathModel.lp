@@ -153,57 +153,121 @@ newreaction(R,P1,P2):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output
 
 % Defining the result of generic reactions
 
+% Compound P resulting from the C5_desaturation of a compound R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% all atoms from R are mapped to P
+component(P,I,A):- reaction(c5_desaturation,R,P); component(R,I,A).
+% the 5-6 link is transformed from simple in R to double in P
+link(P,double,5,6):-reaction(c5_desaturation,R,P); link(R,simple,5,6).
+% all other links from R are mapped to P
+link(P,T,I,J):-reaction(c5_desaturation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,5,6).
+
 
 % Compound P resulting from the C22_desaturation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % all atoms from R are mapped to P
 component(P,I,A):- reaction(c22_desaturation,R,P); component(R,I,A).
 % the 22-23 link is transformed from simple in R to double in P
 link(P,double,22,23):-reaction(c22_desaturation,R,P); link(R,simple,22,23).
 % all other links from R are mapped to P
-link(P,T,I,J):-reaction(c22_desaturation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,T,22,23).
+link(P,T,I,J):-reaction(c22_desaturation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,22,23).
 
 
 % Compound P resulting from the delta7reduction of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % all atoms from R are mapped to P
 component(P,I,A):- reaction(delta7reduction,R,P); component(R,I,A).
 % the 7-8 link is transformed from double in R to simple in P
 link(P,simple,7,8):-reaction(delta7reduction,R,P); link(R,double,7,8).
 % all other links from R are mapped to P
-link(P,T,I,J):-reaction(delta7reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,T,7,8).
+link(P,T,I,J):-reaction(delta7reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,double,7,8).
 
-% Compound P resulting from the delta24reduction of a compound R
+% Compound P resulting from the delta24_25_reduction of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % all atoms from R are mapped to P
-component(P,I,A):- reaction(delta24reduction,R,P); component(R,I,A).
+component(P,I,A):- reaction(delta24_25_reduction,R,P); component(R,I,A).
 % the 24-29 link is transformed from double in R to simple in P
-link(P,simple,24,241):-reaction(delta24reduction,R,P); link(R,double,24,241).
+link(P,simple,24,25):-reaction(delta24_25_reduction,R,P); link(R,double,24,25).
 % all other links from R are mapped to P
-link(P,T,I,J):-reaction(delta24reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,T,24,241).
+link(P,T,I,J):-reaction(delta24_25_reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,double,24,25).
+
+% Compound P resulting from the delta24_241_reduction of a compound R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% all atoms from R are mapped to P
+component(P,I,A):- reaction(delta24_241_reduction,R,P); component(R,I,A).
+% the 24-241 link is transformed from double in R to simple in P
+link(P,simple,24,241):-reaction(delta24_241_reduction,R,P); link(R,double,24,241).
+% all other links from R are mapped to P
+link(P,T,I,J):-reaction(delta24_241_reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,double,24,241).
+
+% Compound P resulting from the cyclopropylsterol_isomerisation of a compound R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% all atoms from R are mapped to P
+component(P,I,A):- reaction(cyclopropylsterol_isomerisation,R,P); component(R,I,A).
+% the 8-9 link is transformed from simple in R to double in P
+link(P,double,8,9):-reaction(cyclopropylsterol_isomerisation,R,P); link(R,simple,8,9).
+% all other links from R are mapped to P, except the 9-19 one
+link(P,T,I,J):-reaction(cyclopropylsterol_isomerisation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,8,9); not link(R,simpleR,9,19).
+
+% Compound P resulting from the c14_reduction of a compound R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% all atoms from R are mapped to P
+component(P,I,A):- reaction(c14_reduction,R,P); component(R,I,A).
+% the 14-15 link is transformed from double in R to simple in P
+link(P,simple,14,15):-reaction(c14_reduction,R,P); link(R,double,14,15).
+% all other links from R are mapped to P
+link(P,T,I,J):-reaction(c14_reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,double,14,15).
 
 % Compound P resulting from the hydrogenation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % all atoms from R are mapped to P, escept oxyg 22 and 23
 component(P,I,A):- reaction(hydrogenation,R,P); component(R,I,A); not component (R,22..23,oxyg).
 % all links from R are mapped to P, escept the 21-22 and 21-23 ones
 link(P,T,I,J):-reaction(hydrogenation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,double,21,22); not link(R,simple,21,23).
 
+% Compound P resulting from the c14_demethylation of a compound R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% all atoms from R are mapped to P, except carb 29
+component(P,I,A):- reaction(c14_demethylation,R,P); component(R,I,A); not component (R,30,carb).
+% the 14-15 link is transformed from simple in R to double in P
+link(P,double,14,15):-reaction(c14_demethylation,R,P); link(R,simple,14,15).
+% all links from R are mapped to P, except the 14-30 one
+link(P,T,I,J):-reaction(c14_demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simpleS,14,30); link(R,simple,14,15).
+
+% Compound P resulting from the c4_c29_demethylation of a compound R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% all atoms from R are mapped to P, except carb 29
+component(P,I,A):- reaction(c4_c29_demethylation,R,P); component(R,I,A); not component (R,29,carb).
+% all links from R are mapped to P, except the 18-21 one
+link(P,T,I,J):-reaction(c4_c29_demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simpleR,4,29).
+
+% Compound P resulting from the c4_c28_demethylation of a compound R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% all atoms from R are mapped to P, except carb 29
+component(P,I,A):- reaction(c4_c28_demethylation,R,P); component(R,I,A); not component (R,28,carb).
+% all links from R are mapped to P, except the 18-21 one
+link(P,T,I,J):-reaction(c4_c28_demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simpleS,4,28).
+
 % Compound P resulting from the demethylation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% all atoms from R are mapped to P, escept carb 21
+% all atoms from R are mapped to P, except carb 21
 component(P,I,A):- reaction(demethylation,R,P); component(R,I,A); not component (R,21,carb).
-% all links from R are mapped to P, escept the 18-21 one
+% all links from R are mapped to P, except the 18-21 one
 link(P,T,I,J):-reaction(demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,18,21).
+
+% Compound P resulting from the c8_isomerase of a compound R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% all atoms from R are mapped to P, except carb 29
+component(P,I,A):- reaction(c8_isomerase,R,P); component(R,I,A).
+% the 8-9 link is transformed from simple in R to double in P
+link(P,simple,8,9):-reaction(c8_isomerase,R,P); link(R,double,8,9).
+% the 7-8 link is transformed from simple in R to double in P
+link(P,double,7,8):-reaction(c8_isomerase,R,P); link(R,simple,7,8).
+% all links from R are mapped to P
+link(P,T,I,J):-reaction(c8_isomerase,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,8,9); link(R,double,7,8).
 
 % Compound P resulting from the dehydration of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % all atoms from R are mapped to P, escept oxyg 20
 component(P,I,A):- reaction(dehydration,R,P); component(R,I,A); not component (R,20,oxyg).
 % all links from R are mapped to P, escept the 18-19 and 19-20
@@ -213,7 +277,6 @@ link(P,double,18,19):-reaction(dehydration,R,P); link(R,simple,18,19).
 
 % Compound P resulting from the decarboxylation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % all atoms from R are mapped to P, escept carb 21, oxyg 22 and 23
 component(P,I,A):- reaction(demethylation,R,P); component(R,I,A); I!=21; I!=22; I!=23.
 % all links from R are mapped to P, escept 18-21, 21-22 and 22-23
@@ -221,7 +284,6 @@ link(P,T,I,J):-reaction(demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not li
 
 % Compound P resulting from the transfer of an aminoacid AA on C3 from compound R 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % all atoms from R are mapped to P, except oxyg 10, which is replaced by nitr 5 of the aminoacid
 component(P,I,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I!=10.
 component(P,10,nitr):- reaction("aminoacid_C-3_transfer",_,_,P).

@@ -50,6 +50,71 @@ link("31-norcycloartanol",simpleS,20,21). link("31-norcycloartanol",simple,20,22
 link("31-norcycloartanol",simple,23,24). link("31-norcycloartanol",simple,24,25). link("31-norcycloartanol",simple,25,26).
 link("31-norcycloartanol",simple,25,27).
 
+component("31-nor-24(25)-dihydrolanosterol",1..28,carb). component("31-nor-24(25)-dihydrolanosterol",30,carb). component("31-nor-24(25)-dihydrolanosterol",31,oxyg).
+link("31-nor-24(25)-dihydrolanosterol",simple,1,2). link("31-nor-24(25)-dihydrolanosterol",simple,1,10). link("31-nor-24(25)-dihydrolanosterol",simple,2,3).
+link("31-nor-24(25)-dihydrolanosterol",simple,3,4). link("31-nor-24(25)-dihydrolanosterol",simpleR,3,31). link("31-nor-24(25)-dihydrolanosterol",simple,4,5).
+link("31-nor-24(25)-dihydrolanosterol",simpleS,4,28). link("31-nor-24(25)-dihydrolanosterol",simple,5,6). link("31-nor-24(25)-dihydrolanosterol",simple,5,10).
+link("31-nor-24(25)-dihydrolanosterol",simple,6,7). link("31-nor-24(25)-dihydrolanosterol",simple,7,8). link("31-nor-24(25)-dihydrolanosterol",double,8,9).
+link("31-nor-24(25)-dihydrolanosterol",simple,8,14). link("31-nor-24(25)-dihydrolanosterol",simple,9,10). link("31-nor-24(25)-dihydrolanosterol",simple,9,11).
+link("31-nor-24(25)-dihydrolanosterol",simpleR,10,19). link("31-nor-24(25)-dihydrolanosterol",simple,11,12). link("31-nor-24(25)-dihydrolanosterol",simple,12,13).
+link("31-nor-24(25)-dihydrolanosterol",simple,13,14). link("31-nor-24(25)-dihydrolanosterol",simple,14,15). link("31-nor-24(25)-dihydrolanosterol",simpleS,14,30).
+link("31-nor-24(25)-dihydrolanosterol",simple,15,16). link("31-nor-24(25)-dihydrolanosterol",simple,16,17). link("31-nor-24(25)-dihydrolanosterol",simple,13,17).
+link("31-nor-24(25)-dihydrolanosterol",simpleR,13,18). link("31-nor-24(25)-dihydrolanosterol",simpleR,17,20). link("31-nor-24(25)-dihydrolanosterol",simpleS,20,21).
+link("31-nor-24(25)-dihydrolanosterol",simple,20,22). link("31-nor-24(25)-dihydrolanosterol",simple,22,23). link("31-nor-24(25)-dihydrolanosterol",simple,23,24).
+link("31-nor-24(25)-dihydrolanosterol",simple,24,25). link("31-nor-24(25)-dihydrolanosterol",simple,25,26). link("31-nor-24(25)-dihydrolanosterol",simple,25,27).
+
+component("4α-methylcholesta-8,14-dien-3β-ol",1..28,carb). component("4α-methylcholesta-8,14-dien-3β-ol",31,oxyg).
+link("4α-methylcholesta-8,14-dien-3β-ol",simple,1,2). link("4α-methylcholesta-8,14-dien-3β-ol",simple,1,10). link("4α-methylcholesta-8,14-dien-3β-ol",simple,2,3).
+link("4α-methylcholesta-8,14-dien-3β-ol",simple,3,4). link("4α-methylcholesta-8,14-dien-3β-ol",simpleR,3,31). link("4α-methylcholesta-8,14-dien-3β-ol",simple,4,5).
+link("4α-methylcholesta-8,14-dien-3β-ol",simpleS,4,28). link("4α-methylcholesta-8,14-dien-3β-ol",simple,5,6). link("4α-methylcholesta-8,14-dien-3β-ol",simple,5,10).
+link("4α-methylcholesta-8,14-dien-3β-ol",simple,6,7). link("4α-methylcholesta-8,14-dien-3β-ol",simple,7,8). link("4α-methylcholesta-8,14-dien-3β-ol",double,8,9).
+link("4α-methylcholesta-8,14-dien-3β-ol",simple,8,14). link("4α-methylcholesta-8,14-dien-3β-ol",simple,9,10). link("4α-methylcholesta-8,14-dien-3β-ol",simple,9,11).
+link("4α-methylcholesta-8,14-dien-3β-ol",simpleR,10,19). link("4α-methylcholesta-8,14-dien-3β-ol",simple,11,12). link("4α-methylcholesta-8,14-dien-3β-ol",simple,12,13).
+link("4α-methylcholesta-8,14-dien-3β-ol",simple,13,14). link("4α-methylcholesta-8,14-dien-3β-ol",double,14,15). link("4α-methylcholesta-8,14-dien-3β-ol",simple,15,16).
+link("4α-methylcholesta-8,14-dien-3β-ol",simple,16,17). link("4α-methylcholesta-8,14-dien-3β-ol",simple,13,17). link("4α-methylcholesta-8,14-dien-3β-ol",simpleR,13,18).
+link("4α-methylcholesta-8,14-dien-3β-ol",simpleR,17,20). link("4α-methylcholesta-8,14-dien-3β-ol",simpleS,20,21). link("4α-methylcholesta-8,14-dien-3β-ol",simple,20,22).
+link("4α-methylcholesta-8,14-dien-3β-ol",simple,22,23). link("4α-methylcholesta-8,14-dien-3β-ol",simple,23,24). link("4α-methylcholesta-8,14-dien-3β-ol",simple,24,25).
+link("4α-methylcholesta-8,14-dien-3β-ol",simple,25,26). link("4α-methylcholesta-8,14-dien-3β-ol",simple,25,27).
+
+component("4α-methyl-24(25)-dihydrozymosterol",1..28,carb). component("4α-methyl-24(25)-dihydrozymosterol",31,oxyg).
+link("4α-methyl-24(25)-dihydrozymosterol",simple,1,2). link("4α-methyl-24(25)-dihydrozymosterol",simple,1,10). link("4α-methyl-24(25)-dihydrozymosterol",simple,2,3).
+link("4α-methyl-24(25)-dihydrozymosterol",simple,3,4). link("4α-methyl-24(25)-dihydrozymosterol",simpleR,3,31). link("4α-methyl-24(25)-dihydrozymosterol",simple,4,5).
+link("4α-methyl-24(25)-dihydrozymosterol",simpleS,4,28). link("4α-methyl-24(25)-dihydrozymosterol",simple,5,6). link("4α-methyl-24(25)-dihydrozymosterol",simple,5,10).
+link("4α-methyl-24(25)-dihydrozymosterol",simple,6,7). link("4α-methyl-24(25)-dihydrozymosterol",simple,7,8). link("4α-methyl-24(25)-dihydrozymosterol",double,8,9).
+link("4α-methyl-24(25)-dihydrozymosterol",simple,8,14). link("4α-methyl-24(25)-dihydrozymosterol",simple,9,10). link("4α-methyl-24(25)-dihydrozymosterol",simple,9,11).
+link("4α-methyl-24(25)-dihydrozymosterol",simpleR,10,19). link("4α-methyl-24(25)-dihydrozymosterol",simple,11,12). link("4α-methyl-24(25)-dihydrozymosterol",simple,12,13).
+link("4α-methyl-24(25)-dihydrozymosterol",simple,13,14). link("4α-methyl-24(25)-dihydrozymosterol",simple,14,15). link("4α-methyl-24(25)-dihydrozymosterol",simple,15,16).
+link("4α-methyl-24(25)-dihydrozymosterol",simple,16,17). link("4α-methyl-24(25)-dihydrozymosterol",simple,13,17). link("4α-methyl-24(25)-dihydrozymosterol",simpleR,13,18).
+link("4α-methyl-24(25)-dihydrozymosterol",simpleR,17,20). link("4α-methyl-24(25)-dihydrozymosterol",simpleS,20,21). link("4α-methyl-24(25)-dihydrozymosterol",simple,20,22).
+link("4α-methyl-24(25)-dihydrozymosterol",simple,22,23). link("4α-methyl-24(25)-dihydrozymosterol",simple,23,24). link("4α-methyl-24(25)-dihydrozymosterol",simple,24,25).
+link("4α-methyl-24(25)-dihydrozymosterol",simple,25,26). link("4α-methyl-24(25)-dihydrozymosterol",simple,25,27).
+
+component("4α-methyl-5α-cholest-7-en-3β-ol",1..28,carb). component("4α-methyl-5α-cholest-7-en-3β-ol",31,oxyg).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simple,1,2). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,1,10). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,2,3).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simple,3,4). link("4α-methyl-5α-cholest-7-en-3β-ol",simpleR,3,31). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,4,5).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simpleS,4,28). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,5,6). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,5,10).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simple,6,7). link("4α-methyl-5α-cholest-7-en-3β-ol",double,7,8). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,8,9).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simple,8,14). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,9,10). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,9,11).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simpleR,10,19). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,11,12). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,12,13).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simple,13,14). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,14,15). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,15,16).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simple,16,17). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,13,17). link("4α-methyl-5α-cholest-7-en-3β-ol",simpleR,13,18).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simpleR,17,20). link("4α-methyl-5α-cholest-7-en-3β-ol",simpleS,20,21). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,20,22).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simple,22,23). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,23,24). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,24,25).
+link("4α-methyl-5α-cholest-7-en-3β-ol",simple,25,26). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,25,27).
+
+component("cholesta-7-en-3β-ol",1..27,carb). component("cholesta-7-en-3β-ol",31,oxyg).
+link("cholesta-7-en-3β-ol",simple,1,2). link("cholesta-7-en-3β-ol",simple,1,10). link("cholesta-7-en-3β-ol",simple,2,3).
+link("cholesta-7-en-3β-ol",simple,3,4). link("cholesta-7-en-3β-ol",simpleR,3,31). link("cholesta-7-en-3β-ol",simple,4,5).
+link("cholesta-7-en-3β-ol",simple,5,6). link("cholesta-7-en-3β-ol",simple,5,10). link("cholesta-7-en-3β-ol",simple,6,7).
+link("cholesta-7-en-3β-ol",double,7,8). link("cholesta-7-en-3β-ol",simple,8,9). link("cholesta-7-en-3β-ol",simple,8,14).
+link("cholesta-7-en-3β-ol",simple,9,10). link("cholesta-7-en-3β-ol",simple,9,11). link("cholesta-7-en-3β-ol",simpleR,10,19).
+link("cholesta-7-en-3β-ol",simple,11,12). link("cholesta-7-en-3β-ol",simple,12,13). link("cholesta-7-en-3β-ol",simple,13,14).
+link("cholesta-7-en-3β-ol",simple,14,15). link("cholesta-7-en-3β-ol",simple,15,16). link("cholesta-7-en-3β-ol",simple,16,17).
+link("cholesta-7-en-3β-ol",simple,13,17). link("cholesta-7-en-3β-ol",simpleR,13,18). link("cholesta-7-en-3β-ol",simpleR,17,20).
+link("cholesta-7-en-3β-ol",simpleS,20,21). link("cholesta-7-en-3β-ol",simple,20,22). link("cholesta-7-en-3β-ol",simple,22,23).
+link("cholesta-7-en-3β-ol",simple,23,24). link("cholesta-7-en-3β-ol",simple,24,25). link("cholesta-7-en-3β-ol",simple,25,26).
+link("cholesta-7-en-3β-ol",simple,25,27).
+
 component("sitosterol",1..27,carb). component("sitosterol",241..242,carb). component("sitosterol",31,oxyg).
 link("sitosterol",simple,1,2). link("sitosterol",simple,1,10). link("sitosterol",simple,2,3).
 link("sitosterol",simple,3,4). link("sitosterol",simpleR,3,31). link("sitosterol",simple,4,5).
@@ -314,10 +379,28 @@ reaction(hypothetic_reaction, "something", "6α-hydroxycholest-4-ene-3-one").
 
 % Known reactions in Chondrus (inferred from other organisms)
 
+% Early SSR pathway intervention (omato-like)
+
+reaction(delta24_25_reduction, "cycloartenol", "cycloartanol").
+
+reaction(c4_c29_demethylation, "cycloartanol", "31-norcycloartanol").
+
+reaction(cyclopropylsterol_isomerisation, "31-norcycloartanol", "31-nor-24(25)-dihydrolanosterol").
+
+reaction(c14_demethylation, "31-nor-24(25)-dihydrolanosterol", "4α-methylcholesta-8,14-dien-3β-ol").
+
+reaction(c14_reduction, "4α-methylcholesta-8,14-dien-3β-ol", "4α-methyl-24(25)-dihydrozymosterol").
+
+reaction(c8_isomerase, "4α-methyl-24(25)-dihydrozymosterol", "4α-methyl-5α-cholest-7-en-3β-ol").
+
+reaction(c4_c28_demethylation, "4α-methyl-5α-cholest-7-en-3β-ol", "cholesta-7-en-3β-ol").
+
+reaction(c5_desaturation, "cholesta-7-en-3β-ol", "7-dehydrocholesterol").
+
 % delta7reduction of 7-dehydrocholesterol gives cholesterol
 reaction(delta7reduction, "7-dehydrocholesterol", "cholesterol").
 
-reaction(delta24reduction,"24-methylenecholesterol", "24-epicampesterol").
+reaction(delta24_241_reduction,"24-methylenecholesterol", "24-epicampesterol").
 
 reaction(c22_desaturation,"24-epicampesterol", "brassicasterol").
 
