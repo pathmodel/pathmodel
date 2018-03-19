@@ -147,6 +147,14 @@ not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeNa
 difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,reverse):- link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
 not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="6α-hydroxycholest-4-ene-3-one", MoleculeName2="sitosterol".
 
+%* Look for pathways
+%%%%%%%%%%%%%%%%%%%%
+Search for following reactions to extract pathways from one molecule to another.
+Use to check if we have achieved our goal.
+*%
+
+pathway(Molecule1,Molecule2):- reaction(ReactionName,Molecule1,Molecule2).
+pathway(Molecule1,Molecule3):- reaction(ReactionName,Molecule2,Molecule3), pathway(Molecule1,Molecule2).
 
 %* Inference Method
 %%%%%%%%%%%%%%%%%%%
