@@ -263,6 +263,14 @@ component(P,I,A):- reaction(demethylation,R,P); component(R,I,A); I!=21; I!=22; 
 % all links from R are mapped to P, escept 18-21, 21-22 and 22-23
 link(P,T,I,J):-reaction(demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,18,21); not link(R,double,21,22); not link(R,simple,21,23).
 
+% Compound P resulting from the hydrolyse of a compound R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% all atoms from R are mapped to P, except carb 18, oxyg 19 and 20
+component(P,I,A):- reaction(hydrolyse,R,P); component(R,I,A); not component (R,18..20,carb).
+% all links from R are mapped to P, except 10-18, 18-19 and 19-20
+link(P,T,I,J):-reaction(hydrolyse,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,10,18); link(R,double,18,19); link(R,simpleZ,19,20).
+
 % Compound P resulting from the transfer of an aminoacid AA on C3 from compound R 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

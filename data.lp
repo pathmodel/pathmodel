@@ -324,6 +324,10 @@ reaction(dehydration,"porphyra-334", "z-palythenic acid").
 
 reaction(decarboxylation,"z-palythenic acid","palythene").
 
+reaction(decarboxylation,"shinorine","asterina-330").
+
+reaction(hydrolyse,"palythene","palythine").
+
 reaction("aminoacid_C-3_transfer","mycosporin-glycine","serine","shinorine").
 
 reaction("aminoacid_C-3_transfer","mycosporin-glycine","threonine","porphyra-334").
