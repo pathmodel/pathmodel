@@ -32,19 +32,51 @@ Based on the wikipedia structure: https://fr.wikipedia.org/wiki/St%C3%A9rane#/me
 One exception the bound between carbone 7 and carbone 8 has variable for the bond type to include the 7-dehydrocholesterol
 because of the double bond instead of the simple.
 *%
-class(MoleculeName, sterane) :- component(MoleculeName,1..17,carb),
-									link(MoleculeName,simple,1,2), link(MoleculeName,simple,1,10), link(MoleculeName,simple,2,3),
-									link(MoleculeName,simple,3,4), link(MoleculeName,simple,4,5), link(MoleculeName,double,5,6),
-									link(MoleculeName,simple,5,10), link(MoleculeName,simple,6,7), link(MoleculeName,BondType,7,8),
-									link(MoleculeName,simple,8,9), link(MoleculeName,simple,8,14), link(MoleculeName,simple,9,10),
-									link(MoleculeName,simple,9,11), link(MoleculeName,simple,11,12), link(MoleculeName,simple,12,13),
-									link(MoleculeName,simple,13,14), link(MoleculeName,simple,13,17), link(MoleculeName,simple,14,15),
-									link(MoleculeName,simple,15,16), link(MoleculeName,simple,16,17).
+class(MoleculeName, sterane) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,carb),
+									component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,carb), component(MoleculeName,Atome6,carb),
+									component(MoleculeName,Atome7,carb), component(MoleculeName,Atome8,carb), component(MoleculeName,Atome9,carb),
+									component(MoleculeName,Atome10,carb), component(MoleculeName,Atome11,carb), component(MoleculeName,Atome12,carb),
+									component(MoleculeName,Atome13,carb), component(MoleculeName,Atome14,carb), component(MoleculeName,Atome15,carb),
+									component(MoleculeName,Atome16,carb), component(MoleculeName,Atome17,carb),
+									link(MoleculeName,simple,Atome1,Atome2), link(MoleculeName,simple,Atome1,Atome10), link(MoleculeName,simple,Atome2,Atome3),
+									link(MoleculeName,simple,Atome3,Atome4), link(MoleculeName,simple,Atome4,Atome5), link(MoleculeName,double,Atome5,Atome6),
+									link(MoleculeName,simple,Atome5,Atome10), link(MoleculeName,simple,Atome6,Atome7), link(MoleculeName,BondType,Atome7,Atome8),
+									link(MoleculeName,simple,Atome8,Atome9), link(MoleculeName,simple,Atome8,Atome14), link(MoleculeName,simple,Atome9,Atome10),
+									link(MoleculeName,simple,Atome9,Atome11), link(MoleculeName,simple,Atome11,Atome12), link(MoleculeName,simple,Atome12,Atome13),
+									link(MoleculeName,simple,Atome13,Atome14), link(MoleculeName,simple,Atome13,Atome17), link(MoleculeName,simple,Atome14,Atome15),
+									link(MoleculeName,simple,Atome15,Atome16), link(MoleculeName,simple,Atome16,Atome17).
 
 % Definition of a cyclohexene
-class(MoleculeName, cyclohexene) :- component(MoleculeName,1..6,carb),
-									link(MoleculeName,double,1,2), link(MoleculeName,simple,2,3), link(MoleculeName,simple,3,4),
-									link(MoleculeName,simple,4,5), link(MoleculeName,simple,5,6), link(MoleculeName,simple,1,6).
+class(MoleculeName, cyclohexene) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,carb),
+									component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,carb), component(MoleculeName,Atome6,carb),
+									link(MoleculeName,double,Atome1,Atome2), link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome3,Atome4),
+									link(MoleculeName,simple,Atome4,Atome5), link(MoleculeName,simple,Atome5,Atome6), link(MoleculeName,simple,Atome1,Atome6).
+
+class(MoleculeName, glycine, Atome5) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
+								component(MoleculeName,Atome4,oxyg), component(MoleculeName,Atome5,nitr),
+								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,double,Atome2,Atome4),
+								link(MoleculeName,simple,Atome5,Atome1), not class(MoleculeName, threonine, Atome5), not class(MoleculeName, serine, Atome5).
+
+
+class(MoleculeName, threonine, Atome7) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
+								component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,oxyg), component(MoleculeName,Atome6,oxyg),
+								component(MoleculeName,Atome7,nitr), component(MoleculeName,Atome8,carb),
+								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome2,Atome8),
+								link(MoleculeName,simple,Atome1,Atome4),
+								link(MoleculeName,double,Atome4,Atome5), link(MoleculeName,simple,Atome4,Atome6), link(MoleculeName,simple,Atome7,Atome1).
+
+
+class(MoleculeName, serine, Atome7) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
+								component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,oxyg), component(MoleculeName,Atome6,oxyg),
+								component(MoleculeName,Atome7,nitr),
+								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome1,Atome4),
+								link(MoleculeName,double,Atome4,Atome5), link(MoleculeName,simple,Atome4,Atome6), link(MoleculeName,simple,Atome7,Atome1),
+								Atome2 != Atome4, not class(MoleculeName, threonine, Atome7).
+
+class(MoleculeName, ethanolamine, Atome7) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
+								component(MoleculeName,Atome7,nitr),
+								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome7,Atome1),
+								not class(MoleculeName, threonine, Atome7), not class(MoleculeName, serine, Atome7), not class(MoleculeName, glycine, Atome7).
 
 % componentClass(DomainName, NumberOfAtom)
 componentClass(sterane,1..17,17).
@@ -88,7 +120,7 @@ moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, Nu
 % 120107*NumberCarbon + 100794*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen
 % 1200960*NumberCarbon + 100784*NumberHydrogen + 1599903*NumberOxygen + 1400643*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
 % 1201160*NumberCarbon + 100811*NumberHydrogen + 1599977*NumberOxygen + 1400728*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
-moleculeMZ(MoleculeName, 120110*NumberCarbon + 10080*NumberHydrogen + 159990*NumberOxygen + 140070*NumberNitrogen) :- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
 
 %* Definition of input and output from reaction
@@ -115,6 +147,14 @@ not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeNa
 difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,reverse):- link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
 not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="6α-hydroxycholest-4-ene-3-one", MoleculeName2="sitosterol".
 
+%* Look for pathways
+%%%%%%%%%%%%%%%%%%%%
+Search for following reactions to extract pathways from one molecule to another.
+Use to check if we have achieved our goal.
+*%
+
+pathway(Molecule1,Molecule2):- reaction(ReactionName,Molecule1,Molecule2).
+pathway(Molecule1,Molecule3):- reaction(ReactionName,Molecule2,Molecule3), pathway(Molecule1,Molecule2).
 
 %* Inference Method
 %%%%%%%%%%%%%%%%%%%
@@ -136,16 +176,20 @@ newreaction(R,P1,P2):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output
 	class(P1,Domain);class(P2,Domain);class(P3,Domain);class(P4,Domain);
 	% Check if atoms in the domain are the same between P1/P3 and P2/P4. (Now useless with the Domain?)
 	component(P1,I,A):component(P3,I,A),componentClass(Domain,I,Imax),A<=Imax; component(P2,I,A):component(P4,I,A),componentClass(Domain,I,Imax),A<=Imax;
-	% Check if atoms between the domain and the reaction are the same between P1/P3 and P2/P4.
-	component(P1,X,A):component(P3,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=U; component(P2,X,A):component(P4,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=U;
+	% Check if atoms between the domain and the reaction are the same between P1/P2.
+	component(P1,X,A):component(P2,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=N; component(P2,X,A):component(P1,X,A),componentClass(Domain,_,Imax),X=Imax..N,A<=N;
+	% Check if atoms in the reaction are the same between P1/P3 and P3/P4.
+	component(P1,X,A):component(P3,X,_),componentClass(Domain,_,Imax),X=N..U; component(P2,X,A):component(P4,X,_),componentClass(Domain,_,Imax),X=N..U;
 	% Check if atoms after the reaction are the same between P1/P2.
 	component(P1,I,A):component(P2,I,A),not componentClass(Domain,I,_),I>U; component(P2,I,A):component(P1,I,A),not componentClass(Domain,I,_),I>U;
 	% Check if atoms around the domain are identiques between P1 and P2.
 	component(P1,I,A):component(P2,I,A),componentClass(Domain,I,_); component(P2,I,A):component(P1,I,A),componentClass(Domain,I,_);
 	% Check if links in the domain are the same between P1/P3 and P2/P4. (Now useless with the Domain?)
 	link(P1,T,I,J):link(P3,T,I,J),componentClass(Domain,I,Imax),J<=Imax; link(P2,T,I,J):link(P4,T,I,J),componentClass(Domain,I,Imax),J<=Imax;
-	% Check if links between the domain and the reaction are the same between P1/P3 and P2/P4.
-	link(P1,T,X,J):link(P3,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=U; link(P2,T,X,J):link(P4,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=U;
+	% Check if links between the domain and the reaction are the same between P1/P2.
+	link(P1,T,X,J):link(P2,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=N; link(P2,T,X,J):link(P1,T,X,J),componentClass(Domain,_,Imax),X=Imax..N,J<=N;
+	% Check if links in the reaction are the same between P1/P3 and P2/P4.
+	link(P1,T,X,J):link(P3,T,X,J),componentClass(Domain,_,Imax),X=N..U; link(P2,T,X,J):link(P4,T,X,J),componentClass(Domain,_,Imax),X=N..U;
 	% Check if links after the reaction are the same between P1/P2.
 	link(P1,T,I,J):link(P2,T,I,J),not componentClass(Domain,I,_),I>U; link(P2,T,I,J):link(P1,T,I,J),not componentClass(Domain,I,_),I>U;
 	% Check if links around the domain are identiques between P1 and P2.
@@ -282,6 +326,14 @@ component(P,I,A):- reaction(demethylation,R,P); component(R,I,A); I!=21; I!=22; 
 % all links from R are mapped to P, escept 18-21, 21-22 and 22-23
 link(P,T,I,J):-reaction(demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,18,21); not link(R,double,21,22); not link(R,simple,21,23).
 
+% Compound P resulting from the hydrolyse of a compound R
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% all atoms from R are mapped to P, except carb 18, oxyg 19 and 20
+component(P,I,A):- reaction(hydrolyse,R,P); component(R,I,A); not component (R,18..20,carb).
+% all links from R are mapped to P, except 10-18, 18-19 and 19-20
+link(P,T,I,J):-reaction(hydrolyse,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,10,18); link(R,double,18,19); link(R,simpleZ,19,20).
+
 % Compound P resulting from the transfer of an aminoacid AA on C3 from compound R 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P, except oxyg 10, which is replaced by nitr 5 of the aminoacid
@@ -307,6 +359,8 @@ component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,
 #show moleculeMZ/2.
 
 %* Expected output
+Implement incremential mode.
+Implement Cycloartenol -> cholesterol pathways.
 
 newreaction(c22_desaturation,"cholesterol", "22-dehydrocholesterol"). #### Already OK
 
@@ -314,9 +368,11 @@ newreaction(c22_desaturation,"cholesterol", "22-dehydrocholesterol"). #### Alrea
 newreaction(dehydration,"palythinol","palythine").
 
 # Hypothese 2 (minimize unkown reaction types)
-newreaction(dehydration,"asterina-330","hypothetic_MAA_1"). #### Already OK
-newreaction(dehydration,"hypothetic_MAA_1","palythine").
+newreaction(decarboxylation,"shinorine","asterina-330").
+newreaction(dehydration,"asterina-330","hypothetic_MAA_1").
 hypothetic_MAA_1
-mz(hypothetic_MAA_1)=270,2836  #### Find 270,2850 (issue with the number after the decimal for Hydrogen/Carbon/Nitrogen/Oxygen?)
-
+newreaction(decarboxylation,"porphyra-334","hypothetic_MAA_2").
+hypothetic_MAA_2
+mz(hypothetic_MAA_1)=270,2720  #### Alreayd OK
+mz(hypothetic_MAA_2)=302,3117
 *%
