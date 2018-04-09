@@ -111,8 +111,8 @@ moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, Nu
 													NumberCarbon=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , oxyg)},
 													NumberNitrogen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , nitr)}, atom(MoleculeName, AtomeNumber).
 
-%nbatoms provides the total number of atoms in a compound
-nbatoms(MoleculeName,  NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+%moleculeNbAtoms provides the total number of atoms in a compound
+moleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
 % moleculeMZ computes the M/Q ratio for each molecule.
 % moleculeMZ(MoleculeName, M/Q ratio*10000)
@@ -122,7 +122,6 @@ nbatoms(MoleculeName,  NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitr
 % 1200960*NumberCarbon + 100784*NumberHydrogen + 1599903*NumberOxygen + 1400643*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
 % 1201160*NumberCarbon + 100811*NumberHydrogen + 1599977*NumberOxygen + 1400728*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
 moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
-
 
 %* Definition of input and output from reaction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -274,6 +273,7 @@ link(P,T,I,J):-reaction(hydrolyse,R,P); link(R,T,I,J); link(R,T,I,J); not link(R
 
 % Compound P resulting from the transfer of an aminoacid AA on C3 from compound R 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Broken with the new atom coutning method.
 
 % all atoms from R are mapped to P, except oxyg 10, which is replaced by nitr 5 of the aminoacid
 component(P,I,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I!=10.
