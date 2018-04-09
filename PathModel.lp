@@ -15,8 +15,6 @@ valence(carb, 4). valence(nitr, 3). valence(oxyg, 2).
 
 %atom provides the atom numbers in a compound
 atom(MoleculeName, AtomNumber):- component(MoleculeName, AtomNumber, _). 
-%nbatoms provides the total number of atoms in a compound
-nbatoms(MoleculeName, N):- atom(MoleculeName, N); not atom(MoleculeName, N+1). 
 
 % A side chain in a compound M is a maximal suite of carbons starting from atom number 1. It ends at atom number End
 sidechain(M,1,End):-  component(M,End,carb); component(M,End+1,A); A!=carb; component(M,X,carb):X=1..End.
@@ -112,6 +110,9 @@ numberHydrogens(MoleculeName, AtomNumber, ValenceNumber - NumberOfBonds) :- numb
 moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen) :- NumberHydrogen=#sum{NumberHydrogenAtom, AtomNumber: numberHydrogens(MoleculeName, AtomNumber, NumberHydrogenAtom)},
 													NumberCarbon=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , oxyg)},
 													NumberNitrogen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , nitr)}, atom(MoleculeName, AtomeNumber).
+
+%nbatoms provides the total number of atoms in a compound
+nbatoms(MoleculeName,  NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
 % moleculeMZ computes the M/Q ratio for each molecule.
 % moleculeMZ(MoleculeName, M/Q ratio*10000)
