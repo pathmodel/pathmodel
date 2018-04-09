@@ -160,13 +160,6 @@ pathway(Molecule1,Molecule3):- reaction(ReactionName,Molecule2,Molecule3), pathw
 %%%%%%%%%%%%%%%%%%%
 *%
 
-reactionSiteLink(R,simple,22,23):- link(R,simple,22,23).
-reactionSiteLink(R,simple,22,23):- link(R,double,22,23).
-classSiteBeforeReaction(c22_desaturation,R):- link(R,simple,22,23).
-classSiteAfterReaction(c22_desaturation,R):- link(R,double,22,23).
-
-link(c22_desaturation,test,22,23).
-
 % Rule to infer new punctual reactions: metabolite Y can be the product of metabolite X by reaction R 
 % if all their needed atoms are present, and if all other atoms of X and Y are the same
 % Check if all the molecule have a domain in common.
@@ -179,14 +172,14 @@ newreaction(R,P1,P2):- need_reaction(R,P3,before,N); reaction(R,P3,P4); output_m
 	link(P1,T,I,J):link(P2,T,I,J),I>=N; link(P2,T,I,J):link(P1,T,I,J),I>=N.
 *%
 
-newreaction(R,P1,P2,N):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
+newreaction(R,P1,P2):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
 							% Check if the four molecules have the same domain.
 							class(P1,Domain);class(P2,Domain);class(P3,Domain);class(P4,Domain);
 							% Check if reaction site are present in each molecule.
 							classSiteBeforeReaction(R,P1);classSiteBeforeReaction(R,P3);classSiteAfterReaction(R,P2);classSiteAfterReaction(R,P4);
 							% Check if other than reaction site P1 == P2.
-							component(P1,I,A):component(P2,I,A); component(P2,I,A):component(P1,I,A);
-							link(P1,T,I,J):link(P2,T,I,J), not link(R,_,I,J); link(P2,T,I,J):link(P1,T,I,J), notlink(R,_,I,J).
+							component(P1,I,A):component(P2,I,A), not diffAtomBeforeReaction(R,A); component(P2,I,A):component(P1,I,A), not diffAtomAfterReaction(R,A);
+							link(P1,T,I,J):link(P2,T,I,J), not diffLinkBeforeReaction(R,I,J,_); link(P2,T,I,J):link(P1,T,I,J), not diffLinkAfterReaction(R,I,J,_).
 
 
 % Defining the result of generic reactions
@@ -286,7 +279,7 @@ component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,
 #show input_metabolite/1.
 #show output_metabolite/1.
 #show reaction/3.
-#show testnewreaction/3.
+#show newreaction/3.
 #show moleculeMZ/2.
 
 %* Expected output
