@@ -184,6 +184,17 @@ newreaction(R,P1,P2):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output
 
 % Defining the result of generic reactions
 
+% Generic method which is supposed to replace all the other below.
+% Map all the atom of R in P except atoms occuring in reaction.
+component(P,I,A):- reaction(Reaction,R,P); component(R,I,A); not diffAtomBeforeReaction(Reaction,A).
+% Map atoms in the reaction.
+component(P,I,A):- reaction(Reaction,R,P); component(R,I,A); diffAtomAfterReaction(Reaction,A).
+% Map all the links of R in P except links occruing in reaction.
+link(P,BondType,I,J):- reaction(Reaction,R,P); link(R,BondType,I,J); not diffLinkBeforeReaction(Reaction,I,J,BondType).
+% Map links in the reaction.
+link(P,BondType,I,J):- reaction(Reaction,R,P); diffLinkAfterReaction(Reaction,I,J,BondType).
+
+
 % Compound P resulting from the C22_desaturation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -1,6 +1,7 @@
 %*
 Compare links between two molecules that are implied in a reaction.
-Search for the difference between the molecules and extract the positions that are different.
+Search for the difference between the molecules and extract the links and atoms.
+Write the result in a file.
 *%
 
 #script (python)
@@ -63,18 +64,14 @@ not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber).
 diffLinkAfterReaction(ReactionType, FirstAtomNumber, SecondAtomNumber, BondType):- reaction(ReactionType,MoleculeName1,MoleculeName2), link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
 not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber).
 
-reactiontype(T):- reaction(T,_,_,_,_,_). 
 reactionType(TypeOfReaction):- reaction(TypeOfReaction,_,_).
-output_metabolite(M):- reaction(_,_,_,_,_,M).
-output_metabolite(MoleculeName):- reaction(_,_,MoleculeName).
-input_metabolite(MoleculeName):- component(MoleculeName,_,_); not output_metabolite(MoleculeName).
 metabolite(MoleculeName):- component(MoleculeName,_,_).
 
 %*
 Infer reaction site from reaction atom and link.
 *%
 
-classSiteBeforeReaction(ReactionType,MoleculeName):- reactionType(ReactionType), metabolite(MoleculeName); component(MoleculeName,I,A): diffAtomBeforeReaction(ReactionType, A);
-			link(MoleculeName,AT,FirstAtomNumber,SecondAtomNumber): diffLinkBeforeReaction(ReactionType, FirstAtomNumber, SecondAtomNumber, AT).
-classSiteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType), metabolite(MoleculeName); component(MoleculeName,I,A): diffAtomAfterReaction(ReactionType, A);
-			link(MoleculeName,AT,FirstAtomNumber,SecondAtomNumber): diffLinkAfterReaction(ReactionType, FirstAtomNumber, SecondAtomNumber, AT).
+classSiteBeforeReaction(ReactionType,MoleculeName):- reactionType(ReactionType), metabolite(MoleculeName); component(MoleculeName,AtomNumber,AtomType): diffAtomBeforeReaction(ReactionType, AtomNumber);
+			link(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber): diffLinkBeforeReaction(ReactionType, FirstAtomNumber, SecondAtomNumber, BondType).
+classSiteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType), metabolite(MoleculeName); component(MoleculeName,AtomNumber,AtomType): diffAtomAfterReaction(ReactionType, AtomNumber);
+			link(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber): diffLinkAfterReaction(ReactionType, FirstAtomNumber, SecondAtomNumber, BondType).
