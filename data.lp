@@ -126,7 +126,7 @@ link("sitosterol",simple,13,17). link("sitosterol",simpleR,13,18). link("sitoste
 link("sitosterol",simple,15,16). link("sitosterol",simple,16,17). link("sitosterol",simpleR,17,20).
 link("sitosterol",simpleS,20,21). link("sitosterol",simple,20,22). link("sitosterol",simple,22,23).
 link("sitosterol",simple,23,24). link("sitosterol",simple,24,25). link("sitosterol",simple,25,26).
-link("sitosterol",simple,25,27). link("sitosterol",simpleR,24,241). link("sitosterol",simple,28,242).
+link("sitosterol",simple,25,27). link("sitosterol",simpleR,24,241). link("sitosterol",simple,241,242).
 
 component("stigmasterol",1..27,carb). component("stigmasterol",241..242,carb). component("stigmasterol",31,oxyg).
 link("stigmasterol",simple,1,2). link("stigmasterol",simple,1,10). link("stigmasterol",simple,2,3).
@@ -296,7 +296,7 @@ link("4α-methylzymosterol",simple,8,14). link("4α-methylzymosterol",simple,9,1
 link("4α-methylzymosterol",simpleR,10,19). link("4α-methylzymosterol",simple,11,12). link("4α-methylzymosterol",simple,12,13).
 link("4α-methylzymosterol",simple,13,14). link("4α-methylzymosterol",simple,14,15). link("4α-methylzymosterol",simple,15,16).
 link("4α-methylzymosterol",simple,16,17). link("4α-methylzymosterol",simple,13,17). link("4α-methylzymosterol",simpleR,13,18).
-link("4α-methylzymosterol",simpleR,17,20). link("4α-methylzymosterol",simpleS,20,21). link("",simple,20,22).
+link("4α-methylzymosterol",simpleR,17,20). link("4α-methylzymosterol",simpleS,20,21). link("4α-methylzymosterol",simple,20,22).
 link("4α-methylzymosterol",simple,22,23). link("4α-methylzymosterol",simple,23,24). link("4α-methylzymosterol",double,24,25).
 link("4α-methylzymosterol",simple,25,26). link("4α-methylzymosterol",simple,25,27).
 
@@ -467,9 +467,6 @@ link("hypothetic_MAA_1",double,18,19).
 %%%%%%%%%%%%%%%%%%%
 reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound 2 , Active site atom number], Resulting compound)
 *%
-
-% Create an hypothetic reaction to put "6α-hydroxycholest-4-ene-3-one" as an output_metabolite
-reaction(hypothetic_reaction, "something", "6α-hydroxycholest-4-ene-3-one").
 
 % Known reactions in Chondrus (inferred from other organisms)
 

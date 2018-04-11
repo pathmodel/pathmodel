@@ -38,13 +38,13 @@ class(MoleculeName, sterane) :- component(MoleculeName,Atome1,carb), component(M
 									component(MoleculeName,Atome10,carb), component(MoleculeName,Atome11,carb), component(MoleculeName,Atome12,carb),
 									component(MoleculeName,Atome13,carb), component(MoleculeName,Atome14,carb), component(MoleculeName,Atome15,carb),
 									component(MoleculeName,Atome16,carb), component(MoleculeName,Atome17,carb),
-									link(MoleculeName,simple,Atome1,Atome2), link(MoleculeName,simple,Atome1,Atome10), link(MoleculeName,simple,Atome2,Atome3),
-									link(MoleculeName,simple,Atome3,Atome4), link(MoleculeName,simple,Atome4,Atome5), link(MoleculeName,double,Atome5,Atome6),
-									link(MoleculeName,simple,Atome5,Atome10), link(MoleculeName,simple,Atome6,Atome7), link(MoleculeName,BondType,Atome7,Atome8),
-									link(MoleculeName,simple,Atome8,Atome9), link(MoleculeName,simple,Atome8,Atome14), link(MoleculeName,simple,Atome9,Atome10),
-									link(MoleculeName,simple,Atome9,Atome11), link(MoleculeName,simple,Atome11,Atome12), link(MoleculeName,simple,Atome12,Atome13),
-									link(MoleculeName,simple,Atome13,Atome14), link(MoleculeName,simple,Atome13,Atome17), link(MoleculeName,simple,Atome14,Atome15),
-									link(MoleculeName,simple,Atome15,Atome16), link(MoleculeName,simple,Atome16,Atome17).
+									link(MoleculeName,BondType1,Atome1,Atome2), link(MoleculeName,BondType8,Atome1,Atome10), link(MoleculeName,BondType15,Atome2,Atome3),
+									link(MoleculeName,BondType2,Atome3,Atome4), link(MoleculeName,BondType9,Atome4,Atome5), link(MoleculeName,BondType16,Atome5,Atome6),
+									link(MoleculeName,BondType3,Atome5,Atome10), link(MoleculeName,BondType10,Atome6,Atome7), link(MoleculeName,BondType17,Atome7,Atome8),
+									link(MoleculeName,BondType4,Atome8,Atome9), link(MoleculeName,BondType11,Atome8,Atome14), link(MoleculeName,BondType18,Atome9,Atome10),
+									link(MoleculeName,BondType5,Atome9,Atome11), link(MoleculeName,BondType12,Atome11,Atome12), link(MoleculeName,BondType19,Atome12,Atome13),
+									link(MoleculeName,BondType6,Atome13,Atome14), link(MoleculeName,BondType13,Atome13,Atome17), link(MoleculeName,BondType20,Atome14,Atome15),
+									link(MoleculeName,BondType7,Atome15,Atome16), link(MoleculeName,BondType14,Atome16,Atome17).
 
 % Definition of a cyclohexene
 class(MoleculeName, cyclohexene) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,carb),
@@ -141,9 +141,9 @@ difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtom
 					not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="z-palythenic acid", MoleculeName2="palythene".
 
 difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,direct):- link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber),
-					not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="porphyra-334", MoleculeName2="MAA2".
+					not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="4α-methylcholest-8(9),14,24,trien-3β-ol", MoleculeName2="4α-methylzymosterol".
 difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,reverse):- link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
-					not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="porphyra-334", MoleculeName2="MAA2".
+					not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="4α-methylcholest-8(9),14,24,trien-3β-ol", MoleculeName2="4α-methylzymosterol".
 
 %* Browse reactions
 %%%%%%%%%%%%%%%%%%%%
