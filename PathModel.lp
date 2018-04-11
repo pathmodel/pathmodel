@@ -1,7 +1,11 @@
+#include <incmode>.
+
  %*
 Search of metabolic pathways
 allowing to reach  output metabolites from a set of input metabolites
 *%
+
+#program base.
 
 %* General definitions
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -127,11 +131,15 @@ moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*Num
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
 
-reactiontype(T):- reaction(T,_,_,_,_,_). 
+#program step(t).
+
+{basereaction(ReactionName,Molecule1,Molecule2,t): reaction(ReactionName,Molecule1,Molecule2)}.
+
+%reactiontype(TypeOfReaction):- reaction(TypeOfReaction,_,_,_,_,_).
 reactionType(TypeOfReaction):- reaction(TypeOfReaction,_,_).
-output_metabolite(M):- reaction(_,_,_,_,_,M).
-output_metabolite(MoleculeName):- reaction(_,_,MoleculeName).
-input_metabolite(MoleculeName):- component(MoleculeName,_,_); not output_metabolite(MoleculeName).
+%output_metabolite(MoleculeName):- reaction(_,_,_,_,_,MoleculeName).
+output_metabolite(MoleculeName,t):- basereaction(_,_,MoleculeName,t).
+input_metabolite(MoleculeName,t):- component(MoleculeName,_,_); not output_metabolite(MoleculeName,t).
 
 %* Test to see difference between two molecules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,8 +161,8 @@ Search for following reactions to extract pathways from one molecule to another.
 Use to check if we have achieved our goal.
 *%
 
-pathway(Molecule1,Molecule2):- reaction(ReactionName,Molecule1,Molecule2).
-pathway(Molecule1,Molecule3):- reaction(ReactionName,Molecule2,Molecule3), pathway(Molecule1,Molecule2).
+infered(pathway(Molecule1,Molecule2), t):- basereaction(ReactionName,Molecule1,Molecule2,t-1).
+infered(pathway(Molecule1,Molecule3), t):- basereaction(ReactionName,Molecule2,Molecule3,t-1), infered(pathway(Molecule1,Molecule2),t-1).
 
 %* Inference Method
 %%%%%%%%%%%%%%%%%%%
@@ -171,7 +179,8 @@ newreaction(R,P1,P2):- need_reaction(R,P3,before,N); reaction(R,P3,P4); output_m
 	link(P1,T,I,J):link(P3,T,I,J),I=1..N-1; link(P2,T,I,J):link(P4,T,I,J),I=1..N-1; 
 	link(P1,T,I,J):link(P2,T,I,J),I>=N; link(P2,T,I,J):link(P1,T,I,J),I>=N.
 *%
-newreaction(R,P1,P2):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output_metabolite(P1); input_metabolite(P2);
+
+reaction(R,P1,P2):- need_reaction(R,P3,before,N,U); reaction(R,P3,P4); output_metabolite(P1,t); input_metabolite(P2,t);
 	% Check if the four molecules have the same domain.
 	class(P1,Domain);class(P2,Domain);class(P3,Domain);class(P4,Domain);
 	% Check if atoms in the domain are the same between P1/P3 and P2/P4. (Now useless with the Domain?)
@@ -290,7 +299,10 @@ component(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,
 component(P,N+4,oxyg):-reaction("aminoacid_C-3_transfer",_,"glycine",P); nbatoms(R,N); production(P). 
 component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I>7; nbatoms(R,N);  production(P). 
 
+#program check(t).
+:- goal(F), query(t), not infered((F),t).
 
+#show infered/2.
 #show input_metabolite/1.
 #show output_metabolite/1.
 #show reaction/3.
@@ -298,8 +310,6 @@ component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,
 #show moleculeMZ/2.
 
 %* Expected output
-Implement incremential mode.
-Implement Cycloartenol -> cholesterol pathways.
 
 newreaction(c22_desaturation,"cholesterol", "22-dehydrocholesterol"). #### Already OK
 
