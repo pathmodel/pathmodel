@@ -360,6 +360,20 @@ aminoacid(glycine;serine;threonine).
 
 % Mycosporine-like amino acids
 
+component("S-desmethyl-4-deoxygadusol",1..7,carb). component("S-desmethyl-4-deoxygadusol",8,oxyg). component("S-desmethyl-4-deoxygadusol",9..12,oxyg).
+link("S-desmethyl-4-deoxygadusol",double,1,2). link("S-desmethyl-4-deoxygadusol",simple,2,3). link("S-desmethyl-4-deoxygadusol",simple,3,4).
+link("S-desmethyl-4-deoxygadusol",simple,4,5). link("S-desmethyl-4-deoxygadusol",simple,5,6). link("S-desmethyl-4-deoxygadusol",simple,1,6).
+link("S-desmethyl-4-deoxygadusol",simple,5,7). link("S-desmethyl-4-deoxygadusol",double,3,10). link("S-desmethyl-4-deoxygadusol",simple,1,8).
+link("S-desmethyl-4-deoxygadusol",simple,5,12). link("S-desmethyl-4-deoxygadusol",simple,7,11). link("S-desmethyl-4-deoxygadusol",simple,2,9).
+
+component("4-deoxygadusol",1..7,carb). component("4-deoxygadusol",8,oxyg). component("4-deoxygadusol",9..12,oxyg).
+component("4-deoxygadusol",13,carb).
+link("4-deoxygadusol",double,1,2). link("4-deoxygadusol",simple,2,3). link("4-deoxygadusol",simple,3,4).
+link("4-deoxygadusol",simple,4,5). link("4-deoxygadusol",simple,5,6). link("4-deoxygadusol",simple,1,6).
+link("4-deoxygadusol",simple,5,7). link("4-deoxygadusol",double,3,10). link("4-deoxygadusol",simple,1,8).
+link("4-deoxygadusol",simple,5,12). link("4-deoxygadusol",simple,7,11). link("4-deoxygadusol",simple,2,9).
+link("4-deoxygadusol",simple,9,13).
+
 component("mycosporin-glycine",1..7,carb). component("mycosporin-glycine",8,nitr). component("mycosporin-glycine",9..12,oxyg).
 component("mycosporin-glycine",13..15,carb). component("mycosporin-glycine",16..17,oxyg).
 link("mycosporin-glycine",double,1,2). link("mycosporin-glycine",simple,2,3). link("mycosporin-glycine",simple,3,4).
@@ -430,8 +444,8 @@ link("porphyra-334",double,21,22). link("porphyra-334",simple,21,23). link("porp
 
 component("z-palythenic acid",1..7,carb). component("z-palythenic acid",8,nitr). component("z-palythenic acid",9,oxyg).
 component("z-palythenic acid",10,nitr). component("z-palythenic acid",11..12,oxyg). component("z-palythenic acid",13..15,carb).
-component("z-palythenic acid",16..17,oxyg). component("z-palythenic acid",18..19,carb). component("z-palythenic acid",20..21,carb).
-component("z-palythenic acid",22..23,oxyg).
+component("z-palythenic acid",16..17,oxyg). component("z-palythenic acid",18..19,carb). component("z-palythenic acid",21,carb).
+component("z-palythenic acid",22..23,oxyg). component("z-palythenic acid",24,carb).
 link("z-palythenic acid",double,1,2). link("z-palythenic acid",simple,2,3). link("z-palythenic acid",simple,3,4).
 link("z-palythenic acid",simple,4,5). link("z-palythenic acid",simple,5,6). link("z-palythenic acid",simple,1,6).
 link("z-palythenic acid",simple,5,7). link("z-palythenic acid",double,3,10). link("z-palythenic acid",simple,1,8).
@@ -439,29 +453,41 @@ link("z-palythenic acid",simple,5,12). link("z-palythenic acid",simple,7,11). li
 link("z-palythenic acid",simple,9,13). link("z-palythenic acid",simple,8,14). link("z-palythenic acid",simple,14,15).
 link("z-palythenic acid",double,15,16). link("z-palythenic acid",simple,15,17). link("z-palythenic acid",simple,10,18).
 link("z-palythenic acid",double,18,19). link("z-palythenic acid",simple,18,21). link("z-palythenic acid",double,21,22).
-link("z-palythenic acid",simple,21,23). link("z-palythenic acid",simpleZ,19,20).
+link("z-palythenic acid",simple,21,23). link("z-palythenic acid",simple,19,24).
 
 component("palythene",1..7,carb). component("palythene",8,nitr). component("palythene",9,oxyg).
 component("palythene",10,nitr). component("palythene",11..12,oxyg). component("palythene",13..15,carb).
-component("palythene",16..17,oxyg). component("palythene",18..20,carb).
+component("palythene",16..17,oxyg). component("palythene",18..19,carb). component("palythene",24,carb).
 link("palythene",double,1,2). link("palythene",simple,2,3). link("palythene",simple,3,4).
 link("palythene",simple,4,5). link("palythene",simple,5,6). link("palythene",simple,1,6).
 link("palythene",simple,5,7). link("palythene",double,3,10). link("palythene",simple,1,8).
 link("palythene",simple,5,12). link("palythene",simple,7,11). link("palythene",simple,2,9).
 link("palythene",simple,9,13). link("palythene",simple,8,14). link("palythene",simple,14,15).
 link("palythene",double,15,16). link("palythene",simple,15,17). link("palythene",simple,10,18).
-link("palythene",double,18,19). link("palythene",simpleZ,19,20).
+link("palythene",double,18,19). link("palythene",simple,19,24).
 
-component("hypothetic_MAA_1",1..7,carb). component("hypothetic_MAA_1",8,nitr). component("hypothetic_MAA_1",9,oxyg).
-component("hypothetic_MAA_1",10,nitr). component("hypothetic_MAA_1",11..12,oxyg). component("hypothetic_MAA_1",13..15,carb).
-component("hypothetic_MAA_1",16..17,oxyg). component("hypothetic_MAA_1",18..19,carb).
-link("hypothetic_MAA_1",double,1,2). link("hypothetic_MAA_1",simple,2,3). link("hypothetic_MAA_1",simple,3,4).
-link("hypothetic_MAA_1",simple,4,5). link("hypothetic_MAA_1",simple,5,6). link("hypothetic_MAA_1",simple,1,6).
-link("hypothetic_MAA_1",simple,5,7). link("hypothetic_MAA_1",double,3,10). link("hypothetic_MAA_1",simple,1,8).
-link("hypothetic_MAA_1",simple,5,12). link("hypothetic_MAA_1",simple,7,11). link("hypothetic_MAA_1",simple,2,9).
-link("hypothetic_MAA_1",simple,9,13). link("hypothetic_MAA_1",simple,8,14). link("hypothetic_MAA_1",simple,14,15).
-link("hypothetic_MAA_1",double,15,16). link("hypothetic_MAA_1",simple,15,17). link("hypothetic_MAA_1",simple,10,18).
-link("hypothetic_MAA_1",double,18,19).
+component("MAA1",1..7,carb). component("MAA1",8,nitr). component("MAA1",9,oxyg).
+component("MAA1",10,nitr). component("MAA1",11..12,oxyg). component("MAA1",13..15,carb).
+component("MAA1",16..17,oxyg). component("MAA1",18..19,carb).
+link("MAA1",double,1,2). link("MAA1",simple,2,3). link("MAA1",simple,3,4).
+link("MAA1",simple,4,5). link("MAA1",simple,5,6). link("MAA1",simple,1,6).
+link("MAA1",simple,5,7). link("MAA1",double,3,10). link("MAA1",simple,1,8).
+link("MAA1",simple,5,12). link("MAA1",simple,7,11). link("MAA1",simple,2,9).
+link("MAA1",simple,9,13). link("MAA1",simple,8,14). link("MAA1",simple,14,15).
+link("MAA1",double,15,16). link("MAA1",simple,15,17). link("MAA1",simple,10,18).
+link("MAA1",double,18,19).
+
+component("MAA2",1..7,carb). component("MAA2",8,nitr). component("MAA2",9,oxyg).
+component("MAA2",10,nitr). component("MAA2",11..12,oxyg). component("MAA2",13..15,carb).
+component("MAA2",16..17,oxyg). component("MAA2",18..19,carb). component("MAA2",20,oxyg).
+component("MAA2",24,carb).
+link("MAA2",double,1,2). link("MAA2",simple,2,3). link("MAA2",simple,3,4).
+link("MAA2",simple,4,5). link("MAA2",simple,5,6). link("MAA2",simple,1,6).
+link("MAA2",simple,5,7). link("MAA2",double,3,10). link("MAA2",simple,1,8).
+link("MAA2",simple,5,12). link("MAA2",simple,7,11). link("MAA2",simple,2,9).
+link("MAA2",simple,9,13). link("MAA2",simple,8,14). link("MAA2",simple,14,15).
+link("MAA2",double,15,16). link("MAA2",simple,15,17). link("MAA2",simple,10,18).
+link("MAA2",simple,18,19). link("MAA2",simple,19,20). link("MAA2",simple,19,24).
 
 %* Known reactions
 %%%%%%%%%%%%%%%%%%%
@@ -508,6 +534,10 @@ reaction(decarboxylation,"z-palythenic acid","palythene").
 reaction(decarboxylation,"shinorine","asterina-330").
 
 reaction(hydrolyse,"palythene","palythine").
+
+reaction(rxn_17896, "S-desmethyl-4-deoxygadusol", "4-deoxygadusol").
+
+reaction(aminoacid_C_1_transfer, "4-deoxygadusol", "mycosporin-glycine").
 
 reaction("aminoacid_C-3_transfer","mycosporin-glycine","serine","shinorine").
 
