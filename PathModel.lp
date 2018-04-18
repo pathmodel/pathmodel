@@ -1,7 +1,11 @@
+#include <incmode>.
+
  %*
 Search of metabolic pathways
 allowing to reach  output metabolites from a set of input metabolites
 *%
+
+#program base.
 
 %* General definitions
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -15,8 +19,6 @@ valence(carb, 4). valence(nitr, 3). valence(oxyg, 2).
 
 %atom provides the atom numbers in a compound
 atom(MoleculeName, AtomNumber):- component(MoleculeName, AtomNumber, _). 
-%nbatoms provides the total number of atoms in a compound
-nbatoms(MoleculeName, N):- atom(MoleculeName, N); not atom(MoleculeName, N+1). 
 
 % A side chain in a compound M is a maximal suite of carbons starting from atom number 1. It ends at atom number End
 sidechain(M,1,End):-  component(M,End,carb); component(M,End+1,A); A!=carb; component(M,X,carb):X=1..End.
@@ -110,6 +112,9 @@ moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, Nu
 													NumberCarbon=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , oxyg)},
 													NumberNitrogen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , nitr)}, atom(MoleculeName, AtomeNumber).
 
+%moleculeNbAtoms provides the total number of atoms in a compound
+moleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+
 % moleculeMZ computes the M/Q ratio for each molecule.
 % moleculeMZ(MoleculeName, M/Q ratio*10000)
 % Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Q ratio divide the M/Q ratio by 10 0000.
@@ -119,12 +124,15 @@ moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, Nu
 % 1201160*NumberCarbon + 100811*NumberHydrogen + 1599977*NumberOxygen + 1400728*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
 moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
-
 %* Definition of input and output from reaction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
 
-reactiontype(T):- reaction(T,_,_,_,_,_). 
+#program step(t).
+
+{basereaction(ReactionName,Molecule1,Molecule2,t): reaction(ReactionName,Molecule1,Molecule2)}.
+
+%reactiontype(TypeOfReaction):- reaction(TypeOfReaction,_,_,_,_,_).
 reactionType(TypeOfReaction):- reaction(TypeOfReaction,_,_).
 output_metabolite(M):- reaction(_,_,_,_,_,M).
 output_metabolite(MoleculeName):- reaction(_,_,MoleculeName).
@@ -151,8 +159,8 @@ Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway i
 Use to check if we have achieved our goal.
 *%
 
-pathway(Molecule1,Molecule2):- reaction(ReactionName,Molecule1,Molecule2).
-pathway(Molecule1,Molecule3):- reaction(ReactionName,Molecule2,Molecule3), pathway(Molecule1,Molecule2).
+infered(pathway(Molecule1,Molecule2), t):- basereaction(ReactionName,Molecule1,Molecule2,t-1).
+infered(pathway(Molecule1,Molecule3), t):- basereaction(ReactionName,Molecule2,Molecule3,t-1), infered(pathway(Molecule1,Molecule2),t-1).
 
 %* Inference Method
 %%%%%%%%%%%%%%%%%%%
@@ -334,6 +342,8 @@ link(P,T,I,J):-reaction(hydrolyse,R,P); link(R,T,I,J); link(R,T,I,J); not link(R
 
 % Compound P resulting from the transfer of an aminoacid AA on C3 from compound R 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Broken with the new atom counting method.
+
 % all atoms from R are mapped to P, except oxyg 10, which is replaced by nitr 5 of the aminoacid
 component(P,I,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I!=10.
 component(P,10,nitr):- reaction("aminoacid_C-3_transfer",_,_,P).
@@ -349,7 +359,10 @@ component(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,
 component(P,N+4,oxyg):-reaction("aminoacid_C-3_transfer",_,"glycine",P); nbatoms(R,N); production(P). 
 component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I>7; nbatoms(R,N);  production(P). 
 
+#program check(t).
+:- goal(F), query(t), not infered((F),t).
 
+#show infered/2.
 #show input_metabolite/1.
 #show output_metabolite/1.
 #show reaction/3.
@@ -357,8 +370,6 @@ component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,
 #show moleculeMZ/2.
 
 %* Expected output
-Implement incremential mode.
-Implement Cycloartenol -> cholesterol pathways.
 
 newreaction(c22_desaturation,"cholesterol", "22-dehydrocholesterol"). #### Already OK
 

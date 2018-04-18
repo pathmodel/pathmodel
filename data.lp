@@ -550,3 +550,8 @@ need_reaction(c22_desaturation, "sitosterol", before, 22, 23).
 % OK for Chondrus, but will need to be reformulated for other red algae - see sterols-phylopaths.pdf
 
 need_reaction(dehydration, "porphyra-334", before, 18, 20).
+
+need_reaction(decarboxylation, "z-palythenic acid", before, 18, 23).
+
+init(pathway("cycloartenol","cholesterol")).
+goal(pathway("31-norcycloartenol","cholesterol")).
