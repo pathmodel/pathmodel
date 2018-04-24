@@ -165,12 +165,6 @@ Use to check if we have achieved our goal.
 %* Inference Method
 %%%%%%%%%%%%%%%%%%%
 *%
-#script (python)
-from clingo import Symbol
-def g(c, f):
-	r = c+f
-	return r
-#end.
 
 % Rule to infer new punctual reactions: metabolite ProductInfered can be the product of metabolite ReactantInfered by reaction Reaction.
 % This method work with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
