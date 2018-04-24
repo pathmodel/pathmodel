@@ -1,11 +1,11 @@
-#include <incmode>.
+%#include <incmode>.
 
  %*
 Search of metabolic pathways
 allowing to reach  output metabolites from a set of input metabolites
 *%
 
-#program base.
+%#program base.
 
 %* General definitions
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -128,9 +128,9 @@ moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*Num
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
 
-#program step(t).
+%#program step(t).
 
-{basereaction(ReactionName,Molecule1,Molecule2,t): reaction(ReactionName,Molecule1,Molecule2)}.
+%{basereaction(ReactionName,Molecule1,Molecule2,t): reaction(ReactionName,Molecule1,Molecule2)}.
 
 %reactiontype(TypeOfReaction):- reaction(TypeOfReaction,_,_,_,_,_).
 reactionType(TypeOfReaction):- reaction(TypeOfReaction,_,_).
@@ -159,12 +159,18 @@ Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway i
 Use to check if we have achieved our goal.
 *%
 
-infered(pathway(Molecule1,Molecule2), t):- basereaction(ReactionName,Molecule1,Molecule2,t-1).
-infered(pathway(Molecule1,Molecule3), t):- basereaction(ReactionName,Molecule2,Molecule3,t-1), infered(pathway(Molecule1,Molecule2),t-1).
+%infered(pathway(Molecule1,Molecule2), t):- basereaction(ReactionName,Molecule1,Molecule2,t-1).
+%infered(pathway(Molecule1,Molecule3), t):- basereaction(ReactionName,Molecule2,Molecule3,t-1), infered(pathway(Molecule1,Molecule2),t-1).
 
 %* Inference Method
 %%%%%%%%%%%%%%%%%%%
 *%
+#script (python)
+from clingo import Symbol
+def g(c, f):
+	r = c+f
+	return r
+#end.
 
 % Rule to infer new punctual reactions: metabolite ProductInfered can be the product of metabolite ReactantInfered by reaction Reaction.
 % This method work with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
@@ -175,6 +181,20 @@ infered(pathway(Molecule1,Molecule3), t):- basereaction(ReactionName,Molecule2,M
 % Then we search in one of the two metabolites if it contains a region corresponding to the site of reaction of the ReactantReference (the site that will be modified by the reaction).
 % We also search in the other metabolite if it contains a region corresponding to the site of reaction of the ProductReference (the site modified by the reaction).
 % And we check if all atoms and links are the same between ReactantInfered and ProductInfered, except from the atoms and links implied in the reaction
+
+newmetabolite(g(ReactantInfered, Reaction)):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered);
+							% Check if the four molecules have the same domain.
+							class(ReactantInfered,Domain);class(ProductInfered,Domain);class(ProductReference,Domain);
+							% Check if reaction site are present in each molecule.
+							siteBeforeReaction(Reaction,ReactantInfered);siteBeforeReaction(Reaction,ReactantReference);siteAfterReaction(Reaction,ProductReference).
+% Create ProductInfered.
+% Check if atoms of ProductInfered mapped from atoms of ReactantInfered.
+newcomponent(Number,AtomNumber,AtomType):-component(ReactantInfered,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType),newmetabolite(g(ReactantInfered, Reaction)), Number=g(ReactantInfered, Reaction).
+newcomponent(Number,AtomNumber,AtomType):- diffAtomAfterReaction(Reaction,AtomNumber,AtomType),newmetabolite(g(ReactantInfered, Reaction)), Number=g(ReactantInfered, Reaction).
+% Check if links of ProductInfered mapped from links of ReactantInfered.
+newlink(Number,BondType,FirstAtom,SecondAtom):-link(ReactantInfered,BondType,FirstAtom,SecondAtom), not diffLinkBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetabolite(g(ReactantInfered, Reaction)), Number=g(ReactantInfered, Reaction).
+% Check if links of ProductInfered mapped from links of ReactantInfered.
+newlink(Number,BondType,FirstAtom,SecondAtom):- diffLinkAfterReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetabolite(g(ReactantInfered, Reaction)), Number=g(ReactantInfered, Reaction).
 
 newreaction(Reaction,ReactantInfered,ProductInfered):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered); metabolite(ProductInfered); not reaction(Reaction,ReactantInfered,ProductInfered); ReactantInfered != ProductInfered;
 							% Check if the four molecules have the same domain.
@@ -359,8 +379,8 @@ component(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,
 component(P,N+4,oxyg):-reaction("aminoacid_C-3_transfer",_,"glycine",P); nbatoms(R,N); production(P). 
 component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I>7; nbatoms(R,N);  production(P). 
 
-#program check(t).
-:- goal(F), query(t), not infered((F),t).
+%#program check(t).
+%:- goal(F), query(t), not infered((F),t).
 
 #show infered/2.
 #show input_metabolite/1.
