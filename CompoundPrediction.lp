@@ -4,13 +4,14 @@ Prediction of new metabolite.
 
 %*
 Python script creating name for new metabolite.
-It uses the reaction name and teh metabolite use to infer the new metabolite.
+It uses the reaction name and the metabolite use to infer the new metabolite.
 *%
+
 #script (python)
 import clingo
 import hashlib
 
-def g(x, y):
+def name_metabolite(x, y):
 	name = str(x) + str(y)
 	hash_name = str(int(hashlib.sha1(name).hexdigest(), 16) % (10 ** 8))
 	r = "Prediction_" + str(hash_name)
@@ -117,7 +118,7 @@ metabolite(MoleculeName):- component(MoleculeName,_,_).
 % First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
 % A known reaction is used to infer a new reaction between a known molecule and a new molecule.
 
-newmetaboliteName(@g(ReactantInfered, Reaction),ReactantInfered, Reaction):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered);
+newmetaboliteName(@name_metabolite(ReactantInfered, Reaction),ReactantInfered, Reaction):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered);
 							% Check if the three molecules have the same domain.
 							class(ReactantInfered,Domain);class(ProductInfered,Domain);class(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.

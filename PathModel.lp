@@ -1,11 +1,11 @@
-%#include <incmode>.
+#include <incmode>.
 
  %*
 Search of metabolic pathways
 allowing to reach  output metabolites from a set of input metabolites
 *%
 
-%#program base.
+#program base.
 
 %* General definitions
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -128,11 +128,9 @@ moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*Num
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
 
-%#program step(t).
+#program step(t).
 
-%{basereaction(ReactionName,Molecule1,Molecule2,t): reaction(ReactionName,Molecule1,Molecule2)}.
-
-%reactiontype(TypeOfReaction):- reaction(TypeOfReaction,_,_,_,_,_).
+reactiontype(TypeOfReaction):- reaction(TypeOfReaction,_,_,_,_,_).
 reactionType(TypeOfReaction):- reaction(TypeOfReaction,_,_).
 output_metabolite(M):- reaction(_,_,_,_,_,M).
 output_metabolite(MoleculeName):- reaction(_,_,MoleculeName).
@@ -142,7 +140,7 @@ metabolite(MoleculeName):- component(MoleculeName,_,_).
 %* Test to see difference between two molecules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
-
+%*
 difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,direct):- link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber),
 					not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="z-palythenic acid", MoleculeName2="palythene".
 difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,reverse):- link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
@@ -152,15 +150,22 @@ difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtom
 					not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="4α-methylcholest-8(9),14,24,trien-3β-ol", MoleculeName2="4α-methylzymosterol".
 difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,reverse):- link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
 					not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="4α-methylcholest-8(9),14,24,trien-3β-ol", MoleculeName2="4α-methylzymosterol".
-
+*%
 %* Browse reactions
 %%%%%%%%%%%%%%%%%%%%
 Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway is here described as the path from a moleucle to another through reactions.
 Use to check if we have achieved our goal.
 *%
 
-%infered(pathway(Molecule1,Molecule2), t):- basereaction(ReactionName,Molecule1,Molecule2,t-1).
-%infered(pathway(Molecule1,Molecule3), t):- basereaction(ReactionName,Molecule2,Molecule3,t-1), infered(pathway(Molecule1,Molecule2),t-1).
+%pathway(Molecule1,ProductInfered, t):- produced(ProductInfered, t-1), newreaction(Reaction,Molecule1,ProductInfered).
+%infered(pathway(Molecule1,Molecule2), t):- newreaction(ReactionName,Molecule1,Molecule2).
+%infered(pathway(Molecule1,Molecule3), t):- newreaction(ReactionName,Molecule2,Molecule3), produced(ProductInfered, t-1),infered(pathway(Molecule1,Molecule2), t-1).
+%*
+solution(M1,M2,t):- pathway(M1, M2,t).
+solution(M1,M3,t):- pathway(M2,M3,t+1), pathway(M1,M2,t).
+*%
+source(ProductInfered):- produced(ProductInfered, t-1).
+infered(source(ProductInfered),t):- produced(ProductInfered, t-1).
 
 %* Inference Method
 %%%%%%%%%%%%%%%%%%%
@@ -176,21 +181,10 @@ Use to check if we have achieved our goal.
 % We also search in the other metabolite if it contains a region corresponding to the site of reaction of the ProductReference (the site modified by the reaction).
 % And we check if all atoms and links are the same between ReactantInfered and ProductInfered, except from the atoms and links implied in the reaction
 
-newmetabolite(g(ReactantInfered, Reaction)):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered);
-							% Check if the four molecules have the same domain.
-							class(ReactantInfered,Domain);class(ProductInfered,Domain);class(ProductReference,Domain);
-							% Check if reaction site are present in each molecule.
-							siteBeforeReaction(Reaction,ReactantInfered);siteBeforeReaction(Reaction,ReactantReference);siteAfterReaction(Reaction,ProductReference).
-% Create ProductInfered.
-% Check if atoms of ProductInfered mapped from atoms of ReactantInfered.
-newcomponent(Number,AtomNumber,AtomType):-component(ReactantInfered,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType),newmetabolite(g(ReactantInfered, Reaction)), Number=g(ReactantInfered, Reaction).
-newcomponent(Number,AtomNumber,AtomType):- diffAtomAfterReaction(Reaction,AtomNumber,AtomType),newmetabolite(g(ReactantInfered, Reaction)), Number=g(ReactantInfered, Reaction).
-% Check if links of ProductInfered mapped from links of ReactantInfered.
-newlink(Number,BondType,FirstAtom,SecondAtom):-link(ReactantInfered,BondType,FirstAtom,SecondAtom), not diffLinkBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetabolite(g(ReactantInfered, Reaction)), Number=g(ReactantInfered, Reaction).
-% Check if links of ProductInfered mapped from links of ReactantInfered.
-newlink(Number,BondType,FirstAtom,SecondAtom):- diffLinkAfterReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetabolite(g(ReactantInfered, Reaction)), Number=g(ReactantInfered, Reaction).
+produced(MoleculeName, t):- source(MoleculeName).
 
-newreaction(Reaction,ReactantInfered,ProductInfered):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered); metabolite(ProductInfered); not reaction(Reaction,ReactantInfered,ProductInfered); ReactantInfered != ProductInfered;
+newreaction(Reaction,ReactantInfered,ProductInfered):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered); metabolite(ProductInfered); source(ReactantInfered);
+							not reaction(Reaction,ReactantInfered,ProductInfered); ReactantInfered != ProductInfered;
 							% Check if the four molecules have the same domain.
 							class(ReactantInfered,Domain);class(ProductInfered,Domain);class(ReactantReference,Domain);class(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
@@ -205,6 +199,7 @@ newreaction(Reaction,ReactantInfered,ProductInfered):- reaction(Reaction,Reactan
 							% Check if links of ProductInfered mapped from links of ReactantInfered.
 							link(ProductInfered,BondType,FirstAtom,SecondAtom):link(ReactantInfered,BondType,FirstAtom,SecondAtom), not diffLinkBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom).
 
+produced(ProductInfered, t):- newreaction(Reaction,Reactant,ProductInfered), source(Reactant).
 
 % Defining the result of generic reactions
 % Generic method which is supposed to replace all the methods below.
@@ -373,10 +368,12 @@ component(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,
 component(P,N+4,oxyg):-reaction("aminoacid_C-3_transfer",_,"glycine",P); nbatoms(R,N); production(P). 
 component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I>7; nbatoms(R,N);  production(P). 
 
-%#program check(t).
-%:- goal(F), query(t), not infered((F),t).
-
+#program check(t).
+:- goal(F), query(t), not infered(F,t).
+#show goal/1.
+#show source/1.
 #show infered/2.
+#show solution/3.
 #show input_metabolite/1.
 #show output_metabolite/1.
 #show reaction/3.

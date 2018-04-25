@@ -533,5 +533,8 @@ need_reaction(decarboxylation, "z-palythenic acid", before, 18, 23).
 mzfiltering(2702720).
 mzfiltering(3023117).
 
+source("cycloartenol").
+
 init(pathway("cycloartenol","cholesterol")).
-goal(pathway("31-norcycloartenol","cholesterol")).
+%goal(pathway("cycloartenol","lathosterol")).
+goal(source("lathosterol")).
