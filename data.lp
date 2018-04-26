@@ -536,5 +536,4 @@ mzfiltering(3023117).
 source("cycloartenol").
 
 init(pathway("cycloartenol","cholesterol")).
-%goal(pathway("cycloartenol","lathosterol")).
-goal(source("lathosterol")).
+goal(pathway("cycloartenol","lathosterol")).

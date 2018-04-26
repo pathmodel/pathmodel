@@ -157,15 +157,15 @@ Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway i
 Use to check if we have achieved our goal.
 *%
 
-%pathway(Molecule1,ProductInfered, t):- produced(ProductInfered, t-1), newreaction(Reaction,Molecule1,ProductInfered).
-%infered(pathway(Molecule1,Molecule2), t):- newreaction(ReactionName,Molecule1,Molecule2).
-%infered(pathway(Molecule1,Molecule3), t):- newreaction(ReactionName,Molecule2,Molecule3), produced(ProductInfered, t-1),infered(pathway(Molecule1,Molecule2), t-1).
-%*
-solution(M1,M2,t):- pathway(M1, M2,t).
-solution(M1,M3,t):- pathway(M2,M3,t+1), pathway(M1,M2,t).
-*%
+
+infered(pathway(Molecule1,Molecule2), t):- newreaction(ReactionName,Molecule1,Molecule2).
+infered(pathway(Molecule1,ProductInfered), t):- newreaction(ReactionName,Molecule2,ProductInfered), produced(ProductInfered, t-1),infered(pathway(Molecule1,Molecule2), t-1).
+
+solution(M1,M2,t):- infered(pathway(M1, M2),t).
+solution(M1,M3,t):- infered(pathway(M2,M3),t+1), infered(pathway(M1,M2),t).
+
 source(ProductInfered):- produced(ProductInfered, t-1).
-infered(source(ProductInfered),t):- produced(ProductInfered, t-1).
+
 
 %* Inference Method
 %%%%%%%%%%%%%%%%%%%
@@ -199,7 +199,7 @@ newreaction(Reaction,ReactantInfered,ProductInfered):- reaction(Reaction,Reactan
 							% Check if links of ProductInfered mapped from links of ReactantInfered.
 							link(ProductInfered,BondType,FirstAtom,SecondAtom):link(ReactantInfered,BondType,FirstAtom,SecondAtom), not diffLinkBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom).
 
-produced(ProductInfered, t):- newreaction(Reaction,Reactant,ProductInfered), source(Reactant).
+produced(ProductInfered, t):- newreaction(Reaction,Reactant,ProductInfered), source(Reactant), not produced(ProductInfered, t-1).
 
 % Defining the result of generic reactions
 % Generic method which is supposed to replace all the methods below.
@@ -370,7 +370,7 @@ component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,
 
 #program check(t).
 :- goal(F), query(t), not infered(F,t).
-#show goal/1.
+
 #show source/1.
 #show infered/2.
 #show solution/3.
