@@ -17,10 +17,6 @@ def name_metabolite(x, y):
 	r = "Prediction_" + str(hash_name)
 	return r
 
-def main(prg):
-	prg.ground([("base", [])])
-	prg.solve()
- 
 #end.
 
 % Known atom
@@ -42,7 +38,12 @@ moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, Nu
 													NumberCarbon=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , oxyg)},
 													NumberNitrogen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , nitr)}, atom(MoleculeName, AtomeNumber).
 
+% moleculeNbComponents provides the total number of atoms in a compound.
+moleculeNbComponents(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
+% numberTotalLinks provides the number of link in a molecule.
+numberTotalLinks(MoleculeName,NumberTotalOfLinks):-  NumberTotalOfLinks=#sum{1,SecondAtomNumber : link(MoleculeName, BoundType, AtomNumber, SecondAtomNumber);
+																			1,SecondAtomNumber: link(MoleculeName, BoundType, SecondAtomNumber, AtomNumber)}; metabolite(MoleculeName).
 %*
 Chemical variable:
 valence(Atom type, Number of valence)
@@ -141,7 +142,7 @@ newatom(MoleculeName, AtomNumber):- newcomponent(MoleculeName, AtomNumber, _).
 %*
 Compute MZ for new metabolite.
 *%
-numberBonds(MoleculeName, AtomNumber, NumberOfBonds):-  NumberOfBonds=#sum{2, SecondAtomNumber: newlink(MoleculeName, double, AtomNumber, SecondAtomNumber);
+newnumberBonds(MoleculeName, AtomNumber, NumberOfBonds):-  NumberOfBonds=#sum{2, SecondAtomNumber: newlink(MoleculeName, double, AtomNumber, SecondAtomNumber);
 																2, SecondAtomNumber: newlink(MoleculeName, double, SecondAtomNumber, AtomNumber);
 																1, SecondAtomNumber: newlink(MoleculeName, BoundType, AtomNumber, SecondAtomNumber), BoundType != double;
 																1, SecondAtomNumber: newlink(MoleculeName, BoundType, SecondAtomNumber, AtomNumber), BoundType != double}; newatom(MoleculeName, AtomNumber).
@@ -149,43 +150,43 @@ numberBonds(MoleculeName, AtomNumber, NumberOfBonds):-  NumberOfBonds=#sum{2, Se
 
 % numberHydrogens provides the number of hydrogens associated with each atoms.
 % numberHydrogens(MoleculeName, AtomNumber, number of Hydrogen bonded with the atom)
-numberHydrogens(MoleculeName, AtomNumber, ValenceNumber - NumberOfBonds) :- numberBonds(MoleculeName, AtomNumber, NumberOfBonds), newcomponent(MoleculeName, AtomNumber, AtomeType), valence(AtomeType, ValenceNumber).
+newnumberHydrogens(MoleculeName, AtomNumber, ValenceNumber - NumberOfBonds) :- newnumberBonds(MoleculeName, AtomNumber, NumberOfBonds), newcomponent(MoleculeName, AtomNumber, AtomeType), valence(AtomeType, ValenceNumber).
 
 % moleculeComposition shows the number of Carbon, Hydrogen, Oxygen and Nitrogen in the molecule.
 % moleculeComposition(MoleculeName, Number of Carbon, Number of Hydrogen, Number of Oxygen, Number of Nitrogen)
-moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen) :- NumberHydrogen=#sum{NumberHydrogenAtom, AtomNumber: numberHydrogens(MoleculeName, AtomNumber, NumberHydrogenAtom)},
+newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen) :- NumberHydrogen=#sum{NumberHydrogenAtom, AtomNumber: newnumberHydrogens(MoleculeName, AtomNumber, NumberHydrogenAtom)},
 													NumberCarbon=#sum{1, AtomNumber: newcomponent(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: newcomponent(MoleculeName, AtomNumber , oxyg)},
 													NumberNitrogen=#sum{1, AtomNumber: newcomponent(MoleculeName, AtomNumber , nitr)}, newatom(MoleculeName, AtomeNumber).
 
 %moleculeNbAtoms provides the total number of atoms in a compound
-moleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):- newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
+																					newmetabolite(MoleculeName).
 
 % moleculeMZ computes the M/Q ratio for each new molecule.
 % moleculeMZ(MoleculeName, M/Q ratio*10000)
 % Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Q ratio divide the M/Q ratio by 10 0000.
-newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :- newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
+																					newmetabolite(MoleculeName).
 
-moleculeNbComponents(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+newmoleculeNbComponents(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
-numberTotalLinks(MoleculeName,NumberTotalOfLinks):-  NumberTotalOfLinks=#sum{1,SecondAtomNumber : newlink(MoleculeName, BoundType, AtomNumber, SecondAtomNumber);
+newnumberTotalLinks(MoleculeName,NumberTotalOfLinks):-  NumberTotalOfLinks=#sum{1,SecondAtomNumber : newlink(MoleculeName, BoundType, AtomNumber, SecondAtomNumber);
 																			1, SecondAtomNumber: newlink(MoleculeName, BoundType, SecondAtomNumber, AtomNumber)}; newmetabolite(MoleculeName).
-
-numberTotalLinks(MoleculeName,NumberTotalOfLinks):-  NumberTotalOfLinks=#sum{1,SecondAtomNumber : link(MoleculeName, BoundType, AtomNumber, SecondAtomNumber);
-																			1,SecondAtomNumber: link(MoleculeName, BoundType, SecondAtomNumber, AtomNumber)}; metabolite(MoleculeName).
 
 % Check if new metabolites aren't known molecules.
 alreadyKnownComponent(NewMoleculeName):- newmetabolite(NewMoleculeName); metabolite(KnownMolecule);
 												% Check the number of components between the new metabolite and all the known molecules.
-												moleculeNbComponents(NewMoleculeName, NumberComponents); moleculeNbComponents(KnownMolecule, NumberComponentsRef);
+												newmoleculeNbComponents(NewMoleculeName, NumberComponents); moleculeNbComponents(KnownMolecule, NumberComponentsRef);
 												NumberComponents==NumberComponentsRef;
 												% Check the number of links between the new metabolite and all the known molecules.
-												numberTotalLinks(NewMoleculeName,NumberTotalOfLinks); numberTotalLinks(KnownMolecule,NumberTotalOfLinksRef);
+												newnumberTotalLinks(NewMoleculeName,NumberTotalOfLinks); numberTotalLinks(KnownMolecule,NumberTotalOfLinksRef);
 												NumberTotalOfLinks==NumberTotalOfLinksRef;
 												% Check that all components are similar from the components of a known molecule.
 												NumberComponents{newcomponent(NewMoleculeName,AtomNumber,AtomType): component(KnownMolecule,AtomNumber,AtomType),metabolite(KnownMolecule)}NumberComponents;
 												% Check that all links are similar from the links of a known molecule.
 												NumberTotalOfLinks{newlink(NewMoleculeName, BondType, FirstAtomNumber, SecondAtomNumber): link(KnownMolecule, BondType, FirstAtomNumber, SecondAtomNumber),
 												metabolite(KnownMolecule)}NumberTotalOfLinks.
+
 
 % Filtering using MZ and already known metabolites.
 % Keep only new metabolite having the MZ required.

@@ -5,6 +5,21 @@ Search of metabolic pathways
 allowing to reach  output metabolites from a set of input metabolites
 *%
 
+#script (python)
+import clingo
+import hashlib
+
+def name_metabolite(reactant_name, reaction_name):
+	"""
+	Rename new metabolite infered.
+	"""
+	name = str(reactant_name) + str(reaction_name)
+	hash_name = str(int(hashlib.sha1(name).hexdigest(), 16) % (10 ** 8))
+	new_product_infered = "Prediction_" + str(hash_name)
+	return new_product_infered
+
+#end.
+
 #program base.
 
 %* General definitions
@@ -112,8 +127,15 @@ moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, Nu
 													NumberCarbon=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , oxyg)},
 													NumberNitrogen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , nitr)}, atom(MoleculeName, AtomeNumber).
 
-%moleculeNbAtoms provides the total number of atoms in a compound
+% moleculeNbAtoms provides the total number of atoms in a compound.
 moleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+
+% moleculeNbComponents provides the total number of atoms in a compound.
+moleculeNbComponents(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+
+% numberTotalLinks provides the number of link in a molecule.
+numberTotalLinks(MoleculeName,NumberTotalOfLinks):-  NumberTotalOfLinks=#sum{1,SecondAtomNumber : link(MoleculeName, BoundType, AtomNumber, SecondAtomNumber);
+																			1,SecondAtomNumber: link(MoleculeName, BoundType, SecondAtomNumber, AtomNumber)}; metabolite(MoleculeName).
 
 % moleculeMZ computes the M/Q ratio for each molecule.
 % moleculeMZ(MoleculeName, M/Q ratio*10000)
@@ -128,14 +150,19 @@ moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*Num
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
 
-#program step(t).
-
 reactiontype(TypeOfReaction):- reaction(TypeOfReaction,_,_,_,_,_).
 reactionType(TypeOfReaction):- reaction(TypeOfReaction,_,_).
 output_metabolite(M):- reaction(_,_,_,_,_,M).
 output_metabolite(MoleculeName):- reaction(_,_,MoleculeName).
 input_metabolite(MoleculeName):- component(MoleculeName,_,_); not output_metabolite(MoleculeName).
 metabolite(MoleculeName):- component(MoleculeName,_,_).
+
+% Create link, component and reaction of the infered metabolite.
+component(MoleculeName,AtomNumber,AtomType):- testmetabolite(MoleculeName, t-1),newcomponent(MoleculeName,AtomNumber,AtomType).
+
+link(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t-1),newlink(MoleculeName,BondType,FirstAtom,SecondAtom).
+
+#program step(t).
 
 %* Test to see difference between two molecules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -160,14 +187,106 @@ Use to check if we have achieved our goal.
 
 infered(pathway(Molecule1,Molecule2), t):- newreaction(ReactionName,Molecule1,Molecule2).
 infered(pathway(Molecule1,ProductInfered), t):- newreaction(ReactionName,Molecule2,ProductInfered), produced(ProductInfered, t-1),infered(pathway(Molecule1,Molecule2), t-1).
-
+%*
 solution(M1,M2,t):- infered(pathway(M1, M2),t).
 solution(M1,M3,t):- infered(pathway(M2,M3),t+1), infered(pathway(M1,M2),t).
-
+*%
 source(ProductInfered):- produced(ProductInfered, t-1).
 
+% Create link, component and reaction of the infered metabolite.
+component(MoleculeName,AtomNumber,AtomType):- testmetabolite(MoleculeName, t-1),newcomponent(MoleculeName,AtomNumber,AtomType).
 
-%* Inference Method
+link(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t-1),newlink(MoleculeName,BondType,FirstAtom,SecondAtom).
+
+newreaction(Reaction,ReactantInfered,NewProduct):- testmetabolite(NewProduct, t-1),newmetaboliteName(NewProduct,ReactantInfered,Reaction).
+
+%* Metabolite Inference Method
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*%
+
+% Rule to infer new punctual metabolites: new metabolite @g(ReactantInfered, Reaction), can be the product of metabolite ReactantInfered by reaction Reaction.
+% This method work with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
+% The reaction sites are defined with the ReactionCreation.lp script.
+% First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
+% A known reaction is used to infer a new reaction between a known molecule and a new molecule.
+
+newmetaboliteName(@name_metabolite(ReactantInfered, Reaction),ReactantInfered, Reaction):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered);
+							% Check if the three molecules have the same domain.
+							class(ReactantInfered,Domain);class(ProductInfered,Domain);class(ProductReference,Domain);
+							% Check if reaction site are present in each molecule.
+							siteBeforeReaction(Reaction,ReactantInfered);siteBeforeReaction(Reaction,ReactantReference);siteAfterReaction(Reaction,ProductReference).
+
+newmetabolite(MoleculeName):- newmetaboliteName(MoleculeName,ReactantInfered, Reaction).
+
+% Create new metabolite components and links.
+
+newcomponent(MoleculeName,AtomNumber,AtomType):-component(ReactantInfered,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType),newmetaboliteName(MoleculeName,ReactantInfered, Reaction).
+newcomponent(MoleculeName,AtomNumber,AtomType):- diffAtomAfterReaction(Reaction,AtomNumber,AtomType),newmetaboliteName(MoleculeName,ReactantInfered, Reaction).
+
+newlink(MoleculeName,BondType,FirstAtom,SecondAtom):-link(ReactantInfered,BondType,FirstAtom,SecondAtom), not diffLinkBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetaboliteName(MoleculeName,ReactantInfered, Reaction).
+newlink(MoleculeName,BondType,FirstAtom,SecondAtom):- diffLinkAfterReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetaboliteName(MoleculeName,ReactantInfered, Reaction).
+
+%atom provides the atom numbers in a compound
+newatom(MoleculeName, AtomNumber):- newcomponent(MoleculeName, AtomNumber, _).
+
+
+%*
+Compute MZ for new metabolite.
+*%
+newnumberBonds(MoleculeName, AtomNumber, NumberOfBonds):-  NumberOfBonds=#sum{2, SecondAtomNumber: newlink(MoleculeName, double, AtomNumber, SecondAtomNumber);
+																2, SecondAtomNumber: newlink(MoleculeName, double, SecondAtomNumber, AtomNumber);
+																1, SecondAtomNumber: newlink(MoleculeName, BoundType, AtomNumber, SecondAtomNumber), BoundType != double;
+																1, SecondAtomNumber: newlink(MoleculeName, BoundType, SecondAtomNumber, AtomNumber), BoundType != double}; newatom(MoleculeName, AtomNumber).
+
+
+% numberHydrogens provides the number of hydrogens associated with each atoms.
+% numberHydrogens(MoleculeName, AtomNumber, number of Hydrogen bonded with the atom)
+newnumberHydrogens(MoleculeName, AtomNumber, ValenceNumber - NumberOfBonds) :- newnumberBonds(MoleculeName, AtomNumber, NumberOfBonds), newcomponent(MoleculeName, AtomNumber, AtomeType), valence(AtomeType, ValenceNumber).
+
+% moleculeComposition shows the number of Carbon, Hydrogen, Oxygen and Nitrogen in the molecule.
+% moleculeComposition(MoleculeName, Number of Carbon, Number of Hydrogen, Number of Oxygen, Number of Nitrogen)
+newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen) :- NumberHydrogen=#sum{NumberHydrogenAtom, AtomNumber: newnumberHydrogens(MoleculeName, AtomNumber, NumberHydrogenAtom)},
+													NumberCarbon=#sum{1, AtomNumber: newcomponent(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: newcomponent(MoleculeName, AtomNumber , oxyg)},
+													NumberNitrogen=#sum{1, AtomNumber: newcomponent(MoleculeName, AtomNumber , nitr)}, newatom(MoleculeName, AtomeNumber).
+
+%moleculeNbAtoms provides the total number of atoms in a compound
+newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):- newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
+																					newmetabolite(MoleculeName).
+
+% moleculeMZ computes the M/Q ratio for each new molecule.
+% moleculeMZ(MoleculeName, M/Q ratio*10000)
+% Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Q ratio divide the M/Q ratio by 10 0000.
+newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :- newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
+																					newmetabolite(MoleculeName).
+
+newmoleculeNbComponents(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+
+newnumberTotalLinks(MoleculeName,NumberTotalOfLinks):-  NumberTotalOfLinks=#sum{1,SecondAtomNumber : newlink(MoleculeName, BoundType, AtomNumber, SecondAtomNumber);
+																			1, SecondAtomNumber: newlink(MoleculeName, BoundType, SecondAtomNumber, AtomNumber)}; newmetabolite(MoleculeName).
+
+% Check if new metabolites aren't known molecules.
+alreadyKnownComponent(NewMoleculeName):- newmetabolite(NewMoleculeName); metabolite(KnownMolecule);
+												% Check the number of components between the new metabolite and all the known molecules.
+												newmoleculeNbComponents(NewMoleculeName, NumberComponents); moleculeNbComponents(KnownMolecule, NumberComponentsRef);
+												NumberComponents==NumberComponentsRef;
+												% Check the number of links between the new metabolite and all the known molecules.
+												newnumberTotalLinks(NewMoleculeName,NumberTotalOfLinks); numberTotalLinks(KnownMolecule,NumberTotalOfLinksRef);
+												NumberTotalOfLinks==NumberTotalOfLinksRef;
+												% Check that all components are similar from the components of a known molecule.
+												NumberComponents{newcomponent(NewMoleculeName,AtomNumber,AtomType): component(KnownMolecule,AtomNumber,AtomType),metabolite(KnownMolecule)}NumberComponents;
+												% Check that all links are similar from the links of a known molecule.
+												NumberTotalOfLinks{newlink(NewMoleculeName, BondType, FirstAtomNumber, SecondAtomNumber): link(KnownMolecule, BondType, FirstAtomNumber, SecondAtomNumber),
+												metabolite(KnownMolecule)}NumberTotalOfLinks.
+
+% Filtering using MZ and already known metabolites.
+% Keep only new metabolite having the MZ required.
+testmetabolite(NewMoleculeName, t):- newmetabolite(NewMoleculeName), newmoleculeMZ(NewMoleculeName,MZFilter), mzfiltering(MZFilter),
+									not alreadyKnownComponent(NewMoleculeName),metabolite(KnownMolecule).
+
+produced(ProductInfered, t):- testmetabolite(ProductInfered, t), not produced(ProductInfered, t-1),newmetaboliteName(ProductInfered,Reactant,Reaction).
+
+
+%* Reaction Inference Method
 %%%%%%%%%%%%%%%%%%%
 *%
 
@@ -351,7 +470,6 @@ link(P,T,I,J):-reaction(hydrolyse,R,P); link(R,T,I,J); link(R,T,I,J); not link(R
 
 % Compound P resulting from the transfer of an aminoacid AA on C3 from compound R 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Broken with the new atom counting method.
 
 % all atoms from R are mapped to P, except oxyg 10, which is replaced by nitr 5 of the aminoacid
 component(P,I,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I!=10.
@@ -359,25 +477,26 @@ component(P,10,nitr):- reaction("aminoacid_C-3_transfer",_,_,P).
 % all links from R are mapped to P except for oxyg 10
 link(P,T,I,J):-reaction("aminoacid_C-3_transfer",R,AA,P); link(R,T,I,J); link(R,T,I,J); I!=10; J!=10.
 % atoms and links from aminoacid are transferred at position 10 except nitr 5
-component(P,N+1,carb):-reaction("aminoacid_C-3_transfer",_,_,P); nbatoms(R,N); production(P). 
-component(P,N+2,carb):-reaction("aminoacid_C-3_transfer",_,_,P); nbatoms(R,N); production(P). 
-component(P,N+3,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); nbatoms(R,N); production(P). 
-component(P,N+4,carb):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,carb); component(AA,7,oxyg); nbatoms(R,N); production(P). 
-component(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,carb); component(AA,7,oxyg); nbatoms(R,N); production(P). 
-component(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,carb); component(AA,7,oxyg); nbatoms(R,N); production(P). 
-component(P,N+4,oxyg):-reaction("aminoacid_C-3_transfer",_,"glycine",P); nbatoms(R,N); production(P). 
-component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I>7; nbatoms(R,N);  production(P). 
+component(P,N+1,carb):-reaction("aminoacid_C-3_transfer",_,_,P); moleculeNbComponents(R,N); production(P). 
+component(P,N+2,carb):-reaction("aminoacid_C-3_transfer",_,_,P); moleculeNbComponents(R,N); production(P). 
+component(P,N+3,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); moleculeNbComponents(R,N); production(P). 
+component(P,N+4,carb):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,carb); component(AA,7,oxyg); moleculeNbComponents(R,N); production(P). 
+component(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,carb); component(AA,7,oxyg); moleculeNbComponents(R,N); production(P). 
+component(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,carb); component(AA,7,oxyg); moleculeNbComponents(R,N); production(P). 
+component(P,N+4,oxyg):-reaction("aminoacid_C-3_transfer",_,"glycine",P); moleculeNbComponents(R,N); production(P). 
+component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I>7; moleculeNbComponents(R,N);  production(P). 
 
 #program check(t).
 :- goal(F), query(t), not infered(F,t).
 
-#show source/1.
-#show infered/2.
-#show solution/3.
+%#show source/1.
+%#show infered/2.
+%#show solution/3.
 #show input_metabolite/1.
 #show output_metabolite/1.
 #show reaction/3.
 #show newreaction/3.
+#show testreaction/3.
 #show moleculeMZ/2.
 
 %* Expected output
