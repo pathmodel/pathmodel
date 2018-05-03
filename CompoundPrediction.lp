@@ -11,8 +11,11 @@ It uses the reaction name and the metabolite use to infer the new metabolite.
 import clingo
 import hashlib
 
-def name_metabolite(x, y):
-	name = str(x) + str(y)
+def name_metabolite(reactant_name, reaction_name, domain_reference):
+	"""
+	Rename new metabolite infered.
+	"""
+	name = str(reactant_name) + str(reaction_name) + str(domain_reference)
 	hash_name = str(int(hashlib.sha1(name).hexdigest(), 16) % (10 ** 8))
 	r = "Prediction_" + str(hash_name)
 	return r
@@ -119,7 +122,7 @@ metabolite(MoleculeName):- component(MoleculeName,_,_).
 % First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
 % A known reaction is used to infer a new reaction between a known molecule and a new molecule.
 
-newmetaboliteName(@name_metabolite(ReactantInfered, Reaction),ReactantInfered, Reaction):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered);
+newmetaboliteName(@name_metabolite(ReactantInfered, Reaction, Domain),ReactantInfered, Reaction):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered);
 							% Check if the three molecules have the same domain.
 							class(ReactantInfered,Domain);class(ProductInfered,Domain);class(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
@@ -203,3 +206,4 @@ testreaction(Reaction,ReactantInfered,NewProduct):- newmetaboliteName(NewProduct
 #show newmetabolite/1.
 #show testcomponent/3.
 #show testlink/4.
+#show testreaction/3.
