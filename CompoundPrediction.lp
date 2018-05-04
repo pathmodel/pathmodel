@@ -185,10 +185,9 @@ alreadyKnownComponent(NewMoleculeName):- newmetabolite(NewMoleculeName); metabol
 												newnumberTotalLinks(NewMoleculeName,NumberTotalOfLinks); numberTotalLinks(KnownMolecule,NumberTotalOfLinksRef);
 												NumberTotalOfLinks==NumberTotalOfLinksRef;
 												% Check that all components are similar from the components of a known molecule.
-												NumberComponents{newcomponent(NewMoleculeName,AtomNumber,AtomType): component(KnownMolecule,AtomNumber,AtomType),metabolite(KnownMolecule)}NumberComponents;
+												newcomponent(NewMoleculeName,AtomNumber,AtomType): component(KnownMolecule,AtomNumber,AtomType);
 												% Check that all links are similar from the links of a known molecule.
-												NumberTotalOfLinks{newlink(NewMoleculeName, BondType, FirstAtomNumber, SecondAtomNumber): link(KnownMolecule, BondType, FirstAtomNumber, SecondAtomNumber),
-												metabolite(KnownMolecule)}NumberTotalOfLinks.
+												newlink(NewMoleculeName, BondType, FirstAtomNumber, SecondAtomNumber): link(KnownMolecule, BondType, FirstAtomNumber, SecondAtomNumber).
 
 
 % Filtering using MZ and already known metabolites.
