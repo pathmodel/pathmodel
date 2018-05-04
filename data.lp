@@ -466,29 +466,6 @@ link("palythene",simple,9,13). link("palythene",simple,8,14). link("palythene",s
 link("palythene",double,15,16). link("palythene",simple,15,17). link("palythene",simple,10,18).
 link("palythene",double,18,19). link("palythene",simple,19,24).
 
-component("MAA1",1..7,carb). component("MAA1",8,nitr). component("MAA1",9,oxyg).
-component("MAA1",10,nitr). component("MAA1",11..12,oxyg). component("MAA1",13..15,carb).
-component("MAA1",16..17,oxyg). component("MAA1",18..19,carb).
-link("MAA1",double,1,2). link("MAA1",simple,2,3). link("MAA1",simple,3,4).
-link("MAA1",simple,4,5). link("MAA1",simple,5,6). link("MAA1",simple,1,6).
-link("MAA1",simple,5,7). link("MAA1",double,3,10). link("MAA1",simple,1,8).
-link("MAA1",simple,5,12). link("MAA1",simple,7,11). link("MAA1",simple,2,9).
-link("MAA1",simple,9,13). link("MAA1",simple,8,14). link("MAA1",simple,14,15).
-link("MAA1",double,15,16). link("MAA1",simple,15,17). link("MAA1",simple,10,18).
-link("MAA1",double,18,19).
-
-component("MAA2",1..7,carb). component("MAA2",8,nitr). component("MAA2",9,oxyg).
-component("MAA2",10,nitr). component("MAA2",11..12,oxyg). component("MAA2",13..15,carb).
-component("MAA2",16..17,oxyg). component("MAA2",18..19,carb). component("MAA2",20,oxyg).
-component("MAA2",24,carb).
-link("MAA2",double,1,2). link("MAA2",simple,2,3). link("MAA2",simple,3,4).
-link("MAA2",simple,4,5). link("MAA2",simple,5,6). link("MAA2",simple,1,6).
-link("MAA2",simple,5,7). link("MAA2",double,3,10). link("MAA2",simple,1,8).
-link("MAA2",simple,5,12). link("MAA2",simple,7,11). link("MAA2",simple,2,9).
-link("MAA2",simple,9,13). link("MAA2",simple,8,14). link("MAA2",simple,14,15).
-link("MAA2",double,15,16). link("MAA2",simple,15,17). link("MAA2",simple,10,18).
-link("MAA2",simple,18,19). link("MAA2",simple,19,20). link("MAA2",simple,19,24).
-
 %* Known reactions
 %%%%%%%%%%%%%%%%%%%
 reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound 2 , Active site atom number], Resulting compound)
@@ -553,5 +530,10 @@ need_reaction(dehydration, "porphyra-334", before, 18, 20).
 
 need_reaction(decarboxylation, "z-palythenic acid", before, 18, 23).
 
+mzfiltering(2702720).
+mzfiltering(3023117).
+
+source("cycloartenol").
+
 init(pathway("cycloartenol","cholesterol")).
-goal(pathway("31-norcycloartenol","cholesterol")).
+goal(pathway("cycloartenol","7-dehydrocholesterol")).
