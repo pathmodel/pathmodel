@@ -91,3 +91,6 @@ ENV/
 
 # Data directories
 .vscode
+
+# Pytest directories
+.pytest_cache
