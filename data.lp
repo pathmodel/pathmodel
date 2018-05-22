@@ -102,18 +102,18 @@ link("4α-methyl-5α-cholest-7-en-3β-ol",simpleR,17,20). link("4α-methyl-5α-c
 link("4α-methyl-5α-cholest-7-en-3β-ol",simple,22,23). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,23,24). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,24,25).
 link("4α-methyl-5α-cholest-7-en-3β-ol",simple,25,26). link("4α-methyl-5α-cholest-7-en-3β-ol",simple,25,27).
 
-component("cholesta-7-en-3β-ol",1..27,carb). component("cholesta-7-en-3β-ol",31,oxyg).
-link("cholesta-7-en-3β-ol",simple,1,2). link("cholesta-7-en-3β-ol",simple,1,10). link("cholesta-7-en-3β-ol",simple,2,3).
-link("cholesta-7-en-3β-ol",simple,3,4). link("cholesta-7-en-3β-ol",simpleR,3,31). link("cholesta-7-en-3β-ol",simple,4,5).
-link("cholesta-7-en-3β-ol",simple,5,6). link("cholesta-7-en-3β-ol",simple,5,10). link("cholesta-7-en-3β-ol",simple,6,7).
-link("cholesta-7-en-3β-ol",double,7,8). link("cholesta-7-en-3β-ol",simple,8,9). link("cholesta-7-en-3β-ol",simple,8,14).
-link("cholesta-7-en-3β-ol",simple,9,10). link("cholesta-7-en-3β-ol",simple,9,11). link("cholesta-7-en-3β-ol",simpleR,10,19).
-link("cholesta-7-en-3β-ol",simple,11,12). link("cholesta-7-en-3β-ol",simple,12,13). link("cholesta-7-en-3β-ol",simple,13,14).
-link("cholesta-7-en-3β-ol",simple,14,15). link("cholesta-7-en-3β-ol",simple,15,16). link("cholesta-7-en-3β-ol",simple,16,17).
-link("cholesta-7-en-3β-ol",simple,13,17). link("cholesta-7-en-3β-ol",simpleR,13,18). link("cholesta-7-en-3β-ol",simpleR,17,20).
-link("cholesta-7-en-3β-ol",simpleS,20,21). link("cholesta-7-en-3β-ol",simple,20,22). link("cholesta-7-en-3β-ol",simple,22,23).
-link("cholesta-7-en-3β-ol",simple,23,24). link("cholesta-7-en-3β-ol",simple,24,25). link("cholesta-7-en-3β-ol",simple,25,26).
-link("cholesta-7-en-3β-ol",simple,25,27).
+component("lathosterol",1..27,carb). component("lathosterol",31,oxyg).
+link("lathosterol",simple,1,2). link("lathosterol",simple,1,10). link("lathosterol",simple,2,3).
+link("lathosterol",simple,3,4). link("lathosterol",simpleR,3,31). link("lathosterol",simple,4,5).
+link("lathosterol",simple,5,6). link("lathosterol",simple,5,10). link("lathosterol",simple,6,7).
+link("lathosterol",double,7,8). link("lathosterol",simple,8,9). link("lathosterol",simple,8,14).
+link("lathosterol",simple,9,10). link("lathosterol",simple,9,11). link("lathosterol",simpleR,10,19).
+link("lathosterol",simple,11,12). link("lathosterol",simple,12,13). link("lathosterol",simple,13,14).
+link("lathosterol",simple,14,15). link("lathosterol",simple,15,16). link("lathosterol",simple,16,17).
+link("lathosterol",simple,13,17). link("lathosterol",simpleR,13,18). link("lathosterol",simpleR,17,20).
+link("lathosterol",simpleS,20,21). link("lathosterol",simple,20,22). link("lathosterol",simple,22,23).
+link("lathosterol",simple,23,24). link("lathosterol",simple,24,25). link("lathosterol",simple,25,26).
+link("lathosterol",simple,25,27).
 
 component("sitosterol",1..27,carb). component("sitosterol",241..242,carb). component("sitosterol",31,oxyg).
 link("sitosterol",simple,1,2). link("sitosterol",simple,1,10). link("sitosterol",simple,2,3).
@@ -326,19 +326,6 @@ link("5α-cholesta-7,24-dienol",simpleS,20,21). link("5α-cholesta-7,24-dienol",
 link("5α-cholesta-7,24-dienol",simple,23,24). link("5α-cholesta-7,24-dienol",double,24,25). link("5α-cholesta-7,24-dienol",simple,25,26).
 link("5α-cholesta-7,24-dienol",simple,25,27).
 
-component("lathosterol",1..27,carb). component("lathosterol",31,oxyg).
-link("lathosterol",simple,1,2). link("lathosterol",simple,1,10). link("lathosterol",simple,2,3).
-link("lathosterol",simple,3,4). link("lathosterol",simpleR,3,31). link("lathosterol",simple,4,5).
-link("lathosterol",simple,5,6). link("lathosterol",simple,5,10). link("lathosterol",simple,6,7).
-link("lathosterol",double,7,8). link("lathosterol",simple,8,9). link("lathosterol",simple,8,14).
-link("lathosterol",simple,9,10). link("lathosterol",simple,9,11). link("lathosterol",simpleR,10,19).
-link("lathosterol",simple,11,12). link("lathosterol",simple,12,13). link("lathosterol",simple,13,14).
-link("lathosterol",simple,14,15). link("lathosterol",simple,15,16). link("lathosterol",simple,16,17).
-link("lathosterol",simple,13,17). link("lathosterol",simpleR,13,18). link("lathosterol",simpleR,17,20).
-link("lathosterol",simpleS,20,21). link("lathosterol",simple,20,22). link("lathosterol",simple,22,23).
-link("lathosterol",simple,23,24). link("lathosterol",simple,24,25). link("lathosterol",simple,25,26).
-link("lathosterol",simple,25,27).
-
 % Amino acids
 
 component("glycine",1..2,carb). component("glycine",3..4,oxyg). component("glycine",5,nitr). 
@@ -487,9 +474,9 @@ reaction(c14_reduction, "4α-methylcholesta-8,14-dien-3β-ol", "4α-methyl-24(25
 
 reaction(c8_isomerase, "4α-methyl-24(25)-dihydrozymosterol", "4α-methyl-5α-cholest-7-en-3β-ol").
 
-reaction(c4_c28_demethylation, "4α-methyl-5α-cholest-7-en-3β-ol", "cholesta-7-en-3β-ol").
+reaction(c4_c28_demethylation, "4α-methyl-5α-cholest-7-en-3β-ol", "lathosterol").
 
-reaction(c5_desaturation, "cholesta-7-en-3β-ol", "7-dehydrocholesterol").
+reaction(c5_desaturation, "lathosterol", "7-dehydrocholesterol").
 
 % delta7reduction of 7-dehydrocholesterol gives cholesterol
 reaction(delta7reduction, "7-dehydrocholesterol", "cholesterol").
@@ -536,4 +523,4 @@ mzfiltering(3023117).
 source("cycloartenol").
 
 init(pathway("cycloartenol","cholesterol")).
-goal(pathway("cycloartenol","7-dehydrocholesterol")).
+goal(pathway("cycloartenol","5a-cholesta-7,24-dienol")).
