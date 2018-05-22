@@ -300,31 +300,31 @@ link("4α-methylzymosterol",simpleR,17,20). link("4α-methylzymosterol",simpleS,
 link("4α-methylzymosterol",simple,22,23). link("4α-methylzymosterol",simple,23,24). link("4α-methylzymosterol",double,24,25).
 link("4α-methylzymosterol",simple,25,26). link("4α-methylzymosterol",simple,25,27).
 
-component("zymosterol",1..27,carb). component("zymosterol",31,oxyg).
-link("zymosterol",simple,1,2). link("zymosterol",simple,1,10). link("zymosterol",simple,2,3).
-link("zymosterol",simple,3,4). link("zymosterol",simpleR,3,31). link("zymosterol",simple,4,5).
-link("zymosterol",simple,5,6). link("zymosterol",simple,5,10). link("zymosterol",simple,6,7).
-link("zymosterol",simple,7,8). link("zymosterol",double,8,9). link("zymosterol",simple,8,14).
-link("zymosterol",simple,9,10). link("zymosterol",simple,9,11). link("zymosterol",simpleR,10,19).
-link("zymosterol",simple,11,12). link("zymosterol",simple,12,13). link("zymosterol",simple,13,14).
-link("zymosterol",simple,14,15). link("zymosterol",simple,15,16). link("zymosterol",simple,16,17).
-link("zymosterol",simple,13,17). link("zymosterol",simpleR,13,18). link("zymosterol",simpleR,17,20).
-link("zymosterol",simpleS,20,21). link("zymosterol",simple,20,22). link("zymosterol",simple,22,23).
-link("zymosterol",simple,23,24). link("zymosterol",double,24,25). link("zymosterol",simple,25,26).
-link("zymosterol",simple,25,27).
+component("4α-methyl-5α-cholesta-7,24-dienol",1..28,carb). component("4α-methyl-5α-cholesta-7,24-dienol",31,oxyg).
+link("4α-methyl-5α-cholesta-7,24-dienol",simple,1,2). link("4α-methyl-5α-cholesta-7,24-dienol",simple,1,10). link("4α-methyl-5α-cholesta-7,24-dienol",simple,2,3).
+link("4α-methyl-5α-cholesta-7,24-dienol",simple,3,4). link("4α-methyl-5α-cholesta-7,24-dienol",simpleR,3,31). link("4α-methyl-5α-cholesta-7,24-dienol",simple,4,5).
+link("4α-methyl-5α-cholesta-7,24-dienol",simpleS,4,28). link("4α-methyl-5α-cholesta-7,24-dienol",simple,5,6). link("4α-methyl-5α-cholesta-7,24-dienol",simple,5,10).
+link("4α-methyl-5α-cholesta-7,24-dienol",simple,6,7). link("4α-methyl-5α-cholesta-7,24-dienol",double,7,8). link("4α-methyl-5α-cholesta-7,24-dienol",simple,8,9).
+link("4α-methyl-5α-cholesta-7,24-dienol",simple,8,14). link("4α-methyl-5α-cholesta-7,24-dienol",simple,9,10). link("4α-methyl-5α-cholesta-7,24-dienol",simple,9,11).
+link("4α-methyl-5α-cholesta-7,24-dienol",simpleR,10,19). link("4α-methyl-5α-cholesta-7,24-dienol",simple,11,12). link("4α-methyl-5α-cholesta-7,24-dienol",simple,12,13).
+link("4α-methyl-5α-cholesta-7,24-dienol",simple,13,14). link("4α-methyl-5α-cholesta-7,24-dienol",simple,14,15). link("4α-methyl-5α-cholesta-7,24-dienol",simple,15,16).
+link("4α-methyl-5α-cholesta-7,24-dienol",simple,16,17). link("4α-methyl-5α-cholesta-7,24-dienol",simple,13,17). link("4α-methyl-5α-cholesta-7,24-dienol",simpleR,13,18).
+link("4α-methyl-5α-cholesta-7,24-dienol",simpleR,17,20). link("4α-methyl-5α-cholesta-7,24-dienol",simpleS,20,21). link("4α-methyl-5α-cholesta-7,24-dienol",simple,20,22).
+link("4α-methyl-5α-cholesta-7,24-dienol",simple,22,23). link("4α-methyl-5α-cholesta-7,24-dienol",simple,23,24). link("4α-methyl-5α-cholesta-7,24-dienol",double,24,25).
+link("4α-methyl-5α-cholesta-7,24-dienol",simple,25,26). link("4α-methyl-5α-cholesta-7,24-dienol",simple,25,27).
 
-component("cholesta-7,24-dienol",1..27,carb). component("cholesta-7,24-dienol",31,oxyg).
-link("cholesta-7,24-dienol",simple,1,2). link("cholesta-7,24-dienol",simple,1,10). link("cholesta-7,24-dienol",simple,2,3).
-link("cholesta-7,24-dienol",simple,3,4). link("cholesta-7,24-dienol",simpleR,3,31). link("cholesta-7,24-dienol",simple,4,5).
-link("cholesta-7,24-dienol",simple,5,6). link("cholesta-7,24-dienol",simple,5,10). link("cholesta-7,24-dienol",simple,6,7).
-link("cholesta-7,24-dienol",double,7,8). link("cholesta-7,24-dienol",simple,8,9). link("cholesta-7,24-dienol",simple,8,14).
-link("cholesta-7,24-dienol",simple,9,10). link("cholesta-7,24-dienol",simple,9,11). link("cholesta-7,24-dienol",simpleR,10,19).
-link("cholesta-7,24-dienol",simple,11,12). link("cholesta-7,24-dienol",simple,12,13). link("cholesta-7,24-dienol",simple,13,14).
-link("cholesta-7,24-dienol",simple,14,15). link("cholesta-7,24-dienol",simple,15,16). link("cholesta-7,24-dienol",simple,16,17).
-link("cholesta-7,24-dienol",simple,13,17). link("cholesta-7,24-dienol",simpleR,13,18). link("cholesta-7,24-dienol",simpleR,17,20).
-link("cholesta-7,24-dienol",simpleS,20,21). link("cholesta-7,24-dienol",simple,20,22). link("cholesta-7,24-dienol",simple,22,23).
-link("cholesta-7,24-dienol",simple,23,24). link("cholesta-7,24-dienol",double,24,25). link("cholesta-7,24-dienol",simple,25,26).
-link("cholesta-7,24-dienol",simple,25,27).
+component("5α-cholesta-7,24-dienol",1..27,carb). component("5α-cholesta-7,24-dienol",31,oxyg).
+link("5α-cholesta-7,24-dienol",simple,1,2). link("5α-cholesta-7,24-dienol",simple,1,10). link("5α-cholesta-7,24-dienol",simple,2,3).
+link("5α-cholesta-7,24-dienol",simple,3,4). link("5α-cholesta-7,24-dienol",simpleR,3,31). link("5α-cholesta-7,24-dienol",simple,4,5).
+link("5α-cholesta-7,24-dienol",simple,5,6). link("5α-cholesta-7,24-dienol",simple,5,10). link("5α-cholesta-7,24-dienol",simple,6,7).
+link("5α-cholesta-7,24-dienol",double,7,8). link("5α-cholesta-7,24-dienol",simple,8,9). link("5α-cholesta-7,24-dienol",simple,8,14).
+link("5α-cholesta-7,24-dienol",simple,9,10). link("5α-cholesta-7,24-dienol",simple,9,11). link("5α-cholesta-7,24-dienol",simpleR,10,19).
+link("5α-cholesta-7,24-dienol",simple,11,12). link("5α-cholesta-7,24-dienol",simple,12,13). link("5α-cholesta-7,24-dienol",simple,13,14).
+link("5α-cholesta-7,24-dienol",simple,14,15). link("5α-cholesta-7,24-dienol",simple,15,16). link("5α-cholesta-7,24-dienol",simple,16,17).
+link("5α-cholesta-7,24-dienol",simple,13,17). link("5α-cholesta-7,24-dienol",simpleR,13,18). link("5α-cholesta-7,24-dienol",simpleR,17,20).
+link("5α-cholesta-7,24-dienol",simpleS,20,21). link("5α-cholesta-7,24-dienol",simple,20,22). link("5α-cholesta-7,24-dienol",simple,22,23).
+link("5α-cholesta-7,24-dienol",simple,23,24). link("5α-cholesta-7,24-dienol",double,24,25). link("5α-cholesta-7,24-dienol",simple,25,26).
+link("5α-cholesta-7,24-dienol",simple,25,27).
 
 component("lathosterol",1..27,carb). component("lathosterol",31,oxyg).
 link("lathosterol",simple,1,2). link("lathosterol",simple,1,10). link("lathosterol",simple,2,3).
@@ -473,7 +473,7 @@ reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound
 
 % Known reactions in Chondrus (inferred from other organisms)
 
-% Early SSR pathway intervention (omato-like)
+% Early SSR pathway intervention (tomato-like)
 
 reaction(delta24_25_reduction, "cycloartenol", "cycloartanol").
 
