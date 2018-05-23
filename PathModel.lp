@@ -185,14 +185,15 @@ reached(MoleculeName, t):- source(MoleculeName).
 % Create metabolite, link, component and reaction of the infered metabolite.
 metabolite(NewMoleculeName):- testmetabolite(NewMoleculeName, t-1).
 
-component(MoleculeName,AtomNumber,AtomType):- testmetabolite(MoleculeName, t-1),newcomponent(MoleculeName,AtomNumber,AtomType).
+component(MoleculeName,AtomNumber,AtomType):- testmetabolite(MoleculeName, t-1), newcomponent(MoleculeName,AtomNumber,AtomType).
 
-link(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t-1),newlink(MoleculeName,BondType,FirstAtom,SecondAtom).
+link(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t-1), newlink(MoleculeName,BondType,FirstAtom,SecondAtom).
 
 reaction(Reaction,ReactantInfered,NewProduct):- newreaction(Reaction,ReactantInfered,NewProduct), reached(NewProduct, t-1).
 
 infered(pathway(Molecule1,Molecule2), t):- reaction(ReactionName,Molecule1,Molecule2), reached(Molecule2, t-1).
-infered(pathway(Molecule1,ProductInfered), t):- reaction(ReactionName,Molecule2,ProductInfered), reached(ProductInfered, t-1),infered(pathway(Molecule1,Molecule2), t-1).
+infered(pathway(Molecule1,ProductInfered), t):- reaction(ReactionName,Molecule2,ProductInfered), reached(ProductInfered, t-1), infered(pathway(Molecule1,Molecule2), t-1).
+
 %*
 solution(M1,M2,t):- infered(pathway(M1, M2),t).
 solution(M1,M3,t):- infered(pathway(M2,M3),t+1), infered(pathway(M1,M2),t).
