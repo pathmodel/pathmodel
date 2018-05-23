@@ -522,5 +522,5 @@ mzfiltering(3023117).
 
 source("cycloartenol").
 
-init(pathway("cycloartenol","cholesterol")).
-goal(pathway("cycloartenol","5a-cholesta-7,24-dienol")).
+init(pathway("cycloartenol","lathosterol")).
+goal(pathway("31-norcycloartenol","lathosterol")).
