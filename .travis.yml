@@ -27,7 +27,7 @@ install:
 
 # Run tests with coverage
 script:
-  - coverage run -m unittest discover
+  - coverage run test/test_wrapping_PathModel.py
 
 after_success:
 - coveralls

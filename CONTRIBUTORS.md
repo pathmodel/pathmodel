@@ -1,3 +1,5 @@
-Arnaud Belcour
-Gabriel Markov
-Jacques Nicolas
+# Contributors (sorted alphabetically by last name)
+
+* Arnaud Belcour
+* Gabriel Markov
+* Jacques Nicolas
