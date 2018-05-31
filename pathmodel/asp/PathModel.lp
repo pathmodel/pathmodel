@@ -32,68 +32,68 @@ valence(Atom type, Number of valence)
 *%
 valence(carb, 4). valence(nitr, 3). valence(oxyg, 2).
 
-%atom provides the atom numbers in a compound
-atom(MoleculeName, AtomNumber):- component(MoleculeName, AtomNumber, _). 
+%atomNumber provides the atom numbers in a compound
+atomNumber(MoleculeName, AtomNumber):- atom(MoleculeName, AtomNumber, _). 
 
 % A side chain in a compound M is a maximal suite of carbons starting from atom number 1. It ends at atom number End
-sidechain(M,1,End):-  component(M,End,carb); component(M,End+1,A); A!=carb; component(M,X,carb):X=1..End.
-%sidechain(M,Start1+1,End):-  component(M,End,carb), component(M,End+1,A), A!=carb, 
-%	component(M,Start1,B), B!=carb, Start1>0, component(M,X,carb): X=Start1+1..End-1.
+sidechain(M,1,End):-  atom(M,End,carb); atom(M,End+1,A); A!=carb; atom(M,X,carb):X=1..End.
+%sidechain(M,Start1+1,End):-  atom(M,End,carb), atom(M,End+1,A), A!=carb, 
+%	atom(M,Start1,B), B!=carb, Start1>0, atom(M,X,carb): X=Start1+1..End-1.
 
 %*
 Definition of domain
-class(MoleculeName, DomainName)
+domain(MoleculeName, DomainName)
 
 Definition of sterane
 Based on the wikipedia structure: https://fr.wikipedia.org/wiki/St%C3%A9rane#/media/File:Steran_num_ABCD.svg
 One exception the bound between carbone 7 and carbone 8 has variable for the bond type to include the 7-dehydrocholesterol
 because of the double bond instead of the simple.
 *%
-class(MoleculeName, sterane) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,carb),
-									component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,carb), component(MoleculeName,Atome6,carb),
-									component(MoleculeName,Atome7,carb), component(MoleculeName,Atome8,carb), component(MoleculeName,Atome9,carb),
-									component(MoleculeName,Atome10,carb), component(MoleculeName,Atome11,carb), component(MoleculeName,Atome12,carb),
-									component(MoleculeName,Atome13,carb), component(MoleculeName,Atome14,carb), component(MoleculeName,Atome15,carb),
-									component(MoleculeName,Atome16,carb), component(MoleculeName,Atome17,carb),
-									link(MoleculeName,BondType1,Atome1,Atome2), link(MoleculeName,BondType8,Atome1,Atome10), link(MoleculeName,BondType15,Atome2,Atome3),
-									link(MoleculeName,BondType2,Atome3,Atome4), link(MoleculeName,BondType9,Atome4,Atome5), link(MoleculeName,BondType16,Atome5,Atome6),
-									link(MoleculeName,BondType3,Atome5,Atome10), link(MoleculeName,BondType10,Atome6,Atome7), link(MoleculeName,BondType17,Atome7,Atome8),
-									link(MoleculeName,BondType4,Atome8,Atome9), link(MoleculeName,BondType11,Atome8,Atome14), link(MoleculeName,BondType18,Atome9,Atome10),
-									link(MoleculeName,BondType5,Atome9,Atome11), link(MoleculeName,BondType12,Atome11,Atome12), link(MoleculeName,BondType19,Atome12,Atome13),
-									link(MoleculeName,BondType6,Atome13,Atome14), link(MoleculeName,BondType13,Atome13,Atome17), link(MoleculeName,BondType20,Atome14,Atome15),
-									link(MoleculeName,BondType7,Atome15,Atome16), link(MoleculeName,BondType14,Atome16,Atome17).
+domain(MoleculeName, sterane) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,carb),
+									atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,carb), atom(MoleculeName,Atome6,carb),
+									atom(MoleculeName,Atome7,carb), atom(MoleculeName,Atome8,carb), atom(MoleculeName,Atome9,carb),
+									atom(MoleculeName,Atome10,carb), atom(MoleculeName,Atome11,carb), atom(MoleculeName,Atome12,carb),
+									atom(MoleculeName,Atome13,carb), atom(MoleculeName,Atome14,carb), atom(MoleculeName,Atome15,carb),
+									atom(MoleculeName,Atome16,carb), atom(MoleculeName,Atome17,carb),
+									bond(MoleculeName,BondType1,Atome1,Atome2), bond(MoleculeName,BondType8,Atome1,Atome10), bond(MoleculeName,BondType15,Atome2,Atome3),
+									bond(MoleculeName,BondType2,Atome3,Atome4), bond(MoleculeName,BondType9,Atome4,Atome5), bond(MoleculeName,BondType16,Atome5,Atome6),
+									bond(MoleculeName,BondType3,Atome5,Atome10), bond(MoleculeName,BondType10,Atome6,Atome7), bond(MoleculeName,BondType17,Atome7,Atome8),
+									bond(MoleculeName,BondType4,Atome8,Atome9), bond(MoleculeName,BondType11,Atome8,Atome14), bond(MoleculeName,BondType18,Atome9,Atome10),
+									bond(MoleculeName,BondType5,Atome9,Atome11), bond(MoleculeName,BondType12,Atome11,Atome12), bond(MoleculeName,BondType19,Atome12,Atome13),
+									bond(MoleculeName,BondType6,Atome13,Atome14), bond(MoleculeName,BondType13,Atome13,Atome17), bond(MoleculeName,BondType20,Atome14,Atome15),
+									bond(MoleculeName,BondType7,Atome15,Atome16), bond(MoleculeName,BondType14,Atome16,Atome17).
 
 % Definition of a cyclohexene
-class(MoleculeName, cyclohexene) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,carb),
-									component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,carb), component(MoleculeName,Atome6,carb),
-									link(MoleculeName,double,Atome1,Atome2), link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome3,Atome4),
-									link(MoleculeName,simple,Atome4,Atome5), link(MoleculeName,simple,Atome5,Atome6), link(MoleculeName,simple,Atome1,Atome6).
+domain(MoleculeName, cyclohexene) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,carb),
+									atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,carb), atom(MoleculeName,Atome6,carb),
+									bond(MoleculeName,double,Atome1,Atome2), bond(MoleculeName,simple,Atome2,Atome3), bond(MoleculeName,simple,Atome3,Atome4),
+									bond(MoleculeName,simple,Atome4,Atome5), bond(MoleculeName,simple,Atome5,Atome6), bond(MoleculeName,simple,Atome1,Atome6).
 
-class(MoleculeName, glycine, Atome5) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
-								component(MoleculeName,Atome4,oxyg), component(MoleculeName,Atome5,nitr),
-								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,double,Atome2,Atome4),
-								link(MoleculeName,simple,Atome5,Atome1), not class(MoleculeName, threonine, Atome5), not class(MoleculeName, serine, Atome5).
-
-
-class(MoleculeName, threonine, Atome7) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
-								component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,oxyg), component(MoleculeName,Atome6,oxyg),
-								component(MoleculeName,Atome7,nitr), component(MoleculeName,Atome8,carb),
-								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome2,Atome8),
-								link(MoleculeName,simple,Atome1,Atome4),
-								link(MoleculeName,double,Atome4,Atome5), link(MoleculeName,simple,Atome4,Atome6), link(MoleculeName,simple,Atome7,Atome1).
+domain(MoleculeName, glycine, Atome5) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
+								atom(MoleculeName,Atome4,oxyg), atom(MoleculeName,Atome5,nitr),
+								bond(MoleculeName,simple,Atome1,Atome2),  bond(MoleculeName,simple,Atome2,Atome3), bond(MoleculeName,double,Atome2,Atome4),
+								bond(MoleculeName,simple,Atome5,Atome1), not domain(MoleculeName, threonine, Atome5), not domain(MoleculeName, serine, Atome5).
 
 
-class(MoleculeName, serine, Atome7) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
-								component(MoleculeName,Atome4,carb), component(MoleculeName,Atome5,oxyg), component(MoleculeName,Atome6,oxyg),
-								component(MoleculeName,Atome7,nitr),
-								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome1,Atome4),
-								link(MoleculeName,double,Atome4,Atome5), link(MoleculeName,simple,Atome4,Atome6), link(MoleculeName,simple,Atome7,Atome1),
-								Atome2 != Atome4, not class(MoleculeName, threonine, Atome7).
+domain(MoleculeName, threonine, Atome7) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
+								atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,oxyg), atom(MoleculeName,Atome6,oxyg),
+								atom(MoleculeName,Atome7,nitr), atom(MoleculeName,Atome8,carb),
+								bond(MoleculeName,simple,Atome1,Atome2),  bond(MoleculeName,simple,Atome2,Atome3), bond(MoleculeName,simple,Atome2,Atome8),
+								bond(MoleculeName,simple,Atome1,Atome4),
+								bond(MoleculeName,double,Atome4,Atome5), bond(MoleculeName,simple,Atome4,Atome6), bond(MoleculeName,simple,Atome7,Atome1).
 
-class(MoleculeName, ethanolamine, Atome7) :- component(MoleculeName,Atome1,carb), component(MoleculeName,Atome2,carb), component(MoleculeName,Atome3,oxyg),
-								component(MoleculeName,Atome7,nitr),
-								link(MoleculeName,simple,Atome1,Atome2),  link(MoleculeName,simple,Atome2,Atome3), link(MoleculeName,simple,Atome7,Atome1),
-								not class(MoleculeName, threonine, Atome7), not class(MoleculeName, serine, Atome7), not class(MoleculeName, glycine, Atome7).
+
+domain(MoleculeName, serine, Atome7) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
+								atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,oxyg), atom(MoleculeName,Atome6,oxyg),
+								atom(MoleculeName,Atome7,nitr),
+								bond(MoleculeName,simple,Atome1,Atome2),  bond(MoleculeName,simple,Atome2,Atome3), bond(MoleculeName,simple,Atome1,Atome4),
+								bond(MoleculeName,double,Atome4,Atome5), bond(MoleculeName,simple,Atome4,Atome6), bond(MoleculeName,simple,Atome7,Atome1),
+								Atome2 != Atome4, not domain(MoleculeName, threonine, Atome7).
+
+domain(MoleculeName, ethanolamine, Atome7) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
+								atom(MoleculeName,Atome7,nitr),
+								bond(MoleculeName,simple,Atome1,Atome2),  bond(MoleculeName,simple,Atome2,Atome3), bond(MoleculeName,simple,Atome7,Atome1),
+								not domain(MoleculeName, threonine, Atome7), not domain(MoleculeName, serine, Atome7), not domain(MoleculeName, glycine, Atome7).
 
 %* Definition of atomic masses
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,39 +102,39 @@ class(MoleculeName, ethanolamine, Atome7) :- component(MoleculeName,Atome1,carb)
 %*
 m_hydr = 1.0074, m_carb = 12.0107,  m_oxyg = 15.9994 ,  m_nitr=14.0067.
 *%
-%énumérer les liens de chaque atome C,N,O, et de rajouter autant de H pour que nb_H = valence (atome) - nb_link(atome), sachant que valence(oxyg)=2, valence(nitr)=3 et valence(carb)=4.
+%énumérer les liens de chaque atome C,N,O, et de rajouter autant de H pour que nb_H = valence (atome) - nb_bond(atome), sachant que valence(oxyg)=2, valence(nitr)=3 et valence(carb)=4.
 
 %*
 mz(newcompound)=nb_carb(newcompound) x m_carb + nb_oxyg(newcompound) x m_oxyg + nb_nitr(newcompound) x m_nitr + nb_hydr(newcompound) x m_hydr
 *%
 
 % M/Q Ratio
-% numberBonds provides the number of link for each atom.
+% numberBonds provides the number of bond for each atom.
 % numberBonds(Molecule's name, Atom Number, Number of bonds for the corresponding atom number)
-numberBonds(MoleculeName, AtomNumber, NumberOfBonds) :-  NumberOfBonds=#sum{2, SecondAtomNumber: link(MoleculeName, double, AtomNumber, SecondAtomNumber);
-																2, SecondAtomNumber: link(MoleculeName, double, SecondAtomNumber, AtomNumber);
-																1, SecondAtomNumber: link(MoleculeName, BoundType, AtomNumber, SecondAtomNumber), BoundType != double;
-																1, SecondAtomNumber: link(MoleculeName, BoundType, SecondAtomNumber, AtomNumber), BoundType != double}; atom(MoleculeName, AtomNumber).
+numberBonds(MoleculeName, AtomNumber, NumberOfBonds) :-  NumberOfBonds=#sum{2, SecondAtomNumber: bond(MoleculeName, double, AtomNumber, SecondAtomNumber);
+																2, SecondAtomNumber: bond(MoleculeName, double, SecondAtomNumber, AtomNumber);
+																1, SecondAtomNumber: bond(MoleculeName, BoundType, AtomNumber, SecondAtomNumber), BoundType != double;
+																1, SecondAtomNumber: bond(MoleculeName, BoundType, SecondAtomNumber, AtomNumber), BoundType != double}; atomNumber(MoleculeName, AtomNumber).
 																
 % numberHydrogens provides the number of hydrogens associated with each atoms.
 % numberHydrogens(MoleculeName, AtomNumber, number of Hydrogen bonded with the atom)
-numberHydrogens(MoleculeName, AtomNumber, ValenceNumber - NumberOfBonds) :- numberBonds(MoleculeName, AtomNumber, NumberOfBonds), component(MoleculeName, AtomNumber, AtomeType), valence(AtomeType, ValenceNumber).
+numberHydrogens(MoleculeName, AtomNumber, ValenceNumber - NumberOfBonds) :- numberBonds(MoleculeName, AtomNumber, NumberOfBonds), atom(MoleculeName, AtomNumber, AtomeType), valence(AtomeType, ValenceNumber).
 
 % moleculeComposition shows the number of Carbon, Hydrogen, Oxygen and Nitrogen in the molecule.
 % moleculeComposition(MoleculeName, Number of Carbon, Number of Hydrogen, Number of Oxygen, Number of Nitrogen)
 moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen) :- NumberHydrogen=#sum{NumberHydrogenAtom, AtomNumber: numberHydrogens(MoleculeName, AtomNumber, NumberHydrogenAtom)},
-													NumberCarbon=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , oxyg)},
-													NumberNitrogen=#sum{1, AtomNumber: component(MoleculeName, AtomNumber , nitr)}, atom(MoleculeName, AtomeNumber).
+													NumberCarbon=#sum{1, AtomNumber: atom(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: atom(MoleculeName, AtomNumber , oxyg)},
+													NumberNitrogen=#sum{1, AtomNumber: atom(MoleculeName, AtomNumber , nitr)}, atomNumber(MoleculeName, AtomeNumber).
 
 % moleculeNbAtoms provides the total number of atoms in a compound.
 moleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
-% moleculeNbComponents provides the total number of atoms in a compound.
-moleculeNbComponents(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+% moleculeNbAtoms provides the total number of atoms in a compound.
+moleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
-% numberTotalLinks provides the number of link in a molecule.
-numberTotalLinks(MoleculeName,NumberTotalOfLinks):-  NumberTotalOfLinks=#sum{1,SecondAtomNumber : link(MoleculeName, BoundType, AtomNumber, SecondAtomNumber);
-																			1,SecondAtomNumber: link(MoleculeName, BoundType, SecondAtomNumber, AtomNumber)}; metabolite(MoleculeName).
+% numberTotalBonds provides the number of bond in a molecule.
+numberTotalBonds(MoleculeName,NumberTotalOfBonds):-  NumberTotalOfBonds=#sum{1,SecondAtomNumber : bond(MoleculeName, BoundType, AtomNumber, SecondAtomNumber);
+																			1,SecondAtomNumber: bond(MoleculeName, BoundType, SecondAtomNumber, AtomNumber)}; metabolite(MoleculeName).
 
 % moleculeMZ computes the M/Q ratio for each molecule.
 % moleculeMZ(MoleculeName, M/Q ratio*10000)
@@ -153,8 +153,8 @@ reactiontype(TypeOfReaction):- reaction(TypeOfReaction,_,_,_,_,_).
 reactionType(TypeOfReaction):- reaction(TypeOfReaction,_,_).
 output_metabolite(M):- reaction(_,_,_,_,_,M).
 output_metabolite(MoleculeName):- reaction(_,_,MoleculeName).
-input_metabolite(MoleculeName):- component(MoleculeName,_,_); not output_metabolite(MoleculeName).
-metabolite(MoleculeName):- component(MoleculeName,_,_).
+input_metabolite(MoleculeName):- atom(MoleculeName,_,_); not output_metabolite(MoleculeName).
+metabolite(MoleculeName):- atom(MoleculeName,_,_).
 
 #program step(t).
 
@@ -162,15 +162,15 @@ metabolite(MoleculeName):- component(MoleculeName,_,_).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
 %*
-difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,direct):- link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber),
-					not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="z-palythenic acid", MoleculeName2="palythene".
-difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,reverse):- link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
-					not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="z-palythenic acid", MoleculeName2="palythene".
+difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,direct):- bond(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber),
+					not bond(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="z-palythenic acid", MoleculeName2="palythene".
+difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,reverse):- bond(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
+					not bond(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="z-palythenic acid", MoleculeName2="palythene".
 
-difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,direct):- link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber),
-					not link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="4α-methylcholest-8(9),14,24,trien-3β-ol", MoleculeName2="4α-methylzymosterol".
-difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,reverse):- link(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
-					not link(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="4α-methylcholest-8(9),14,24,trien-3β-ol", MoleculeName2="4α-methylzymosterol".
+difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,direct):- bond(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber),
+					not bond(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="4α-methylcholest-8(9),14,24,trien-3β-ol", MoleculeName2="4α-methylzymosterol".
+difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,reverse):- bond(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber),
+					not bond(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber), MoleculeName1="4α-methylcholest-8(9),14,24,trien-3β-ol", MoleculeName2="4α-methylzymosterol".
 *%
 %* Browse reactions
 %%%%%%%%%%%%%%%%%%%%
@@ -184,12 +184,12 @@ reached(MoleculeName, t):- source(MoleculeName).
 
 reached(KnownPoduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownPoduct).
 
-% Create metabolite, link, component and reaction of the infered metabolite.
+% Create metabolite, bond, atom and reaction of the infered metabolite.
 metabolite(NewMoleculeName):- testmetabolite(NewMoleculeName, t-1).
 
-component(MoleculeName,AtomNumber,AtomType):- testmetabolite(MoleculeName, t-1), newcomponent(MoleculeName,AtomNumber,AtomType).
+atom(MoleculeName,AtomNumber,AtomType):- testmetabolite(MoleculeName, t-1), newatom(MoleculeName,AtomNumber,AtomType).
 
-link(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t-1), newlink(MoleculeName,BondType,FirstAtom,SecondAtom).
+bond(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t-1), newbond(MoleculeName,BondType,FirstAtom,SecondAtom).
 
 reaction(Reaction,ReactantInfered,NewProduct):- newreaction(Reaction,ReactantInfered,NewProduct), reached(NewProduct, t-1).
 
@@ -212,41 +212,41 @@ solution(M1,M3,t):- infered(pathway(M2,M3),t+1), infered(pathway(M1,M2),t).
 % First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
 % A known reaction is used to infer a new reaction between a known molecule and a new molecule.
 
-newmetaboliteName(@name_metabolite(ReactantInfered, Reaction, Domain),ReactantInfered, Reaction, Domain):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered); %source(ReactantInfered);
+newmetaboliteName(@name_metabolite(ReactantInfered, Reaction, Domain),ReactantInfered, Reaction, Domain):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered); source(ReactantInfered); not reached(ReactantInfered);
 							% Check if the three molecules have the same domain.
-							class(ReactantInfered,Domain);class(ProductInfered,Domain);class(ProductReference,Domain);
+							domain(ReactantInfered,Domain);domain(ProductInfered,Domain);domain(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
 							siteBeforeReaction(Reaction,ReactantInfered);siteBeforeReaction(Reaction,ReactantReference);siteAfterReaction(Reaction,ProductReference).
 
 newmetabolite(MoleculeName):- newmetaboliteName(MoleculeName,ReactantInfered, Reaction, Domain).
 
-% Create new metabolite components and links.
+% Create new metabolite atoms and bonds.
 
-newcomponent(MoleculeName,AtomNumber,AtomType):-component(ReactantInfered,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType),newmetaboliteName(MoleculeName,ReactantInfered, Reaction,Domain).
-newcomponent(MoleculeName,AtomNumber,AtomType):- diffAtomAfterReaction(Reaction,AtomNumber,AtomType),newmetaboliteName(MoleculeName,ReactantInfered, Reaction,Domain).
+newatom(MoleculeName,AtomNumber,AtomType):-atom(ReactantInfered,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType),newmetaboliteName(MoleculeName,ReactantInfered, Reaction,Domain).
+newatom(MoleculeName,AtomNumber,AtomType):- diffAtomAfterReaction(Reaction,AtomNumber,AtomType),newmetaboliteName(MoleculeName,ReactantInfered, Reaction,Domain).
 
-newlink(MoleculeName,BondType,FirstAtom,SecondAtom):-link(ReactantInfered,BondType,FirstAtom,SecondAtom), not diffLinkBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetaboliteName(MoleculeName,ReactantInfered,Reaction,Domain).
-newlink(MoleculeName,BondType,FirstAtom,SecondAtom):- diffLinkAfterReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetaboliteName(MoleculeName,ReactantInfered, Reaction,Domain).
+newbond(MoleculeName,BondType,FirstAtom,SecondAtom):-bond(ReactantInfered,BondType,FirstAtom,SecondAtom), not diffBondBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetaboliteName(MoleculeName,ReactantInfered,Reaction,Domain).
+newbond(MoleculeName,BondType,FirstAtom,SecondAtom):- diffBondAfterReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetaboliteName(MoleculeName,ReactantInfered, Reaction,Domain).
 
-% newatom provides the atom numbers in a compound.
-newatom(MoleculeName, AtomNumber):- newcomponent(MoleculeName, AtomNumber, _).
+% newatomNumber provides the atom numbers in a compound.
+newatomNumber(MoleculeName, AtomNumber):- newatom(MoleculeName, AtomNumber, _).
 
 % Compute MZ for new metabolite.
-newnumberBonds(MoleculeName, AtomNumber, NumberOfBonds):-  NumberOfBonds=#sum{2, SecondAtomNumber: newlink(MoleculeName, double, AtomNumber, SecondAtomNumber);
-																2, SecondAtomNumber: newlink(MoleculeName, double, SecondAtomNumber, AtomNumber);
-																1, SecondAtomNumber: newlink(MoleculeName, BoundType, AtomNumber, SecondAtomNumber), BoundType != double;
-																1, SecondAtomNumber: newlink(MoleculeName, BoundType, SecondAtomNumber, AtomNumber), BoundType != double}; newatom(MoleculeName, AtomNumber).
+newnumberBonds(MoleculeName, AtomNumber, NumberOfBonds):-  NumberOfBonds=#sum{2, SecondAtomNumber: newbond(MoleculeName, double, AtomNumber, SecondAtomNumber);
+																2, SecondAtomNumber: newbond(MoleculeName, double, SecondAtomNumber, AtomNumber);
+																1, SecondAtomNumber: newbond(MoleculeName, BoundType, AtomNumber, SecondAtomNumber), BoundType != double;
+																1, SecondAtomNumber: newbond(MoleculeName, BoundType, SecondAtomNumber, AtomNumber), BoundType != double}; newatomNumber(MoleculeName, AtomNumber).
 
 
 % numberHydrogens provides the number of hydrogens associated with each atoms.
 % numberHydrogens(MoleculeName, AtomNumber, number of Hydrogen bonded with the atom)
-newnumberHydrogens(MoleculeName, AtomNumber, ValenceNumber - NumberOfBonds) :- newnumberBonds(MoleculeName, AtomNumber, NumberOfBonds), newcomponent(MoleculeName, AtomNumber, AtomeType), valence(AtomeType, ValenceNumber).
+newnumberHydrogens(MoleculeName, AtomNumber, ValenceNumber - NumberOfBonds) :- newnumberBonds(MoleculeName, AtomNumber, NumberOfBonds), newatom(MoleculeName, AtomNumber, AtomeType), valence(AtomeType, ValenceNumber).
 
 % moleculeComposition shows the number of Carbon, Hydrogen, Oxygen and Nitrogen in the molecule.
 % moleculeComposition(MoleculeName, Number of Carbon, Number of Hydrogen, Number of Oxygen, Number of Nitrogen)
 newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen) :- NumberHydrogen=#sum{NumberHydrogenAtom, AtomNumber: newnumberHydrogens(MoleculeName, AtomNumber, NumberHydrogenAtom)},
-													NumberCarbon=#sum{1, AtomNumber: newcomponent(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: newcomponent(MoleculeName, AtomNumber , oxyg)},
-													NumberNitrogen=#sum{1, AtomNumber: newcomponent(MoleculeName, AtomNumber , nitr)}, newatom(MoleculeName, AtomeNumber).
+													NumberCarbon=#sum{1, AtomNumber: newatom(MoleculeName, AtomNumber , carb)}, NumberOxygen=#sum{1, AtomNumber: newatom(MoleculeName, AtomNumber , oxyg)},
+													NumberNitrogen=#sum{1, AtomNumber: newatom(MoleculeName, AtomNumber , nitr)}, newatomNumber(MoleculeName, AtomeNumber).
 
 %moleculeNbAtoms provides the total number of atoms in a compound
 newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):- newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
@@ -258,53 +258,53 @@ newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + 
 newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :- newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
 																					newmetabolite(MoleculeName).
 
-newmoleculeNbComponents(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
 
-newnumberTotalLinks(MoleculeName,NumberTotalOfLinks):-  NumberTotalOfLinks=#sum{1,SecondAtomNumber : newlink(MoleculeName, BoundType, AtomNumber, SecondAtomNumber);
-																			1, SecondAtomNumber: newlink(MoleculeName, BoundType, SecondAtomNumber, AtomNumber)}; newmetabolite(MoleculeName).
+newnumberTotalBonds(MoleculeName,NumberTotalOfBonds):-  NumberTotalOfBonds=#sum{1,SecondAtomNumber : newbond(MoleculeName, BoundType, AtomNumber, SecondAtomNumber);
+																			1, SecondAtomNumber: newbond(MoleculeName, BoundType, SecondAtomNumber, AtomNumber)}; newmetabolite(MoleculeName).
 
 % Check if new metabolites aren't known molecules.
-alreadyKnownComponent(NewMoleculeName):- newmetabolite(NewMoleculeName); metabolite(KnownMolecule);
-												% Check the number of components between the new metabolite and all the known molecules.
-												newmoleculeNbComponents(NewMoleculeName, NumberComponents); moleculeNbComponents(KnownMolecule, NumberComponentsRef);
-												NumberComponents==NumberComponentsRef;
-												% Check the number of links between the new metabolite and all the known molecules.
-												newnumberTotalLinks(NewMoleculeName,NumberTotalOfLinks); numberTotalLinks(KnownMolecule,NumberTotalOfLinksRef);
-												NumberTotalOfLinks==NumberTotalOfLinksRef;
-												% Check that all components are similar from the components of a known molecule.
-												newcomponent(NewMoleculeName,AtomNumber,AtomType): component(KnownMolecule,AtomNumber,AtomType);
-												% Check that all links are similar from the links of a known molecule.
-												newlink(NewMoleculeName, BondType, FirstAtomNumber, SecondAtomNumber): link(KnownMolecule, BondType, FirstAtomNumber, SecondAtomNumber).
+alreadyKnownMolecule(NewMoleculeName):- newmetabolite(NewMoleculeName); metabolite(KnownMolecule);
+												% Check the number of atoms between the new metabolite and all the known molecules.
+												newmoleculeNbAtoms(NewMoleculeName, NumberOfAtoms); moleculeNbAtoms(KnownMolecule, NumberOfAtomsInRef);
+												NumberOfAtoms==NumberOfAtomsInRef;
+												% Check the number of bonds between the new metabolite and all the known molecules.
+												newnumberTotalBonds(NewMoleculeName,NumberTotalOfBonds); numberTotalBonds(KnownMolecule,NumberTotalOfBondsRef);
+												NumberTotalOfBonds==NumberTotalOfBondsRef;
+												% Check that all atoms are similar from the atoms of a known molecule.
+												newatom(NewMoleculeName,AtomNumber,AtomType): atom(KnownMolecule,AtomNumber,AtomType);
+												% Check that all bonds are similar from the bonds of a known molecule.
+												newbond(NewMoleculeName, BondType, FirstAtomNumber, SecondAtomNumber): bond(KnownMolecule, BondType, FirstAtomNumber, SecondAtomNumber).
 
 % Filtering using MZ and already known metabolites.
 % Keep only new metabolite having the MZ required.
 testmetabolite(NewMoleculeName, t):- newmetabolite(NewMoleculeName), newmoleculeMZ(NewMoleculeName,MZFilter), mzfiltering(MZFilter),
-									not alreadyKnownComponent(NewMoleculeName),metabolite(KnownMolecule).
+									not alreadyKnownMolecule(NewMoleculeName),metabolite(KnownMolecule).
 
 % Create newreaction from infered metabolite.
 newreaction(Reaction,ReactantInfered,NewProduct):- testmetabolite(NewProduct, t-1),newmetaboliteName(NewProduct,ReactantInfered,Reaction,Domain).
 
 % Create the siteBeforeReaction for the new metabolite.
 siteBeforeReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newmetabolite(MoleculeName); testmetabolite(MoleculeName, t);
-                                                    newcomponent(MoleculeName,AtomNumber,AtomType): diffAtomBeforeReaction(ReactionType, AtomNumber, AtomType);
-			                                        newlink(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
-                                                        diffLinkBeforeReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber);
-                                                    not newlink(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
-                                                        diffLinkAfterReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber).
+                                                    newatom(MoleculeName,AtomNumber,AtomType): diffAtomBeforeReaction(ReactionType, AtomNumber, AtomType);
+			                                        newbond(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
+                                                        diffBondBeforeReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber);
+                                                    not newbond(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
+                                                        diffBondAfterReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber).
 
 % Create the siteAfterReaction for the new metabolite.
 siteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newmetabolite(MoleculeName); testmetabolite(MoleculeName, t);
-                                                    newcomponent(MoleculeName,AtomNumber,AtomType): diffAtomAfterReaction(ReactionType, AtomNumber, AtomType);
-			                                        newlink(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
-                                                        diffLinkAfterReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber);
-                                                    not newlink(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
-                                                        diffLinkBeforeReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber).
+                                                    newatom(MoleculeName,AtomNumber,AtomType): diffAtomAfterReaction(ReactionType, AtomNumber, AtomType);
+			                                        newbond(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
+                                                        diffBondAfterReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber);
+                                                    not newbond(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
+                                                        diffBondBeforeReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber).
 
 % New metabolite found by the Metabolite Inference Method can be reach.
 reached(ProductInfered, t):- testmetabolite(ProductInfered, t), not reached(ProductInfered, t-1),newmetaboliteName(ProductInfered,Reactant,Reaction,Domain).
 
 % New metabolite is associated to the domain of its reactant.
-class(ProductInfered,Domain):- testmetabolite(ProductInfered, t),newmetaboliteName(ProductInfered,Reactant,Reaction,Domain).
+domain(ProductInfered,Domain):- testmetabolite(ProductInfered, t),newmetaboliteName(ProductInfered,Reactant,Reaction,Domain).
 
 %* Reaction Inference Method
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -318,23 +318,23 @@ class(ProductInfered,Domain):- testmetabolite(ProductInfered, t),newmetaboliteNa
 % In a second point we check if the four molecules (two molecules from reference reaction and two tested metabolites) have a domain in common.
 % Then we search in one of the two metabolites if it contains a region corresponding to the site of reaction of the ReactantReference (the site that will be modified by the reaction).
 % We also search in the other metabolite if it contains a region corresponding to the site of reaction of the ProductReference (the site modified by the reaction).
-% And we check if all atoms and links are the same between ReactantInfered and ProductInfered, except from the atoms and links implied in the reaction
+% And we check if all atoms and bonds are the same between ReactantInfered and ProductInfered, except from the atoms and bonds implied in the reaction
 
 newreaction(Reaction,ReactantInfered,ProductInfered):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered); metabolite(ProductInfered); source(ReactantInfered);
 							not reaction(Reaction,ReactantInfered,ProductInfered); ReactantInfered != ProductInfered;
 							% Check if the four molecules have the same domain.
-							class(ReactantInfered,Domain);class(ProductInfered,Domain);class(ReactantReference,Domain);class(ProductReference,Domain);
+							domain(ReactantInfered,Domain);domain(ProductInfered,Domain);domain(ReactantReference,Domain);domain(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
 							siteBeforeReaction(Reaction,ReactantInfered);siteBeforeReaction(Reaction,ReactantReference);siteAfterReaction(Reaction,ProductInfered);siteAfterReaction(Reaction,ProductReference);
 							% Four comparisons to check if other than reaction site ReactantInfered == ProductInfered:
 							% Check if atoms of ReactantInfered mapped from atoms of ProductInfered.
-							component(ReactantInfered,AtomNumber,AtomType):component(ProductInfered,AtomNumber,AtomType), not diffAtomAfterReaction(Reaction,AtomNumber,AtomType);
+							atom(ReactantInfered,AtomNumber,AtomType):atom(ProductInfered,AtomNumber,AtomType), not diffAtomAfterReaction(Reaction,AtomNumber,AtomType);
 							% Check if atoms of ProductInfered mapped from atoms of ReactantInfered.
-							component(ProductInfered,AtomNumber,AtomType):component(ReactantInfered,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType);
-							% Check if links of ReactantInfered mapped from links of ProductInfered.
-							link(ReactantInfered,BondType,FirstAtom,SecondAtom):link(ProductInfered,BondType,FirstAtom,SecondAtom), not diffLinkAfterReaction(Reaction,BondType,FirstAtom,SecondAtom);
-							% Check if links of ProductInfered mapped from links of ReactantInfered.
-							link(ProductInfered,BondType,FirstAtom,SecondAtom):link(ReactantInfered,BondType,FirstAtom,SecondAtom), not diffLinkBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom).
+							atom(ProductInfered,AtomNumber,AtomType):atom(ReactantInfered,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType);
+							% Check if bonds of ReactantInfered mapped from bonds of ProductInfered.
+							bond(ReactantInfered,BondType,FirstAtom,SecondAtom):bond(ProductInfered,BondType,FirstAtom,SecondAtom), not diffBondAfterReaction(Reaction,BondType,FirstAtom,SecondAtom);
+							% Check if bonds of ProductInfered mapped from bonds of ReactantInfered.
+							bond(ProductInfered,BondType,FirstAtom,SecondAtom):bond(ReactantInfered,BondType,FirstAtom,SecondAtom), not diffBondBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom).
 
 % Product found by the Reaction Inference Method can be reach.
 reached(ProductInfered, t):- newreaction(Reaction,Reactant,ProductInfered), source(Reactant), not reached(ProductInfered, t-1).
@@ -342,173 +342,173 @@ reached(ProductInfered, t):- newreaction(Reaction,Reactant,ProductInfered), sour
 % Defining the result of generic reactions
 % Generic method which is supposed to replace all the methods below.
 % Map all the atom of Reactant in Product except atoms occuring in reaction.
-component(ProductName,AtomNumber,AtomType):- reaction(Reaction,ReactantName,ProductName); component(ReactantName,AtomNumber,AtomType); not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType).
+atom(ProductName,AtomNumber,AtomType):- reaction(Reaction,ReactantName,ProductName); atom(ReactantName,AtomNumber,AtomType); not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType).
 % Map atoms in the reaction.
-component(ProductName,AtomNumber,AtomType):- reaction(Reaction,ReactantName,ProductName); component(ReactantName,AtomNumber,AtomType); diffAtomAfterReaction(Reaction,AtomNumber,AtomType).
-% Map all the links of Reactant in Product except links occruing in reaction.
-link(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reaction,ReactantName,ProductName); link(ReactantName,BondType,FirstAtomeNumber,SecondAtomeNumber);
-																	not diffLinkBeforeReaction(Reaction,BondType,FirstAtomeNumber,SecondAtomeNumber).
-% Map links in the reaction.
-link(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reaction,ReactantName,ProductName); diffLinkAfterReaction(Reaction,BondType,FirstAtomeNumber,SecondAtomeNumber).
+atom(ProductName,AtomNumber,AtomType):- reaction(Reaction,ReactantName,ProductName); atom(ReactantName,AtomNumber,AtomType); diffAtomAfterReaction(Reaction,AtomNumber,AtomType).
+% Map all the bonds of Reactant in Product except bonds occruing in reaction.
+bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reaction,ReactantName,ProductName); bond(ReactantName,BondType,FirstAtomeNumber,SecondAtomeNumber);
+																	not diffBondBeforeReaction(Reaction,BondType,FirstAtomeNumber,SecondAtomeNumber).
+% Map bonds in the reaction.
+bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reaction,ReactantName,ProductName); diffBondAfterReaction(Reaction,BondType,FirstAtomeNumber,SecondAtomeNumber).
 
 % Compound P resulting from the C5_desaturation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P
-component(P,I,A):- reaction(c5_desaturation,R,P); component(R,I,A).
-% the 5-6 link is transformed from simple in R to double in P
-link(P,double,5,6):-reaction(c5_desaturation,R,P); link(R,simple,5,6).
-% all other links from R are mapped to P
-link(P,T,I,J):-reaction(c5_desaturation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,5,6).
+atom(P,I,A):- reaction(c5_desaturation,R,P); atom(R,I,A).
+% the 5-6 bond is transformed from simple in R to double in P
+bond(P,double,5,6):-reaction(c5_desaturation,R,P); bond(R,simple,5,6).
+% all other bonds from R are mapped to P
+bond(P,T,I,J):-reaction(c5_desaturation,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simple,5,6).
 
 % Compound P resulting from the C22_desaturation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P
-component(P,I,A):- reaction(c22_desaturation,R,P); component(R,I,A).
-% the 22-23 link is transformed from simple in R to double in P
-link(P,double,22,23):-reaction(c22_desaturation,R,P); link(R,simple,22,23).
-% all other links from R are mapped to P
-link(P,T,I,J):-reaction(c22_desaturation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,22,23).
+atom(P,I,A):- reaction(c22_desaturation,R,P); atom(R,I,A).
+% the 22-23 bond is transformed from simple in R to double in P
+bond(P,double,22,23):-reaction(c22_desaturation,R,P); bond(R,simple,22,23).
+% all other bonds from R are mapped to P
+bond(P,T,I,J):-reaction(c22_desaturation,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simple,22,23).
 
 % Compound P resulting from the delta7reduction of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P
-component(P,I,A):- reaction(delta7reduction,R,P); component(R,I,A).
-% the 7-8 link is transformed from double in R to simple in P
-link(P,simple,7,8):-reaction(delta7reduction,R,P); link(R,double,7,8).
-% all other links from R are mapped to P
-link(P,T,I,J):-reaction(delta7reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,double,7,8).
+atom(P,I,A):- reaction(delta7reduction,R,P); atom(R,I,A).
+% the 7-8 bond is transformed from double in R to simple in P
+bond(P,simple,7,8):-reaction(delta7reduction,R,P); bond(R,double,7,8).
+% all other bonds from R are mapped to P
+bond(P,T,I,J):-reaction(delta7reduction,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,double,7,8).
 
 % Compound P resulting from the delta24_25_reduction of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P
-component(P,I,A):- reaction(delta24_25_reduction,R,P); component(R,I,A).
-% the 24-29 link is transformed from double in R to simple in P
-link(P,simple,24,25):-reaction(delta24_25_reduction,R,P); link(R,double,24,25).
-% all other links from R are mapped to P
-link(P,T,I,J):-reaction(delta24_25_reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,double,24,25).
+atom(P,I,A):- reaction(delta24_25_reduction,R,P); atom(R,I,A).
+% the 24-29 bond is transformed from double in R to simple in P
+bond(P,simple,24,25):-reaction(delta24_25_reduction,R,P); bond(R,double,24,25).
+% all other bonds from R are mapped to P
+bond(P,T,I,J):-reaction(delta24_25_reduction,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,double,24,25).
 
 % Compound P resulting from the delta24_241_reduction of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P
-component(P,I,A):- reaction(delta24_241_reduction,R,P); component(R,I,A).
-% the 24-241 link is transformed from double in R to simple in P
-link(P,simple,24,241):-reaction(delta24_241_reduction,R,P); link(R,double,24,241).
-% all other links from R are mapped to P
-link(P,T,I,J):-reaction(delta24_241_reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,double,24,241).
+atom(P,I,A):- reaction(delta24_241_reduction,R,P); atom(R,I,A).
+% the 24-241 bond is transformed from double in R to simple in P
+bond(P,simple,24,241):-reaction(delta24_241_reduction,R,P); bond(R,double,24,241).
+% all other bonds from R are mapped to P
+bond(P,T,I,J):-reaction(delta24_241_reduction,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,double,24,241).
 
 % Compound P resulting from the cyclopropylsterol_isomerisation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P
-component(P,I,A):- reaction(cyclopropylsterol_isomerisation,R,P); component(R,I,A).
-% the 8-9 link is transformed from simple in R to double in P
-link(P,double,8,9):-reaction(cyclopropylsterol_isomerisation,R,P); link(R,simple,8,9).
-% all other links from R are mapped to P, except the 9-19 one
-link(P,T,I,J):-reaction(cyclopropylsterol_isomerisation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,8,9); not link(R,simpleR,9,19).
+atom(P,I,A):- reaction(cyclopropylsterol_isomerisation,R,P); atom(R,I,A).
+% the 8-9 bond is transformed from simple in R to double in P
+bond(P,double,8,9):-reaction(cyclopropylsterol_isomerisation,R,P); bond(R,simple,8,9).
+% all other bonds from R are mapped to P, except the 9-19 one
+bond(P,T,I,J):-reaction(cyclopropylsterol_isomerisation,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simple,8,9); not bond(R,simpleR,9,19).
 
 % Compound P resulting from the c14_reduction of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P
-component(P,I,A):- reaction(c14_reduction,R,P); component(R,I,A).
-% the 14-15 link is transformed from double in R to simple in P
-link(P,simple,14,15):-reaction(c14_reduction,R,P); link(R,double,14,15).
-% all other links from R are mapped to P
-link(P,T,I,J):-reaction(c14_reduction,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,double,14,15).
+atom(P,I,A):- reaction(c14_reduction,R,P); atom(R,I,A).
+% the 14-15 bond is transformed from double in R to simple in P
+bond(P,simple,14,15):-reaction(c14_reduction,R,P); bond(R,double,14,15).
+% all other bonds from R are mapped to P
+bond(P,T,I,J):-reaction(c14_reduction,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,double,14,15).
 
 % Compound P resulting from the hydrogenation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P, escept oxyg 22 and 23
-component(P,I,A):- reaction(hydrogenation,R,P); component(R,I,A); not component (R,22..23,oxyg).
-% all links from R are mapped to P, escept the 21-22 and 21-23 ones
-link(P,T,I,J):-reaction(hydrogenation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,double,21,22); not link(R,simple,21,23).
+atom(P,I,A):- reaction(hydrogenation,R,P); atom(R,I,A); not atom (R,22..23,oxyg).
+% all bonds from R are mapped to P, escept the 21-22 and 21-23 ones
+bond(P,T,I,J):-reaction(hydrogenation,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,double,21,22); not bond(R,simple,21,23).
 
 % Compound P resulting from the c14_demethylation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P, except carb 29
-component(P,I,A):- reaction(c14_demethylation,R,P); component(R,I,A); not component (R,30,carb).
-% the 14-15 link is transformed from simple in R to double in P
-link(P,double,14,15):-reaction(c14_demethylation,R,P); link(R,simple,14,15).
-% all links from R are mapped to P, except the 14-30 one
-link(P,T,I,J):-reaction(c14_demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simpleS,14,30); link(R,simple,14,15).
+atom(P,I,A):- reaction(c14_demethylation,R,P); atom(R,I,A); not atom (R,30,carb).
+% the 14-15 bond is transformed from simple in R to double in P
+bond(P,double,14,15):-reaction(c14_demethylation,R,P); bond(R,simple,14,15).
+% all bonds from R are mapped to P, except the 14-30 one
+bond(P,T,I,J):-reaction(c14_demethylation,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simpleS,14,30); bond(R,simple,14,15).
 
 % Compound P resulting from the c4_c29_demethylation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P, except carb 29
-component(P,I,A):- reaction(c4_c29_demethylation,R,P); component(R,I,A); not component (R,29,carb).
-% all links from R are mapped to P, except the 18-21 one
-link(P,T,I,J):-reaction(c4_c29_demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simpleR,4,29).
+atom(P,I,A):- reaction(c4_c29_demethylation,R,P); atom(R,I,A); not atom (R,29,carb).
+% all bonds from R are mapped to P, except the 18-21 one
+bond(P,T,I,J):-reaction(c4_c29_demethylation,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simpleR,4,29).
 
 % Compound P resulting from the c4_c28_demethylation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P, except carb 29
-component(P,I,A):- reaction(c4_c28_demethylation,R,P); component(R,I,A); not component (R,28,carb).
-% all links from R are mapped to P, except the 18-21 one
-link(P,T,I,J):-reaction(c4_c28_demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simpleS,4,28).
+atom(P,I,A):- reaction(c4_c28_demethylation,R,P); atom(R,I,A); not atom (R,28,carb).
+% all bonds from R are mapped to P, except the 18-21 one
+bond(P,T,I,J):-reaction(c4_c28_demethylation,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simpleS,4,28).
 
 % Compound P resulting from the demethylation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P, except carb 21
-component(P,I,A):- reaction(demethylation,R,P); component(R,I,A); not component (R,21,carb).
-% all links from R are mapped to P, except the 18-21 one
-link(P,T,I,J):-reaction(demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,18,21).
+atom(P,I,A):- reaction(demethylation,R,P); atom(R,I,A); not atom (R,21,carb).
+% all bonds from R are mapped to P, except the 18-21 one
+bond(P,T,I,J):-reaction(demethylation,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simple,18,21).
 
 % Compound P resulting from the c8_isomerase of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P, except carb 29
-component(P,I,A):- reaction(c8_isomerase,R,P); component(R,I,A).
-% the 8-9 link is transformed from simple in R to double in P
-link(P,simple,8,9):-reaction(c8_isomerase,R,P); link(R,double,8,9).
-% the 7-8 link is transformed from simple in R to double in P
-link(P,double,7,8):-reaction(c8_isomerase,R,P); link(R,simple,7,8).
-% all links from R are mapped to P
-link(P,T,I,J):-reaction(c8_isomerase,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,8,9); link(R,double,7,8).
+atom(P,I,A):- reaction(c8_isomerase,R,P); atom(R,I,A).
+% the 8-9 bond is transformed from simple in R to double in P
+bond(P,simple,8,9):-reaction(c8_isomerase,R,P); bond(R,double,8,9).
+% the 7-8 bond is transformed from simple in R to double in P
+bond(P,double,7,8):-reaction(c8_isomerase,R,P); bond(R,simple,7,8).
+% all bonds from R are mapped to P
+bond(P,T,I,J):-reaction(c8_isomerase,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simple,8,9); bond(R,double,7,8).
 
 % Compound P resulting from the dehydration of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P, escept oxyg 20
-component(P,I,A):- reaction(dehydration,R,P); component(R,I,A); not component (R,20,oxyg).
-% all links from R are mapped to P, escept the 18-19 and 19-20
-link(P,T,I,J):-reaction(dehydration,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,18,19); not link(R,simple,19,20).
-% the 18-19 link is transformed from simple in R to double in P
-link(P,double,18,19):-reaction(dehydration,R,P); link(R,simple,18,19).
+atom(P,I,A):- reaction(dehydration,R,P); atom(R,I,A); not atom (R,20,oxyg).
+% all bonds from R are mapped to P, escept the 18-19 and 19-20
+bond(P,T,I,J):-reaction(dehydration,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simple,18,19); not bond(R,simple,19,20).
+% the 18-19 bond is transformed from simple in R to double in P
+bond(P,double,18,19):-reaction(dehydration,R,P); bond(R,simple,18,19).
 
 % Compound P resulting from the decarboxylation of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all atoms from R are mapped to P, escept carb 21, oxyg 22 and 23
-component(P,I,A):- reaction(demethylation,R,P); component(R,I,A); I!=21; I!=22; I!=23.
-% all links from R are mapped to P, escept 18-21, 21-22 and 22-23
-link(P,T,I,J):-reaction(demethylation,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,18,21); not link(R,double,21,22); not link(R,simple,21,23).
+atom(P,I,A):- reaction(demethylation,R,P); atom(R,I,A); I!=21; I!=22; I!=23.
+% all bonds from R are mapped to P, escept 18-21, 21-22 and 22-23
+bond(P,T,I,J):-reaction(demethylation,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simple,18,21); not bond(R,double,21,22); not bond(R,simple,21,23).
 
 % Compound P resulting from the hydrolyse of a compound R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % all atoms from R are mapped to P, except carb 18, oxyg 19 and 24
-component(P,I,A):- reaction(hydrolyse,R,P); component(R,I,A); not component (R,18..19,carb); not component (R,24,carb).
-% all links from R are mapped to P, except 10-18, 18-19 and 19-24
-link(P,T,I,J):-reaction(hydrolyse,R,P); link(R,T,I,J); link(R,T,I,J); not link(R,simple,10,18); link(R,double,18,19); link(R,simple,19,24).
+atom(P,I,A):- reaction(hydrolyse,R,P); atom(R,I,A); not atom (R,18..19,carb); not atom (R,24,carb).
+% all bonds from R are mapped to P, except 10-18, 18-19 and 19-24
+bond(P,T,I,J):-reaction(hydrolyse,R,P); bond(R,T,I,J); bond(R,T,I,J); not bond(R,simple,10,18); bond(R,double,18,19); bond(R,simple,19,24).
 
 % Compound P resulting from the transfer of an aminoacid AA on C3 from compound R 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % all atoms from R are mapped to P, except oxyg 10, which is replaced by nitr 5 of the aminoacid
-component(P,I,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I!=10.
-component(P,10,nitr):- reaction("aminoacid_C-3_transfer",_,_,P).
-% all links from R are mapped to P except for oxyg 10
-link(P,T,I,J):-reaction("aminoacid_C-3_transfer",R,AA,P); link(R,T,I,J); link(R,T,I,J); I!=10; J!=10.
-% atoms and links from aminoacid are transferred at position 10 except nitr 5
-component(P,N+1,carb):-reaction("aminoacid_C-3_transfer",_,_,P); moleculeNbComponents(R,N); production(P). 
-component(P,N+2,carb):-reaction("aminoacid_C-3_transfer",_,_,P); moleculeNbComponents(R,N); production(P). 
-component(P,N+3,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); moleculeNbComponents(R,N); production(P). 
-component(P,N+4,carb):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,carb); component(AA,7,oxyg); moleculeNbComponents(R,N); production(P). 
-component(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,carb); component(AA,7,oxyg); moleculeNbComponents(R,N); production(P). 
-component(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); component(AA,6,carb); component(AA,7,oxyg); moleculeNbComponents(R,N); production(P). 
-component(P,N+4,oxyg):-reaction("aminoacid_C-3_transfer",_,"glycine",P); moleculeNbComponents(R,N); production(P). 
-component(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); component(R,I,A); I>7; moleculeNbComponents(R,N);  production(P). 
+atom(P,I,A):- reaction("aminoacid_C-3_transfer",R,AA,P); atom(R,I,A); I!=10.
+atom(P,10,nitr):- reaction("aminoacid_C-3_transfer",_,_,P).
+% all bonds from R are mapped to P except for oxyg 10
+bond(P,T,I,J):-reaction("aminoacid_C-3_transfer",R,AA,P); bond(R,T,I,J); bond(R,T,I,J); I!=10; J!=10.
+% atoms and bonds from aminoacid are transferred at position 10 except nitr 5
+atom(P,N+1,carb):-reaction("aminoacid_C-3_transfer",_,_,P); moleculeNbAtoms(R,N); production(P). 
+atom(P,N+2,carb):-reaction("aminoacid_C-3_transfer",_,_,P); moleculeNbAtoms(R,N); production(P). 
+atom(P,N+3,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); moleculeNbAtoms(R,N); production(P). 
+atom(P,N+4,carb):-reaction("aminoacid_C-3_transfer",_,_,P); atom(AA,6,carb); atom(AA,7,oxyg); moleculeNbAtoms(R,N); production(P). 
+atom(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); atom(AA,6,carb); atom(AA,7,oxyg); moleculeNbAtoms(R,N); production(P). 
+atom(P,N+5,oxyg):-reaction("aminoacid_C-3_transfer",_,_,P); atom(AA,6,carb); atom(AA,7,oxyg); moleculeNbAtoms(R,N); production(P). 
+atom(P,N+4,oxyg):-reaction("aminoacid_C-3_transfer",_,"glycine",P); moleculeNbAtoms(R,N); production(P). 
+atom(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); atom(R,I,A); I>7; moleculeNbAtoms(R,N);  production(P). 
 
 #program check(t).
 :- goal(F), query(t), not infered(F,t).
 
 #show newreaction/3.
-%#show component/3.
+%#show atom/3.
 %#show solution/3.
 %#show input_metabolite/1.
 %#show output_metabolite/1.
