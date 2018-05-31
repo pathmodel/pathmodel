@@ -458,7 +458,7 @@ link("palythene",double,18,19). link("palythene",simple,19,24).
 reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound 2 , Active site atom number], Resulting compound)
 *%
 
-% Known reactions in Chondrus (inferred from other organisms)
+% Known sterol reactions (inferred from other organisms)
 
 % Early SSR pathway intervention (tomato-like)
 
@@ -487,6 +487,16 @@ reaction(c22_desaturation,"24-epicampesterol", "brassicasterol").
 
 reaction(c22_desaturation,"sitosterol", "stigmasterol").
 
+% Mycosporine amino-acids known reactions.
+
+reaction(rxn_17896, "S-desmethyl-4-deoxygadusol", "4-deoxygadusol").
+
+reaction(aminoacid_C_1_transfer, "4-deoxygadusol", "mycosporin-glycine").
+
+reaction(aminoacid_C_3_transfer_serine,"mycosporin-glycine","shinorine").
+
+reaction(aminoacid_C_3_transfer_threonine,"mycosporin-glycine","porphyra-334").
+
 reaction(hydrogenation,"shinorine","palythinol").
 
 reaction(demethylation,"palythinol", "asterina-330").
@@ -499,28 +509,18 @@ reaction(decarboxylation,"shinorine","asterina-330").
 
 reaction(hydrolyse,"palythene","palythine").
 
-reaction(rxn_17896, "S-desmethyl-4-deoxygadusol", "4-deoxygadusol").
-
-reaction(aminoacid_C_1_transfer, "4-deoxygadusol", "mycosporin-glycine").
-
-reaction("aminoacid_C-3_transfer","mycosporin-glycine","serine","shinorine").
-
-reaction("aminoacid_C-3_transfer","mycosporin-glycine","threonine","porphyra-334").
-
-% Punctual Reactions that need all atoms before/after a certain number of a given coumpound to occur
-
-% concerning c-22-desaturation, has to have everything before C22, like in sitosterol
-need_reaction(c22_desaturation, "sitosterol", before, 22, 23).
-% OK for Chondrus, but will need to be reformulated for other red algae - see sterols-phylopaths.pdf
-
-need_reaction(dehydration, "porphyra-334", before, 18, 20).
-
-need_reaction(decarboxylation, "z-palythenic acid", before, 18, 23).
+% MZ expected in mycopsorine amino-acids pathway.
 
 mzfiltering(2702720).
 mzfiltering(3023117).
 
+% Source molecule for inference.
+
 source("cycloartenol").
+source("S-desmethyl-4-deoxygadusol").
+
+% Initiation of incremental grounding.
 
 init(pathway("cycloartenol","lathosterol")).
 goal(pathway("31-norcycloartenol","lathosterol")).
+goal(pathway("S-desmethyl-4-deoxygadusol","palythene")).

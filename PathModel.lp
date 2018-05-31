@@ -182,6 +182,8 @@ source(ProductInfered):- reached(ProductInfered, t-1).
 
 reached(MoleculeName, t):- source(MoleculeName).
 
+reached(KnownPoduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownPoduct).
+
 % Create metabolite, link, component and reaction of the infered metabolite.
 metabolite(NewMoleculeName):- testmetabolite(NewMoleculeName, t-1).
 
@@ -210,7 +212,7 @@ solution(M1,M3,t):- infered(pathway(M2,M3),t+1), infered(pathway(M1,M2),t).
 % First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
 % A known reaction is used to infer a new reaction between a known molecule and a new molecule.
 
-newmetaboliteName(@name_metabolite(ReactantInfered, Reaction, Domain),ReactantInfered, Reaction, Domain):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered);
+newmetaboliteName(@name_metabolite(ReactantInfered, Reaction, Domain),ReactantInfered, Reaction, Domain):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInfered); %source(ReactantInfered);
 							% Check if the three molecules have the same domain.
 							class(ReactantInfered,Domain);class(ProductInfered,Domain);class(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
