@@ -3,11 +3,11 @@
 import sys  
 import clyngor
 
-next(clyngor.solve(['data.lp', 'ReactionCreation.lp']), None)
+next(clyngor.solve(['data.lp', 'asp/ReactionCreation.lp']), None)
 
-test_result = clyngor.solve(['data_result.lp', 'PathModel.lp'])
+test_result = clyngor.solve(['data_result.lp', 'asp/PathModel.lp'])
 
-result = clyngor.solve(['data_result.lp', 'PathModel.lp'])
+result = clyngor.solve(['data_result.lp', 'asp/PathModel.lp'])
 
 resultfile = open("result.lp", "w")
 optimization_scores = []
