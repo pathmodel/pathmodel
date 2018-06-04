@@ -272,8 +272,11 @@ newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):-
 
 newnumberTotalBonds(MoleculeName,NumberTotalOfBonds):-  NumberTotalOfBonds={newbond(MoleculeName, BoundType, AtomNumber, SecondAtomNumber)}; newmetabolite(MoleculeName).
 
-% Check if new metabolites aren't known molecules.
-alreadyKnownMolecule(NewMoleculeName):- newmetabolite(NewMoleculeName); metabolite(KnownMolecule);
+% Check if new molecules have the same MZ than already known molecules.
+possibleKnownMolecule(NewMoleculeName):-newmoleculeMZ(NewMoleculeName,NewMoleculeMZ);moleculeMZ(KnownMolecule,KnownMoleculeMZ);NewMoleculeMZ==KnownMoleculeMZ.
+
+% Check if new molecules aren't known molecules.
+alreadyKnownMolecule(NewMoleculeName):- possibleKnownMolecule(NewMoleculeName); metabolite(KnownMolecule);
 												% Check the number of atoms between the new metabolite and all the known molecules.
 												newmoleculeNbAtoms(NewMoleculeName, NumberOfAtoms); moleculeNbAtoms(KnownMolecule, NumberOfAtomsInRef);
 												NumberOfAtoms==NumberOfAtomsInRef;
@@ -363,7 +366,7 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 :- goal(F), query(t), not inferred(F,t).
 
 #show newreaction/3.
-#show moleculeMZ/2.
+%#show alreadyKnownMolecule/1.
 %#show solution/3.
 %#show input_metabolite/1.
 %#show output_metabolite/1.
