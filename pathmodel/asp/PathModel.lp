@@ -48,7 +48,7 @@ domain(MoleculeName, DomainName)
 Definition of sterane
 Based on the wikipedia structure: https://fr.wikipedia.org/wiki/St%C3%A9rane#/media/File:Steran_num_ABCD.svg
 One exception the bound between carbone 7 and carbone 8 has variable for the bond type to include the 7-dehydrocholesterol
-because of the double bond instead of the simple.
+because of the double bond instead of the single.
 *%
 domain(MoleculeName, sterane) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,carb),
 									atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,carb), atom(MoleculeName,Atome6,carb),
@@ -67,33 +67,33 @@ domain(MoleculeName, sterane) :- atom(MoleculeName,Atome1,carb), atom(MoleculeNa
 % Definition of a cyclohexene
 domain(MoleculeName, cyclohexene) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,carb),
 									atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,carb), atom(MoleculeName,Atome6,carb),
-									bond(MoleculeName,double,Atome1,Atome2), bond(MoleculeName,simple,Atome2,Atome3), bond(MoleculeName,simple,Atome3,Atome4),
-									bond(MoleculeName,simple,Atome4,Atome5), bond(MoleculeName,simple,Atome5,Atome6), bond(MoleculeName,simple,Atome1,Atome6).
+									bond(MoleculeName,double,Atome1,Atome2), bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,single,Atome3,Atome4),
+									bond(MoleculeName,single,Atome4,Atome5), bond(MoleculeName,single,Atome5,Atome6), bond(MoleculeName,single,Atome1,Atome6).
 
 domain(MoleculeName, glycine, Atome5) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
 								atom(MoleculeName,Atome4,oxyg), atom(MoleculeName,Atome5,nitr),
-								bond(MoleculeName,simple,Atome1,Atome2),  bond(MoleculeName,simple,Atome2,Atome3), bond(MoleculeName,double,Atome2,Atome4),
-								bond(MoleculeName,simple,Atome5,Atome1), not domain(MoleculeName, threonine, Atome5), not domain(MoleculeName, serine, Atome5).
+								bond(MoleculeName,single,Atome1,Atome2),  bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,double,Atome2,Atome4),
+								bond(MoleculeName,single,Atome5,Atome1), not domain(MoleculeName, threonine, Atome5), not domain(MoleculeName, serine, Atome5).
 
 
 domain(MoleculeName, threonine, Atome7) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
 								atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,oxyg), atom(MoleculeName,Atome6,oxyg),
 								atom(MoleculeName,Atome7,nitr), atom(MoleculeName,Atome8,carb),
-								bond(MoleculeName,simple,Atome1,Atome2),  bond(MoleculeName,simple,Atome2,Atome3), bond(MoleculeName,simple,Atome2,Atome8),
-								bond(MoleculeName,simple,Atome1,Atome4),
-								bond(MoleculeName,double,Atome4,Atome5), bond(MoleculeName,simple,Atome4,Atome6), bond(MoleculeName,simple,Atome7,Atome1).
+								bond(MoleculeName,single,Atome1,Atome2),  bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,single,Atome2,Atome8),
+								bond(MoleculeName,single,Atome1,Atome4),
+								bond(MoleculeName,double,Atome4,Atome5), bond(MoleculeName,single,Atome4,Atome6), bond(MoleculeName,single,Atome7,Atome1).
 
 
 domain(MoleculeName, serine, Atome7) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
 								atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,oxyg), atom(MoleculeName,Atome6,oxyg),
 								atom(MoleculeName,Atome7,nitr),
-								bond(MoleculeName,simple,Atome1,Atome2),  bond(MoleculeName,simple,Atome2,Atome3), bond(MoleculeName,simple,Atome1,Atome4),
-								bond(MoleculeName,double,Atome4,Atome5), bond(MoleculeName,simple,Atome4,Atome6), bond(MoleculeName,simple,Atome7,Atome1),
+								bond(MoleculeName,single,Atome1,Atome2),  bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,single,Atome1,Atome4),
+								bond(MoleculeName,double,Atome4,Atome5), bond(MoleculeName,single,Atome4,Atome6), bond(MoleculeName,single,Atome7,Atome1),
 								Atome2 != Atome4, not domain(MoleculeName, threonine, Atome7).
 
 domain(MoleculeName, ethanolamine, Atome7) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
 								atom(MoleculeName,Atome7,nitr),
-								bond(MoleculeName,simple,Atome1,Atome2),  bond(MoleculeName,simple,Atome2,Atome3), bond(MoleculeName,simple,Atome7,Atome1),
+								bond(MoleculeName,single,Atome1,Atome2),  bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,single,Atome7,Atome1),
 								not domain(MoleculeName, threonine, Atome7), not domain(MoleculeName, serine, Atome7), not domain(MoleculeName, glycine, Atome7).
 
 %* Definition of atomic masses
