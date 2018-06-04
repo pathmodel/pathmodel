@@ -245,7 +245,7 @@ bond("6α-hydroxycholest-4,22-diene-3-one",singleR,13,18). bond("6α-hydroxychol
 bond("6α-hydroxycholest-4,22-diene-3-one",single,20,22). bond("6α-hydroxycholest-4,22-diene-3-one",double,22,23). bond("6α-hydroxycholest-4,22-diene-3-one",single,23,24).
 bond("6α-hydroxycholest-4,22-diene-3-one",single,24,25). bond("6α-hydroxycholest-4,22-diene-3-one",single,25,26). bond("6α-hydroxycholest-4,22-diene-3-one",single,25,27).
 
-% Sterols expected from Chondrus
+% Sterols expected in Late SSR Intervention in Chondrus
 
 atom("31-norcycloartenol",1..28,carb). atom("31-norcycloartenol",30,carb). atom("31-norcycloartenol",31,oxyg).
 bond("31-norcycloartenol",single,1,2). bond("31-norcycloartenol",single,1,10). bond("31-norcycloartenol",single,2,3).
@@ -274,18 +274,18 @@ bond("4α,14α-dimethylcholest-24-en-3β-ol",singleR,13,18). bond("4α,14α-dime
 bond("4α,14α-dimethylcholest-24-en-3β-ol",single,20,22). bond("4α,14α-dimethylcholest-24-en-3β-ol",single,22,23). bond("4α,14α-dimethylcholest-24-en-3β-ol",single,23,24).
 bond("4α,14α-dimethylcholest-24-en-3β-ol",double,24,25). bond("4α,14α-dimethylcholest-24-en-3β-ol",single,25,26). bond("4α,14α-dimethylcholest-24-en-3β-ol",single,25,27).
 
-atom("4α-methylcholest-8(9),14,24,trien-3β-ol",1..28,carb). atom("4α-methylcholest-8(9),14,24,trien-3β-ol",31,oxyg).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,1,2). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,1,10). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,2,3).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,3,4). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",singleR,3,31). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,4,5).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",singleS,4,28). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,5,6). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,5,10).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,6,7). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,7,8). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",double,8,9).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,8,14). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,9,10). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,9,11).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",singleR,10,19). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,11,12). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,12,13).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,13,14). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",double,14,15). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,15,16).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,16,17). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,13,17). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",singleR,13,18).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",singleR,17,20). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",singleS,20,21). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,20,22).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,22,23). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,23,24). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",double,24,25).
-bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,25,26). bond("4α-methylcholest-8(9),14,24,trien-3β-ol",single,25,27).
+atom("4α-methylcholest-8(9),14,24-trien-3β-ol",1..28,carb). atom("4α-methylcholest-8(9),14,24-trien-3β-ol",31,oxyg).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,1,2). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,1,10). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,2,3).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,3,4). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",singleR,3,31). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,4,5).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",singleS,4,28). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,5,6). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,5,10).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,6,7). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,7,8). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",double,8,9).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,8,14). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,9,10). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,9,11).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",singleR,10,19). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,11,12). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,12,13).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,13,14). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",double,14,15). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,15,16).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,16,17). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,13,17). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",singleR,13,18).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",singleR,17,20). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",singleS,20,21). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,20,22).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,22,23). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,23,24). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",double,24,25).
+bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,25,26). bond("4α-methylcholest-8(9),14,24-trien-3β-ol",single,25,27).
 
 atom("4α-methylzymosterol",1..28,carb). atom("4α-methylzymosterol",31,oxyg).
 bond("4α-methylzymosterol",single,1,2). bond("4α-methylzymosterol",single,1,10). bond("4α-methylzymosterol",single,2,3).
