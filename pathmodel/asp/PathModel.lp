@@ -102,14 +102,13 @@ domain(MoleculeName, ethanolamine, Atome7) :- atom(MoleculeName,Atome1,carb), at
 
 %*
 m_hydr = 1.0074, m_carb = 12.0107,  m_oxyg = 15.9994 ,  m_nitr=14.0067.
-*%
-%énumérer les liens de chaque atome C,N,O, et de rajouter autant de H pour que nb_H = valence (atome) - nb_bond(atome), sachant que valence(oxyg)=2, valence(nitr)=3 et valence(carb)=4.
 
-%*
+Compute bonds between each atoms C,N,O, and add as many H as nb_H = valence (atom) - nb_bond(atom), with valence(oxyg)=2, valence(nitr)=3 et valence(carb)=4.
+
 mz(newcompound)=nb_carb(newcompound) x m_carb + nb_oxyg(newcompound) x m_oxyg + nb_nitr(newcompound) x m_nitr + nb_hydr(newcompound) x m_hydr
 *%
 
-% M/Q Ratio
+% M/Z Ratio
 																
 % numberHydrogens provides the number of hydrogens associated with each atoms.
 % numberHydrogens(MoleculeName, AtomNumber, number of Hydrogen bonded with the atom)
@@ -139,9 +138,9 @@ moleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- mo
 % numberTotalBonds provides the number of bond in a molecule.
 numberTotalBonds(MoleculeName,NumberTotalOfBonds):-  NumberTotalOfBonds={bond(MoleculeName, BoundType, AtomNumber, SecondAtomNumber)}; metabolite(MoleculeName).
 
-% moleculeMZ computes the M/Q ratio for each molecule.
-% moleculeMZ(MoleculeName, M/Q ratio*10000)
-% Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Q ratio divide the M/Q ratio by 10 0000.
+% moleculeMZ computes the M/Z ratio for each molecule.
+% moleculeMZ(MoleculeName, M/Z ratio*10000)
+% Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Z ratio divide the M/Z ratio by 10 0000.
 % Approximation like at PubChem: 120110*NumberCarbon + 10080*NumberHydrogen + 159990*NumberOxygen + 140070*NumberNitrogen
 % 120107*NumberCarbon + 100794*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen
 % 1200960*NumberCarbon + 100784*NumberHydrogen + 1599903*NumberOxygen + 1400643*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
@@ -264,9 +263,9 @@ newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + 
 	newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
 	newmetabolite(MoleculeName).
 
-% moleculeMZ computes the M/Q ratio for each new molecule.
-% moleculeMZ(MoleculeName, M/Q ratio*10000)
-% Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Q ratio divide the M/Q ratio by 10 0000.
+% moleculeMZ computes the M/Z ratio for each new molecule.
+% moleculeMZ(MoleculeName, M/Z ratio*10000)
+% Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Z ratio divide the M/Z ratio by 10 0000.
 newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :-
 		newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
 		newmetabolite(MoleculeName).
@@ -287,8 +286,8 @@ alreadyKnownMolecule(NewMoleculeName):- newmetabolite(NewMoleculeName); metaboli
 												% Check that all bonds are similar from the bonds of a known molecule.
 												newbond(NewMoleculeName, BondType, FirstAtomNumber, SecondAtomNumber): bond(KnownMolecule, BondType, FirstAtomNumber, SecondAtomNumber).
 
-% Filtering using MZ and already known metabolites.
-% Keep only new metabolite having the MZ required.
+% Filtering using M/Z and already known metabolites.
+% Keep only new metabolite having the M/Z required.
 testmetabolite(NewMoleculeName, t):- newmetabolite(NewMoleculeName), newmoleculeMZ(NewMoleculeName,MZFilter), mzfiltering(MZFilter),
 									not alreadyKnownMolecule(NewMoleculeName),metabolite(KnownMolecule).
 
@@ -519,7 +518,7 @@ atom(P,N+I-1,A):- reaction("aminoacid_C-3_transfer",R,AA,P); atom(R,I,A); I>7; m
 :- goal(F), query(t), not inferred(F,t).
 
 #show newreaction/3.
-%#show moleculeMZ/2.
+#show moleculeMZ/2.
 %#show solution/3.
 %#show input_metabolite/1.
 %#show output_metabolite/1.
