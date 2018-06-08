@@ -530,10 +530,10 @@ mzfiltering(3023117).
 % Source molecule for inference.
 
 source("cycloartenol").
-%source("sedoheptulose-7-phosphate").
+source("sedoheptulose-7-phosphate").
 
 % Initiation of incremental grounding.
 
 init(pathway("cycloartenol","lathosterol")).
 goal(pathway("31-norcycloartenol","lathosterol")).
-%goal(pathway("sedoheptulose-7-phosphate","palythene")).
+goal(pathway("sedoheptulose-7-phosphate","palythene")).

@@ -184,7 +184,7 @@ source(ProductInferred):- reached(ProductInferred, t-1).
 
 tested(MoleculeName,t,t-1,tested(MoleculeName, t-1)):- not tested(MoleculeName, t-1), source(MoleculeName).
 
-reached(MoleculeName, t):- source(MoleculeName), not reached(MoleculeName, t-1).
+reached(MoleculeName, t):- source(MoleculeName).
 
 reached(KnownPoduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownPoduct), not reached(KnownPoduct, t-1).
 
