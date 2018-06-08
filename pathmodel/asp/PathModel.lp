@@ -30,7 +30,7 @@ def name_metabolite(reactant_name, reaction_name, domain_reference):
 Chemical variable:
 valence(Atom type, Number of valence)
 *%
-valence(carb, 4). valence(nitr, 3). valence(oxyg, 2).
+valence(carb, 4). valence(nitr, 3). valence(oxyg, 2). valence(phos, 5).
 
 % Symmetric bonds.
 bond2(A,B,C,D):- bond(A,B,C,D).
@@ -101,11 +101,11 @@ domain(MoleculeName, ethanolamine, Atome7) :- atom(MoleculeName,Atome1,carb), at
 *%
 
 %*
-m_hydr = 1.0074, m_carb = 12.0107,  m_oxyg = 15.9994 ,  m_nitr=14.0067.
+m_hydr = 1.0074, m_carb = 12.0107,  m_oxyg = 15.9994 ,  m_nitr=14.0067, m_phos = 30,9738.
 
-Compute bonds between each atoms C,N,O, and add as many H as nb_H = valence (atom) - nb_bond(atom), with valence(oxyg)=2, valence(nitr)=3 et valence(carb)=4.
+Compute bonds between each atoms C,N,O, and add as many H as nb_H = valence (atom) - nb_bond(atom), with valence(oxyg)=2, valence(nitr)=3, valence(carb)=4 and valence(phos)=5(?).
 
-mz(newcompound)=nb_carb(newcompound) x m_carb + nb_oxyg(newcompound) x m_oxyg + nb_nitr(newcompound) x m_nitr + nb_hydr(newcompound) x m_hydr
+mz(newcompound)=nb_carb(newcompound) x m_carb + nb_oxyg(newcompound) x m_oxyg + nb_nitr(newcompound) x m_nitr + nb_hydr(newcompound) x m_hydr + nb_phos(newcompound) x m_phos
 *%
 
 % M/Z Ratio
@@ -121,19 +121,21 @@ numberHydrogens(MoleculeName, AtomNumber, NumberHydrogen) :-
 
 % moleculeComposition shows the number of Carbon, Hydrogen, Oxygen and Nitrogen in the molecule.
 % moleculeComposition(MoleculeName, Number of Carbon, Number of Hydrogen, Number of Oxygen, Number of Nitrogen)
-moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen) :-
+moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus) :-
 	NumberHydrogen=#sum{NumberHydrogenAtom, AtomNumber: numberHydrogens(MoleculeName, AtomNumber, NumberHydrogenAtom)},
 	NumberCarbon={atom(MoleculeName, AtomNumber , carb)},
 	NumberOxygen={atom(MoleculeName, AtomNumber , oxyg)},
 	NumberNitrogen={atom(MoleculeName, AtomNumber , nitr)},
+	NumberPhosphorus={atom(MoleculeName, AtomNumber , phos)},
 	metabolite(MoleculeName).
 
 % moleculeNbAtoms provides the total number of atoms in a compound.
-moleculeNbAtoms(MoleculeName, NumberCarbon+NumberHydrogen+NumberOxygen+NumberNitrogen):-
-	moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+moleculeNbAtoms(MoleculeName, NumberCarbon+NumberHydrogen+NumberOxygen+NumberNitrogen+NumberPhosphorus):-
+	moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus).
 
 % moleculeNbAtoms provides the total number of atoms in a compound.
-moleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+moleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen + NumberPhosphorus):-
+	moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus).
 
 % numberTotalBonds provides the number of bond in a molecule.
 numberTotalBonds(MoleculeName,NumberTotalOfBonds):-  NumberTotalOfBonds={bond(MoleculeName, BoundType, AtomNumber, SecondAtomNumber)}; metabolite(MoleculeName).
@@ -141,12 +143,12 @@ numberTotalBonds(MoleculeName,NumberTotalOfBonds):-  NumberTotalOfBonds={bond(Mo
 % moleculeMZ computes the M/Z ratio for each molecule.
 % moleculeMZ(MoleculeName, M/Z ratio*10000)
 % Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Z ratio divide the M/Z ratio by 10 0000.
-% Approximation like at PubChem: 120110*NumberCarbon + 10080*NumberHydrogen + 159990*NumberOxygen + 140070*NumberNitrogen
+% Approximation like at PubChem: 120110*NumberCarbon + 10080*NumberHydrogen + 159990*NumberOxygen + 140070*NumberNitrogen + 309738*NumberPhosphorus)
 % 120107*NumberCarbon + 100794*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen
 % 1200960*NumberCarbon + 100784*NumberHydrogen + 1599903*NumberOxygen + 1400643*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
 % 1201160*NumberCarbon + 100811*NumberHydrogen + 1599977*NumberOxygen + 1400728*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
-moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen):-
-	moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen).
+moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen + 309738*NumberPhosphorus):-
+	moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus).
 
 %* Definition of input and output from reaction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -180,9 +182,11 @@ Use to check if we have achieved our goal.
 
 source(ProductInferred):- reached(ProductInferred, t-1).
 
-reached(MoleculeName, t):- source(MoleculeName).
+tested(MoleculeName,t,t-1,tested(MoleculeName, t-1)):- not tested(MoleculeName, t-1), source(MoleculeName).
 
-reached(KnownPoduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownPoduct).
+reached(MoleculeName, t):- source(MoleculeName), not reached(MoleculeName, t-1).
+
+reached(KnownPoduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownPoduct), not reached(KnownPoduct, t-1).
 
 % Create metabolite, bond, atom and reaction of the inferred metabolite.
 metabolite(NewMoleculeName):- testmetabolite(NewMoleculeName, t-1).
@@ -249,26 +253,27 @@ newnumberHydrogens(MoleculeName, AtomNumber, NumberHydrogen) :-
 
 % moleculeComposition shows the number of Carbon, Hydrogen, Oxygen and Nitrogen in the molecule.
 % moleculeComposition(MoleculeName, Number of Carbon, Number of Hydrogen, Number of Oxygen, Number of Nitrogen)
-newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen) :-
+newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus) :-
 	NumberHydrogen=#sum{NumberHydrogenAtom, AtomNumber: newnumberHydrogens(MoleculeName, AtomNumber, NumberHydrogenAtom)},
 	NumberCarbon={newatom(MoleculeName, AtomNumber , carb)},
 	NumberOxygen={newatom(MoleculeName, AtomNumber , oxyg)},
 	NumberNitrogen={newatom(MoleculeName, AtomNumber , nitr)},
+	NumberPhosphorus={newatom(MoleculeName, AtomNumber , phos)},
 	newmetabolite(MoleculeName).
 
 %moleculeNbAtoms provides the total number of atoms in a compound
-newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen):-
-	newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
+newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + NumberNitrogen + NumberPhosphorus):-
+	newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus),
 	newmetabolite(MoleculeName).
 
 % moleculeMZ computes the M/Z ratio for each new molecule.
 % moleculeMZ(MoleculeName, M/Z ratio*10000)
 % Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Z ratio divide the M/Z ratio by 10 0000.
-newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :-
-		newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
+newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen + 309738*NumberPhosphorus) :-
+		newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus),
 		newmetabolite(MoleculeName).
 
-newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen):- newmoleculeComposition(MoleculeName, NumberCarbon, _, NumberOxygen, NumberNitrogen).
+newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen + NumberPhosphorus):- newmoleculeComposition(MoleculeName, NumberCarbon, _, NumberOxygen, NumberNitrogen, NumberPhosphorus).
 
 newnumberTotalBonds(MoleculeName,NumberTotalOfBonds):-  NumberTotalOfBonds={newbond(MoleculeName, BoundType, AtomNumber, SecondAtomNumber)}; newmetabolite(MoleculeName).
 
@@ -312,7 +317,7 @@ siteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newme
                                                         diffBondBeforeReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber).
 
 % New metabolite found by the Metabolite Inference Method can be reach.
-reached(ProductInferred, t):- testmetabolite(ProductInferred, t), not reached(ProductInferred, t-1),newmetaboliteName(ProductInferred,Reactant,Reaction,Domain).
+reached(ProductInferred, t):- testmetabolite(ProductInferred, t), not reached(ProductInferred, t-1), newmetaboliteName(ProductInferred,Reactant,Reaction,Domain).
 
 % New metabolite is associated to the domain of its reactant.
 domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t),newmetaboliteName(ProductInferred,Reactant,Reaction,Domain).
@@ -366,8 +371,8 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 :- goal(F), query(t), not inferred(F,t).
 
 #show newreaction/3.
-%#show alreadyKnownMolecule/1.
-%#show solution/3.
+#show newmetaboliteName/4.
+%#show newmoleculeMZ/2.
 %#show input_metabolite/1.
 %#show output_metabolite/1.
 %#show reaction/3.

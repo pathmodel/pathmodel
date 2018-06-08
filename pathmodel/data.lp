@@ -326,6 +326,7 @@ bond("5α-cholesta-7,24-dienol",singleS,20,21). bond("5α-cholesta-7,24-dienol",
 bond("5α-cholesta-7,24-dienol",single,23,24). bond("5α-cholesta-7,24-dienol",double,24,25). bond("5α-cholesta-7,24-dienol",single,25,26).
 bond("5α-cholesta-7,24-dienol",single,25,27).
 
+
 % Amino acids
 
 atom("glycine",1..2,carb). atom("glycine",3..4,oxyg). atom("glycine",5,nitr). 
@@ -346,6 +347,16 @@ bond("threonine",single,6,8).
 aminoacid(glycine;serine;threonine).
 
 % Mycosporine-like amino acids
+
+atom("sedoheptulose-7-phosphate",1..5,carb). atom("sedoheptulose-7-phosphate",6,oxyg). atom("sedoheptulose-7-phosphate",7,carb).
+atom("sedoheptulose-7-phosphate",8,carb). atom("sedoheptulose-7-phosphate",9..12,oxyg). atom("sedoheptulose-7-phosphate",25,oxyg).
+atom("sedoheptulose-7-phosphate",26..29,oxyg). atom("sedoheptulose-7-phosphate",30,phos).
+bond("sedoheptulose-7-phosphate",single,1,2). bond("sedoheptulose-7-phosphate",single,2,3). bond("sedoheptulose-7-phosphate",single,3,4).
+bond("sedoheptulose-7-phosphate",single,4,5). bond("sedoheptulose-7-phosphate",singleR,4,25). bond("sedoheptulose-7-phosphate",single,5,6).
+bond("sedoheptulose-7-phosphate",single,1,6). bond("sedoheptulose-7-phosphate",singleR,5,7). bond("sedoheptulose-7-phosphate",singleS,3,10).
+bond("sedoheptulose-7-phosphate",singleR,1,8). bond("sedoheptulose-7-phosphate",singleS,5,12). bond("sedoheptulose-7-phosphate",single,7,11).
+bond("sedoheptulose-7-phosphate",singleS,2,9). bond("sedoheptulose-7-phosphate",single,9,26). bond("sedoheptulose-7-phosphate",single,26,30).
+bond("sedoheptulose-7-phosphate",single,27,30). bond("sedoheptulose-7-phosphate",double,28,30). bond("sedoheptulose-7-phosphate",single,29,30).
 
 atom("S-desmethyl-4-deoxygadusol",1..7,carb). atom("S-desmethyl-4-deoxygadusol",8,oxyg). atom("S-desmethyl-4-deoxygadusol",9..12,oxyg).
 bond("S-desmethyl-4-deoxygadusol",double,1,2). bond("S-desmethyl-4-deoxygadusol",single,2,3). bond("S-desmethyl-4-deoxygadusol",single,3,4).
@@ -489,6 +500,8 @@ reaction(c22_desaturation,"sitosterol", "stigmasterol").
 
 % Mycosporine amino-acids known reactions.
 
+reaction(mysa, "sedoheptulose-7-phosphate", "S-desmethyl-4-deoxygadusol").
+
 reaction(rxn_17896, "S-desmethyl-4-deoxygadusol", "4-deoxygadusol").
 
 reaction(aminoacid_C_1_transfer, "4-deoxygadusol", "mycosporin-glycine").
@@ -517,10 +530,10 @@ mzfiltering(3023117).
 % Source molecule for inference.
 
 source("cycloartenol").
-source("S-desmethyl-4-deoxygadusol").
+%source("sedoheptulose-7-phosphate").
 
 % Initiation of incremental grounding.
 
 init(pathway("cycloartenol","lathosterol")).
 goal(pathway("31-norcycloartenol","lathosterol")).
-goal(pathway("S-desmethyl-4-deoxygadusol","palythene")).
+%goal(pathway("sedoheptulose-7-phosphate","palythene")).
