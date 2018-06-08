@@ -223,7 +223,7 @@ solution(M1,M3,t):- inferred(pathway(M2,M3),t+1), inferred(pathway(M1,M2),t).
 newmetaboliteName(@name_metabolite(ReactantInferred, Reaction, Domain),ReactantInferred, Reaction, Domain):-
 							reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); source(ReactantInferred); not reached(ReactantInferred);
 							% Check if the three molecules have the same domain.
-							domain(ReactantInferred,Domain);domain(ProductInferred,Domain);domain(ProductReference,Domain);
+							domain(ReactantInferred,Domain);domain(ReactantReference,Domain);domain(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
 							siteBeforeReaction(Reaction,ReactantInferred);siteBeforeReaction(Reaction,ReactantReference);siteAfterReaction(Reaction,ProductReference).
 
@@ -376,7 +376,7 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 %#show input_metabolite/1.
 %#show output_metabolite/1.
 %#show reaction/3.
-%#show newreaction/3.
+#show domain/2.
 %#show moleculeMZ/2.
 
 %* Expected output
