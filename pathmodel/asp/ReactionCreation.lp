@@ -9,6 +9,7 @@ When it finds difference, the script will extract the links and atoms and write 
 import clingo
 
 def on_model(answer, output_file):
+    # Write all atoms in output file.
     atoms=answer.symbols(atoms=True)
     for atom in atoms:
         if atom.name == "diffAtomBeforeReaction" and len(atom.arguments) == 3:
@@ -25,13 +26,9 @@ def on_model(answer, output_file):
             output_file.write( "siteAfterReaction("+str(atom.arguments[0])+","+str(atom.arguments[1])+").\n")
 
 def main(prg):
-    # Open data file and write its content in an output file.
-	input_file = open("data.lp", "r")
+    # Create file storing results.
 	output_file = open("data_result.lp", "w")
-	output_file.write(input_file.read())
-	input_file.close()
 
-    # Add predicates informing of the position of the reaction sites.
 	output_file.write('\n')
 	output_file.write('% Reaction site for each reaction.')
 	output_file.write('\n')
