@@ -96,59 +96,6 @@ domain(MoleculeName, ethanolamine, Atome7) :- atom(MoleculeName,Atome1,carb), at
 								bond(MoleculeName,single,Atome1,Atome2),  bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,single,Atome7,Atome1),
 								not domain(MoleculeName, threonine, Atome7), not domain(MoleculeName, serine, Atome7), not domain(MoleculeName, glycine, Atome7).
 
-%* Definition of atomic masses
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-*%
-
-%*
-m_hydr = 1.0074, m_carb = 12.0107,  m_oxyg = 15.9994 ,  m_nitr=14.0067, m_phos = 30,9738.
-
-Compute bonds between each atoms C,N,O, and add as many H as nb_H = valence (atom) - nb_bond(atom), with valence(oxyg)=2, valence(nitr)=3, valence(carb)=4 and valence(phos)=5(?).
-
-mz(newcompound)=nb_carb(newcompound) x m_carb + nb_oxyg(newcompound) x m_oxyg + nb_nitr(newcompound) x m_nitr + nb_hydr(newcompound) x m_hydr + nb_phos(newcompound) x m_phos
-*%
-
-% M/Z Ratio
-																
-% numberHydrogens provides the number of hydrogens associated with each atoms.
-% numberHydrogens(MoleculeName, AtomNumber, number of Hydrogen bonded with the atom)
-numberHydrogens(MoleculeName, AtomNumber, NumberHydrogen) :-
-	NumberOfBonds2={bond2(MoleculeName, double, AtomNumber, SecondAtomNumber)};
-	NumberOfBonds1=#sum{1, SecondAtomNumber, BoundType: bond2(MoleculeName, BoundType, AtomNumber, SecondAtomNumber), BoundType != double};
-	atom(MoleculeName, AtomNumber, AtomeType);
-	valence(AtomeType, ValenceNumber);
-	NumberHydrogen=ValenceNumber - NumberOfBonds1- 2*NumberOfBonds2; NumberHydrogen=0..ValenceNumber.
-
-% moleculeComposition shows the number of Carbon, Hydrogen, Oxygen and Nitrogen in the molecule.
-% moleculeComposition(MoleculeName, Number of Carbon, Number of Hydrogen, Number of Oxygen, Number of Nitrogen)
-moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus) :-
-	NumberHydrogen=#sum{NumberHydrogenAtom, AtomNumber: numberHydrogens(MoleculeName, AtomNumber, NumberHydrogenAtom)},
-	NumberCarbon={atom(MoleculeName, AtomNumber , carb)},
-	NumberOxygen={atom(MoleculeName, AtomNumber , oxyg)},
-	NumberNitrogen={atom(MoleculeName, AtomNumber , nitr)},
-	NumberPhosphorus={atom(MoleculeName, AtomNumber , phos)},
-	metabolite(MoleculeName).
-
-% moleculeNbAtoms provides the total number of atoms in a compound.
-moleculeNbAtoms(MoleculeName, NumberCarbon+NumberHydrogen+NumberOxygen+NumberNitrogen+NumberPhosphorus):-
-	moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus).
-
-% moleculeNbAtoms provides the total number of atoms in a compound.
-moleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen + NumberPhosphorus):-
-	moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus).
-
-% numberTotalBonds provides the number of bond in a molecule.
-numberTotalBonds(MoleculeName,NumberTotalOfBonds):-  NumberTotalOfBonds={bond(MoleculeName, BoundType, AtomNumber, SecondAtomNumber)}; metabolite(MoleculeName).
-
-% moleculeMZ computes the M/Z ratio for each molecule.
-% moleculeMZ(MoleculeName, M/Z ratio*10000)
-% Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Z ratio divide the M/Z ratio by 10 0000.
-% Approximation like at PubChem: 120110*NumberCarbon + 10080*NumberHydrogen + 159990*NumberOxygen + 140070*NumberNitrogen + 309738*NumberPhosphorus)
-% 120107*NumberCarbon + 100794*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen
-% 1200960*NumberCarbon + 100784*NumberHydrogen + 1599903*NumberOxygen + 1400643*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
-% 1201160*NumberCarbon + 100811*NumberHydrogen + 1599977*NumberOxygen + 1400728*NumberNitrogen (here multiplied by 100 000) <- from https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf
-moleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen + 309738*NumberPhosphorus):-
-	moleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus).
 
 %* Definition of input and output from reaction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -180,29 +127,29 @@ Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway i
 Use to check if we have achieved our goal.
 *%
 
-source(ProductInferred):- reached(ProductInferred, t-1).
-
-tested(MoleculeName,t,t-1,tested(MoleculeName, t-1)):- not tested(MoleculeName, t-1), source(MoleculeName).
-
-reached(MoleculeName, t):- source(MoleculeName).
-
-reached(KnownPoduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownPoduct), not reached(KnownPoduct, t-1).
-
 % Create metabolite, bond, atom and reaction of the inferred metabolite.
-metabolite(NewMoleculeName):- testmetabolite(NewMoleculeName, t-1).
+metabolite(NewMoleculeName):- testmetabolite(NewMoleculeName, t).
 
-atom(MoleculeName,AtomNumber,AtomType):- testmetabolite(MoleculeName, t-1), newatom(MoleculeName,AtomNumber,AtomType).
+atom(MoleculeName,AtomNumber,AtomType):- testmetabolite(MoleculeName, t), newatom(MoleculeName,AtomNumber,AtomType).
 
-bond(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t-1), newbond(MoleculeName,BondType,FirstAtom,SecondAtom).
+bond(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t), newbond(MoleculeName,BondType,FirstAtom,SecondAtom).
 
-bond2(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t-1), newbond2(MoleculeName,BondType,FirstAtom,SecondAtom).
+bond2(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t), newbond2(MoleculeName,BondType,FirstAtom,SecondAtom).
 
-moleculeMZ(MoleculeName, MZRatio) :-  testmetabolite(MoleculeName, t-1), newmoleculeMZ(MoleculeName, MZRatio).
+moleculeMZ(MoleculeName, MZRatio) :-  testmetabolite(MoleculeName, t), newmoleculeMZ(MoleculeName, MZRatio).
 
-reaction(Reaction,ReactantInferred,NewProduct):- newreaction(Reaction,ReactantInferred,NewProduct), reached(NewProduct, t-1).
+reaction(Reaction,ReactantInferred,NewProduct):- newreaction(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1), not reaction(Reaction,ReactantInferred,NewProduct).
 
-inferred(pathway(Molecule1,Molecule2), t):- reaction(ReactionName,Molecule1,Molecule2), reached(Molecule2, t-1).
-inferred(pathway(Molecule1,ProductInferred), t):- reaction(ReactionName,Molecule2,ProductInferred), reached(ProductInferred, t-1), inferred(pathway(Molecule1,Molecule2), t-1).
+% Intialize source.
+reached(MoleculeName, t):- source(MoleculeName), t==1.
+
+reached(KnownProduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownProduct), reached(KnownReactant, t-1).
+
+% Add product found by inference methods.
+source(ProductInferred):- source(Reactant), reaction(ReactionName, Reactant, ProductInferred), reached(ProductInferred, t).
+
+inferred(pathway(Molecule1,Molecule2), t):- reaction(ReactionName,Molecule1,Molecule2), reached(Molecule2, t).
+inferred(pathway(Molecule1,ProductInferred), t):- reaction(ReactionName,Molecule2,ProductInferred), reached(ProductInferred, t), inferred(pathway(Molecule1,Molecule2), t-1).
 
 %*
 solution(M1,M2,t):- inferred(pathway(M1, M2),t).
@@ -221,21 +168,29 @@ solution(M1,M3,t):- inferred(pathway(M2,M3),t+1), inferred(pathway(M1,M2),t).
 % A known reaction is used to infer a new reaction between a known molecule and a new molecule.
 
 newmetaboliteName(@name_metabolite(ReactantInferred, Reaction, Domain),ReactantInferred, Reaction, Domain):-
-							reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); source(ReactantInferred); not reached(ReactantInferred);
+							reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); reached(ReactantInferred, t);
 							% Check if the three molecules have the same domain.
 							domain(ReactantInferred,Domain);domain(ReactantReference,Domain);domain(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
 							siteBeforeReaction(Reaction,ReactantInferred);siteBeforeReaction(Reaction,ReactantReference);siteAfterReaction(Reaction,ProductReference).
 
-newmetabolite(MoleculeName):- newmetaboliteName(MoleculeName,ReactantInferred, Reaction, Domain).
+% Compute an hypothetic MZ for new molecule.
+hypotheticMZ(MoleculeName, MZHypothetic):- newmetaboliteName(MoleculeName,ReactantInferred,Reaction,Domain), reactionMZ(Reaction,ReactionMZ),
+								moleculeMZ(ReactantInferred, ReactantInferredMZ),
+								MZHypothetic = ReactantInferredMZ - ReactionMZ.
+
+possibleMetabolite(MoleculeName,ReactantInferred, Reaction, Domain):- newmetaboliteName(MoleculeName,ReactantInferred, Reaction, Domain),
+																		hypotheticMZ(MoleculeName,MZFilter), mzfiltering(MZFilter).
+
+newmetabolite(MoleculeName):- possibleMetabolite(MoleculeName,ReactantInferred, Reaction, Domain).
 
 % Create new metabolite atoms and bonds.
 
-newatom(MoleculeName,AtomNumber,AtomType):-atom(ReactantInferred,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType),newmetaboliteName(MoleculeName,ReactantInferred, Reaction,Domain).
-newatom(MoleculeName,AtomNumber,AtomType):- diffAtomAfterReaction(Reaction,AtomNumber,AtomType),newmetaboliteName(MoleculeName,ReactantInferred, Reaction,Domain).
+newatom(MoleculeName,AtomNumber,AtomType):-atom(ReactantInferred,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType),possibleMetabolite(MoleculeName,ReactantInferred, Reaction,Domain).
+newatom(MoleculeName,AtomNumber,AtomType):- diffAtomAfterReaction(Reaction,AtomNumber,AtomType),possibleMetabolite(MoleculeName,ReactantInferred, Reaction,Domain).
 
-newbond(MoleculeName,BondType,FirstAtom,SecondAtom):-bond(ReactantInferred,BondType,FirstAtom,SecondAtom), not diffBondBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetaboliteName(MoleculeName,ReactantInferred,Reaction,Domain).
-newbond(MoleculeName,BondType,FirstAtom,SecondAtom):- diffBondAfterReaction(Reaction,BondType,FirstAtom,SecondAtom),newmetaboliteName(MoleculeName,ReactantInferred, Reaction,Domain).
+newbond(MoleculeName,BondType,FirstAtom,SecondAtom):-bond(ReactantInferred,BondType,FirstAtom,SecondAtom), not diffBondBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom),possibleMetabolite(MoleculeName,ReactantInferred,Reaction,Domain).
+newbond(MoleculeName,BondType,FirstAtom,SecondAtom):- diffBondAfterReaction(Reaction,BondType,FirstAtom,SecondAtom),possibleMetabolite(MoleculeName,ReactantInferred, Reaction,Domain).
 
 newbond2(MoleculeName,BondType,FirstAtom,SecondAtom):- newbond(MoleculeName,BondType,FirstAtom,SecondAtom).
 newbond2(MoleculeName,BondType,FirstAtom,SecondAtom):- newbond(MoleculeName,BondType,SecondAtom,FirstAtom).
@@ -281,7 +236,7 @@ newnumberTotalBonds(MoleculeName,NumberTotalOfBonds):-  NumberTotalOfBonds={newb
 possibleKnownMolecule(NewMoleculeName):-newmoleculeMZ(NewMoleculeName,NewMoleculeMZ);moleculeMZ(KnownMolecule,KnownMoleculeMZ);NewMoleculeMZ==KnownMoleculeMZ.
 
 % Check if new molecules aren't known molecules.
-alreadyKnownMolecule(NewMoleculeName):- possibleKnownMolecule(NewMoleculeName); metabolite(KnownMolecule);
+alreadyKnownMolecule(NewMoleculeName, KnownMolecule):- possibleKnownMolecule(NewMoleculeName); metabolite(KnownMolecule);
 												% Check the number of atoms between the new metabolite and all the known molecules.
 												newmoleculeNbAtoms(NewMoleculeName, NumberOfAtoms); moleculeNbAtoms(KnownMolecule, NumberOfAtomsInRef);
 												NumberOfAtoms==NumberOfAtomsInRef;
@@ -295,10 +250,10 @@ alreadyKnownMolecule(NewMoleculeName):- possibleKnownMolecule(NewMoleculeName); 
 % Filtering using M/Z and already known metabolites.
 % Keep only new metabolite having the M/Z required.
 testmetabolite(NewMoleculeName, t):- newmetabolite(NewMoleculeName), newmoleculeMZ(NewMoleculeName,MZFilter), mzfiltering(MZFilter),
-									not alreadyKnownMolecule(NewMoleculeName),metabolite(KnownMolecule).
+									not alreadyKnownMolecule(NewMoleculeName, KnownMolecule), metabolite(KnownMolecule).
 
 % Create newreaction from inferred metabolite.
-newreaction(Reaction,ReactantInferred,NewProduct):- testmetabolite(NewProduct, t-1),newmetaboliteName(NewProduct,ReactantInferred,Reaction,Domain).
+newreaction(Reaction,ReactantInferred,NewProduct):- testmetabolite(NewProduct, t), possibleMetabolite(NewProduct,ReactantInferred,Reaction,Domain).
 
 % Create the siteBeforeReaction for the new metabolite.
 siteBeforeReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newmetabolite(MoleculeName); testmetabolite(MoleculeName, t);
@@ -317,10 +272,10 @@ siteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newme
                                                         diffBondBeforeReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber).
 
 % New metabolite found by the Metabolite Inference Method can be reach.
-reached(ProductInferred, t):- testmetabolite(ProductInferred, t), not reached(ProductInferred, t-1), newmetaboliteName(ProductInferred,Reactant,Reaction,Domain).
+reached(ProductInferred, t):- testmetabolite(ProductInferred, t), possibleMetabolite(ProductInferred,Reactant,Reaction,Domain), reached(Reactant, t).
 
 % New metabolite is associated to the domain of its reactant.
-domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t),newmetaboliteName(ProductInferred,Reactant,Reaction,Domain).
+domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t),possibleMetabolite(ProductInferred,Reactant,Reaction,Domain).
 
 %* Reaction Inference Method
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -336,7 +291,7 @@ domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t),newmetabolit
 % We also search in the other metabolite if it contains a region corresponding to the site of reaction of the ProductReference (the site modified by the reaction).
 % And we check if all atoms and bonds are the same between ReactantInferred and ProductInferred, except from the atoms and bonds implied in the reaction
 
-newreaction(Reaction,ReactantInferred,ProductInferred):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); metabolite(ProductInferred); source(ReactantInferred);
+newreaction(Reaction,ReactantInferred,ProductInferred):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); metabolite(ProductInferred); reached(ReactantInferred, t);
 							not reaction(Reaction,ReactantInferred,ProductInferred); ReactantInferred != ProductInferred;
 							% Check if the four molecules have the same domain.
 							domain(ReactantInferred,Domain);domain(ProductInferred,Domain);domain(ReactantReference,Domain);domain(ProductReference,Domain);
@@ -351,9 +306,6 @@ newreaction(Reaction,ReactantInferred,ProductInferred):- reaction(Reaction,React
 							bond(ReactantInferred,BondType,FirstAtom,SecondAtom):bond(ProductInferred,BondType,FirstAtom,SecondAtom), not diffBondAfterReaction(Reaction,BondType,FirstAtom,SecondAtom);
 							% Check if bonds of ProductInferred mapped from bonds of ReactantInferred.
 							bond(ProductInferred,BondType,FirstAtom,SecondAtom):bond(ReactantInferred,BondType,FirstAtom,SecondAtom), not diffBondBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom).
-
-% Product found by the Reaction Inference Method can be reach.
-reached(ProductInferred, t):- newreaction(Reaction,Reactant,ProductInferred), source(Reactant), not reached(ProductInferred, t-1).
 
 % Defining the result of generic reactions
 % Generic method which is supposed to replace all the methods below.
@@ -371,12 +323,12 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 :- goal(F), query(t), not inferred(F,t).
 
 #show newreaction/3.
-#show newmetaboliteName/4.
-%#show newmoleculeMZ/2.
+%#show reached/2.
+%#show newmetaboliteName/4.
 %#show input_metabolite/1.
 %#show output_metabolite/1.
 %#show reaction/3.
-#show domain/2.
+%#show domain/2.
 %#show moleculeMZ/2.
 
 %* Expected output

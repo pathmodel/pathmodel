@@ -24,6 +24,10 @@ def on_model(answer, output_file):
             output_file.write( "siteBeforeReaction("+str(atom.arguments[0])+","+str(atom.arguments[1])+").\n")
         elif atom.name == "siteAfterReaction" and len(atom.arguments) == 2:
             output_file.write( "siteAfterReaction("+str(atom.arguments[0])+","+str(atom.arguments[1])+").\n")
+        elif atom.name == "siteBeforeReactionMZ" and len(atom.arguments) == 2:
+            output_file.write( "siteBeforeReactionMZ("+str(atom.arguments[0])+","+str(atom.arguments[1])+").\n")
+        elif atom.name == "siteAfterReactionMZ" and len(atom.arguments) == 2:
+            output_file.write( "siteAfterReactionMZ("+str(atom.arguments[0])+","+str(atom.arguments[1])+").\n")
 
 def main(prg):
     # Create file storing results.
@@ -40,6 +44,11 @@ def main(prg):
 
 #end.
 
+%*
+Chemical variable:
+valence(Atom type, Number of valence)
+*%
+valence(carb, 4). valence(nitr, 3). valence(oxyg, 2). valence(phos, 5).
 
 % Compare reactant and product of the reaction.
 % The idea is to create a named graph (with diffAtomBeforeReaction as node and diffBondBeforeReaction as edge) containing the reaction.
@@ -94,3 +103,10 @@ siteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType); metab
                                                         diffBondAfterReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber);
                                                     not bond(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
                                                         diffBondBeforeReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber).
+
+#show diffAtomBeforeReaction/3.
+#show diffAtomAfterReaction/3.
+#show diffBondBeforeReaction/4.
+#show diffBondAfterReaction/4.
+#show siteBeforeReaction/2.
+#show siteAfterReaction/2.

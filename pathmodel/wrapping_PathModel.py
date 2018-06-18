@@ -13,20 +13,32 @@ parser_args = parser.parse_args(sys.argv[1:])
 input_file = parser_args.input_file
 
 def pathmodel_analysis(input_file):
-	print('~~~~~Creation of Reaction~~~~~')
-	next(clyngor.solve([input_file, 'asp/ReactionCreation.lp']), None)
+	print('~~~~~Creation of MZ~~~~~')
+	mz_result = clyngor.solve([input_file, 'asp/MZComputation.lp'])
 
-	with open('data_temp.lp', 'w') as output_file:
-		with open(input_file,'r') as input_file:
-			with open('data_result.lp','r') as result_file: 
-				output_file.write(input_file.read())
-				output_file.write(result_file.read())
-	os.rename('data_temp.lp','data_result.lp')
+	with open('data_preprocess.lp', 'w') as output_file:
+		with open(input_file,'r') as data_file:
+				output_file.write(data_file.read())
+
+	with open('data_preprocess.lp', 'a') as output_file:
+		for answer in sorted(mz_result.parse_args.atoms_as_string.int_not_parsed.with_optimization):
+			for atom in answer[0]:
+				output_file.write(atom)
+				output_file.write('.\n')
+
+	print('~~~~~Creation of Reaction~~~~~')
+	reaction_result = clyngor.solve([input_file, 'asp/ReactionCreation.lp'])
+
+	with open('data_preprocess.lp', 'a') as output_file:
+		for answer in sorted(reaction_result.parse_args.atoms_as_string.int_not_parsed.with_optimization):
+			for atom in answer[0]:
+				output_file.write(atom)
+				output_file.write('.\n')
 
 	print('~~~~~Inference of reactions and metabolites~~~~~')
-	test_result = clyngor.solve(['data_result.lp', 'asp/PathModel.lp'])
+	test_result = clyngor.solve(['data_preprocess.lp', 'asp/PathModel.lp'])
 
-	result = clyngor.solve(['data_result.lp', 'asp/PathModel.lp'])
+	result = clyngor.solve(['data_preprocess.lp', 'asp/PathModel.lp'])
 
 	print('~~~~~Creating result file~~~~~')
 	resultfile = open("result.lp", "w")
