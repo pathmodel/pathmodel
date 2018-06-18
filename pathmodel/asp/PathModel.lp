@@ -144,6 +144,8 @@ reaction(Reaction,ReactantInferred,NewProduct):- newreaction(Reaction,ReactantIn
 reached(MoleculeName, t):- source(MoleculeName), t==1.
 
 reached(KnownProduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownProduct), reached(KnownReactant, t-1).
+% Error miising some results with this atom.
+%reached(ProductInferred, t):- newreaction(Reaction,Reactant,ProductInferred), source(Reactant), not reached(ProductInferred, t-1).
 
 % Add product found by inference methods.
 source(ProductInferred):- source(Reactant), reaction(ReactionName, Reactant, ProductInferred), reached(ProductInferred, t).
