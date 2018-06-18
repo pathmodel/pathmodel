@@ -138,7 +138,7 @@ bond2(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName,
 
 moleculeMZ(MoleculeName, MZRatio) :-  testmetabolite(MoleculeName, t), newmoleculeMZ(MoleculeName, MZRatio).
 
-reaction(Reaction,ReactantInferred,NewProduct):- newreaction(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1), not reaction(Reaction,ReactantInferred,NewProduct).
+reaction(Reaction,ReactantInferred,NewProduct):- newreaction(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1).
 
 % Intialize source.
 reached(MoleculeName, t):- source(MoleculeName), t==1.
