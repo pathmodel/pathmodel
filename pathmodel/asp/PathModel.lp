@@ -144,14 +144,14 @@ reaction(Reaction,ReactantInferred,NewProduct):- newreaction(Reaction,ReactantIn
 reached(MoleculeName, t):- source(MoleculeName), t==1.
 
 reached(KnownProduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownProduct), reached(KnownReactant, t-1).
-% Error miising some results with this atom.
-%reached(ProductInferred, t):- newreaction(Reaction,Reactant,ProductInferred), source(Reactant), not reached(ProductInferred, t-1).
 
 % Add product found by inference methods.
 source(ProductInferred):- source(Reactant), reaction(ReactionName, Reactant, ProductInferred), reached(ProductInferred, t).
 
 inferred(pathway(Molecule1,Molecule2), t):- reaction(ReactionName,Molecule1,Molecule2), reached(Molecule2, t).
 inferred(pathway(Molecule1,ProductInferred), t):- reaction(ReactionName,Molecule2,ProductInferred), reached(ProductInferred, t), inferred(pathway(Molecule1,Molecule2), t-1).
+% Error with inferred (need to keep older inferred?)
+inferred(pathway(Molecule1,ProductInferred), t):-inferred(pathway(Molecule1,ProductInferred), t-1).
 
 %*
 solution(M1,M2,t):- inferred(pathway(M1, M2),t).
