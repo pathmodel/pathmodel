@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import argparse
@@ -14,60 +15,35 @@ input_file = parser_args.input_file
 
 def pathmodel_analysis(input_file):
 	print('~~~~~Creation of MZ~~~~~')
-	mz_result = clyngor.solve([input_file, 'asp/MZComputation.lp'])
-
-	with open('data_preprocess.lp', 'w') as output_file:
-		with open(input_file,'r') as data_file:
-				output_file.write(data_file.read())
-
-	with open('data_preprocess.lp', 'a') as output_file:
-		for answer in sorted(mz_result.parse_args.atoms_as_string.int_not_parsed.with_optimization):
-			for atom in answer[0]:
-				output_file.write(atom)
-				output_file.write('.\n')
+	# Compute MZ for all known molecules and MZ for reaction then put results in a string.
+	# Use next because for these analysis, we expect only one answer.
+	mz_solver = clyngor.solve([input_file, 'asp/MZComputation.lp'])
+	mz_result = '\n'.join([atom+'. ' for atom in next(mz_solver.parse_args.atoms_as_string.int_not_parsed)])
 
 	print('~~~~~Creation of Reaction~~~~~')
-	reaction_result = clyngor.solve([input_file, 'asp/ReactionCreation.lp'])
-
-	with open('data_preprocess.lp', 'a') as output_file:
-		for answer in sorted(reaction_result.parse_args.atoms_as_string.int_not_parsed.with_optimization):
-			for atom in answer[0]:
-				output_file.write(atom)
-				output_file.write('.\n')
+	# Detect reaction sites by comparing molecules implied in a reaction, then put results in a string.
+	reaction_solver = clyngor.solve([input_file, 'asp/ReactionCreation.lp'])
+	reaction_result = '\n'.join([atom+'. ' for atom in next(reaction_solver.parse_args.atoms_as_string.int_not_parsed)])
 
 	print('~~~~~Inference of reactions and metabolites~~~~~')
-	test_result = clyngor.solve(['data_preprocess.lp', 'asp/PathModel.lp'])
+	# Merge input files + result from MZ prediction and reaction creation into a string, which will be the input file for PathModel.
+	input_string = open(input_file, 'r').read() + '\n' + mz_result + '\n' + reaction_result
+	pathmodel_solver = clyngor.solve(inline=input_string, files='asp/PathModel.lp')
 
-	result = clyngor.solve(['data_preprocess.lp', 'asp/PathModel.lp'])
+	# Take the best model.
+	best_model = None
+	for best_model in pathmodel_solver.parse_args.atoms_as_string.int_not_parsed.sorted: pass
+	pathmodel_result = '\n'.join([atom+'.' for atom in best_model])
 
 	print('~~~~~Creating result file~~~~~')
+	# Write input in a file.
 	resultfile = open("result.lp", "w")
-	optimization_scores = []
-	# Parse result of classification
-	# Check the best optimization.
-	# In clyngor with optimization answer are set with two datas: first one is the model the second is the optimization.
-	for answer in test_result.with_optimization:
-		try:
-			optimization_score = answer[1][1]
-			optimization_scores.append(optimization_score)
-		except:
-			break
-
-	# Write the atoms from the model with the best optimization.
-	if optimization_scores:
-		best_score = max(optimization_scores)
-
-	for answer in sorted(result.parse_args.atoms_as_string.int_not_parsed.with_optimization):
-		try:
-			if answer[1][1] == best_score:
-				for atom in answer[0]:
-					resultfile.write(atom)
-					resultfile.write('.\n')
-		except:
-			for atom in answer[0]:
-				resultfile.write(atom)
-				resultfile.write('.\n')
-
+	resultfile.write(pathmodel_result)
+	resultfile.write('\n')
 	resultfile.close()
 
-pathmodel_analysis(input_file)
+def main():
+	pathmodel_analysis(input_file)
+
+if __name__ == '__main__':
+    main()

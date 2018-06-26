@@ -14,6 +14,7 @@ def name_metabolite(reactant_name, reaction_name, domain_reference):
 	Rename new metabolite inferred.
 	"""
 	name = str(reactant_name) + str(reaction_name) + str(domain_reference)
+	name = name .encode('utf8')
 	hash_name = str(int(hashlib.sha1(name).hexdigest(), 16) % (10 ** 8))
 	new_product_inferred = "Prediction_" + str(hash_name)
 	return new_product_inferred
