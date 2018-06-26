@@ -235,10 +235,11 @@ newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen + 
 newnumberTotalBonds(MoleculeName,NumberTotalOfBonds):-  NumberTotalOfBonds={newbond(MoleculeName, BoundType, AtomNumber, SecondAtomNumber)}; newmetabolite(MoleculeName).
 
 % Check if new molecules have the same MZ than already known molecules.
-possibleKnownMolecule(NewMoleculeName):-newmoleculeMZ(NewMoleculeName,NewMoleculeMZ);moleculeMZ(KnownMolecule,KnownMoleculeMZ);NewMoleculeMZ==KnownMoleculeMZ.
+possibleKnownMolecule(NewMoleculeName):- newmoleculeMZ(NewMoleculeName,NewMoleculeMZ), moleculeMZ(KnownMolecule,KnownMoleculeMZ),
+											NewMoleculeMZ==KnownMoleculeMZ.
 
 % Check if new molecules aren't known molecules.
-alreadyKnownMolecule(NewMoleculeName, KnownMolecule):- possibleKnownMolecule(NewMoleculeName); metabolite(KnownMolecule);
+alreadyKnownMolecule(NewMoleculeName):- possibleKnownMolecule(NewMoleculeName); metabolite(KnownMolecule);
 												% Check the number of atoms between the new metabolite and all the known molecules.
 												newmoleculeNbAtoms(NewMoleculeName, NumberOfAtoms); moleculeNbAtoms(KnownMolecule, NumberOfAtomsInRef);
 												NumberOfAtoms==NumberOfAtomsInRef;
@@ -251,8 +252,8 @@ alreadyKnownMolecule(NewMoleculeName, KnownMolecule):- possibleKnownMolecule(New
 
 % Filtering using M/Z and already known metabolites.
 % Keep only new metabolite having the M/Z required.
-testmetabolite(NewMoleculeName, t):- newmetabolite(NewMoleculeName), newmoleculeMZ(NewMoleculeName,MZFilter), mzfiltering(MZFilter),
-									not alreadyKnownMolecule(NewMoleculeName, KnownMolecule), metabolite(KnownMolecule).
+testmetabolite(NewMoleculeName, t):- newmetabolite(NewMoleculeName), newmoleculeMZ(NewMoleculeName, MZFilter), mzfiltering(MZFilter),
+									not alreadyKnownMolecule(NewMoleculeName).
 
 % Create newreaction from inferred metabolite.
 newreaction(Reaction,ReactantInferred,NewProduct):- testmetabolite(NewProduct, t), possibleMetabolite(NewProduct,ReactantInferred,Reaction,Domain).
@@ -277,7 +278,7 @@ siteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newme
 reached(ProductInferred, t):- testmetabolite(ProductInferred, t), possibleMetabolite(ProductInferred,Reactant,Reaction,Domain), reached(Reactant, t).
 
 % New metabolite is associated to the domain of its reactant.
-domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t),possibleMetabolite(ProductInferred,Reactant,Reaction,Domain).
+domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t), possibleMetabolite(ProductInferred,Reactant,Reaction,Domain).
 
 %* Reaction Inference Method
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -325,8 +326,8 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 :- goal(F), query(t), not inferred(F,t).
 
 #show newreaction/3.
-%#show reached/2.
-%#show newmetaboliteName/4.
+%#show alreadyKnownMolecule/1.
+%#show testmetabolite/2.
 %#show input_metabolite/1.
 %#show output_metabolite/1.
 %#show reaction/3.
