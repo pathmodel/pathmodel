@@ -6,6 +6,8 @@ import clyngor
 import os
 import sys
 
+from path_creation import pathmodel_pathway_picture
+
 parser = argparse.ArgumentParser(usage="python pathway_tools_multiprocess.py -f FOLDER")
 parser.add_argument("-d", "--data", dest = "input_file", metavar = "FILE", help = "Input file containing atoms, bonds, reactions and goal.")
 
@@ -41,6 +43,8 @@ def pathmodel_analysis(input_file):
 	resultfile.write(pathmodel_result)
 	resultfile.write('\n')
 	resultfile.close()
+
+	pathmodel_pathway_picture("result.lp")
 
 def main():
 	pathmodel_analysis(input_file)
