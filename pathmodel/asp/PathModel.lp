@@ -139,7 +139,9 @@ bond2(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName,
 
 moleculeMZ(MoleculeName, MZRatio) :-  testmetabolite(MoleculeName, t), newmoleculeMZ(MoleculeName, MZRatio).
 
-reaction(Reaction,ReactantInferred,NewProduct):- newreaction(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1).
+reaction(Reaction,ReactantInferred,NewProduct):- analogicalReasoningInference(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1).
+
+reaction(Reaction,ReactantInferred,NewProduct):- deductiveReasoningInference(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1).
 
 % Intialize source.
 reached(MoleculeName, t):- source(MoleculeName), t==1.
@@ -163,6 +165,11 @@ solution(M1,M3,t):- inferred(pathway(M2,M3),t+1), inferred(pathway(M1,M2),t).
 %* Metabolite Inference Method
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
+
+% Analogical reasoning: Using all konwn reactions between two metabolites, new metabolites are created from a known metabolites.
+% The known metabolite must shared a domain with the two other molecules and if it has the same site before reaction than the reactant.
+% Then a new metablolite is created by analogy by taking the structure of the known metabolite and the change made by the reaction on the two other molecules.
+% This new metabolite is compared to the database to check if it is not a known and metabolite and filtered using its MZ ratio.
 
 % Rule to infer new punctual metabolites: new metabolite @g(ReactantInferred, Reaction), can be the product of metabolite ReactantInferred by reaction Reaction.
 % This method work with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
@@ -257,7 +264,7 @@ testmetabolite(NewMoleculeName, t):- newmetabolite(NewMoleculeName), newmolecule
 									not alreadyKnownMolecule(NewMoleculeName).
 
 % Create newreaction from inferred metabolite.
-newreaction(Reaction,ReactantInferred,NewProduct):- testmetabolite(NewProduct, t), possibleMetabolite(NewProduct,ReactantInferred,Reaction,Domain).
+analogicalReasoningInference(Reaction,ReactantInferred,NewProduct):- testmetabolite(NewProduct, t), possibleMetabolite(NewProduct,ReactantInferred,Reaction,Domain).
 
 % Create the siteBeforeReaction for the new metabolite.
 siteBeforeReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newmetabolite(MoleculeName); testmetabolite(MoleculeName, t);
@@ -285,6 +292,12 @@ domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t), possibleMet
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
 
+% Deductice reasoning: a reaction between two molecules (reference). These two molecules share a chemical (like sterane for sterol) domain with two other molecules (to infer).
+% One molecule to infer has the same chemical structure (atoms + bonds) on the reaction site than the reactant of reference (site before reaction).
+% And the other molecule to infer has the same structure than the product of reference (site after reaction).
+% And the two molecules to infer have the same structure except for the reaction site.
+% Then the reaction between reference is inferred between the two molecules to infer.
+
 % Rule to infer new punctual reactions: metabolite ProductInferred can be the product of metabolite ReactantInferred by reaction Reaction.
 % This method work with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
 % The reaction sites are defined with the ReactionCreation.lp script.
@@ -295,7 +308,7 @@ domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t), possibleMet
 % We also search in the other metabolite if it contains a region corresponding to the site of reaction of the ProductReference (the site modified by the reaction).
 % And we check if all atoms and bonds are the same between ReactantInferred and ProductInferred, except from the atoms and bonds implied in the reaction
 
-newreaction(Reaction,ReactantInferred,ProductInferred):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); metabolite(ProductInferred); reached(ReactantInferred, t);
+deductiveReasoningInference(Reaction,ReactantInferred,ProductInferred):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); metabolite(ProductInferred); reached(ReactantInferred, t);
 							not reaction(Reaction,ReactantInferred,ProductInferred); ReactantInferred != ProductInferred;
 							% Check if the four molecules have the same domain.
 							domain(ReactantInferred,Domain);domain(ProductInferred,Domain);domain(ReactantReference,Domain);domain(ProductReference,Domain);
@@ -326,9 +339,9 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 #program check(t).
 :- goal(F), query(t), not inferred(F,t).
 
-#show newreaction/3.
-%#show alreadyKnownMolecule/1.
-%#show testmetabolite/2.
+#show deductiveReasoningInference/3.
+#show analogicalReasoningInference/3.
+#show reaction/3.
 %#show input_metabolite/1.
 %#show output_metabolite/1.
 %#show reaction/3.

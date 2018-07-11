@@ -4,36 +4,6 @@ To do this it compares links and atoms between two molecules that are implied in
 When it finds difference, the script will extract the links and atoms and write the result in a file.
 *%
 
-#script (python)
-
-import clingo
-
-def on_model(answer, output_file):
-    # Write all atoms in output file.
-    atoms=answer.symbols(atoms=True)
-    for atom in atoms:
-        if atom.name == "moleculeMZ" and len(atom.arguments) == 2:
-            output_file.write( "moleculeMZ("+str(atom.arguments[0])+","+str(atom.arguments[1])+").\n")
-        elif atom.name == "moleculeComposition" and len(atom.arguments) == 6:
-            output_file.write( "moleculeComposition("+str(atom.arguments[0])+","+str(atom.arguments[1])+","+str(atom.arguments[2])+","+str(atom.arguments[3])+","+str(atom.arguments[4])+","+
-														str(atom.arguments[5])+").\n")
-        elif atom.name == "moleculeNbAtoms" and len(atom.arguments) == 2:
-            output_file.write( "moleculeNbAtoms("+str(atom.arguments[0])+","+str(atom.arguments[1])+").\n")
-        elif atom.name == "numberTotalBonds" and len(atom.arguments) == 2:
-            output_file.write( "numberTotalBonds("+str(atom.arguments[0])+","+str(atom.arguments[1])+").\n")
-
-def main(prg):
-    # Create file storing results.
-	output_file = open("data_mz.lp", "w")
-
-	prg.ground([("base", [])])
-	for answer_number, answer in enumerate(prg.solve(yield_=True, async=True), start=1):
-		on_model(answer, output_file)
-	output_file.close()
-
-#end.
-
-
 %*
 Chemical variable:
 valence(Atom type, Number of valence)

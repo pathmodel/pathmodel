@@ -8,12 +8,15 @@ import sys
 
 from path_creation import pathmodel_pathway_picture
 
-parser = argparse.ArgumentParser(usage="python pathway_tools_multiprocess.py -f FOLDER")
-parser.add_argument("-d", "--data", dest = "input_file", metavar = "FILE", help = "Input file containing atoms, bonds, reactions and goal.")
+def run():
+	parser = argparse.ArgumentParser(usage="python pathway_tools_multiprocess.py -f FOLDER")
+	parser.add_argument("-d", "--data", dest = "input_file", metavar = "FILE", help = "Input file containing atoms, bonds, reactions and goal.")
 
-parser_args = parser.parse_args(sys.argv[1:])
+	parser_args = parser.parse_args(sys.argv[1:])
 
-input_file = parser_args.input_file
+	input_file = parser_args.input_file
+
+	pathmodel_analysis(input_file)
 
 def pathmodel_analysis(input_file):
 	print('~~~~~Creation of MZ~~~~~')
@@ -24,7 +27,7 @@ def pathmodel_analysis(input_file):
 
 	print('~~~~~Creation of Reaction~~~~~')
 	# Detect reaction sites by comparing molecules implied in a reaction, then put results in a string.
-	reaction_solver = clyngor.solve([input_file, 'asp/ReactionCreation.lp'])
+	reaction_solver = clyngor.solve([input_file, 'asp/ReactionSiteExtraction.lp'])
 	reaction_result = '\n'.join([atom+'. ' for atom in next(reaction_solver.parse_args.atoms_as_string.int_not_parsed)])
 
 	print('~~~~~Inference of reactions and metabolites~~~~~')
@@ -46,8 +49,5 @@ def pathmodel_analysis(input_file):
 
 	pathmodel_pathway_picture("result.lp")
 
-def main():
-	pathmodel_analysis(input_file)
-
 if __name__ == '__main__':
-    main()
+    run()
