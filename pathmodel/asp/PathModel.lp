@@ -322,9 +322,9 @@ domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t),newmetabolit
 *%
 
 % Rule to infer new punctual reactions: metabolite ProductInferred can be the product of metabolite ReactantInferred by reaction Reaction.
-% This method work with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
+% This method works with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
 % The reaction sites are defined with the ReactionCreation.lp script.
-% First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
+% First we search for a reference reaction. Then we take two metabolites and look if the reference reaction doesn't exist between them.
 % We also check if the two metabolites are not the same.
 % In a second point we check if the four molecules (two molecules from reference reaction and two tested metabolites) have a domain in common.
 % Then we search in one of the two metabolites if it contains a region corresponding to the site of reaction of the ReactantReference (the site that will be modified by the reaction).
