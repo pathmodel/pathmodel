@@ -211,7 +211,7 @@ solution(M1,M3,t):- inferred(pathway(M2,M3),t+1), inferred(pathway(M1,M2),t).
 *%
 
 % Rule to infer new punctual metabolites: new metabolite @g(ReactantInferred, Reaction), can be the product of metabolite ReactantInferred by reaction Reaction.
-% This method work with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
+% This method works with analogy reasoning. Using known reactions, the method will use these reactions to infer new reactions between molecules.
 % The reaction sites are defined with the ReactionCreation.lp script.
 % First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
 % A known reaction is used to infer a new reaction between a known molecule and a new molecule.
@@ -263,7 +263,7 @@ newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + 
 
 % moleculeMZ computes the M/Z ratio for each new molecule.
 % moleculeMZ(MoleculeName, M/Z ratio*10000)
-% Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Z ratio divide the M/Z ratio by 10 0000.
+% Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Z ratio, divide the M/Z ratio by 10 0000.
 newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :-
 		newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
 		newmetabolite(MoleculeName).
