@@ -174,7 +174,7 @@ testeddif(B,A):-testeddif(A,B).
 *%
 %* Browse reactions
 %%%%%%%%%%%%%%%%%%%%
-Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway is here described as the path from a molecuce to another through reactions.
+Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway is here described as the path from a molecule to another through reactions.
 Use to check if we have achieved our goal.
 *%
 
