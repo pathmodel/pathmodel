@@ -182,7 +182,7 @@ source(ProductInferred):- reached(ProductInferred, t-1).
 
 reached(MoleculeName, t):- source(MoleculeName).
 
-reached(KnownPoduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownPoduct).
+reached(KnownProduct, t):- source(KnownReactant), reaction(ReactionName, KnownReactant, KnownProduct).
 
 % Create metabolite, bond, atom and reaction of the inferred metabolite.
 metabolite(NewMoleculeName):- testmetabolite(NewMoleculeName, t-1).
