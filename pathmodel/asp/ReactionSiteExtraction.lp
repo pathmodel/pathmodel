@@ -4,45 +4,11 @@ To do this it compares links and atoms between two molecules that are implied in
 When it finds difference, the script will extract the links and atoms and write the result in a file.
 *%
 
-#script (python)
-
-import clingo
-
-def on_model(answer, output_file):
-    atoms=answer.symbols(atoms=True)
-    for atom in atoms:
-        if atom.name == "diffAtomBeforeReaction" and len(atom.arguments) == 3:
-            output_file.write( "diffAtomBeforeReaction("+str(atom.arguments[0])+","+str(atom.arguments[1])+","+str(atom.arguments[2])+").\n")
-        elif atom.name == "diffAtomAfterReaction" and len(atom.arguments) == 3:
-            output_file.write( "diffAtomAfterReaction("+str(atom.arguments[0])+","+str(atom.arguments[1])+","+str(atom.arguments[2])+").\n")
-        elif atom.name == "diffBondBeforeReaction" and len(atom.arguments) == 4:
-            output_file.write( "diffBondBeforeReaction("+str(atom.arguments[0])+","+str(atom.arguments[1])+","+str(atom.arguments[2])+","+str(atom.arguments[3])+").\n")
-        elif atom.name == "diffBondAfterReaction" and len(atom.arguments) == 4:
-            output_file.write( "diffBondAfterReaction("+str(atom.arguments[0])+","+str(atom.arguments[1])+","+str(atom.arguments[2])+","+str(atom.arguments[3])+").\n")
-        elif atom.name == "siteBeforeReaction" and len(atom.arguments) == 2:
-            output_file.write( "siteBeforeReaction("+str(atom.arguments[0])+","+str(atom.arguments[1])+").\n")
-        elif atom.name == "siteAfterReaction" and len(atom.arguments) == 2:
-            output_file.write( "siteAfterReaction("+str(atom.arguments[0])+","+str(atom.arguments[1])+").\n")
-
-def main(prg):
-    # Open data file and write its content in an output file.
-	input_file = open("data.lp", "r")
-	output_file = open("data_result.lp", "w")
-	output_file.write(input_file.read())
-	input_file.close()
-
-    # Add predicates informing of the position of the reaction sites.
-	output_file.write('\n')
-	output_file.write('% Reaction site for each reaction.')
-	output_file.write('\n')
-
-	prg.ground([("base", [])])
-	for answer_number, answer in enumerate(prg.solve(yield_=True, async=True), start=1):
-		on_model(answer, output_file)
-	output_file.close()
-
-#end.
-
+%*
+Chemical variable:
+valence(Atom type, Number of valence)
+*%
+valence(carb, 4). valence(nitr, 3). valence(oxyg, 2). valence(phos, 5).
 
 % Compare reactant and product of the reaction.
 % The idea is to create a named graph (with diffAtomBeforeReaction as node and diffBondBeforeReaction as edge) containing the reaction.
@@ -97,3 +63,10 @@ siteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType); metab
                                                         diffBondAfterReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber);
                                                     not bond(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
                                                         diffBondBeforeReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber).
+
+#show diffAtomBeforeReaction/3.
+#show diffAtomAfterReaction/3.
+#show diffBondBeforeReaction/4.
+#show diffBondAfterReaction/4.
+#show siteBeforeReaction/2.
+#show siteAfterReaction/2.
