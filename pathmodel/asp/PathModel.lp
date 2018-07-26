@@ -234,8 +234,8 @@ newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + 
 % moleculeMZ computes the M/Z ratio for each new molecule.
 % moleculeMZ(MoleculeName, M/Z ratio*10000)
 % Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Z ratio, divide the M/Z ratio by 10 0000.
-newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :-
-		newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
+newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen + 309738*NumberPhosphorus) :-
+		newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus),
 		newmetabolite(MoleculeName).
 
 newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen + NumberPhosphorus):- newmoleculeComposition(MoleculeName, NumberCarbon, _, NumberOxygen, NumberNitrogen, NumberPhosphorus).
