@@ -124,7 +124,7 @@ testeddif(B,A):-testeddif(A,B).
 *%
 %* Browse reactions
 %%%%%%%%%%%%%%%%%%%%
-Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway is here described as the path from a moleucle to another through reactions.
+Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway is here described as the path from a molecule to another through reactions.
 Use to check if we have achieved our goal.
 *%
 
@@ -172,7 +172,7 @@ solution(M1,M3,t):- inferred(pathway(M2,M3),t+1), inferred(pathway(M1,M2),t).
 % This new metabolite is compared to the database to check if it is not a known and metabolite and filtered using its MZ ratio.
 
 % Rule to infer new punctual metabolites: new metabolite @g(ReactantInferred, Reaction), can be the product of metabolite ReactantInferred by reaction Reaction.
-% This method work with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
+% This method works with analogy reasoning. Using known reactions, the method will use these reactions to infer new reactions between molecules.
 % The reaction sites are defined with the ReactionCreation.lp script.
 % First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
 % A known reaction is used to infer a new reaction between a known molecule and a new molecule.
@@ -233,9 +233,9 @@ newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberHydrogen + NumberOxygen + 
 
 % moleculeMZ computes the M/Z ratio for each new molecule.
 % moleculeMZ(MoleculeName, M/Z ratio*10000)
-% Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Z ratio divide the M/Z ratio by 10 0000.
-newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen + 309738*NumberPhosphorus) :-
-		newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen, NumberPhosphorus),
+% Because in ASP there is no decimal, all the atomic masses have been multiplied by 10 0000. If you want the real M/Z ratio, divide the M/Z ratio by 10 0000.
+newmoleculeMZ(MoleculeName, 120107*NumberCarbon + 10074*NumberHydrogen + 159994*NumberOxygen + 140067*NumberNitrogen) :-
+		newmoleculeComposition(MoleculeName, NumberCarbon, NumberHydrogen, NumberOxygen, NumberNitrogen),
 		newmetabolite(MoleculeName).
 
 newmoleculeNbAtoms(MoleculeName, NumberCarbon + NumberOxygen + NumberNitrogen + NumberPhosphorus):- newmoleculeComposition(MoleculeName, NumberCarbon, _, NumberOxygen, NumberNitrogen, NumberPhosphorus).
@@ -299,9 +299,9 @@ domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t), possibleMet
 % Then the reaction between reference is inferred between the two molecules to infer.
 
 % Rule to infer new punctual reactions: metabolite ProductInferred can be the product of metabolite ReactantInferred by reaction Reaction.
-% This method work with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
+% This method works with reasoning with analogy. Using known reactions, the method will use these reactions to infer new reaction between molecules.
 % The reaction sites are defined with the ReactionCreation.lp script.
-% First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
+% First we search for a reference reaction. Then we take two metabolites and look if the reference reaction doesn't exist between them.
 % We also check if the two metabolites are not the same.
 % In a second point we check if the four molecules (two molecules from reference reaction and two tested metabolites) have a domain in common.
 % Then we search in one of the two metabolites if it contains a region corresponding to the site of reaction of the ReactantReference (the site that will be modified by the reaction).

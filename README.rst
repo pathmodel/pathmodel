@@ -57,4 +57,4 @@ Example
 
 pathmodel/data.lp contains example for sterols and mycosporine amino-acids pathways.
 
-test/data.lp contains an example with fictionnal molecules to test PathModel.
+test/data.lp contains an example with fictional molecules to test PathModel.
