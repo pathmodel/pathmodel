@@ -30,12 +30,12 @@ setup(name='pathmodel',
         'Programming Language :: Python :: 2'
       ],
       packages=['pathmodel'],
-      install_requires=[
-            'clyngor',
-      ],
+      package_dir = {'pathmodel' : 'pathmodel'},
+      package_data = {'pathmodel' : ['pathmodel/asp/*.lp']},
+      install_requires=['clyngor','networkx',],
       entry_points={
           'console_scripts': [
-              'pathmodel = wrapping_PathModel.__main__:main'
+              'pathmodel = pathmodel.__main__:main'
           ]
       },
 )
