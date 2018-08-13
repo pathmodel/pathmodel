@@ -22,6 +22,21 @@ bond("cycloartenol",singleR,17,20). bond("cycloartenol",singleS,20,21). bond("cy
 bond("cycloartenol",single,22,23). bond("cycloartenol",single,23,24). bond("cycloartenol",double,24,25).
 bond("cycloartenol",single,25,26). bond("cycloartenol",single,25,27).
 
+atom("24-methylenecycloartanol",1..24,carb). atom("24-methylenecycloartanol",241,carb). atom("24-methylenecycloartanol",25..30,carb).
+atom("24-methylenecycloartanol",31,oxyg).
+bond("24-methylenecycloartanol",single,1,2). bond("24-methylenecycloartanol",single,1,10). bond("24-methylenecycloartanol",single,2,3).
+bond("24-methylenecycloartanol",single,3,4). bond("24-methylenecycloartanol",singleR,3,31). bond("24-methylenecycloartanol",single,4,5).
+bond("24-methylenecycloartanol",singleR,4,29). bond("24-methylenecycloartanol",singleS,4,28). bond("24-methylenecycloartanol",single,5,6).
+bond("24-methylenecycloartanol",single,5,10). bond("24-methylenecycloartanol",single,6,7). bond("24-methylenecycloartanol",single,7,8).
+bond("24-methylenecycloartanol",single,8,9). bond("24-methylenecycloartanol",single,8,14). bond("24-methylenecycloartanol",single,9,10).
+bond("24-methylenecycloartanol",single,9,11).bond("24-methylenecycloartanol",singleR,9,19). bond("24-methylenecycloartanol",singleR,10,19).
+bond("24-methylenecycloartanol",single,11,12). bond("24-methylenecycloartanol",single,12,13). bond("24-methylenecycloartanol",single,13,14).
+bond("24-methylenecycloartanol",single,14,15). bond("24-methylenecycloartanol",singleS,14,30). bond("24-methylenecycloartanol",single,15,16).
+bond("24-methylenecycloartanol",single,16,17). bond("24-methylenecycloartanol",single,13,17). bond("24-methylenecycloartanol",singleR,13,18).
+bond("24-methylenecycloartanol",singleR,17,20). bond("24-methylenecycloartanol",singleS,20,21). bond("24-methylenecycloartanol",single,20,22).
+bond("24-methylenecycloartanol",single,22,23). bond("24-methylenecycloartanol",single,23,24). bond("24-methylenecycloartanol",double,24,241).
+bond("24-methylenecycloartanol",single,24,25). bond("24-methylenecycloartanol",single,25,26). bond("24-methylenecycloartanol",single,25,27).
+
 atom("cycloartanol",1..30,carb). atom("cycloartanol",31,oxyg).
 bond("cycloartanol",single,1,2). bond("cycloartanol",single,1,10). bond("cycloartanol",single,2,3).
 bond("cycloartanol",single,3,4). bond("cycloartanol",singleR,3,31). bond("cycloartanol",single,4,5).
@@ -523,6 +538,8 @@ reaction(c22_desaturation,"24-epicampesterol", "brassicasterol").
 
 reaction(c22_desaturation,"sitosterol", "stigmasterol").
 
+reaction(c24_methyltransferase,"cycloartenol","24-methylenecycloartanol").
+
 % Mycosporine amino-acids known reactions.
 
 reaction(mysa, "sedoheptulose-7-phosphate", "S-desmethyl-4-deoxygadusol").
@@ -560,5 +577,5 @@ source("sedoheptulose-7-phosphate").
 % Initiation of incremental grounding.
 
 init(pathway("cycloartenol","22-dehydrocholesterol")).
-goal(pathway("cycloartenol","stigmasterol")).
+goal(pathway("cycloartenol","24-methylenecholesterol")).
 goal(pathway("sedoheptulose-7-phosphate","palythene")).
