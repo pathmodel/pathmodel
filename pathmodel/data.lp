@@ -569,6 +569,10 @@ reaction(hydrolyse,"palythene","palythine").
 mzfiltering(2702720).
 mzfiltering(3023117).
 
+% Molecules absent in our organism.
+
+absentmolecules("fucosterol").
+
 % Source molecule for inference.
 
 source("cycloartenol").

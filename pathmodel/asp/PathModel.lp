@@ -309,7 +309,7 @@ domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t), possibleMet
 % And we check if all atoms and bonds are the same between ReactantInferred and ProductInferred, except from the atoms and bonds implied in the reaction
 
 deductiveReasoningInference(Reaction,ReactantInferred,ProductInferred):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); metabolite(ProductInferred); reached(ReactantInferred, t);
-							not reaction(Reaction,ReactantInferred,ProductInferred); ReactantInferred != ProductInferred;
+							not reaction(Reaction,ReactantInferred,ProductInferred); ReactantInferred != ProductInferred; not absentmolecules(ReactantInferred); not absentmolecules(ProductInferred);
 							% Check if the four molecules have the same domain.
 							domain(ReactantInferred,Domain);domain(ProductInferred,Domain);domain(ReactantReference,Domain);domain(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
