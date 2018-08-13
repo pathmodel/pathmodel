@@ -7,10 +7,7 @@ import matplotlib.pyplot as plt
 
 from networkx.drawing.nx_agraph import graphviz_layout
 
-def pathmodel_pathway_picture(asp_path):
-    asp_file = open(asp_path, 'r')
-    asp_code = asp_file.read()
-
+def pathmodel_pathway_picture(asp_code, picture_name):
     DG = nx.DiGraph()
 
     kown_reactions = []
@@ -59,6 +56,4 @@ def pathmodel_pathway_picture(asp_path):
 
     ax = plt.gca()
     ax.set_axis_off()
-    plt.savefig("test.png", dpi=144, format='png', frameon=True)
-
-    asp_file.close()
+    plt.savefig(picture_name, dpi=144, format='png', frameon=True)

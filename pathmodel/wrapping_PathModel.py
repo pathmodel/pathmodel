@@ -9,16 +9,20 @@ import sys
 from pathmodel.path_creation import pathmodel_pathway_picture
 
 def run_pathmodel():
-	parser = argparse.ArgumentParser(usage="python pathway_tools_multiprocess.py -f FOLDER")
+	parser = argparse.ArgumentParser(usage="python wrapping_PathModel.py -d FILE -p FILE -o FILE")
 	parser.add_argument("-d", "--data", dest = "input_file", metavar = "FILE", help = "Input file containing atoms, bonds, reactions and goal.")
+	parser.add_argument("-p", "--picture", dest = "picture", metavar = "FILE", help = "Create picture result file.")
+	parser.add_argument("-o", "--output", dest = "output_file", metavar = "FILE", help = "Write result in this file.")
 
 	parser_args = parser.parse_args(sys.argv[1:])
 
 	input_file = parser_args.input_file
+	picture_name = parser_args.picture
+	output_file = parser_args.output_file
 
-	pathmodel_analysis(input_file)
+	pathmodel_analysis(input_file, picture_name, output_file)
 
-def pathmodel_analysis(input_file):
+def pathmodel_analysis(input_file, picture_name=None, output_file=None):
 	root = __file__.rsplit('/', 1)[0]
 	print('~~~~~Creation of MZ~~~~~')
 	# Compute MZ for all known molecules and MZ for reaction then put results in a string.
@@ -46,14 +50,18 @@ def pathmodel_analysis(input_file):
 	for best_model in pathmodel_solver.parse_args.atoms_as_string.int_not_parsed.sorted: pass
 	pathmodel_result = '\n'.join([atom+'.' for atom in best_model])
 
-	print('~~~~~Creating result file~~~~~')
-	# Write input in a file.
-	resultfile = open("result.lp", "w")
-	resultfile.write(pathmodel_result)
-	resultfile.write('\n')
-	resultfile.close()
+	if output_file:
+		print('~~~~~Creating result file~~~~~')
+		# Write input in a file.
+		resultfile = open(output_file, "w")
+		resultfile.write(pathmodel_result)
+		resultfile.write('\n')
+		resultfile.close()
 
-	pathmodel_pathway_picture("result.lp")
+	if picture_name:
+		pathmodel_pathway_picture(pathmodel_result, picture_name)
+
+	return pathmodel_result
 
 if __name__ == '__main__':
     run_pathmodel()

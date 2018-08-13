@@ -21,7 +21,7 @@ Python environment for Clingo must be Python 3, if it is Python 2 the script wil
 
 For the wrapping script, `Python3 <https://www.python.org/>`__ and `clyngor package <https://github.com/Aluriak/clyngor>`__ are needed.
 
-To create pathway picture, the script uses `networkx <https://networkx.github.io/>`__ and matplotlib packages `<https://matplotlib.org/>`__.
+To create pathway picture, the script uses `networkx <https://networkx.github.io/>`__ and `matplotlib packages <https://matplotlib.org/>`__.
 
 Using git
 ~~~~~~~~~
@@ -30,7 +30,7 @@ At this moment, the package can be installed only using python setup. But when t
 
 .. code:: sh
 
-	git clone https://gitlab.inria.fr/abelcour/PathModel.git
+git clone https://gitlab.inria.fr/abelcour/PathModel.git
 
     cd PathModel
 
