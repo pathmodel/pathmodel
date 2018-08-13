@@ -30,7 +30,7 @@ At this moment, the package can be installed only using python setup. But when t
 
 .. code:: sh
 
-git clone https://gitlab.inria.fr/abelcour/PathModel.git
+    git clone https://gitlab.inria.fr/abelcour/PathModel.git
 
     cd PathModel
 
@@ -93,6 +93,12 @@ M/Z ratio can be added to check whether there is a metabolite that can be predic
 .. code:: sh
 
     mzfiltering(2702720).
+
+Molecules that are not in the organism of study can be added. They will not be target of the inference methods.
+
+.. code:: sh
+
+    absentmolecules("Molecule1").
 
 Use
 ~~~
