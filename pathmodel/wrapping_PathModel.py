@@ -34,6 +34,11 @@ def pathmodel_analysis(input_file):
 	print('~~~~~Inference of reactions and metabolites~~~~~')
 	# Merge input files + result from MZ prediction and reaction creation into a string, which will be the input file for PathModel.
 	input_string = open(input_file, 'r').read() + '\n' + mz_result + '\n' + reaction_result
+	input_pathmodel_file = open("data_pathmodel.lp", "w")
+	input_pathmodel_file.write(input_string)
+	input_pathmodel_file.write('\n')
+	input_pathmodel_file.close()
+
 	pathmodel_solver = clyngor.solve(inline=input_string, files=root + '/asp/PathModel.lp')
 
 	# Take the best model.

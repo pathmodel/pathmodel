@@ -326,6 +326,31 @@ bond("5α-cholesta-7,24-dienol",singleS,20,21). bond("5α-cholesta-7,24-dienol",
 bond("5α-cholesta-7,24-dienol",single,23,24). bond("5α-cholesta-7,24-dienol",double,24,25). bond("5α-cholesta-7,24-dienol",single,25,26).
 bond("5α-cholesta-7,24-dienol",single,25,27).
 
+atom("7-dehydrodesmesterol",1..27,carb). atom("7-dehydrodesmesterol",31,oxyg).
+bond("7-dehydrodesmesterol",single,1,2). bond("7-dehydrodesmesterol",single,1,10). bond("7-dehydrodesmesterol",single,2,3).
+bond("7-dehydrodesmesterol",single,3,4). bond("7-dehydrodesmesterol",singleR,3,31). bond("7-dehydrodesmesterol",single,4,5).
+bond("7-dehydrodesmesterol",double,5,6). bond("7-dehydrodesmesterol",single,5,10). bond("7-dehydrodesmesterol",single,6,7).
+bond("7-dehydrodesmesterol",double,7,8). bond("7-dehydrodesmesterol",single,8,9). bond("7-dehydrodesmesterol",single,8,14).
+bond("7-dehydrodesmesterol",single,9,10). bond("7-dehydrodesmesterol",single,9,11). bond("7-dehydrodesmesterol",singleR,10,19).
+bond("7-dehydrodesmesterol",single,11,12). bond("7-dehydrodesmesterol",single,12,13). bond("7-dehydrodesmesterol",single,13,14).
+bond("7-dehydrodesmesterol",single,14,15). bond("7-dehydrodesmesterol",single,15,16). bond("7-dehydrodesmesterol",single,16,17).
+bond("7-dehydrodesmesterol",single,13,17). bond("7-dehydrodesmesterol",singleR,13,18). bond("7-dehydrodesmesterol",singleR,17,20).
+bond("7-dehydrodesmesterol",singleS,20,21). bond("7-dehydrodesmesterol",single,20,22). bond("7-dehydrodesmesterol",single,22,23).
+bond("7-dehydrodesmesterol",single,23,24). bond("7-dehydrodesmesterol",double,24,25). bond("7-dehydrodesmesterol",single,25,26).
+bond("7-dehydrodesmesterol",single,25,27).
+
+atom("desmesterol",1..27,carb). atom("desmesterol",31,oxyg).
+bond("desmesterol",single,1,2). bond("desmesterol",single,1,10). bond("desmesterol",single,2,3).
+bond("desmesterol",single,3,4). bond("desmesterol",singleR,3,31). bond("desmesterol",single,4,5).
+bond("desmesterol",double,5,6). bond("desmesterol",single,5,10). bond("desmesterol",single,6,7).
+bond("desmesterol",single,7,8). bond("desmesterol",single,8,9). bond("desmesterol",single,8,14).
+bond("desmesterol",single,9,10). bond("desmesterol",single,9,11). bond("desmesterol",singleR,10,19).
+bond("desmesterol",single,11,12). bond("desmesterol",single,12,13). bond("desmesterol",single,13,14).
+bond("desmesterol",single,14,15). bond("desmesterol",single,15,16). bond("desmesterol",single,16,17).
+bond("desmesterol",single,13,17). bond("desmesterol",singleR,13,18). bond("desmesterol",singleR,17,20).
+bond("desmesterol",singleS,20,21). bond("desmesterol",single,20,22). bond("desmesterol",single,22,23).
+bond("desmesterol",single,23,24). bond("desmesterol",double,24,25). bond("desmesterol",single,25,26).
+bond("desmesterol",single,25,27).
 
 % Amino acids
 
@@ -535,5 +560,5 @@ source("sedoheptulose-7-phosphate").
 % Initiation of incremental grounding.
 
 init(pathway("cycloartenol","22-dehydrocholesterol")).
-goal(pathway("31-norcycloartenol","22-dehydrocholesterol")).
+goal(pathway("cycloartenol","stigmasterol")).
 goal(pathway("sedoheptulose-7-phosphate","palythene")).
