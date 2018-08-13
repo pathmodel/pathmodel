@@ -50,7 +50,9 @@ def pathmodel_pathway_picture(asp_path):
                            edge_color="black",
                            alpha=0.5,
                            width=2.0,
-                           arrow=True)
+                           arrow=True,
+                           arrowstyle='->',
+                           arrowsize=14)
     nx.draw_networkx_labels(DG,
                            graphviz_layout(DG, prog='neato'),
                            font_size=15)
