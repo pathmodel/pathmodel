@@ -581,5 +581,5 @@ source("sedoheptulose-7-phosphate").
 % Initiation of incremental grounding.
 
 init(pathway("cycloartenol","22-dehydrocholesterol")).
-goal(pathway("cycloartenol","24-methylenecholesterol")).
-goal(pathway("sedoheptulose-7-phosphate","palythene")).
+goal(pathway("cycloartenol","brassicasterol")).
+goal(pathway("sedoheptulose-7-phosphate","palythine")).

@@ -182,7 +182,9 @@ newmetaboliteName(@name_metabolite(ReactantInferred, Reaction, Domain),ReactantI
 							% Check if the three molecules have the same domain.
 							domain(ReactantInferred,Domain);domain(ReactantReference,Domain);domain(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
-							siteBeforeReaction(Reaction,ReactantInferred);siteBeforeReaction(Reaction,ReactantReference);siteAfterReaction(Reaction,ProductReference).
+							siteBeforeReaction(Reaction,ReactantInferred);siteBeforeReaction(Reaction,ReactantReference);siteAfterReaction(Reaction,ProductReference);
+							% Check if the reactant to infer is in the organism.
+							not absentmolecules(ReactantInferred).
 
 % Compute an hypothetic MZ for new molecule.
 hypotheticMZ(MoleculeName, MZHypothetic):- newmetaboliteName(MoleculeName,ReactantInferred,Reaction,Domain), reactionMZ(Reaction,ReactionMZ),
@@ -309,7 +311,9 @@ domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t), possibleMet
 % And we check if all atoms and bonds are the same between ReactantInferred and ProductInferred, except from the atoms and bonds implied in the reaction
 
 deductiveReasoningInference(Reaction,ReactantInferred,ProductInferred):- reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); metabolite(ProductInferred); reached(ReactantInferred, t);
-							not reaction(Reaction,ReactantInferred,ProductInferred); ReactantInferred != ProductInferred; not absentmolecules(ReactantInferred); not absentmolecules(ProductInferred);
+							not reaction(Reaction,ReactantInferred,ProductInferred); ReactantInferred != ProductInferred;
+							% Check the two molecules to infer are not present in the organism.
+							not absentmolecules(ReactantInferred); not absentmolecules(ProductInferred);
 							% Check if the four molecules have the same domain.
 							domain(ReactantInferred,Domain);domain(ProductInferred,Domain);domain(ReactantReference,Domain);domain(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
