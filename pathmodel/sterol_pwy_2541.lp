@@ -1002,7 +1002,38 @@ mzfiltering(3023117).
 
 % Molecules absent in our organism.
 
-absentmolecules("fucosterol").
+absentmolecules("24-methylenecycloartanol").
+absentmolecules("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol").
+absentmolecules("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol").
+absentmolecules("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol").
+absentmolecules("cycloeucalenone").
+absentmolecules("cycloeucalenol").
+absentmolecules("obtusifoliol").
+absentmolecules("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol").
+absentmolecules("4α-methyl-5α-ergosta-8,24-dien-3β-ol").
+absentmolecules("24-methylenelophenol").
+absentmolecules("24-ethylidenelophenol").
+absentmolecules("4α-hydroxymethyl-stigmasta-7,24(241)-dien-3β-ol").
+absentmolecules("4α-formyl-stigmasta-7,24(241)-dien-3β-ol").
+absentmolecules("4α-carboxy-stigmasta-7,24(241)-dien-3β-ol").
+absentmolecules("avenastenone").
+absentmolecules("avenasterol").
+absentmolecules("5-dehydroavenasterol").
+absentmolecules("isofucosterol").
+absentmolecules("Δ24-25-sitosterol").
+absentmolecules("sitosterol").
+absentmolecules("stigmasterol").
+absentmolecules("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol").
+absentmolecules("4α-formyl-ergosta-7,24(241)-dien-3β-ol").
+absentmolecules("4α-carboxy-ergosta-7,24(241)-dien-3β-ol").
+absentmolecules("episterone").
+absentmolecules("episterol").
+absentmolecules("ergosta-5,7,24(28)-trien-3β-ol").
+absentmolecules("24-methyldesmosterol").
+absentmolecules("campesterol").
+absentmolecules("crinosterol").
+absentmolecules("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol").
+absentmolecules("24-ethylidenelophenol").
 
 % Source molecule for inference.
 
@@ -1011,6 +1042,6 @@ source("cycloartenol").
 
 % Initiation of incremental grounding.
 
-init(pathway("cycloartenol","22-dehydrocholesterol")).
-goal(pathway("cycloartenol","desmeterol")).
+init(pathway("cycloartenol","stigmasterol")).
+goal(pathway("cycloartenol","22-dehydrocholesterol")).
 %goal(pathway("sedoheptulose-7-phosphate","palythine")).
