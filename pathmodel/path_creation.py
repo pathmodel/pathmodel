@@ -4,6 +4,7 @@
 import clyngor
 import networkx as nx
 import matplotlib.pyplot as plt
+import os.path
 
 from networkx.drawing.nx_agraph import graphviz_layout
 
@@ -56,4 +57,6 @@ def pathmodel_pathway_picture(asp_code, picture_name):
 
     ax = plt.gca()
     ax.set_axis_off()
-    plt.savefig(picture_name, dpi=144, format='png', frameon=True)
+
+    extension = os.path.splitext(picture_name)[1]
+    plt.savefig(picture_name, dpi=144, format=extension, frameon=True)
