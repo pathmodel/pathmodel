@@ -509,7 +509,6 @@ bond("brassicasterol",singleS,20,21). bond("brassicasterol",single,20,22). bond(
 bond("brassicasterol",single,23,24). bond("brassicasterol",singleS,24,241). bond("brassicasterol",single,24,25).
 bond("brassicasterol",single,25,26). bond("brassicasterol",single,25,27).
 
-
 % 2.1.1 Biocyc
 
 atom("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",1..28,carb). atom("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",30,carb). atom("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",31,oxyg).
@@ -525,6 +524,7 @@ bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,16,17). bo
 bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",singleR,17,20). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",singleS,20,21). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,20,22).
 bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,22,23). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,23,24). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",double,24,25).
 bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,25,26). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,25,27).
+
 
 % Early SSR Intervention
 
@@ -620,72 +620,7 @@ bond("lathosterol",single,13,17). bond("lathosterol",singleR,13,18). bond("latho
 bond("lathosterol",singleS,20,21). bond("lathosterol",single,20,22). bond("lathosterol",single,22,23).
 bond("lathosterol",single,23,24). bond("lathosterol",single,24,25). bond("lathosterol",single,25,26).
 bond("lathosterol",single,25,27).
-%*
-atom("sitosterol",1..27,carb). atom("sitosterol",241..242,carb). atom("sitosterol",31,oxyg).
-bond("sitosterol",single,1,2). bond("sitosterol",single,1,10). bond("sitosterol",single,2,3).
-bond("sitosterol",single,3,4). bond("sitosterol",singleR,3,31). bond("sitosterol",single,4,5).
-bond("sitosterol",double,5,6). bond("sitosterol",single,5,10). bond("sitosterol",single,6,7).
-bond("sitosterol",single,7,8). bond("sitosterol",single,8,9). bond("sitosterol",single,8,14).
-bond("sitosterol",single,9,10).  bond("sitosterol",single,9,11). bond("sitosterol",singleR,10,19).
-bond("sitosterol",single,11,12). bond("sitosterol",single,12,13). bond("sitosterol",single,13,14).
-bond("sitosterol",single,13,17). bond("sitosterol",singleR,13,18). bond("sitosterol",single,14,15).
-bond("sitosterol",single,15,16). bond("sitosterol",single,16,17). bond("sitosterol",singleR,17,20).
-bond("sitosterol",singleS,20,21). bond("sitosterol",single,20,22). bond("sitosterol",single,22,23).
-bond("sitosterol",single,23,24). bond("sitosterol",single,24,25). bond("sitosterol",single,25,26).
-bond("sitosterol",single,25,27). bond("sitosterol",singleR,24,241). bond("sitosterol",single,241,242).
 
-atom("stigmasterol",1..27,carb). atom("stigmasterol",241..242,carb). atom("stigmasterol",31,oxyg).
-bond("stigmasterol",single,1,2). bond("stigmasterol",single,1,10). bond("stigmasterol",single,2,3).
-bond("stigmasterol",single,3,4). bond("stigmasterol",singleR,3,31). bond("stigmasterol",single,4,5).
-bond("stigmasterol",double,5,6). bond("stigmasterol",single,5,10). bond("stigmasterol",single,6,7).
-bond("stigmasterol",single,7,8). bond("stigmasterol",single,8,9). bond("stigmasterol",single,8,14).
-bond("stigmasterol",single,9,10).  bond("stigmasterol",single,9,11). bond("stigmasterol",singleR,10,19).
-bond("stigmasterol",single,11,12). bond("stigmasterol",single,12,13). bond("stigmasterol",single,13,14).
-bond("stigmasterol",single,13,17). bond("stigmasterol",singleR,13,18). bond("stigmasterol",single,14,15).
-bond("stigmasterol",single,15,16). bond("stigmasterol",single,16,17). bond("stigmasterol",singleR,17,20).
-bond("stigmasterol",singleS,20,21). bond("stigmasterol",single,20,22). bond("stigmasterol",double,22,23).
-bond("stigmasterol",single,23,24). bond("stigmasterol",single,24,25). bond("stigmasterol",single,25,26).
-bond("stigmasterol",single,25,27). bond("stigmasterol",singleR,24,241). bond("stigmasterol",single,241,242).
-
-atom("24-methylenecholesterol",1..27,carb). atom("24-methylenecholesterol",241,carb). atom("24-methylenecholesterol",31,oxyg).
-bond("24-methylenecholesterol",single,1,2). bond("24-methylenecholesterol",single,1,10). bond("24-methylenecholesterol",single,2,3).
-bond("24-methylenecholesterol",single,3,4). bond("24-methylenecholesterol",singleR,3,31). bond("24-methylenecholesterol",single,4,5).
-bond("24-methylenecholesterol",double,5,6). bond("24-methylenecholesterol",single,5,10). bond("24-methylenecholesterol",single,6,7).
-bond("24-methylenecholesterol",single,7,8). bond("24-methylenecholesterol",single,8,9). bond("24-methylenecholesterol",single,8,14).
-bond("24-methylenecholesterol",single,9,10). bond("24-methylenecholesterol",single,9,11). bond("24-methylenecholesterol",singleR,10,19).
-bond("24-methylenecholesterol",single,11,12). bond("24-methylenecholesterol",single,12,13). bond("24-methylenecholesterol",single,13,14).
-bond("24-methylenecholesterol",single,14,15). bond("24-methylenecholesterol",single,15,16). bond("24-methylenecholesterol",single,16,17).
-bond("24-methylenecholesterol",single,13,17). bond("24-methylenecholesterol",singleR,13,18). bond("24-methylenecholesterol",singleR,17,20).
-bond("24-methylenecholesterol",singleS,20,21). bond("24-methylenecholesterol",single,20,22). bond("24-methylenecholesterol",single,22,23).
-bond("24-methylenecholesterol",single,23,24). bond("24-methylenecholesterol",single,24,25). bond("24-methylenecholesterol",single,25,26).
-bond("24-methylenecholesterol",single,25,27). bond("24-methylenecholesterol",double,24,241).
-
-atom("24-epicampesterol",1..27,carb). atom("24-epicampesterol",241,carb). atom("24-epicampesterol",31,oxyg).
-bond("24-epicampesterol",single,1,2). bond("24-epicampesterol",single,1,10). bond("24-epicampesterol",single,2,3).
-bond("24-epicampesterol",single,3,4). bond("24-epicampesterol",singleR,3,31). bond("24-epicampesterol",single,4,5).
-bond("24-epicampesterol",double,5,6). bond("24-epicampesterol",single,5,10). bond("24-epicampesterol",single,6,7).
-bond("24-epicampesterol",single,7,8). bond("24-epicampesterol",single,8,9). bond("24-epicampesterol",single,8,14).
-bond("24-epicampesterol",single,9,10). bond("24-epicampesterol",single,9,11). bond("24-epicampesterol",singleR,10,19).
-bond("24-epicampesterol",single,11,12). bond("24-epicampesterol",single,12,13). bond("24-epicampesterol",single,13,14).
-bond("24-epicampesterol",single,14,15). bond("24-epicampesterol",single,15,16). bond("24-epicampesterol",single,16,17).
-bond("24-epicampesterol",single,13,17). bond("24-epicampesterol",singleR,13,18). bond("24-epicampesterol",singleR,17,20).
-bond("24-epicampesterol",singleS,20,21). bond("24-epicampesterol",single,20,22). bond("24-epicampesterol",single,22,23).
-bond("24-epicampesterol",single,23,24). bond("24-epicampesterol",single,24,25). bond("24-epicampesterol",single,25,26).
-bond("24-epicampesterol",single,25,27). bond("24-epicampesterol",singleR,24,241).
-
-atom("brassicasterol",1..27,carb). atom("brassicasterol",241,carb). atom("brassicasterol",31,oxyg).
-bond("brassicasterol",single,1,2). bond("brassicasterol",single,1,10). bond("brassicasterol",single,2,3).
-bond("brassicasterol",single,3,4). bond("brassicasterol",singleR,3,31). bond("brassicasterol",single,4,5).
-bond("brassicasterol",double,5,6). bond("brassicasterol",single,5,10). bond("brassicasterol",single,6,7).
-bond("brassicasterol",single,7,8). bond("brassicasterol",single,8,9). bond("brassicasterol",single,8,14).
-bond("brassicasterol",single,9,10). bond("brassicasterol",single,9,11). bond("brassicasterol",singleR,10,19).
-bond("brassicasterol",single,11,12). bond("brassicasterol",single,12,13). bond("brassicasterol",single,13,14).
-bond("brassicasterol",single,14,15). bond("brassicasterol",single,15,16). bond("brassicasterol",single,16,17).
-bond("brassicasterol",single,13,17). bond("brassicasterol",singleR,13,18). bond("brassicasterol",singleR,17,20).
-bond("brassicasterol",singleS,20,21). bond("brassicasterol",single,20,22). bond("brassicasterol",double,22,23).
-bond("brassicasterol",single,23,24). bond("brassicasterol",single,24,25). bond("brassicasterol",single,25,26).
-bond("brassicasterol",single,25,27). bond("brassicasterol",singleR,24,241).
-*%
 atom("7-dehydrocholesterol",1..27,carb). atom("7-dehydrocholesterol",31,oxyg).
 bond("7-dehydrocholesterol",single,1,2). bond("7-dehydrocholesterol",single,1,10). bond("7-dehydrocholesterol",single,2,3).
 bond("7-dehydrocholesterol",single,3,4). bond("7-dehydrocholesterol",singleR,3,31). bond("7-dehydrocholesterol",single,4,5).
@@ -724,32 +659,6 @@ bond("22-dehydrocholesterol",single,13,17). bond("22-dehydrocholesterol",singleR
 bond("22-dehydrocholesterol",singleS,20,21). bond("22-dehydrocholesterol",single,20,22). bond("22-dehydrocholesterol",double,22,23).
 bond("22-dehydrocholesterol",single,23,24). bond("22-dehydrocholesterol",single,24,25). bond("22-dehydrocholesterol",single,25,26).
 bond("22-dehydrocholesterol",single,25,27).
-
-atom("6α-hydroxycholest-4-ene-3-one",1..27,carb). atom("6α-hydroxycholest-4-ene-3-one",31..32,oxyg).
-bond("6α-hydroxycholest-4-ene-3-one",single,1,2). bond("6α-hydroxycholest-4-ene-3-one",single,1,10). bond("6α-hydroxycholest-4-ene-3-one",single,2,3).
-bond("6α-hydroxycholest-4-ene-3-one",single,3,4). bond("6α-hydroxycholest-4-ene-3-one",double,3,31). bond("6α-hydroxycholest-4-ene-3-one",single,4,5).
-bond("6α-hydroxycholest-4-ene-3-one",double,5,6). bond("6α-hydroxycholest-4-ene-3-one",single,5,10). bond("6α-hydroxycholest-4-ene-3-one",single,6,7).
-bond("6α-hydroxycholest-4-ene-3-one",single,6,7). bond("6α-hydroxycholest-4-ene-3-one",singleS,6,32). bond("6α-hydroxycholest-4-ene-3-one",single,7,8).
-bond("6α-hydroxycholest-4-ene-3-one",single,8,9). bond("6α-hydroxycholest-4-ene-3-one",single,8,14). bond("6α-hydroxycholest-4-ene-3-one",single,9,10).
-bond("6α-hydroxycholest-4-ene-3-one",single,9,11). bond("6α-hydroxycholest-4-ene-3-one",singleR,10,19). bond("6α-hydroxycholest-4-ene-3-one",single,11,12).
-bond("6α-hydroxycholest-4-ene-3-one",single,12,13). bond("6α-hydroxycholest-4-ene-3-one",single,13,14).  bond("6α-hydroxycholest-4-ene-3-one",single,14,15).
-bond("6α-hydroxycholest-4-ene-3-one",single,15,16). bond("6α-hydroxycholest-4-ene-3-one",single,16,17). bond("6α-hydroxycholest-4-ene-3-one",single,13,17).
-bond("6α-hydroxycholest-4-ene-3-one",singleR,13,18). bond("6α-hydroxycholest-4-ene-3-one",singleR,17,20). bond("6α-hydroxycholest-4-ene-3-one",singleS,20,21).
-bond("6α-hydroxycholest-4-ene-3-one",single,20,22). bond("6α-hydroxycholest-4-ene-3-one",single,22,23). bond("6α-hydroxycholest-4-ene-3-one",single,23,24).
-bond("6α-hydroxycholest-4-ene-3-one",single,24,25). bond("6α-hydroxycholest-4-ene-3-one",single,25,26). bond("6α-hydroxycholest-4-ene-3-one",single,25,27).
-
-atom("6α-hydroxycholest-4,22-diene-3-one",1..27,carb). atom("6α-hydroxycholest-4,22-diene-3-one",31..32,oxyg).
-bond("6α-hydroxycholest-4,22-diene-3-one",single,1,2). bond("6α-hydroxycholest-4,22-diene-3-one",single,1,10). bond("6α-hydroxycholest-4,22-diene-3-one",single,2,3).
-bond("6α-hydroxycholest-4,22-diene-3-one",single,3,4). bond("6α-hydroxycholest-4,22-diene-3-one",double,3,31). bond("6α-hydroxycholest-4,22-diene-3-one",single,4,5).
-bond("6α-hydroxycholest-4,22-diene-3-one",double,5,6). bond("6α-hydroxycholest-4,22-diene-3-one",single,5,10). bond("6α-hydroxycholest-4,22-diene-3-one",single,6,7).
-bond("6α-hydroxycholest-4,22-diene-3-one",single,6,7). bond("6α-hydroxycholest-4,22-diene-3-one",singleS,6,32). bond("6α-hydroxycholest-4,22-diene-3-one",single,7,8).
-bond("6α-hydroxycholest-4,22-diene-3-one",single,8,9). bond("6α-hydroxycholest-4,22-diene-3-one",single,8,14). bond("6α-hydroxycholest-4,22-diene-3-one",single,9,10).
-bond("6α-hydroxycholest-4,22-diene-3-one",single,9,11). bond("6α-hydroxycholest-4,22-diene-3-one",singleR,10,19). bond("6α-hydroxycholest-4,22-diene-3-one",single,11,12).
-bond("6α-hydroxycholest-4,22-diene-3-one",single,12,13). bond("6α-hydroxycholest-4,22-diene-3-one",single,13,14).  bond("6α-hydroxycholest-4,22-diene-3-one",single,14,15).
-bond("6α-hydroxycholest-4,22-diene-3-one",single,15,16). bond("6α-hydroxycholest-4,22-diene-3-one",single,16,17). bond("6α-hydroxycholest-4,22-diene-3-one",single,13,17).
-bond("6α-hydroxycholest-4,22-diene-3-one",singleR,13,18). bond("6α-hydroxycholest-4,22-diene-3-one",singleR,17,20). bond("6α-hydroxycholest-4,22-diene-3-one",singleS,20,21).
-bond("6α-hydroxycholest-4,22-diene-3-one",single,20,22). bond("6α-hydroxycholest-4,22-diene-3-one",double,22,23). bond("6α-hydroxycholest-4,22-diene-3-one",single,23,24).
-bond("6α-hydroxycholest-4,22-diene-3-one",single,24,25). bond("6α-hydroxycholest-4,22-diene-3-one",single,25,26). bond("6α-hydroxycholest-4,22-diene-3-one",single,25,27).
 
 % Sterols expected in Late SSR Intervention in Chondrus
 
@@ -832,31 +741,31 @@ bond("5α-cholesta-7,24-dienol",singleS,20,21). bond("5α-cholesta-7,24-dienol",
 bond("5α-cholesta-7,24-dienol",single,23,24). bond("5α-cholesta-7,24-dienol",double,24,25). bond("5α-cholesta-7,24-dienol",single,25,26).
 bond("5α-cholesta-7,24-dienol",single,25,27).
 
-atom("7-dehydrodesmesterol",1..27,carb). atom("7-dehydrodesmesterol",31,oxyg).
-bond("7-dehydrodesmesterol",single,1,2). bond("7-dehydrodesmesterol",single,1,10). bond("7-dehydrodesmesterol",single,2,3).
-bond("7-dehydrodesmesterol",single,3,4). bond("7-dehydrodesmesterol",singleR,3,31). bond("7-dehydrodesmesterol",single,4,5).
-bond("7-dehydrodesmesterol",double,5,6). bond("7-dehydrodesmesterol",single,5,10). bond("7-dehydrodesmesterol",single,6,7).
-bond("7-dehydrodesmesterol",double,7,8). bond("7-dehydrodesmesterol",single,8,9). bond("7-dehydrodesmesterol",single,8,14).
-bond("7-dehydrodesmesterol",single,9,10). bond("7-dehydrodesmesterol",single,9,11). bond("7-dehydrodesmesterol",singleR,10,19).
-bond("7-dehydrodesmesterol",single,11,12). bond("7-dehydrodesmesterol",single,12,13). bond("7-dehydrodesmesterol",single,13,14).
-bond("7-dehydrodesmesterol",single,14,15). bond("7-dehydrodesmesterol",single,15,16). bond("7-dehydrodesmesterol",single,16,17).
-bond("7-dehydrodesmesterol",single,13,17). bond("7-dehydrodesmesterol",singleR,13,18). bond("7-dehydrodesmesterol",singleR,17,20).
-bond("7-dehydrodesmesterol",singleS,20,21). bond("7-dehydrodesmesterol",single,20,22). bond("7-dehydrodesmesterol",single,22,23).
-bond("7-dehydrodesmesterol",single,23,24). bond("7-dehydrodesmesterol",double,24,25). bond("7-dehydrodesmesterol",single,25,26).
-bond("7-dehydrodesmesterol",single,25,27).
+atom("7-dehydrodesmosterol",1..27,carb). atom("7-dehydrodesmosterol",31,oxyg).
+bond("7-dehydrodesmosterol",single,1,2). bond("7-dehydrodesmosterol",single,1,10). bond("7-dehydrodesmosterol",single,2,3).
+bond("7-dehydrodesmosterol",single,3,4). bond("7-dehydrodesmosterol",singleR,3,31). bond("7-dehydrodesmosterol",single,4,5).
+bond("7-dehydrodesmosterol",double,5,6). bond("7-dehydrodesmosterol",single,5,10). bond("7-dehydrodesmosterol",single,6,7).
+bond("7-dehydrodesmosterol",double,7,8). bond("7-dehydrodesmosterol",single,8,9). bond("7-dehydrodesmosterol",single,8,14).
+bond("7-dehydrodesmosterol",single,9,10). bond("7-dehydrodesmosterol",single,9,11). bond("7-dehydrodesmosterol",singleR,10,19).
+bond("7-dehydrodesmosterol",single,11,12). bond("7-dehydrodesmosterol",single,12,13). bond("7-dehydrodesmosterol",single,13,14).
+bond("7-dehydrodesmosterol",single,14,15). bond("7-dehydrodesmosterol",single,15,16). bond("7-dehydrodesmosterol",single,16,17).
+bond("7-dehydrodesmosterol",single,13,17). bond("7-dehydrodesmosterol",singleR,13,18). bond("7-dehydrodesmosterol",singleR,17,20).
+bond("7-dehydrodesmosterol",singleS,20,21). bond("7-dehydrodesmosterol",single,20,22). bond("7-dehydrodesmosterol",single,22,23).
+bond("7-dehydrodesmosterol",single,23,24). bond("7-dehydrodesmosterol",double,24,25). bond("7-dehydrodesmosterol",single,25,26).
+bond("7-dehydrodesmosterol",single,25,27).
 
-atom("desmesterol",1..27,carb). atom("desmesterol",31,oxyg).
-bond("desmesterol",single,1,2). bond("desmesterol",single,1,10). bond("desmesterol",single,2,3).
-bond("desmesterol",single,3,4). bond("desmesterol",singleR,3,31). bond("desmesterol",single,4,5).
-bond("desmesterol",double,5,6). bond("desmesterol",single,5,10). bond("desmesterol",single,6,7).
-bond("desmesterol",single,7,8). bond("desmesterol",single,8,9). bond("desmesterol",single,8,14).
-bond("desmesterol",single,9,10). bond("desmesterol",single,9,11). bond("desmesterol",singleR,10,19).
-bond("desmesterol",single,11,12). bond("desmesterol",single,12,13). bond("desmesterol",single,13,14).
-bond("desmesterol",single,14,15). bond("desmesterol",single,15,16). bond("desmesterol",single,16,17).
-bond("desmesterol",single,13,17). bond("desmesterol",singleR,13,18). bond("desmesterol",singleR,17,20).
-bond("desmesterol",singleS,20,21). bond("desmesterol",single,20,22). bond("desmesterol",single,22,23).
-bond("desmesterol",single,23,24). bond("desmesterol",double,24,25). bond("desmesterol",single,25,26).
-bond("desmesterol",single,25,27).
+atom("desmosterol",1..27,carb). atom("desmosterol",31,oxyg).
+bond("desmosterol",single,1,2). bond("desmosterol",single,1,10). bond("desmosterol",single,2,3).
+bond("desmosterol",single,3,4). bond("desmosterol",singleR,3,31). bond("desmosterol",single,4,5).
+bond("desmosterol",double,5,6). bond("desmosterol",single,5,10). bond("desmosterol",single,6,7).
+bond("desmosterol",single,7,8). bond("desmosterol",single,8,9). bond("desmosterol",single,8,14).
+bond("desmosterol",single,9,10). bond("desmosterol",single,9,11). bond("desmosterol",singleR,10,19).
+bond("desmosterol",single,11,12). bond("desmosterol",single,12,13). bond("desmosterol",single,13,14).
+bond("desmosterol",single,14,15). bond("desmosterol",single,15,16). bond("desmosterol",single,16,17).
+bond("desmosterol",single,13,17). bond("desmosterol",singleR,13,18). bond("desmosterol",singleR,17,20).
+bond("desmosterol",singleS,20,21). bond("desmosterol",single,20,22). bond("desmosterol",single,22,23).
+bond("desmosterol",single,23,24). bond("desmosterol",double,24,25). bond("desmosterol",single,25,26).
+bond("desmosterol",single,25,27).
 
 
 %* Known reactions
@@ -940,7 +849,7 @@ reaction(rxn_11875,"cycloartenol","4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24
 
 reaction(rxn_4208,"24-ethylidenelophenol","avenasterol").
 
-reaction(rxn_4282,"cycloartenol","cycloartanol").
+reaction(rxn_66_28,"desmosterol","cholesterol").
 
 % Early SSR pathway intervention (tomato-like)
 %*
@@ -1035,6 +944,12 @@ absentmolecules("crinosterol").
 absentmolecules("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol").
 absentmolecules("24-ethylidenelophenol").
 
+absentmolecules("cycloartanol").
+absentmolecules("ergosterol").
+absentmolecules("fucosterol").
+absentmolecules("zymosterol").
+
+
 % Source molecule for inference.
 
 source("cycloartenol").
@@ -1043,5 +958,5 @@ source("cycloartenol").
 % Initiation of incremental grounding.
 
 init(pathway("cycloartenol","stigmasterol")).
-goal(pathway("cycloartenol","22-dehydrocholesterol")).
+goal(pathway("cycloartenol","brassicasterol")).
 %goal(pathway("sedoheptulose-7-phosphate","palythine")).
