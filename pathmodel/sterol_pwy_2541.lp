@@ -509,22 +509,6 @@ bond("brassicasterol",singleS,20,21). bond("brassicasterol",single,20,22). bond(
 bond("brassicasterol",single,23,24). bond("brassicasterol",singleS,24,241). bond("brassicasterol",single,24,25).
 bond("brassicasterol",single,25,26). bond("brassicasterol",single,25,27).
 
-% 2.1.1 Biocyc
-
-atom("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",1..28,carb). atom("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",30,carb). atom("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",31,oxyg).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,1,2). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,1,10). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,2,3).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,3,4). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",singleR,3,31). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,4,5).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",singleS,4,28). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,5,6).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,5,10). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,6,7). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,7,8).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,8,9). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,8,14). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,9,10).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,9,11).bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",singleR,9,19). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",singleR,10,19).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,11,12). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,12,13). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,13,14).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,14,15). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",singleS,14,30). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,15,16).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,16,17). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,13,17). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",singleR,13,18).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",singleR,17,20). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",singleS,20,21). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,20,22).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,22,23). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,23,24). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",double,24,25).
-bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,25,26). bond("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol",single,25,27).
-
 
 % Early SSR Intervention
 
@@ -843,73 +827,23 @@ reaction(rxn_8353,"24-methyldesmosterol","24-epi-campesterol").
 
 reaction(rxn_8352,"24-epi-campesterol","brassicasterol").
 
-% added reaction rxn_4208, rxn_4282 and rxn_11875
-
-reaction(rxn_11875,"cycloartenol","4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol").
+% Added reaction rxn_4101, rxn_4181, rxn_4282, rxn_4208 and rxn66_28
+% C4 Demethylase: Reactions rxn_4101, _xn_4181 and rxn_208 -> Choe, Noguchi et al. 1999:
+%   http://www.plantcell.org/content/11/2/207.short
+reaction(rxn_4101,"24-methylenecycloartanol","cycloeucalenol").
 
 reaction(rxn_4208,"24-ethylidenelophenol","avenasterol").
 
-reaction(rxn_66_28,"desmosterol","cholesterol").
+reaction(rxn_4181,"24-methylenelophenol","episterol").
 
-% Early SSR pathway intervention (tomato-like)
-%*
-reaction(delta24_25_reduction, "cycloartenol", "cycloartanol").
+% C24 c25 reduction: rxn_4282, rxn66_28:
+%   https://biocyc.org/META/NEW-IMAGE?type=REACTION&object=RXN-4282
+%   https://biocyc.org/META/NEW-IMAGE?type=REACTION&object=RXN66-28
+reaction(rxn_4282,"cycloartenol","cycloartanol").
 
-reaction(c4_c29_demethylation, "cycloartanol", "31-norcycloartanol").
+reaction(rxn66_28,"desmosterol","cholesterol").
 
-reaction(cyclopropylsterol_isomerisation, "31-norcycloartanol", "31-nor-24(25)-dihydrolanosterol").
-
-reaction(c14_demethylation, "31-nor-24(25)-dihydrolanosterol", "4α-methylcholesta-8,14-dien-3β-ol").
-
-reaction(c14_reduction, "4α-methylcholesta-8,14-dien-3β-ol", "4α-methyl-24(25)-dihydrozymosterol").
-
-reaction(c8_isomerase, "4α-methyl-24(25)-dihydrozymosterol", "4α-methyl-5α-cholest-7-en-3β-ol").
-
-reaction(c4_c28_demethylation, "4α-methyl-5α-cholest-7-en-3β-ol", "lathosterol").
-
-reaction(c5_desaturation, "lathosterol", "7-dehydrocholesterol").
-
-% delta7reduction of 7-dehydrocholesterol gives cholesterol
-reaction(delta7reduction, "7-dehydrocholesterol", "cholesterol").
-
-reaction(delta24_241_reduction,"24-methylenecholesterol", "24-epicampesterol").
-
-reaction(c22_desaturation,"24-epicampesterol", "brassicasterol").
-
-reaction(c22_desaturation,"sitosterol", "stigmasterol").
-
-reaction(c24_methyltransferase,"cycloartenol","24-methylenecycloartanol").
-
-% Mycosporine amino-acids known reactions.
-
-reaction(mysa, "sedoheptulose-7-phosphate", "S-desmethyl-4-deoxygadusol").
-
-reaction(rxn_17896, "S-desmethyl-4-deoxygadusol", "4-deoxygadusol").
-
-reaction(aminoacid_C_1_transfer, "4-deoxygadusol", "mycosporin-glycine").
-
-reaction(aminoacid_C_3_transfer_serine,"mycosporin-glycine","shinorine").
-
-reaction(aminoacid_C_3_transfer_threonine,"mycosporin-glycine","porphyra-334").
-
-reaction(hydrogenation,"shinorine","palythinol").
-
-reaction(demethylation,"palythinol", "asterina-330").
-
-reaction(dehydration,"porphyra-334", "z-palythenic acid").
-
-reaction(decarboxylation,"z-palythenic acid","palythene").
-
-reaction(decarboxylation,"shinorine","asterina-330").
-
-reaction(hydrolyse,"palythene","palythine").
-*%
-% MZ expected in mycopsorine amino-acids pathway.
-
-mzfiltering(2702720).
-mzfiltering(3023117).
-
-% Molecules absent in our organism.
+% Molecules absent in the organism.
 
 absentmolecules("24-methylenecycloartanol").
 absentmolecules("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol").
@@ -941,7 +875,6 @@ absentmolecules("ergosta-5,7,24(28)-trien-3β-ol").
 absentmolecules("24-methyldesmosterol").
 absentmolecules("campesterol").
 absentmolecules("crinosterol").
-absentmolecules("4α,14α-dimethyl-9β,19-cyclo-5α-cholest-24-en-3β-ol").
 absentmolecules("24-ethylidenelophenol").
 
 absentmolecules("cycloartanol").
@@ -949,14 +882,11 @@ absentmolecules("ergosterol").
 absentmolecules("fucosterol").
 absentmolecules("zymosterol").
 
-
 % Source molecule for inference.
 
 source("cycloartenol").
-%source("sedoheptulose-7-phosphate").
 
 % Initiation of incremental grounding.
 
 init(pathway("cycloartenol","stigmasterol")).
 goal(pathway("cycloartenol","brassicasterol")).
-%goal(pathway("sedoheptulose-7-phosphate","palythine")).
