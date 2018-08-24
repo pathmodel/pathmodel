@@ -90,13 +90,13 @@ Initiation and goal of the incremental grounding must be defined:
     init(pathway("Molecule1","Molecule2")).
     goal(pathway("Molecule1","Molecule3")).
 
-M/Z ratio can be added to check whether there is a metabolite that can be predict with this ratio. M/Z ratio must be multiply by 10 000 because Clingo doesn't use decimal.
+M/Z ratio can be added to check whether there is a metabolite that can be predict with this ratio. M/Z ratio must be multiplied by 10 000 because Clingo doesn't use decimals.
 
 .. code:: sh
 
     mzfiltering(2702720).
 
-Molecules that are not in the organism of study can be added. They will not be target of the inference methods.
+Molecules that are not in the organism of study can be added. They will not be targeted of the inference methods.
 
 .. code:: sh
 
@@ -122,11 +122,11 @@ In python:
 Output data
 ~~~~~~~~~~~
 
-Using networkx, pathway inferred as represented as png picture. Also a result.lp is created containing all the inferred reactions.
+Using networkx, inferred pathways are represented as png picture. Also a result.lp file is created containing all the inferred reactions.
 
 Example
 ~~~~~~~
 
-pathmodel/data.lp contains example for sterols and mycosporine amino-acids pathways.
+pathmodel/data.lp contains example for sterols and mycosporine-like amino-acids pathways.
 
 test/data.lp contains an example with fictional molecules to test PathModel.
