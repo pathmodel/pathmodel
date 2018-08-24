@@ -1,4 +1,4 @@
-from pathmodel.wrapping_PathModel import run_pathmodel
+from pathmodel.pathmodel_wrapper import run_pathmodel
 
 def main(args=None):
     run_pathmodel()

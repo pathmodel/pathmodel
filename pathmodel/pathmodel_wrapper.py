@@ -6,15 +6,15 @@ import clyngor
 import os
 import sys
 
-from pathmodel.path_creation import pathmodel_pathway_picture
+from pathmodel.plotting.path_creation import pathmodel_pathway_picture
 
 def run_pathmodel():
-	parser = argparse.ArgumentParser(usage="python wrapping_PathModel.py -d FILE -p FILE -o FILE")
+	parser = argparse.ArgumentParser(usage="python pathmodel.py -d FILE -p FILE -o FILE")
 	parser.add_argument("-d", "--data", dest = "input_file", metavar = "FILE", help = "Input file containing atoms, bonds, reactions and goal.")
 	parser.add_argument("-p", "--picture", dest = "picture", metavar = "FILE", help = "Create picture result file.")
 	parser.add_argument("-o", "--output", dest = "output_file", metavar = "FILE", help = "Write result in this file.")
 
-	parser_args = parser.parse_args(sys.argv[1:])
+	parser_args = parser.parse_args()
 
 	input_file = parser_args.input_file
 	picture_name = parser_args.picture

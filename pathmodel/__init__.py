@@ -1,2 +1,4 @@
-from pathmodel.wrapping_PathModel import pathmodel_analysis
-from pathmodel.path_creation import pathmodel_pathway_picture
+from pathmodel.pathmodel_wrapper import pathmodel_analysis
+
+from pathmodel.plotting.path_creation import pathmodel_pathway_picture
+from pathmodel.plotting.molecule_creation import create_2dmolecule

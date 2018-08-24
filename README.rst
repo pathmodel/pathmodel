@@ -23,6 +23,8 @@ For the wrapping script, `Python3 <https://www.python.org/>`__ and `clyngor pack
 
 To create pathway picture, the script uses `networkx <https://networkx.github.io/>`__ and `matplotlib packages <https://matplotlib.org/>`__.
 
+To create molecule picture, Pathmodel uses the `rdkit package <https://github.com/rdkit/rdkit/>`__.
+
 Using git
 ~~~~~~~~~
 
