@@ -504,6 +504,33 @@ bond("palythene",single,9,13). bond("palythene",single,8,14). bond("palythene",s
 bond("palythene",double,15,16). bond("palythene",single,15,17). bond("palythene",single,10,18).
 bond("palythene",double,18,19). bond("palythene",single,19,24).
 
+%*
+Shared domain
+Definition of sterane
+Based on the wikipedia structure: https://fr.wikipedia.org/wiki/St%C3%A9rane#/media/File:Steran_num_ABCD.svg
+One exception the bound between carbone 7 and carbone 8 has variable for the bond type to include the 7-dehydrocholesterol
+because of the double bond instead of the single.
+*%
+atomDomain(sterane,1,carb). atomDomain(sterane,2,carb). atomDomain(sterane,3,carb).
+atomDomain(sterane,4,carb). atomDomain(sterane,5,carb). atomDomain(sterane,6,carb).
+atomDomain(sterane,7,carb). atomDomain(sterane,8,carb). atomDomain(sterane,9,carb).
+atomDomain(sterane,10,carb). atomDomain(sterane,11,carb). atomDomain(sterane,12,carb).
+atomDomain(sterane,13,carb). atomDomain(sterane,14,carb). atomDomain(sterane,15,carb).
+atomDomain(sterane,16,carb). atomDomain(sterane,17,carb).
+bondDomain(sterane,variable,1,2). bondDomain(sterane,variable,1,10). bondDomain(sterane,variable,2,3).
+bondDomain(sterane,variable,3,4). bondDomain(sterane,variable,4,5). bondDomain(sterane,variable,5,6).
+bondDomain(sterane,variable,5,10). bondDomain(sterane,variable,6,7). bondDomain(sterane,variable,7,8).
+bondDomain(sterane,variable,8,9). bondDomain(sterane,variable,8,14). bondDomain(sterane,variable,9,10).
+bondDomain(sterane,variable,9,11). bondDomain(sterane,variable,11,12). bondDomain(sterane,variable,12,13).
+bondDomain(sterane,variable,13,14). bondDomain(sterane,variable,13,17). bondDomain(sterane,variable,14,15).
+bondDomain(sterane,variable,15,16). bondDomain(sterane,variable,16,17).
+
+% Definition of a cyclohexene
+atom(cyclohexene,1,carb), atom(cyclohexene,2,carb), atom(cyclohexene,3,carb),
+atom(cyclohexene,4,carb), atom(cyclohexene,5,carb), atom(cyclohexene,6,carb),
+bond(cyclohexene,double,1,2), bond(cyclohexene,single,2,3), bond(cyclohexene,single,3,4),
+bond(cyclohexene,single,4,5), bond(cyclohexene,single,5,6), bond(cyclohexene,single,1,6).
+
 %* Known reactions
 %%%%%%%%%%%%%%%%%%%
 reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound 2 , Active site atom number], Resulting compound)

@@ -64,18 +64,28 @@ PathModel will use two inference methods: one creating new metabolites and one i
 Input data
 ~~~~~~~~~~
 
-Molecules are modelled with atoms (hydrogen excluded) and bonds (simple and double).
+Molecules are modelled with atoms (hydrogen excluded) and bonds (single and double).
 
 .. code:: sh
 
 	atom("Molecule1",1,carb). atom("Molecule1",2,carb).
-    bond("Molecule1",1,2,simple).
+    bond("Molecule1",single,1,2).
+
+	atom("Molecule2",1,carb). atom("Molecule2",2,carb). atom("Molecule2",3,carb).
+    bond("Molecule2",single,1,2). bond("Molecule2",single,2,3).
 
 Reaction between molecules are represented as link between two molecules with a name:
 
 .. code:: sh
 
 	reaction(reaction1,"Molecule1","Molecule2").
+
+A common domain is needed to find which molecules share structure with others:
+
+.. code:: sh
+
+	atomDomain(commonDomainName,1,carb). atomDomain(commonDomainName,2,carb).
+    bondDomain(commonDomainName,single,1,2).
 
 A molecule source is defined:
 
@@ -127,6 +137,6 @@ Using networkx, inferred pathways are represented as png picture. Also a result.
 Example
 ~~~~~~~
 
-pathmodel/data.lp contains example for sterols and mycosporine-like amino-acids pathways.
+data/data.lp contains example for sterols and mycosporine-like amino-acids pathways.
 
 test/data.lp contains an example with fictional molecules to test PathModel.

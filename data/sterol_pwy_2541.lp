@@ -751,6 +751,28 @@ bond("desmosterol",singleS,20,21). bond("desmosterol",single,20,22). bond("desmo
 bond("desmosterol",single,23,24). bond("desmosterol",double,24,25). bond("desmosterol",single,25,26).
 bond("desmosterol",single,25,27).
 
+%*
+Shared domain
+Definition of sterane
+Based on the wikipedia structure: https://fr.wikipedia.org/wiki/St%C3%A9rane#/media/File:Steran_num_ABCD.svg
+One exception the bound between carbone 7 and carbone 8 has variable for the bond type to include the 7-dehydrocholesterol
+because of the double bond instead of the single.
+*%
+
+atomDomain(sterane,1,carb). atomDomain(sterane,2,carb). atomDomain(sterane,3,carb).
+atomDomain(sterane,4,carb). atomDomain(sterane,5,carb). atomDomain(sterane,6,carb).
+atomDomain(sterane,7,carb). atomDomain(sterane,8,carb). atomDomain(sterane,9,carb).
+atomDomain(sterane,10,carb). atomDomain(sterane,11,carb). atomDomain(sterane,12,carb).
+atomDomain(sterane,13,carb). atomDomain(sterane,14,carb). atomDomain(sterane,15,carb).
+atomDomain(sterane,16,carb). atomDomain(sterane,17,carb).
+bondDomain(sterane,variable,1,2). bondDomain(sterane,variable,1,10). bondDomain(sterane,variable,2,3).
+bondDomain(sterane,variable,3,4). bondDomain(sterane,variable,4,5). bondDomain(sterane,variable,5,6).
+bondDomain(sterane,variable,5,10). bondDomain(sterane,variable,6,7). bondDomain(sterane,variable,7,8).
+bondDomain(sterane,variable,8,9). bondDomain(sterane,variable,8,14). bondDomain(sterane,variable,9,10).
+bondDomain(sterane,variable,9,11). bondDomain(sterane,variable,11,12). bondDomain(sterane,variable,12,13).
+bondDomain(sterane,variable,13,14). bondDomain(sterane,variable,13,17). bondDomain(sterane,variable,14,15).
+bondDomain(sterane,variable,15,16). bondDomain(sterane,variable,16,17).
+
 
 %* Known reactions
 %%%%%%%%%%%%%%%%%%%

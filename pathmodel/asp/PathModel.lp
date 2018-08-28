@@ -45,58 +45,10 @@ sidechain(M,1,End):-  atom(M,End,carb); atom(M,End+1,A); A!=carb; atom(M,X,carb)
 %*
 Definition of domain
 domain(MoleculeName, DomainName)
-
-Definition of sterane
-Based on the wikipedia structure: https://fr.wikipedia.org/wiki/St%C3%A9rane#/media/File:Steran_num_ABCD.svg
-One exception the bound between carbone 7 and carbone 8 has variable for the bond type to include the 7-dehydrocholesterol
-because of the double bond instead of the single.
 *%
-domain(MoleculeName, sterane) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,carb),
-									atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,carb), atom(MoleculeName,Atome6,carb),
-									atom(MoleculeName,Atome7,carb), atom(MoleculeName,Atome8,carb), atom(MoleculeName,Atome9,carb),
-									atom(MoleculeName,Atome10,carb), atom(MoleculeName,Atome11,carb), atom(MoleculeName,Atome12,carb),
-									atom(MoleculeName,Atome13,carb), atom(MoleculeName,Atome14,carb), atom(MoleculeName,Atome15,carb),
-									atom(MoleculeName,Atome16,carb), atom(MoleculeName,Atome17,carb),
-									bond(MoleculeName,BondType1,Atome1,Atome2), bond(MoleculeName,BondType8,Atome1,Atome10), bond(MoleculeName,BondType15,Atome2,Atome3),
-									bond(MoleculeName,BondType2,Atome3,Atome4), bond(MoleculeName,BondType9,Atome4,Atome5), bond(MoleculeName,BondType16,Atome5,Atome6),
-									bond(MoleculeName,BondType3,Atome5,Atome10), bond(MoleculeName,BondType10,Atome6,Atome7), bond(MoleculeName,BondType17,Atome7,Atome8),
-									bond(MoleculeName,BondType4,Atome8,Atome9), bond(MoleculeName,BondType11,Atome8,Atome14), bond(MoleculeName,BondType18,Atome9,Atome10),
-									bond(MoleculeName,BondType5,Atome9,Atome11), bond(MoleculeName,BondType12,Atome11,Atome12), bond(MoleculeName,BondType19,Atome12,Atome13),
-									bond(MoleculeName,BondType6,Atome13,Atome14), bond(MoleculeName,BondType13,Atome13,Atome17), bond(MoleculeName,BondType20,Atome14,Atome15),
-									bond(MoleculeName,BondType7,Atome15,Atome16), bond(MoleculeName,BondType14,Atome16,Atome17).
 
-% Definition of a cyclohexene
-domain(MoleculeName, cyclohexene) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,carb),
-									atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,carb), atom(MoleculeName,Atome6,carb),
-									bond(MoleculeName,double,Atome1,Atome2), bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,single,Atome3,Atome4),
-									bond(MoleculeName,single,Atome4,Atome5), bond(MoleculeName,single,Atome5,Atome6), bond(MoleculeName,single,Atome1,Atome6).
-
-domain(MoleculeName, glycine, Atome5) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
-								atom(MoleculeName,Atome4,oxyg), atom(MoleculeName,Atome5,nitr),
-								bond(MoleculeName,single,Atome1,Atome2),  bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,double,Atome2,Atome4),
-								bond(MoleculeName,single,Atome5,Atome1), not domain(MoleculeName, threonine, Atome5), not domain(MoleculeName, serine, Atome5).
-
-
-domain(MoleculeName, threonine, Atome7) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
-								atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,oxyg), atom(MoleculeName,Atome6,oxyg),
-								atom(MoleculeName,Atome7,nitr), atom(MoleculeName,Atome8,carb),
-								bond(MoleculeName,single,Atome1,Atome2),  bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,single,Atome2,Atome8),
-								bond(MoleculeName,single,Atome1,Atome4),
-								bond(MoleculeName,double,Atome4,Atome5), bond(MoleculeName,single,Atome4,Atome6), bond(MoleculeName,single,Atome7,Atome1).
-
-
-domain(MoleculeName, serine, Atome7) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
-								atom(MoleculeName,Atome4,carb), atom(MoleculeName,Atome5,oxyg), atom(MoleculeName,Atome6,oxyg),
-								atom(MoleculeName,Atome7,nitr),
-								bond(MoleculeName,single,Atome1,Atome2),  bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,single,Atome1,Atome4),
-								bond(MoleculeName,double,Atome4,Atome5), bond(MoleculeName,single,Atome4,Atome6), bond(MoleculeName,single,Atome7,Atome1),
-								Atome2 != Atome4, not domain(MoleculeName, threonine, Atome7).
-
-domain(MoleculeName, ethanolamine, Atome7) :- atom(MoleculeName,Atome1,carb), atom(MoleculeName,Atome2,carb), atom(MoleculeName,Atome3,oxyg),
-								atom(MoleculeName,Atome7,nitr),
-								bond(MoleculeName,single,Atome1,Atome2),  bond(MoleculeName,single,Atome2,Atome3), bond(MoleculeName,single,Atome7,Atome1),
-								not domain(MoleculeName, threonine, Atome7), not domain(MoleculeName, serine, Atome7), not domain(MoleculeName, glycine, Atome7).
-
+domain(MoleculeName, Domain) :- atomDomain(Domain,Atom,AtomType), bondDomain(Domain,_,Atom1,Atom2),
+								atom(MoleculeName,Atom,AtomType), bond(MoleculeName,_,Atom1,Atom2).
 
 %* Definition of input and output from reaction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
