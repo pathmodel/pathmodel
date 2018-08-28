@@ -91,6 +91,10 @@ bond2(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName,
 
 moleculeMZ(MoleculeName, MZRatio) :-  testmetabolite(MoleculeName, t), newmoleculeMZ(MoleculeName, MZRatio).
 
+newreaction(Reaction,ReactantInferred,NewProduct):- analogicalReasoningInference(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1).
+
+newreaction(Reaction,ReactantInferred,NewProduct):- deductiveReasoningInference(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1).
+
 reaction(Reaction,ReactantInferred,NewProduct):- analogicalReasoningInference(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1).
 
 reaction(Reaction,ReactantInferred,NewProduct):- deductiveReasoningInference(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1).
@@ -295,9 +299,8 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 #program check(t).
 :- goal(F), query(t), not inferred(F,t).
 
-#show deductiveReasoningInference/3.
-#show analogicalReasoningInference/3.
-#show reaction/3.
+#show newreaction/3.
+%#show reaction/3.
 %#show input_metabolite/1.
 %#show output_metabolite/1.
 %#show reaction/3.

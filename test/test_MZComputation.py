@@ -5,7 +5,7 @@ import clyngor
 import sys
 
 def MZ_computation():
-	answer = clyngor.solve(['data-test-computation.lp', '../pathmodel/asp/MZComputation.lp'])
+	answer = clyngor.solve(['test_data/mz_computation.lp', '../pathmodel/asp/MZComputation.lp'])
 	result = next(answer.parse_args.atoms_as_string.sorted)
 	return result
 
