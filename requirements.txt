@@ -1,5 +1,4 @@
-coverage
-clyngor
-python-coveralls
-networkx>=2.1
-matplotlib
+clyngor=0.3.7
+matplotlib=2.2.3
+networkx=2.1
+pygraphviz=1.3
