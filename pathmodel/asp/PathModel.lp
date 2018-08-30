@@ -300,7 +300,7 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 :- goal(F), query(t), not inferred(F,t).
 
 #show newreaction/3.
-%#show reaction/3.
+#show reaction/3.
 %#show input_metabolite/1.
 %#show output_metabolite/1.
 %#show reaction/3.
