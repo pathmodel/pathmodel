@@ -42,14 +42,6 @@ sidechain(M,1,End):-  atom(M,End,carb); atom(M,End+1,A); A!=carb; atom(M,X,carb)
 %sidechain(M,Start1+1,End):-  atom(M,End,carb), atom(M,End+1,A), A!=carb, 
 %	atom(M,Start1,B), B!=carb, Start1>0, atom(M,X,carb): X=Start1+1..End-1.
 
-%*
-Definition of domain
-domain(MoleculeName, DomainName)
-*%
-
-domain(MoleculeName, Domain) :- atomDomain(Domain,Atom,AtomType), bondDomain(Domain,_,Atom1,Atom2),
-								atom(MoleculeName,Atom,AtomType), bond(MoleculeName,_,Atom1,Atom2).
-
 %* Definition of input and output from reaction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%

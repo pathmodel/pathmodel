@@ -77,6 +77,15 @@ reactionMZ(Reaction, ReactionMZ):- reaction(Reaction,Reactant,Product), molecule
 reactionMZ(Reaction, ReactionMZ):- reaction(Reaction,Reactant,Product), moleculeMZ(Reactant,ReactantMZ), moleculeMZ(Product,ProductMZ),
 									ProductMZ < ReactantMZ, ReactionMZ = ReactantMZ - ProductMZ.
 
+%*
+Definition of domain
+domain(MoleculeName, DomainName)
+*%
+
+domain(MoleculeName, Domain) :- atomDomain(Domain,Atom,AtomType), bondDomain(Domain,_,Atom1,Atom2),
+								atom(MoleculeName,Atom,AtomType), bond(MoleculeName,_,Atom1,Atom2).
+
+#show domain/2.
 #show moleculeComposition/6.
 #show moleculeNbAtoms/2.
 #show numberTotalBonds/2.
