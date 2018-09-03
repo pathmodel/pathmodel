@@ -10,3 +10,5 @@ dependencies:
   - pygraphviz=1.3
   - pip:
      - matplotlib=2.2.3
+     - clyngor==0.3.7
+     - networkx==2.1
