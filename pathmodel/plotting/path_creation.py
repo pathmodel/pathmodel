@@ -29,8 +29,12 @@ def run_pathway_creation():
 def pathmodel_pathway_picture(asp_code, picture_name):
     DG = nx.DiGraph()
 
-    kown_reactions = []
+    known_compounds = []
+    inferred_compounds = []
+
+    known_reactions = []
     inferred_reactions = []
+
     for answer in clyngor.ASP(asp_code).parse_args.by_predicate:
         for predicate in answer:
             for atom in answer[predicate]:
@@ -38,32 +42,48 @@ def pathmodel_pathway_picture(asp_code, picture_name):
                 reactant = atom[1].strip('"')
                 product = atom[2].strip('"')
                 if predicate == "reaction":
-                    kown_reactions.append(reactant)
-                    kown_reactions.append(product)
-                else:
-                    inferred_reactions.append(reactant)
-                    inferred_reactions.append(product)
-                DG.add_edge(reactant, product, label=reaction)
+                    known_compounds.append(reactant)
+                    known_compounds.append(product)
+
+                    known_reactions.append((reactant,product))
+                    DG.add_edge(reactant, product, label=reaction)
+                elif predicate == "newreaction":
+                    inferred_compounds.append(reactant)
+                    inferred_compounds.append(product)
+
+                    inferred_reactions.append((reactant,product))
+                    DG.add_edge(reactant, product, label=reaction)
     plt.figure(figsize=(25,25))
 
 
     nx.draw_networkx_nodes(DG,
                            graphviz_layout(DG, prog='neato'),
-                           nodelist=kown_reactions,
+                           nodelist=known_compounds,
                            node_color="green",
                            node_size=3000,
                            node_shape='s',
                        alpha=0.2)
     nx.draw_networkx_nodes(DG,
                            graphviz_layout(DG, prog='neato'),
-                           nodelist=inferred_reactions,
+                           nodelist=inferred_compounds,
                            node_color="blue",
                            node_size=2000,
                            node_shape='s',
                        alpha=0.2)
+
     nx.draw_networkx_edges(DG,
                            graphviz_layout(DG, prog='neato'),
-                           edge_color="black",
+                           edgelist=known_reactions,
+                           edge_color="green",
+                           alpha=0.5,
+                           width=2.0,
+                           arrow=True,
+                           arrowstyle='->',
+                           arrowsize=14)
+    nx.draw_networkx_edges(DG,
+                           graphviz_layout(DG, prog='neato'),
+                           edgelist=inferred_reactions,
+                           edge_color="blue",
                            alpha=0.5,
                            width=2.0,
                            arrow=True,
