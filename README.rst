@@ -25,8 +25,8 @@ To create pathway picture, the script uses `networkx <https://networkx.github.io
 
 To create molecule picture, Pathmodel uses the `rdkit package <https://github.com/rdkit/rdkit/>`__.
 
-Using conda (to install all dependencies)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using conda environment (to install all dependencies)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Due to all the dependencies required by all the script of Pathmodel, we create a conda environment file that contains all dependencies.
 
@@ -50,7 +50,10 @@ If you want to test this, the first thing is to install miniconda:
     rm Miniconda3-latest-Linux-x86_64.sh
 
     # Add conda path to you bash settings.
-    echo 'export PATH="$PATH:/path/where/miniconda/is/installed/bin:"' >> ~/.bashrc
+    echo '. /path/where/miniconda/is/installed/etc/profile.d/conda.sh' >> ~/.bashrc
+    # Will activate the environment.
+    # For more information: https://github.com/conda/conda/blob/master/CHANGELOG.md#440-2017-12-20
+    echo 'conda activate base' >> ~/.bashrc
 
 After this you need to restart your terminal or use: source ~/.bashrc
 
@@ -80,6 +83,16 @@ You can exit the environment with:
 
     # Deactivate the environment.
     conda deactivate
+
+Using conda package
+~~~~~~~~~~~~~~~~~~~
+
+It will be possible to install pathmodel (and its dependencies) with a conda install. But you have to add some channels.
+
+.. code:: sh
+
+    # Install pathmodel
+    conda install pathmodel -c dyliss -c anaconda -c conda-forge -c rdkit -c potassco
 
 
 Using git
