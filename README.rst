@@ -61,7 +61,7 @@ Then you will get our conda environment file:
 
 .. code:: sh
 
-    # Download our conda environment file from Pathmdoel gitlab page.
+    # Download our conda environment file from Pathmodel gitlab page.
     wget https://gitlab.inria.fr/DYLISS/PathModel/raw/master/conda/pathmodel_env.yaml
 
     # Use the file to create the environment and install all dependencies.
