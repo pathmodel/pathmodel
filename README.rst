@@ -21,7 +21,8 @@ Python environment for Clingo must be Python 3, if it is Python 2 the script wil
 
 For the wrapping script, `Python3 <https://www.python.org/>`__ and `clyngor package <https://github.com/Aluriak/clyngor>`__ are needed.
 
-To create pathway picture, the script uses `networkx <https://networkx.github.io/>`__ and `matplotlib packages <https://matplotlib.org/>`__.
+To create pathway picture, the script uses `networkx <https://networkx.github.io/>`__ (with `graphviz <https://www.graphviz.org/>`__ and `pygraphviz <https://github.com/pygraphviz/pygraphviz>`__) and `matplotlib packages <https://matplotlib.org/>`__.
+
 
 To create molecule picture, Pathmodel uses the `rdkit package <https://github.com/rdkit/rdkit/>`__.
 
@@ -111,6 +112,8 @@ At this moment, the package can be installed only using python setup. But when t
 Using pip
 ~~~~~~~~~
 
+If you have all the depedencies on your system, you can just download Pathmodel using pip.
+
 Incoming and will be like:
 
 .. code:: sh
@@ -197,7 +200,7 @@ In python:
 
     import pathmodel
 
-	pathmodel.pathmodel_analysis('data.lp')
+    pathmodel.pathmodel_analysis('data.lp')
 
 Output data
 ~~~~~~~~~~~
@@ -209,4 +212,6 @@ Example
 
 data/data.lp contains example for sterols and mycosporine-like amino-acids pathways.
 
-test/data.lp contains an example with fictional molecules to test PathModel.
+test/test_data/pathmodel_test_data.lp contains an example with fictional molecules to test PathModel.
+
+

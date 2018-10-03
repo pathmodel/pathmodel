@@ -36,6 +36,7 @@ def mz_computation(input_file):
 	Use next because for these analysis, we expect only one answer.
 	'''
 	print('~~~~~Creation of MZ~~~~~')
+	# Argument use_clingo_module=False because of https://github.com/Aluriak/clyngor/issues/7
 	mz_solver = clyngor.solve([input_file, root + '/asp/MZComputation.lp'],use_clingo_module=False)
 	mz_result = '\n'.join([atom+'. ' for atom in next(mz_solver.parse_args.atoms_as_string.int_not_parsed.sorted)])
 
