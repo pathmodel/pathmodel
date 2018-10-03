@@ -8,6 +8,7 @@ This is useful to check if the ASP structure corresponds to the molecule structu
 """
 
 import argparse
+import os
 
 from clyngor import ASP
 from rdkit import Chem
@@ -39,10 +40,10 @@ def create_rdkit_molecule(molecule_name,molecules,molecule_numberings,bonds):
 
 	atoms = sorted(molecules[molecule_name])
 	atom_numberings = sorted(molecule_numberings[molecule_name])
-	# Renumber atom so there is no atom witha number superior to the number of atoms in the molecule.
+	# Renumber atom so there is no atom with a number superior to the number of atoms in the molecule.
 	atom_replaces = {}
 
-	for index, atom in enumerate(atom_numberings):
+	for atom in atom_numberings:
 		if atom != sorted(atom_numberings).index(atom)+1:
 			atom_replaces[atom] = sorted(atom_numberings).index(atom)+1
 
@@ -79,6 +80,10 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
 	To use align_domain, you need the intermediate file creates by pathmodel_wrapper.py.
 	With align_domain, rdkit will use domain to align molecules.
 	'''
+	# Check if output folder exists if not create it.
+	if not os.path.isdir("{0}".format(output_directory)):
+		os.mkdir("{0}".format(output_directory))
+
 	with open(input_filename, 'r') as input_file:
 		asp_code = input_file.read()
 	# Set bond types transformation from ASP to rdkit.
@@ -90,8 +95,8 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
 				'variable': Chem.BondType.UNSPECIFIED}
 
 	# Set atomic number transformation from ASP to rdkit.
-	atomicNumber = { 'carb': 6,
-					'nitro': 7,
+	atomicNumber = {'carb': 6,
+					'nitr': 7,
 					'oxyg': 8,
 					'phos': 15}
 

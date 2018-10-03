@@ -8,6 +8,8 @@ Script to create a pathway picture showing inference results of Pathmodel analys
 import argparse
 import clyngor
 import networkx as nx
+# import for using the script in docker.
+import matplotlib; matplotlib.use('svg')
 import matplotlib.pyplot as plt
 import os.path
 
