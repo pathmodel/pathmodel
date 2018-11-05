@@ -21,4 +21,4 @@ RUN conda install -c rdkit rdkit;\
     conda install -c anaconda pygraphviz;\
     conda install -c potassco clingo
 
-RUN pip install clyngor matplotlib networkx
+RUN pip install pathmodel

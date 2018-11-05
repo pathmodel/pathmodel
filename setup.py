@@ -31,7 +31,7 @@ setup(name='pathmodel',
       packages=['pathmodel'],
       package_dir = {'pathmodel' : 'pathmodel'},
       package_data = {'pathmodel' : ['asp/*.lp', 'plotting/*.py']},
-      install_requires=['clyngor','networkx',],
+      install_requires=['clyngor','networkx','matplotlib'],
       entry_points={
           'console_scripts': [
               'pathmodel = pathmodel.__main__:main'

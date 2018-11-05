@@ -15,10 +15,11 @@ import os.path
 
 from networkx.drawing.nx_agraph import graphviz_layout
 
+
 def run_pathway_creation():
     parser = argparse.ArgumentParser(usage="python path_creation.py -f FILE -o STRING")
-    parser.add_argument("-f", "--file", dest = "asp_file", metavar = "FILE", help = "File containing result data from Pathmodel analysis.")
-    parser.add_argument("-o", "--output", dest = "output_name", metavar = "STRING", help = "Name of the output.")
+    parser.add_argument("-f", "--file", dest="asp_file", metavar="FILE", help="File containing result data from Pathmodel analysis.")
+    parser.add_argument("-o", "--output", dest="output_name", metavar="STRING", help="Name of the output.")
 
     parser_args = parser.parse_args()
 
@@ -27,6 +28,7 @@ def run_pathway_creation():
     picture_name = parser_args.output_name
 
     pathmodel_pathway_picture(asp_code, picture_name)
+
 
 def pathmodel_pathway_picture(asp_code, picture_name):
     DG = nx.DiGraph()
@@ -47,16 +49,15 @@ def pathmodel_pathway_picture(asp_code, picture_name):
                     known_compounds.append(reactant)
                     known_compounds.append(product)
 
-                    known_reactions.append((reactant,product))
+                    known_reactions.append((reactant, product))
                     DG.add_edge(reactant, product, label=reaction)
                 elif predicate == "newreaction":
                     inferred_compounds.append(reactant)
                     inferred_compounds.append(product)
 
-                    inferred_reactions.append((reactant,product))
+                    inferred_reactions.append((reactant, product))
                     DG.add_edge(reactant, product, label=reaction)
-    plt.figure(figsize=(25,25))
-
+    plt.figure(figsize=(25, 25))
 
     nx.draw_networkx_nodes(DG,
                            graphviz_layout(DG, prog='neato'),
@@ -64,14 +65,14 @@ def pathmodel_pathway_picture(asp_code, picture_name):
                            node_color="green",
                            node_size=3000,
                            node_shape='s',
-                       alpha=0.2)
+                           alpha=0.2)
     nx.draw_networkx_nodes(DG,
                            graphviz_layout(DG, prog='neato'),
                            nodelist=inferred_compounds,
                            node_color="blue",
                            node_size=2000,
                            node_shape='s',
-                       alpha=0.2)
+                           alpha=0.2)
 
     nx.draw_networkx_edges(DG,
                            graphviz_layout(DG, prog='neato'),
@@ -92,14 +93,15 @@ def pathmodel_pathway_picture(asp_code, picture_name):
                            arrowstyle='->',
                            arrowsize=14)
     nx.draw_networkx_labels(DG,
-                           graphviz_layout(DG, prog='neato'),
-                           font_size=15)
+                            graphviz_layout(DG, prog='neato'),
+                            font_size=15)
 
     ax = plt.gca()
     ax.set_axis_off()
 
     extension = os.path.splitext(picture_name)[1].strip('.')
     plt.savefig(picture_name, dpi=144, format=extension, frameon=True)
+
 
 if __name__ == '__main__':
     run_pathway_creation()

@@ -12,6 +12,4 @@ dependencies:
   - xorg-libxext=1.3.3
   - xorg-libxau=1.0.8
   - pip:
-     - matplotlib==2.2.3
-     - clyngor==0.3.7
-     - networkx==2.1
+     - pathmodel

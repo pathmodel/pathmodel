@@ -114,11 +114,20 @@ Using pip
 
 If you have all the depedencies on your system, you can just download Pathmodel using pip.
 
-Incoming and will be like:
-
 .. code:: sh
 
 	pip install pathmodel
+
+Using docker
+~~~~~~~~~
+
+A container will be usable in a few days.
+
+
+.. code:: sh
+
+	docker run -ti -v /path/shared/container:/shared dyliss/pathmodel --name="mycontainer" bash
+
 
 Description
 -----------
