@@ -119,7 +119,7 @@ If you have all the depedencies on your system, you can just download Pathmodel 
 	pip install pathmodel
 
 Using docker
-~~~~~~~~~
+~~~~~~~~~~~~
 
 A container will be usable in a few days.
 
