@@ -4,6 +4,7 @@
 import argparse
 import clyngor
 import os
+import sys
 
 from pathmodel.plotting.path_creation import pathmodel_pathway_picture
 
@@ -27,6 +28,12 @@ def run_pathmodel():
                         help="Add if you want the input file given to pathmodel after MZ Computation and Reaction Creation (optional).")
 
     parser_args = parser.parse_args()
+
+    # Print help and exit if no arguments.
+    argument_number = len(sys.argv[1:])
+    if argument_number == 0:
+        parser.print_help()
+        parser.exit()
 
     input_file = parser_args.input_file
     picture_name = parser_args.picture
