@@ -1,3 +1,6 @@
+.. image:: https://img.shields.io/pypi/v/pathmodel.svg
+	:target: https://pypi.python.org/pypi/pathmodel
+
 PathModel
 =========
 
@@ -95,6 +98,17 @@ It will be possible to install pathmodel (and its dependencies) with a conda ins
     # Install pathmodel
     conda install pathmodel -c dyliss -c anaconda -c conda-forge -c rdkit -c potassco
 
+Using docker
+~~~~~~~~~~~~
+
+A docker image of pathmodel is available at `dockerhub <https://hub.docker.com/r/pathmodel/pathmodel/>`__.
+
+
+.. code:: sh
+
+	docker run -ti -v /path/shared/container:/shared --name="mycontainer" pathmodel/pathmodel bash
+
+This command will download the image and create a container with a shared path.
 
 Using git
 ~~~~~~~~~
@@ -118,29 +132,20 @@ If you have all the depedencies on your system, you can just download Pathmodel 
 
 	pip install pathmodel
 
-Using docker
-~~~~~~~~~~~~
-
-A docker image of pathmodel is available at `dockerhub <https://hub.docker.com/r/pathmodel/pathmodel/>`__.
-
-
-.. code:: sh
-
-	docker run -ti -v /path/shared/container:/shared --name="mycontainer" pathmodel/pathmodel bash
-
-This command will download the image and create a container with a shared path.
-
 Description
 -----------
 
-PathModel is developed in `ASP <https://en.wikipedia.org/wiki/Answer_set_programming>`__. It is divided in two scripts.
+PathModel is developed in `ASP <https://en.wikipedia.org/wiki/Answer_set_programming>`__. It is divided in three ASP scripts.
 
 The first one, `ReactionSiteExtraction.lp  <https://gitlab.inria.fr/DYLISS/PathModel/blob/master/pathmodel/asp/ReactionSiteExtraction.lp>`__ creates reaction site.
 
 When a reaction is described between two molecules, the script will compare atoms and bonds of the two molecules of the reaction and will extract a reaction site before the reaction (composed of atoms and bonds that are present in the reactant but absent in the product) and a reaction site after the reaction (composed of atoms and bonds present in the product but absent in the reactant).
 
 ReactionSiteExtraction produces two sites for each reaction (one before and one after the reaction).
-These sites will be used by the second script: `PathModel.lp <https://gitlab.inria.fr/DYLISS/PathModel/blob/master/pathmodel/asp/PathModel.lp>`__.
+
+A second script, `MZComputation.lp  <https://gitlab.inria.fr/DYLISS/PathModel/blob/master/pathmodel/asp/MZComputation.lp>`__ will compute the MZ for each known molecule.
+
+These data will be used by the third script: `PathModel.lp <https://gitlab.inria.fr/DYLISS/PathModel/blob/master/pathmodel/asp/PathModel.lp>`__.
 
 PathModel will use two inference methods: one creating new metabolites and one infering a reaction between two metabolites.
 
