@@ -112,7 +112,7 @@ At this moment, the package can be installed only using python setup. But when t
 Using pip
 ~~~~~~~~~
 
-If you have all the depedencies on your system, you can just download Pathmodel using pip.
+If you have all the depedencies on your system, you can just download Pathmodel using `pip <https://pypi.org/project/pathmodel/>`__.
 
 .. code:: sh
 
@@ -121,13 +121,14 @@ If you have all the depedencies on your system, you can just download Pathmodel 
 Using docker
 ~~~~~~~~~~~~
 
-A container will be usable in a few days.
+A docker image of pathmodel is available at `dockerhub <https://hub.docker.com/r/pathmodel/pathmodel/>`__.
 
 
 .. code:: sh
 
-	docker run -ti -v /path/shared/container:/shared dyliss/pathmodel --name="mycontainer" bash
+	docker run -ti -v /path/shared/container:/shared --name="mycontainer" pathmodel/pathmodel bash
 
+This command will download the image and create a container with a shared path.
 
 Description
 -----------
