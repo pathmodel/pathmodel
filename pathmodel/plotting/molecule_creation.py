@@ -113,7 +113,8 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
     bonds = {}
 
     # Parse ASP input file and extract molecules, atoms and bonds.
-    for predicate in ASP(asp_code).parse_args:
+    # use_clingo_module=false because of https://github.com/Aluriak/clyngor/issues/7
+    for predicate in ASP(asp_code, use_clingo_module=False).parse_args.discard_quotes:
         for variable in predicate:
             if variable[0] == 'atom':
                 atom_molecule = variable[1][0]
@@ -183,8 +184,9 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
             AllChem.GenerateDepictionMatching2DStructure(rdmol, template)
 
         # Draw molecule.
-        molecule_name = molecule_name.strip('"')
-        Draw.MolToFile(rdmol, output_directory+'/'+molecule_name+".svg", size=(800, 800), includeAtomNumbers=True)
+        molecule_name = molecule_name
+        print(molecule_name)
+        Draw.MolToFile(rdmol, output_directory+'/'+molecule_name+'.svg', size=(800, 800), includeAtomNumbers=True)
 
     input_file.close()
 

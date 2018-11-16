@@ -39,12 +39,13 @@ def pathmodel_pathway_picture(asp_code, picture_name):
     known_reactions = []
     inferred_reactions = []
 
-    for answer in clyngor.ASP(asp_code).parse_args.by_predicate:
+    # use_clingo_module=false because of https://github.com/Aluriak/clyngor/issues/7
+    for answer in clyngor.ASP(asp_code, use_clingo_module=False).parse_args.by_predicate.discard_quotes:
         for predicate in answer:
             for atom in answer[predicate]:
-                reaction = atom[0].strip('"')
-                reactant = atom[1].strip('"')
-                product = atom[2].strip('"')
+                reaction = atom[0]
+                reactant = atom[1]
+                product = atom[2]
                 if predicate == "reaction":
                     known_compounds.append(reactant)
                     known_compounds.append(product)
