@@ -19,7 +19,7 @@ def run_pathmodel():
     '''
     Arguments when used with entrypoint as: pathmodel -d data.lp
     '''
-    parser = argparse.ArgumentParser(usage="pathmodel -d FILE -p FILE -o FILE")
+    parser = argparse.ArgumentParser(usage="pathmodel -d FILE -p FILE -o FILE [--example FOLDER]")
     parser.add_argument("-d", "--data", dest="input_file", metavar="FILE",
                         help="Input file containing atoms, bonds, reactions and goal.")
     parser.add_argument("-p", "--picture", dest="picture", metavar="FILE",
@@ -28,8 +28,8 @@ def run_pathmodel():
                         help="Name of the result in this file (optional).")
     parser.add_argument("-i", "--intermediate", dest="intermediate", action='store_true',
                         help="Add if you want the input file given to pathmodel after MZ Computation and Reaction Creation (optional).")
-    parser.add_argument("--example", dest="example", action='store_true',
-                        help="Run Pathmodel on example data and create the result in a folder at the path where you launch this command. Need wget.")
+    parser.add_argument("--example", dest="example", metavar="FOLDER",
+                        help="Run Pathmodel on example data and create the result in the folder you specify. Need wget.")
 
     parser_args = parser.parse_args()
 
@@ -46,12 +46,14 @@ def run_pathmodel():
     example = parser_args.example
 
     if example:
-        if not os.path.exists('pathmodel_example'):
-            os.mkdir('pathmodel_example')
-            subprocess.Popen(['wget', 'https://gitlab.inria.fr/DYLISS/PathModel/raw/master/data/sterol_pwy_2541.lp', '-P', 'pathmodel_example'])
-            while not os.path.exists('pathmodel_example/sterol_pwy_2541.lp'):
+        example_path = example + '/' + 'pathmodel_example'
+        if not os.path.exists(example_path):
+            os.mkdir(example_path)
+            subprocess.Popen(['wget', 'https://gitlab.inria.fr/DYLISS/PathModel/raw/master/data/sterol_pwy_2541.lp', '-P', example_path])
+            data_path = example_path + '/' + 'sterol_pwy_2541.lp'
+            while not os.path.exists(data_path):
                 time.sleep(1)
-            pathmodel_analysis('pathmodel_example/sterol_pwy_2541.lp', 'pathmodel_example/inferred_sterol.png', 'pathmodel_example/inferred_sterol.lp')
+            pathmodel_analysis(data_path, example_path + '/inferred_sterol.png', example_path + '/inferred_sterol.lp')
         else:
             print('Example folder already exists, delete it.')
         return

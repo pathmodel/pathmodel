@@ -241,7 +241,7 @@ In this folder, three files will be created:
 
 -inferred_sterol.lp: the inferred reactions.
 
--inferred_sterol.png: a png file showing yhe inferred reactions.
+-inferred_sterol.png: a png file showing the inferred reactions.
 
 
 Also, the folder test/test_data/ contains an example with fictional molecules to test PathModel.
