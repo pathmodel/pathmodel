@@ -4,7 +4,9 @@
 import argparse
 import clyngor
 import os
+import subprocess
 import sys
+import time
 
 from pathmodel.plotting.path_creation import pathmodel_pathway_picture
 
@@ -26,6 +28,8 @@ def run_pathmodel():
                         help="Name of the result in this file (optional).")
     parser.add_argument("-i", "--intermediate", dest="intermediate", action='store_true',
                         help="Add if you want the input file given to pathmodel after MZ Computation and Reaction Creation (optional).")
+    parser.add_argument("--example", dest="example", action='store_true',
+                        help="Run Pathmodel on example data and create the result in a folder at the path where you launch this command. Need wget.")
 
     parser_args = parser.parse_args()
 
@@ -39,6 +43,18 @@ def run_pathmodel():
     picture_name = parser_args.picture
     output_file = parser_args.output_file
     intermediate = parser_args.intermediate
+    example = parser_args.example
+
+    if example:
+        if not os.path.exists('pathmodel_example'):
+            os.mkdir('pathmodel_example')
+            subprocess.Popen(['wget', 'https://gitlab.inria.fr/DYLISS/PathModel/raw/master/data/sterol_pwy_2541.lp', '-P', 'pathmodel_example'])
+            while not os.path.exists('pathmodel_example/sterol_pwy_2541.lp'):
+                time.sleep(1)
+            pathmodel_analysis('pathmodel_example/sterol_pwy_2541.lp', 'pathmodel_example/inferred_sterol.png', 'pathmodel_example/inferred_sterol.lp')
+        else:
+            print('Example folder already exists, delete it.')
+        return
 
     pathmodel_analysis(input_file, picture_name, output_file, intermediate)
 

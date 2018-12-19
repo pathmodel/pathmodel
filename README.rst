@@ -225,8 +225,23 @@ Using networkx, inferred pathways are represented as png picture. Also a result.
 Example
 ~~~~~~~
 
-data/data.lp contains example for sterols and mycosporine-like amino-acids pathways.
+The folder data/ contains example for sterols and mycosporine-like amino-acids pathways.
 
-test/test_data/pathmodel_test_data.lp contains an example with fictional molecules to test PathModel.
+By calling the command:
+
+.. code:: sh
+
+	pathmodel --example
+
+A run of pathmodel will be launch on the sterol data. It will create a folder named pathmodel_example where you have launched the command.
+
+In this folder, three files will be created:
+
+-sterol_pwy_2541.lp: containing the input data.
+
+-inferred_sterol.lp: the inferred reactions.
+
+-inferred_sterol.png: a png file showing yhe inferred reactions.
 
 
+Also, the folder test/test_data/ contains an example with fictional molecules to test PathModel.
