@@ -23,5 +23,3 @@ RUN conda install -c rdkit rdkit;\
     echo 'export LANG="C.UTF-8"' >> ~/.bashrc
 
 RUN pip install pathmodel
-
-ENTRYPOINT ["pathmodel"]

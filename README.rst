@@ -108,7 +108,7 @@ A docker image of pathmodel is available at `dockerhub <https://hub.docker.com/r
 
 	docker run -ti -v /path/shared/container:/shared --name="mycontainer" pathmodel/pathmodel bash
 
-This command will download the image and create a container with a shared path.
+This command will download the image and create a container with a shared path. It will launch a bash terminal where you can use the command pathmodel (see `Use`__ and `Example`_).
 
 Using git
 ~~~~~~~~~
