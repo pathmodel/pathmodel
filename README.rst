@@ -113,7 +113,7 @@ This command will download the image and create a container with a shared path. 
 Using git
 ~~~~~~~~~
 
-At this moment, the package can be installed only using python setup. But when the git will become public, a pip package would be created.
+The package can be installed either using python setup or pip install (see below)
 
 .. code:: sh
 
@@ -126,7 +126,7 @@ At this moment, the package can be installed only using python setup. But when t
 Using pip
 ~~~~~~~~~
 
-If you have all the depedencies on your system, you can just download Pathmodel using `pip <https://pypi.org/project/pathmodel/>`__.
+If you have all the dependencies on your system, you can just download Pathmodel using `pip <https://pypi.org/project/pathmodel/>`__.
 
 .. code:: sh
 
