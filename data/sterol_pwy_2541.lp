@@ -850,7 +850,7 @@ reaction(rxn_8353,"24-methyldesmosterol","24-epi-campesterol").
 reaction(rxn_8352,"24-epi-campesterol","brassicasterol").
 
 % Added reaction rxn_4101, rxn_4181, rxn_4282, rxn_4208 and rxn66_28
-% C4 Demethylase: Reactions rxn_4101, _xn_4181 and rxn_208 -> Choe, Noguchi et al. 1999:
+% C4 Demethylase: Reactions rxn_4101, rxn_4181 and rxn_4208 -> Choe, Noguchi et al. 1999:
 %   http://www.plantcell.org/content/11/2/207.short
 reaction(rxn_4101,"24-methylenecycloartanol","cycloeucalenol").
 
