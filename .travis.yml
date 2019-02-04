@@ -1,0 +1,36 @@
+dist: trusty
+sudo: required
+language: python
+python:
+  - "3.6"
+
+# Install packages
+install:
+  - sudo apt-get update
+  - sudo apt-get gcc tmux libxrender1
+  # Use a conda installation to get all the modules
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda install -c rdkit rdkit
+  - conda install -c anaconda pygraphviz
+  - conda install -c potassco clingo
+  - conda info -a
+  - echo 'export LANG="C.UTF-8"' >> ~/.bashrc
+
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip
+
+  - source activate test-environment
+
+  - pip install python-coveralls pytest clyngor=0.3.7 matplotlib=2.2.3 networkx=2.1
+
+# Run tests with coverage
+script:
+  - coverage run -m pytest discover
+
+after_success:
+- coveralls
+
