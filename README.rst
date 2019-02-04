@@ -1,11 +1,18 @@
 .. image:: https://img.shields.io/pypi/v/pathmodel.svg
 	:target: https://pypi.python.org/pypi/pathmodel
 
+.. image:: https://travis-ci.org/pathmodel/pathmodel.svg?branch=master
+        :target: https://travis-ci.org/pathmodel/pathmodel
+
+.. image:: https://coveralls.io/repos/github/pathmodel/pathmodel/badge.svg?branch=master
+        :target: https://coveralls.io/github/pathmodel/pathmodel?branch=master
+
+
 PathModel
 =========
 
 PathModel is a tool to infer reaction between metabolites and new metabolites. 
-The biological motivation for developing it is described in this `preprint <https://doi.org/10.1101/462556>`__ , now in review at `iScience <https://www.cell.com/iscience/home>`__
+The biological motivation for developing it is described in this `preprint <https://doi.org/10.1101/462556>`__ , now in review at `iScience <https://www.cell.com/iscience/home>`__.
 
 There is no guarantee that this script will work, it is a Work In Progress in early state.
 
