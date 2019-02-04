@@ -15,13 +15,13 @@ install:
   - hash -r
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - conda install -c rdkit rdkit
-  - conda install -c anaconda pygraphviz
-  - conda install -c potassco clingo
   - conda info -a
-  - echo 'export LANG="C.UTF-8"' >> ~/.bashrc
-
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip
+  - conda install -c rdkit rdkit -n test-environment
+  - conda install -c anaconda pygraphviz -n test-environment
+  - conda install -c potassco clingo -n test-environment
+
+  - echo 'export LANG="C.UTF-8"' >> ~/.bashrc
 
   - source activate test-environment
 
