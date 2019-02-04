@@ -25,7 +25,7 @@ install:
 
   - source activate test-environment
 
-  - pip install python-coveralls pytest clyngor=0.3.7 matplotlib=2.2.3 networkx=2.1
+  - pip install python-coveralls pytest clyngor==0.3.7 matplotlib==2.2.3 networkx==2.1
 
 # Run tests with coverage
 script:
