@@ -4,9 +4,6 @@
 .. image:: https://travis-ci.org/pathmodel/pathmodel.svg?branch=master
         :target: https://travis-ci.org/pathmodel/pathmodel
 
-.. image:: https://coveralls.io/repos/github/pathmodel/pathmodel/badge.svg?branch=master
-        :target: https://coveralls.io/github/pathmodel/pathmodel?branch=master
-
 
 PathModel
 =========
@@ -73,8 +70,8 @@ Then you will get our conda environment file:
 
 .. code:: sh
 
-    # Download our conda environment file from Pathmodel gitlab page.
-    wget https://gitlab.inria.fr/DYLISS/PathModel/raw/master/conda/pathmodel_env.yaml
+    # Download our conda environment file from Pathmodel github page.
+    wget https://raw.githubusercontent.com/pathmodel/pathmodel/master/conda/pathmodel_env.yaml
 
     # Use the file to create the environment and install all dependencies.
     conda env create -f pathmodel.yaml
@@ -125,7 +122,7 @@ The package can be installed either using python setup or pip install (see below
 
 .. code:: sh
 
-    git clone https://gitlab.inria.fr/DYLISS/PathModel
+    git clone https://github.com/pathmodel/pathmodel.git
 
     cd PathModel
 
@@ -145,15 +142,15 @@ Description
 
 PathModel is developed in `ASP <https://en.wikipedia.org/wiki/Answer_set_programming>`__. It is divided in three ASP scripts.
 
-The first one, `ReactionSiteExtraction.lp  <https://gitlab.inria.fr/DYLISS/PathModel/blob/master/pathmodel/asp/ReactionSiteExtraction.lp>`__ creates reaction site.
+The first one, `ReactionSiteExtraction.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/ReactionSiteExtraction.lp>`__ creates reaction site.
 
 When a reaction is described between two molecules, the script will compare atoms and bonds of the two molecules of the reaction and will extract a reaction site before the reaction (composed of atoms and bonds that are present in the reactant but absent in the product) and a reaction site after the reaction (composed of atoms and bonds present in the product but absent in the reactant).
 
 ReactionSiteExtraction produces two sites for each reaction (one before and one after the reaction).
 
-A second script, `MZComputation.lp  <https://gitlab.inria.fr/DYLISS/PathModel/blob/master/pathmodel/asp/MZComputation.lp>`__ will compute the MZ for each known molecule.
+A second script, `MZComputation.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/MZComputation.lp>`__ will compute the MZ for each known molecule.
 
-These data will be used by the third script: `PathModel.lp <https://gitlab.inria.fr/DYLISS/PathModel/blob/master/pathmodel/asp/PathModel.lp>`__.
+These data will be used by the third script: `PathModel.lp <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/PathModel.lp>`__.
 
 PathModel will use two inference methods: one creating new metabolites and one infering a reaction between two metabolites.
 
