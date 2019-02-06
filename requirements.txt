@@ -1,4 +1,4 @@
-clyngor=0.3.7
+clyngor=0.3.13
 matplotlib=2.2.3
 networkx=2.1
 pygraphviz=1.3
