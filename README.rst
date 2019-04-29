@@ -237,7 +237,7 @@ By calling the command:
 
 	pathmodel --example
 
-A run of pathmodel will be launch on the sterol data. It will create a folder named pathmodel_example where you have launched the command.
+A run of pathmodel will be launched on the sterol data. It will create a folder named pathmodel_example in the directory where you have launched the command.
 
 In this folder, three files will be created:
 
