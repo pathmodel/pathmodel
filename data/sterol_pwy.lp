@@ -510,7 +510,7 @@ bond("brassicasterol",single,23,24). bond("brassicasterol",singleS,24,241). bond
 bond("brassicasterol",single,25,26). bond("brassicasterol",single,25,27).
 
 
-% Early SSR Intervention
+% Early SSR Intervention - PWY-18C3-1
 
 atom("cycloartanol",1..30,carb). atom("cycloartanol",31,oxyg).
 bond("cycloartanol",single,1,2). bond("cycloartanol",single,1,10). bond("cycloartanol",single,2,3).
@@ -863,7 +863,7 @@ reaction(rxn_4181,"24-methylenelophenol","episterol").
 %   https://biocyc.org/META/NEW-IMAGE?type=REACTION&object=RXN66-28
 reaction(rxn_4282,"cycloartenol","cycloartanol").
 
-reaction(rxn66_28,"desmosterol","cholesterol").
+reaction(rxn66_28,"desmosterol","cholesterol"). % from PWY-66-4
 
 % Molecules absent in the organism.
 
