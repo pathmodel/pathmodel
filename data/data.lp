@@ -550,7 +550,7 @@ reaction(c14_demethylation, "4α,14α-dimethylcholesta-8-enol", "4α-methylchole
 
 reaction(c14_reduction, "4α-methylcholesta-8,14-dien-3β-ol", "4α-methyl-24(25)-dihydrozymosterol").
 
-reaction(c8_isomerisation, "4α-methyl-24(25)-dihydrozymosterol", "4α-methyl-5α-cholest-7-en-3β-ol").
+reaction(c8_isomerisation, "4α-methyl-5α-cholesta-8-en-3-ol", "4α-methyl-5α-cholest-7-en-3β-ol").
 
 reaction(c4_c28_demethylation, "4α-methyl-5α-cholest-7-en-3β-ol", "lathosterol").
 
