@@ -538,7 +538,7 @@ reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound
 
 % Known sterol reactions (inferred from other organisms)
 
-% Early SSR pathway intervention (tomato-like)
+% Early SSR pathway intervention (PWY-18C3-1, tomato-like)
 
 reaction(delta24_25_reduction, "cycloartenol", "cycloartanol").
 
@@ -546,11 +546,11 @@ reaction(c4_c29_demethylation, "cycloartanol", "31-norcycloartanol").
 
 reaction(cyclopropylsterol_isomerisation, "31-norcycloartanol", "31-nor-24(25)-dihydrolanosterol").
 
-reaction(c14_demethylation, "31-nor-24(25)-dihydrolanosterol", "4α-methylcholesta-8,14-dien-3β-ol").
+reaction(c14_demethylation, "4α,14α-dimethylcholesta-8-enol", "4α-methylcholesta-8,14-dien-3β-ol").
 
 reaction(c14_reduction, "4α-methylcholesta-8,14-dien-3β-ol", "4α-methyl-24(25)-dihydrozymosterol").
 
-reaction(c8_isomerase, "4α-methyl-24(25)-dihydrozymosterol", "4α-methyl-5α-cholest-7-en-3β-ol").
+reaction(c8_isomerisation, "4α-methyl-24(25)-dihydrozymosterol", "4α-methyl-5α-cholest-7-en-3β-ol").
 
 reaction(c4_c28_demethylation, "4α-methyl-5α-cholest-7-en-3β-ol", "lathosterol").
 
