@@ -241,7 +241,7 @@ A run of pathmodel will be launched on the sterol data. It will create a folder 
 
 In this folder, three files will be created:
 
--sterol_pwy_2541.lp: containing the input data.
+-sterol_pwy.lp: containing the input data.
 
 -inferred_sterol.lp: the inferred reactions.
 
