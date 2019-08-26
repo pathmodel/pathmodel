@@ -49,8 +49,8 @@ def run_pathmodel():
         example_path = 'pathmodel_example'
         if not os.path.exists(example_path):
             os.makedirs(example_path)
-            subprocess.Popen(['wget', 'https://gitlab.inria.fr/DYLISS/PathModel/raw/master/data/sterol_pwy_2541.lp', '-P', example_path])
-            data_path = example_path + '/' + 'sterol_pwy_2541.lp'
+            subprocess.Popen(['wget', 'https://github.com/pathmodel/pathmodel/blob/master/data/sterol_pwy.lp', '-P', example_path])
+            data_path = example_path + '/' + 'sterol_pwy.lp'
             while not os.path.exists(data_path):
                 time.sleep(1)
             pathmodel_analysis(data_path, example_path + '/inferred_sterol.png', example_path + '/inferred_sterol.lp')
