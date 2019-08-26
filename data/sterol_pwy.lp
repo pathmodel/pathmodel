@@ -755,8 +755,6 @@ bond("desmosterol",single,25,27).
 Shared domain
 Definition of sterane
 Based on the wikipedia structure: https://fr.wikipedia.org/wiki/St%C3%A9rane#/media/File:Steran_num_ABCD.svg
-One exception the bound between carbone 7 and carbone 8 has variable for the bond type to include the 7-dehydrocholesterol
-because of the double bond instead of the single.
 *%
 
 atomDomain(sterane,1,carb). atomDomain(sterane,2,carb). atomDomain(sterane,3,carb).
