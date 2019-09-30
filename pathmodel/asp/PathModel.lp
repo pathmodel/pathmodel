@@ -114,10 +114,10 @@ solution(M1,M3,t):- inferred(pathway(M2,M3),t+1), inferred(pathway(M1,M2),t).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
 
-% Analogical reasoning: Using all konwn reactions between two metabolites, new metabolites are created from a known metabolites.
-% The known metabolite must shared a domain with the two other molecules and if it has the same site before reaction than the reactant.
-% Then a new metablolite is created by analogy by taking the structure of the known metabolite and the change made by the reaction on the two other molecules.
-% This new metabolite is compared to the database to check if it is not a known and metabolite and filtered using its MZ ratio.
+% Analogical reasoning: Using all known reactions between two metabolites, new metabolites are created from a known metabolite.
+% The known metabolite must share a domain with the two other molecules and if it has the same site before reaction than the reactant,
+% then a new metablolite is created by analogy by taking the structure of the known metabolite and the change made by the reaction on the two other molecules.
+% This new metabolite is compared to the database to check if it is not a known metabolite and filtered using its MZ ratio.
 
 % Rule to infer new punctual metabolites: new metabolite @g(ReactantInferred, Reaction), can be the product of metabolite ReactantInferred by reaction Reaction.
 % This method works with analogy reasoning. Using known reactions, the method will use these reactions to infer new reactions between molecules.
