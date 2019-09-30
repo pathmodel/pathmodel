@@ -242,7 +242,7 @@ domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t), possibleMet
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 *%
 
-% Deductice reasoning: a reaction between two molecules (reference). These two molecules share a chemical (like sterane for sterol) domain with two other molecules (to infer).
+% Deductive reasoning: a reaction between two molecules (reference). These two molecules share a chemical (like sterane for sterol) domain with two other molecules (to infer).
 % One molecule to infer has the same chemical structure (atoms + bonds) on the reaction site than the reactant of reference (site before reaction).
 % And the other molecule to infer has the same structure than the product of reference (site after reaction).
 % And the two molecules to infer have the same structure except for the reaction site.
