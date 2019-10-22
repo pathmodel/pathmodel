@@ -25,7 +25,11 @@ install:
 
   - source activate test-environment
 
-  - pip install python-coveralls pytest clyngor==0.3.12 matplotlib==2.2.3 networkx==2.1 pathmodel
+  - pip install python-coveralls pytest clyngor==0.3.12 matplotlib==2.2.3 networkx==2.1
+
+# Install packages
+before_script:
+  - python3 setup.py develop
 
 # Run tests with coverage
 script:
