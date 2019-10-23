@@ -168,10 +168,10 @@ reaction(aminoacid_C_1_transfer, "4-deoxygadusol", "mycosporin-glycine").
 
 reaction(aminoacid_C_3_transfer_serine,"mycosporin-glycine","shinorine").
 
-% Extend reaction from serine to threonine.
-reaction(aminoacid_C_3_transfer_threonine,"mycosporin-glycine","porphyra-334").
+% Extended reaction from serine to threonine (as proposed in Brawley et al., 2017)
+reaction(aminoacid_C_3_transfer_threonine,"mycosporin-glycine","porphyra-334"). % 
 
-% Reactions from bibliography.
+% Other reactions from bibliography (Carreto and Carignan, 2011)
 reaction(hydrogenation,"shinorine","palythinol").
 
 reaction(demethylation,"palythinol", "asterina-330").
@@ -184,7 +184,7 @@ reaction(decarboxylation,"shinorine","asterina-330").
 
 reaction(hydrolyse,"palythene","palythine").
 
-% MZ expected in mycopsorine amino-acids pathway.
+% MZ expected in mycosporine amino-acids pathway.
 
 mzfiltering(2702720).
 mzfiltering(3023117).
