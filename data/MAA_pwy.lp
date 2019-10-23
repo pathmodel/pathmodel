@@ -189,6 +189,12 @@ reaction(hydrolyse,"palythene","palythine").
 mzfiltering(2702720).
 mzfiltering(3023117).
 
+% defining absent molecules
+
+absentmolecules("z-palythenic acid").
+absentmolecules("palythinol").
+
+
 % Source molecule for inference.
 
 source("sedoheptulose-7-phosphate").
