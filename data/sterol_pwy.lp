@@ -884,8 +884,6 @@ absentmolecules("avenasterol").
 absentmolecules("5-dehydroavenasterol").
 absentmolecules("isofucosterol").
 absentmolecules("Δ24-25-sitosterol").
-absentmolecules("sitosterol").
-absentmolecules("stigmasterol").
 absentmolecules("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol").
 absentmolecules("4α-formyl-ergosta-7,24(241)-dien-3β-ol").
 absentmolecules("4α-carboxy-ergosta-7,24(241)-dien-3β-ol").
@@ -893,11 +891,9 @@ absentmolecules("episterone").
 absentmolecules("episterol").
 absentmolecules("ergosta-5,7,24(28)-trien-3β-ol").
 absentmolecules("24-methyldesmosterol").
-absentmolecules("campesterol").
 absentmolecules("crinosterol").
 absentmolecules("24-ethylidenelophenol").
 
-absentmolecules("cycloartanol").
 absentmolecules("ergosterol").
 absentmolecules("fucosterol").
 absentmolecules("zymosterol").
