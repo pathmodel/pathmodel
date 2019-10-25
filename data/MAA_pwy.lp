@@ -178,9 +178,9 @@ reaction(demethylation,"palythinol", "asterina-330").
 
 reaction(dehydration,"porphyra-334", "z-palythenic acid").
 
-reaction(decarboxylation,"z-palythenic acid","palythene").
+reaction(decarboxylation_1,"z-palythenic acid","palythene").
 
-reaction(decarboxylation,"shinorine","asterina-330").
+reaction(decarboxylation_2,"shinorine","asterina-330").
 
 reaction(hydrolyse,"palythene","palythine").
 
