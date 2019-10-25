@@ -182,7 +182,7 @@ reaction(decarboxylation_1,"z-palythenic acid","palythene").
 
 reaction(decarboxylation_2,"shinorine","asterina-330").
 
-reaction(hydrolyse,"palythene","palythine").
+reaction(hydrolysis,"palythene","palythine").
 
 % MZ expected in mycosporine amino-acids pathway.
 
