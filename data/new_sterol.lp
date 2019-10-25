@@ -462,21 +462,22 @@ reaction(rxn_1_14_21_6,"lathosterol","7-dehydrocholesterol").
 
 reaction(rxn66_323,"7-dehydrocholesterol","cholesterol").
 
+
 % PWY66_44
 reaction(rxn66_28,"desmosterol","cholesterol").
 
 
-reaction(c22_desaturation,"campesterol", "brassicasterol").
-
-reaction(c22_desaturation,"sitosterol", "stigmasterol").
-
-reaction(c24_prime_methyltransferase,"24-methylenelophenol","24-ethylidenelophenol").
-
 % PWY-2541
 reaction(rxn_4021,"cycloartenol","24-methylenecycloartanol").
 
-reaction(rxn_2_1_1_143,"24-methylenecholesterol","campesterol").
+reaction(rxn_2_1_1_143,"24-methylenelophenol","24-ethylidenelophenol").
 
+reaction(rxn_20131,"24-methylenecholesterol","campesterol").
+
+
+reaction(c22_desaturation,"campesterol","brassicasterol").
+
+reaction(c22_desaturation,"sitosterol","stigmasterol").
 
 % Molecules absent in the organism.
 
