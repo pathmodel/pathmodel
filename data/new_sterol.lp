@@ -443,8 +443,8 @@ reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound
 
 reaction(rxn_4282,"cycloartenol","cycloartanol").
 
-% SMO3 (Sonawane et al. 2016): https://www.nature.com/articles/nplants2016205
-reaction(smo3,"cycloartanol","31-norcycloartanol").
+% simplification of multistep C24-C29 demethylation as in Sonawane et al. 2016: https://www.nature.com/articles/nplants2016205
+reaction(c24_c29_demethylation,"cycloartanol","31-norcycloartanol").
 
 reaction(rxn_20436,"31-norcycloartanol","4α,14α-dimethyl-cholesta-8-enol").
 
@@ -454,9 +454,9 @@ reaction(rxn_20439,"4α-methyl-cholesta-8,14-dienol","4α-methyl-5α-cholesta-8-
 
 reaction(rxn_4286,"4α-methyl-5α-cholesta-8-en-3-ol","4α-methyl-5α-cholest-7-en-3β-ol").
 
-% SMO4 (Sonawane et al. 2016): https://www.nature.com/articles/nplants2016205
+% simplification of multistep C24-C29 demethylation as in Sonawane et al. 2016: https://www.nature.com/articles/nplants2016205
 % Cholesta-7-en-3β-ol = lathosterol
-reaction(smo4,"4α-methyl-5α-cholest-7-en-3β-ol","lathosterol").
+reaction(c24_c28_demethylation,"4α-methyl-5α-cholest-7-en-3β-ol","lathosterol").
 
 reaction(rxn_1_14_21_6,"lathosterol","7-dehydrocholesterol").
 
