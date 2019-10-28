@@ -444,6 +444,7 @@ reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound
 reaction(rxn_4282,"cycloartenol","cycloartanol").
 
 % simplification of multistep C24-C29 demethylation as in Sonawane et al. 2016: https://www.nature.com/articles/nplants2016205
+% corresponding to the three Metacyc reactions RXN-20433, RXN20434 and RXN20435
 reaction(c24_c29_demethylation,"cycloartanol","31-norcycloartanol").
 
 reaction(rxn_20436,"31-norcycloartanol","4α,14α-dimethyl-cholesta-8-enol").
