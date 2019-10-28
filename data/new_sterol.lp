@@ -456,6 +456,7 @@ reaction(rxn_20439,"4α-methyl-cholesta-8,14-dienol","4α-methyl-5α-cholesta-8-
 reaction(rxn_4286,"4α-methyl-5α-cholesta-8-en-3-ol","4α-methyl-5α-cholest-7-en-3β-ol").
 
 % simplification of multistep C24-C29 demethylation as in Sonawane et al. 2016: https://www.nature.com/articles/nplants2016205
+% corresponding to the three Metacyc reactions RXN-20440, RXN20441 and RXN20442
 % Cholesta-7-en-3β-ol = lathosterol
 reaction(c24_c28_demethylation,"4α-methyl-5α-cholest-7-en-3β-ol","lathosterol").
 
