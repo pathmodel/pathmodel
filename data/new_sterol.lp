@@ -465,7 +465,7 @@ reaction(rxn_1_14_21_6,"lathosterol","7-dehydrocholesterol").
 reaction(rxn66_323,"7-dehydrocholesterol","cholesterol").
 
 
-% PWY66_44
+% PWY66-4
 reaction(rxn66_28,"desmosterol","cholesterol").
 
 
