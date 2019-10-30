@@ -1,4 +1,2 @@
 from pathmodel.pathmodel_wrapper import mz_computation, reaction_creation, pathmodel_inference, pathmodel_analysis
 
-from pathmodel.plotting.path_creation import pathmodel_pathway_picture
-from pathmodel.plotting.molecule_creation import create_2dmolecule

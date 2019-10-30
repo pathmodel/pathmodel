@@ -801,7 +801,7 @@ reaction(rxn_4144,"4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol","4α-methyl-
 
 reaction(rxn_4161,"4α-methyl-5α-ergosta-8,24-dien-3β-ol","24-methylenelophenol").
 
-reaction(c24_methyltransferase,"24-methylenelophenol","24-ethylidenelophenol").
+reaction(c24_prime_methyltransferase,"24-methylenelophenol","24-ethylidenelophenol").
 
 reaction(rxn_11935,"24-ethylidenelophenol","4α-hydroxymethyl-stigmasta-7,24(241)-dien-3β-ol").
 

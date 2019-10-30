@@ -5,10 +5,10 @@
         :target: https://travis-ci.org/pathmodel/pathmodel
 
 
-PathModel
-=========
+PathModel: metabolic pathway drift prototype
+============================================
 
-PathModel is a tool to infer new biochemical reactions and new metabolite structures. The biological motivation for developing it is described in this `preprint <https://doi.org/10.1101/462556>`__ , now in revision at `iScience <https://www.cell.com/iscience/home>`__.
+PathModel is a prototype to infer new biochemical reactions and new metabolite structures. The biological motivation for developing it is described in this `preprint <https://doi.org/10.1101/462556>`__ , now in revision at `iScience <https://www.cell.com/iscience/home>`__.
 
 There is no guarantee that this script will work, it is a Work In Progress in early state.
 
@@ -22,16 +22,24 @@ Installation
 Requirements
 ~~~~~~~~~~~~
 
-You must have an environment where Clingo is installed. Clingo can be obtained `here <https://github.com/potassco/clingo>`__.
-Also Clingo must be installed in an environment with Python compatibilty (a good way to have it is with `conda <https://anaconda.org/potassco/clingo>`__).
-Python environment for Clingo must be Python 3, if it is Python 2 the script will crash.
+PathModel is a Python3 package using Answer Set Programming (ASP) to infer new biochemical reactions and new metabolites structures. It is divided in two parts:
 
-For the wrapping script, `Python3 <https://www.python.org/>`__ and `clyngor package <https://github.com/Aluriak/clyngor>`__ are needed.
+- a wrapper (pathmodel_wrapper.py) for the ASP programs (MZComputation.lp, ReactionSiteExtraction.lp and PathModel.lp).
 
-To create pathway picture, the script uses `networkx <https://networkx.github.io/>`__ (with `graphviz <https://www.graphviz.org/>`__ and `pygraphviz <https://github.com/pygraphviz/pygraphviz>`__) and `matplotlib packages <https://matplotlib.org/>`__.
+- a plotting script (molecule_creation.py) to create pictures of molecules and pathways.
 
+PathModel requires:
 
-To create molecule picture, Pathmodel uses the `rdkit package <https://github.com/rdkit/rdkit/>`__.
+- `clingo <https://github.com/potassco/clingo>`__: which must be installed with Lua compatibility (a good way to have it is with `conda <https://anaconda.org/potassco/clingo>`__).
+
+- `clyngor package <https://github.com/Aluriak/clyngor>`__.
+
+- `networkx <https://networkx.github.io/>`__ (with `graphviz <https://www.graphviz.org/>`__ and `pygraphviz <https://github.com/pygraphviz/pygraphviz>`__).
+
+- `matplotlib packages <https://matplotlib.org/>`__
+
+- `rdkit package <https://github.com/rdkit/rdkit/>`__
+
 
 Using conda environment (to install all dependencies)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

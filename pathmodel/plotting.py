@@ -9,7 +9,13 @@ This is useful to check if the ASP structure corresponds to the molecule structu
 
 import argparse
 import os
+import networkx as nx
+# import for using the script in docker.
+import matplotlib; matplotlib.use('svg')
+import matplotlib.pyplot as plt
+import os.path
 
+from networkx.drawing.nx_agraph import graphviz_layout
 from clyngor import ASP
 from rdkit import Chem
 from rdkit.Chem import AllChem
@@ -18,18 +24,112 @@ from rdkit.Chem import Draw
 
 def run_pathway_creation():
     parser = argparse.ArgumentParser(usage="python molecule_creation.py -f FILE -o STRING")
-    parser.add_argument("-f", "--file", dest="asp_file", metavar="FILE", help="Input file containing molecule structures.")
-    parser.add_argument("-o", "--output", dest="output_repository", metavar="FOLDER", help="Name of the folder where molecule pictures will be created.")
-    parser.add_argument("-d", "--domain", dest="domain", action='store_true', help="Use domain information to align molecules (optional).")
+    parser.add_argument("-i", "--input", dest="input_folder", metavar="FILE", help="Input folder corresponds to the output folder of pathmodel.")
 
     parser_args = parser.parse_args()
 
-    input_filename = parser_args.asp_file
-    output_repository = parser_args.output_repository
-    align_domain = parser_args.domain
+    input_folder = parser_args.input_folder
+    pathmodel_output_file = input_folder + '/' + 'pathmodel_output.lp'
+    with open(pathmodel_output_file, 'r') as pathmodel_output:
+        asp_code = pathmodel_output.read()
+    picture_name = input_folder + '/' + 'pathmodel_output.svg'
+    input_filename = input_folder + '/' + 'data_pathmodel.lp'
+    output_repository = input_folder + '/molecules'
+    new_output_repository = input_folder + '/newmolecules_from_mz'
+    if not os.path.isdir(output_repository):
+        try:
+            os.makedirs(output_repository)
+        except OSError:
+            raise OSError('Can not create output folder')
 
-    create_2dmolecule(input_filename, output_repository, align_domain)
+    if not os.path.isdir(new_output_repository):
+        try:
+            os.makedirs(new_output_repository)
+        except OSError:
+            raise OSError('Can not create output folder')
 
+    print('~~~~~Creating result picture~~~~~')
+    pathmodel_pathway_picture(asp_code, picture_name)
+
+    if 'newatom' in asp_code and 'newbond' in asp_code:
+        create_2dmolecule(pathmodel_output_file, new_output_repository, align_domain=None)
+
+    print('~~~~~Creating molecules pictures~~~~~')
+    create_2dmolecule(input_filename, output_repository, False)
+
+
+def pathmodel_pathway_picture(asp_code, picture_name):
+    DG = nx.DiGraph()
+
+    known_compounds = []
+    inferred_compounds = []
+
+    known_reactions = []
+    inferred_reactions = []
+
+    # use_clingo_module=false because of https://github.com/Aluriak/clyngor/issues/7
+    for answer in ASP(asp_code, use_clingo_module=False).parse_args.by_predicate.discard_quotes:
+        for predicate in answer:
+            for atom in answer[predicate]:
+                reaction = atom[0]
+                reactant = atom[1]
+                product = atom[2]
+                if predicate == "reaction":
+                    known_compounds.append(reactant)
+                    known_compounds.append(product)
+
+                    known_reactions.append((reactant, product))
+                    DG.add_edge(reactant, product, label=reaction)
+                elif predicate == "newreaction":
+                    inferred_compounds.append(reactant)
+                    inferred_compounds.append(product)
+
+                    inferred_reactions.append((reactant, product))
+                    DG.add_edge(reactant, product, label=reaction)
+    plt.figure(figsize=(25, 25))
+
+    nx.draw_networkx_nodes(DG,
+                           graphviz_layout(DG, prog='neato'),
+                           nodelist=known_compounds,
+                           node_color="green",
+                           node_size=3000,
+                           node_shape='s',
+                           alpha=0.2)
+    nx.draw_networkx_nodes(DG,
+                           graphviz_layout(DG, prog='neato'),
+                           nodelist=inferred_compounds,
+                           node_color="blue",
+                           node_size=2000,
+                           node_shape='s',
+                           alpha=0.2)
+
+    nx.draw_networkx_edges(DG,
+                           graphviz_layout(DG, prog='neato'),
+                           edgelist=known_reactions,
+                           edge_color="green",
+                           alpha=0.5,
+                           width=2.0,
+                           arrow=True,
+                           arrowstyle='->',
+                           arrowsize=14)
+    nx.draw_networkx_edges(DG,
+                           graphviz_layout(DG, prog='neato'),
+                           edgelist=inferred_reactions,
+                           edge_color="blue",
+                           alpha=0.5,
+                           width=2.0,
+                           arrow=True,
+                           arrowstyle='->',
+                           arrowsize=14)
+    nx.draw_networkx_labels(DG,
+                            graphviz_layout(DG, prog='neato'),
+                            font_size=15)
+
+    ax = plt.gca()
+    ax.set_axis_off()
+
+    extension = os.path.splitext(picture_name)[1].strip('.')
+    plt.savefig(picture_name, dpi=144, format=extension)
 
 def create_rdkit_molecule(molecule_name, molecules, molecule_numberings, bonds):
     '''
@@ -116,7 +216,7 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
     # use_clingo_module=false because of https://github.com/Aluriak/clyngor/issues/7
     for predicate in ASP(asp_code, use_clingo_module=False).parse_args.discard_quotes:
         for variable in predicate:
-            if variable[0] == 'atom':
+            if variable[0] == 'atom' or variable[0] == 'newatom':
                 atom_molecule = variable[1][0]
                 atom_number = variable[1][1]
                 atom_type = atomicNumber[variable[1][2]]
@@ -127,7 +227,7 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
                     molecules[atom_molecule].append((atom_number, atom_type))
                     molecule_numberings[atom_molecule].append(atom_number)
 
-            elif variable[0] == 'bond':
+            elif variable[0] == 'bond' or variable[0] == 'newbond':
                 atom_molecule = variable[1][0]
                 bond_number_1 = variable[1][2]
                 bond_number_2 = variable[1][3]

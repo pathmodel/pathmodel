@@ -5,19 +5,12 @@ Search of metabolic pathways
 allowing to reach  output metabolites from a set of input metabolites
 *%
 
-#script (python)
-import clingo
-import hashlib
 
-def name_metabolite(reactant_name, reaction_name, domain_reference):
-	"""
-	Rename new metabolite inferred.
-	"""
-	name = str(reactant_name) + str(reaction_name) + str(domain_reference)
-	name = name .encode('utf8')
-	hash_name = str(int(hashlib.sha1(name).hexdigest(), 16) % (10 ** 8))
-	new_product_inferred = "Prediction_" + str(hash_name)
-	return new_product_inferred
+#script (lua)
+
+function concat(reaction_name, mz)
+	return "Prediction_" .. tostring(mz) .. "_" .. tostring(reaction_name)
+end
 
 #end.
 
@@ -125,14 +118,17 @@ solution(M1,M3,t):- inferred(pathway(M2,M3),t+1), inferred(pathway(M1,M2),t).
 % First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
 % A known reaction is used to infer a new reaction between a known molecule and a new molecule.
 
-newmetaboliteName(@name_metabolite(ReactantInferred, Reaction, Domain),ReactantInferred, Reaction, Domain):-
+newmetaboliteName(@concat(Reaction, MZHypothetic),ReactantInferred, Reaction, Domain):-
 							reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); reached(ReactantInferred, t);
 							% Check if the three molecules have the same domain.
 							domain(ReactantInferred,Domain);domain(ReactantReference,Domain);domain(ProductReference,Domain);
 							% Check if reaction site are present in each molecule.
 							siteBeforeReaction(Reaction,ReactantInferred);siteBeforeReaction(Reaction,ReactantReference);siteAfterReaction(Reaction,ProductReference);
 							% Check if the reactant to infer is in the organism.
-							not absentmolecules(ReactantInferred).
+							not absentmolecules(ReactantInferred);
+							reactionMZ(Reaction,ReactionMZ);
+							moleculeMZ(ReactantInferred, ReactantInferredMZ);
+							MZHypothetic = ReactantInferredMZ - ReactionMZ.
 
 % Compute an hypothetic MZ for new molecule.
 hypotheticMZ(MoleculeName, MZHypothetic):- newmetaboliteName(MoleculeName,ReactantInferred,Reaction,Domain), reactionMZ(Reaction,ReactionMZ),
@@ -293,9 +289,9 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 
 #show newreaction/3.
 #show reaction/3.
-%#show input_metabolite/1.
-%#show output_metabolite/1.
-%#show reaction/3.
+#show inferred/2.
+#show newatom/3.
+#show newbond/4.
 %#show domain/2.
 %#show moleculeMZ/2.
 

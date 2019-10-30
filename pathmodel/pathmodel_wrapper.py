@@ -1,65 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
-import argparse
 import clyngor
+import csv
 import os
 import subprocess
 import sys
 import time
+import networkx as nx
+# import for using the script in docker.
+import matplotlib; matplotlib.use('svg')
+import matplotlib.pyplot as plt
 
-from pathmodel.plotting.path_creation import pathmodel_pathway_picture
+from networkx.drawing.nx_agraph import graphviz_layout
 
 # Path to package scripts.
 global root
 root = __file__.rsplit('/', 1)[0]
-
-
-def run_pathmodel():
-    '''
-    Arguments when used with entrypoint as: pathmodel -d data.lp
-    '''
-    parser = argparse.ArgumentParser(usage="pathmodel -d FILE -p FILE -o FILE [--example FOLDER]")
-    parser.add_argument("-d", "--data", dest="input_file", metavar="FILE",
-                        help="Input file containing atoms, bonds, reactions and goal.")
-    parser.add_argument("-p", "--picture", dest="picture", metavar="FILE",
-                        help="Name of the picture result file (optional).")
-    parser.add_argument("-o", "--output", dest="output_file", metavar="FILE",
-                        help="Name of the result in this file (optional).")
-    parser.add_argument("-i", "--intermediate", dest="intermediate", action='store_true',
-                        help="Add if you want the input file given to pathmodel after MZ Computation and Reaction Creation (optional).")
-    parser.add_argument("--example", dest="example", action='store_true',
-                        help="Run Pathmodel on example data and create the result in the folder you specify. Need wget.")
-
-    parser_args = parser.parse_args()
-
-    # Print help and exit if no arguments.
-    argument_number = len(sys.argv[1:])
-    if argument_number == 0:
-        parser.print_help()
-        parser.exit()
-
-    input_file = parser_args.input_file
-    picture_name = parser_args.picture
-    output_file = parser_args.output_file
-    intermediate = parser_args.intermediate
-    example = parser_args.example
-
-    if example:
-        example_path = 'pathmodel_example'
-        if not os.path.exists(example_path):
-            os.makedirs(example_path)
-            subprocess.Popen(['wget', 'https://github.com/pathmodel/pathmodel/blob/master/data/sterol_pwy.lp', '-P', example_path])
-            data_path = example_path + '/' + 'sterol_pwy.lp'
-            while not os.path.exists(data_path):
-                time.sleep(1)
-            pathmodel_analysis(data_path, example_path + '/inferred_sterol.png', example_path + '/inferred_sterol.lp')
-            subprocess.Popen(['chmod', '-R', '777', example_path])
-        else:
-            print('Example folder already exists, delete it.')
-        return
-
-    pathmodel_analysis(input_file, picture_name, output_file, intermediate)
 
 
 def mz_computation(input_file):
@@ -76,19 +32,54 @@ def mz_computation(input_file):
     return mz_result
 
 
-def reaction_creation(input_file):
+def reaction_creation(input_file, output_folder):
     '''
     Detect reaction sites by comparing molecules implied in a reaction.
     Return the result as a string.
     '''
     print('~~~~~Creation of Reaction~~~~~')
     reaction_solver = clyngor.solve([input_file, root + '/asp/ReactionSiteExtraction.lp'], use_clingo_module=False)
-    reaction_result = '\n'.join([atom+'. ' for atom in next(reaction_solver.parse_args.atoms_as_string.int_not_parsed.sorted)])
+    reaction_results = []
+    transformation_reactants = {}
+    transformation_products = {}
+    for atom in next(reaction_solver.parse_args.int_not_parsed.sorted):
+        reaction_results.append(atom[0] + '(' + ','.join(atom[1]) + ')')
+        if 'diff' in atom[0]:
+            reaction_id = atom[1][0]
+            substructures = atom[1][1:]
+            if 'Before' in atom[0]:
+                if reaction_id not in transformation_reactants:
+                    transformation_reactants[reaction_id] = [substructures]
+                else:
+                    transformation_reactants[reaction_id].append([substructures])
+            elif 'After' in atom[0]:
+                if reaction_id not in transformation_products:
+                    transformation_products[reaction_id] = [substructures]
+                else:
+                    transformation_products[reaction_id].append([substructures])
+    
+    with open(output_folder + '/' + 'pathmodel_data_transformations.tsv', 'w') as transformation_file:
+        csvwriter = csv.writer(transformation_file, delimiter = '\t')
+        csvwriter.writerow(['reaction_id', 'reactant_sbustructure', 'product_substructure'])
+        for reaction in transformation_reactants:
+
+            if reaction in transformation_reactants:
+                reactant = transformation_reactants[reaction]
+            else:
+                reactant = []
+            if reaction in transformation_products:
+                product = transformation_products[reaction]
+            else:
+                product = []
+            csvwriter.writerow([reaction, reactant, product])
+
+
+    reaction_result = '\n'.join([atom+'. ' for atom in reaction_results])
 
     return reaction_result
 
 
-def pathmodel_inference(input_string):
+def pathmodel_inference(input_string, output_folder):
     '''
     Infer reactions and metabolites from known reactions and metabolites.
     '''
@@ -97,42 +88,61 @@ def pathmodel_inference(input_string):
 
     # Take the best model.
     best_model = None
-    for best_model in pathmodel_solver.parse_args.atoms_as_string.int_not_parsed.sorted:
-        pass
+    best_model = []
+    pathways = {}
+    reactions = {}
+
+    for atom in next(pathmodel_solver.parse_args.int_not_parsed.sorted):
+        if 'inferred' in atom[0]:
+            infer_turn = int(atom[1][1])
+            reactant = atom[1][0][1][0]
+            product = atom[1][0][1][1]
+            if infer_turn not in pathways:
+                pathways[infer_turn] = [(reactant, product)]
+            else:
+                pathways[infer_turn].append((reactant, product))
+        else:
+            best_model.append(atom[0] + '(' + ','.join(atom[1]) + ')')
+            if 'newreaction' in atom[0]:
+                reactions[atom[1][1:]] = atom[1][0]
+
     pathmodel_result = '\n'.join([atom+'.' for atom in best_model])
+
+    already_inferreds = []
+    with open(output_folder + '/' + 'pathmodel_incremental_inference.tsv', 'w') as outfile:
+        csvwriter = csv.writer(outfile, delimiter='\t')
+        csvwriter.writerow(["infer_turn", "new_reaction", "reactant", "product"])
+        for i in sorted(list(pathways.keys())):
+            for reaction in pathways[i]:
+                if reaction in reactions and reaction not in already_inferreds:
+                    csvwriter.writerow([i, reactions[reaction], *reaction])
+                    already_inferreds.append(reaction)
 
     return pathmodel_result
 
 
-def pathmodel_analysis(input_file, picture_name=None, output_file=None, intermediate=None):
+def pathmodel_analysis(input_file, output_folder):
     mz_result = mz_computation(input_file)
 
-    reaction_result = reaction_creation(input_file)
+    reaction_result = reaction_creation(input_file, output_folder)
 
     # Merge input files + result from MZ prediction and reaction creation into a string, which will be the input file for PathModel.
     input_string = open(input_file, 'r').read() + '\n' + mz_result + '\n' + reaction_result
 
-    if intermediate:
-        input_pathmodel_file = open("data_pathmodel.lp", "w")
-        input_pathmodel_file.write(input_string)
-        input_pathmodel_file.write('\n')
-        input_pathmodel_file.close()
+    with open(output_folder + '/' + 'data_pathmodel.lp', 'w') as intermediate_file:
+        intermediate_file.write(input_string)
+        intermediate_file.write('\n')
 
-    pathmodel_result = pathmodel_inference(input_string)
+    pathmodel_result = pathmodel_inference(input_string, output_folder)
 
-    if output_file:
-        print('~~~~~Creating result file~~~~~')
-        # Write input in a file.
-        resultfile = open(output_file, "w")
+    output_lp = output_folder + '/' + 'pathmodel_output.lp'
+
+    print('~~~~~Creating result file~~~~~')
+    # Write input in a file.
+    with open(output_lp, "w") as resultfile:
         resultfile.write(pathmodel_result)
         resultfile.write('\n')
-        resultfile.close()
 
-    if picture_name:
-        pathmodel_pathway_picture(pathmodel_result, picture_name)
+    output_picture = output_folder + '/' + 'pathmodel_output.svg'
 
     return pathmodel_result
-
-
-if __name__ == '__main__':
-    run_pathmodel()
