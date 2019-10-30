@@ -67,7 +67,7 @@ def pathmodel_pathway_picture(asp_code, picture_name):
     known_reactions = []
     inferred_reactions = []
 
-    for answer in ASP(asp_code).parse_args.by_predicate.discard_quotes:
+    for answer in ASP(asp_code, use_clingo_module=False).parse_args.by_predicate.discard_quotes:
         for predicate in answer:
             for atom in answer[predicate]:
                 reaction = atom[0]
@@ -212,7 +212,7 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
     bonds = {}
 
     # Parse ASP input file and extract molecules, atoms and bonds.
-    for predicate in ASP(asp_code).parse_args.discard_quotes:
+    for predicate in ASP(asp_code, use_clingo_module=False).parse_args.discard_quotes:
         for variable in predicate:
             if variable[0] == 'atom' or variable[0] == 'newatom':
                 atom_molecule = variable[1][0]
