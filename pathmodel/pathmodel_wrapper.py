@@ -122,6 +122,12 @@ def pathmodel_inference(input_string, output_folder):
 
 
 def pathmodel_analysis(input_file, output_folder):
+    if not os.path.isdir(output_folder):
+        try:
+            os.makedirs(output_folder)
+        except OSError:
+            raise OSError('Can not create output folder')
+
     mz_result = mz_computation(input_file)
 
     reaction_result = reaction_creation(input_file, output_folder)

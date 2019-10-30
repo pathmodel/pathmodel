@@ -66,14 +66,6 @@ def main():
     input_file = parser_args.input
     output_folder = parser_args.output_folder
 
-    if output_folder:
-        if not os.path.isdir(output_folder):
-            try:
-                os.makedirs(output_folder)
-            except OSError:
-                raise OSError('Can not create output folder')
-
-
     if parser_args.cmd == 'test':
         package_path = '/'.join(os.path.realpath(__file__).split('/')[:-1])+ '/data/'
         sterol_input_path = package_path + 'new_sterol.lp'
