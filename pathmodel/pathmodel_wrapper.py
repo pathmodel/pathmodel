@@ -25,7 +25,7 @@ def mz_computation(input_file):
     Use next because for these analysis, we expect only one answer.
     '''
     print('~~~~~Creation of MZ~~~~~')
-    mz_solver = clyngor.solve([input_file, root + '/asp/MZComputation.lp'], use_clingo_module=False)
+    mz_solver = clyngor.solve([input_file, root + '/asp/MZComputation.lp'])
     mz_result = '\n'.join([atom+'. ' for atom in next(mz_solver.parse_args.atoms_as_string.int_not_parsed.sorted)])
 
     return mz_result
@@ -37,7 +37,7 @@ def reaction_creation(input_file, output_folder):
     Return the result as a string.
     '''
     print('~~~~~Creation of Reaction~~~~~')
-    reaction_solver = clyngor.solve([input_file, root + '/asp/ReactionSiteExtraction.lp'], use_clingo_module=False)
+    reaction_solver = clyngor.solve([input_file, root + '/asp/ReactionSiteExtraction.lp'])
     reaction_results = []
     transformation_reactants = {}
     transformation_products = {}
@@ -83,7 +83,7 @@ def pathmodel_inference(input_string, output_folder):
     Infer reactions and metabolites from known reactions and metabolites.
     '''
     print('~~~~~Inference of reactions and metabolites~~~~~')
-    pathmodel_solver = clyngor.solve(inline=input_string, files=root + '/asp/PathModel.lp', use_clingo_module=False)
+    pathmodel_solver = clyngor.solve(inline=input_string, files=root + '/asp/PathModel.lp')
 
     # Take the best model.
     best_model = None
