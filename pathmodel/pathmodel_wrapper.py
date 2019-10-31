@@ -3,19 +3,18 @@
 import clyngor
 import csv
 import os
-import subprocess
-import sys
 import time
-import networkx as nx
-# import for using the script in docker.
-import matplotlib; matplotlib.use('svg')
-import matplotlib.pyplot as plt
-
-from networkx.drawing.nx_agraph import graphviz_layout
 
 # Path to package scripts.
 global root
 root = __file__.rsplit('/', 1)[0]
+
+def check_folder(folder_in):
+    if not os.path.isdir(folder_in):
+        try:
+            os.makedirs(folder_in)
+        except OSError:
+            raise OSError('Can not create folder: ' + folder_in)
 
 
 def mz_computation(input_file):
@@ -121,11 +120,7 @@ def pathmodel_inference(input_string, output_folder):
 
 
 def pathmodel_analysis(input_file, output_folder):
-    if not os.path.isdir(output_folder):
-        try:
-            os.makedirs(output_folder)
-        except OSError:
-            raise OSError('Can not create output folder')
+    check_folder(output_folder)
 
     mz_result = mz_computation(input_file)
 
@@ -147,7 +142,5 @@ def pathmodel_analysis(input_file, output_folder):
     with open(output_lp, "w") as resultfile:
         resultfile.write(pathmodel_result)
         resultfile.write('\n')
-
-    output_picture = output_folder + '/' + 'pathmodel_output.svg'
 
     return pathmodel_result

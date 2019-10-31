@@ -13,10 +13,10 @@ import networkx as nx
 # import for using the script in docker.
 import matplotlib; matplotlib.use('svg')
 import matplotlib.pyplot as plt
-import os.path
 
-from networkx.drawing.nx_agraph import graphviz_layout
 from clyngor import ASP
+from networkx.drawing.nx_agraph import graphviz_layout
+from pathmodel import check_folder
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit.Chem import Draw
@@ -36,17 +36,10 @@ def run_pathway_creation():
     input_filename = input_folder + '/' + 'data_pathmodel.lp'
     output_repository = input_folder + '/molecules'
     new_output_repository = input_folder + '/newmolecules_from_mz'
-    if not os.path.isdir(output_repository):
-        try:
-            os.makedirs(output_repository)
-        except OSError:
-            raise OSError('Can not create output folder')
 
-    if not os.path.isdir(new_output_repository):
-        try:
-            os.makedirs(new_output_repository)
-        except OSError:
-            raise OSError('Can not create output folder')
+    # Check if output folder exists if not create it.
+    check_folder(output_repository)
+    check_folder(new_output_repository)
 
     print('~~~~~Creating result picture~~~~~')
     pathmodel_pathway_picture(asp_code, picture_name)
@@ -181,10 +174,6 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
     To use align_domain, you need the intermediate file creates by pathmodel_wrapper.py.
     With align_domain, rdkit will use domain to align molecules.
     '''
-    # Check if output folder exists if not create it.
-    if not os.path.isdir("{0}".format(output_directory)):
-        os.mkdir("{0}".format(output_directory))
-
     with open(input_filename, 'r') as input_file:
         asp_code = input_file.read()
     # Set bond types transformation from ASP to rdkit.
