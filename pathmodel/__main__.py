@@ -4,7 +4,7 @@ import subprocess
 import sys
 import time
 
-from pathmodel.pathmodel_wrapper import pathmodel_analysis
+from pathmodel.pathmodel_wrapper import check_folder, pathmodel_analysis
 
 def main():
     '''
@@ -12,7 +12,7 @@ def main():
     '''
     parser = argparse.ArgumentParser(
         "pathmodel",
-        description="Prototype of the metabolic pathway drift. For specific help on each subcommand use: pathmodel {cmd} --help",
+        description="Prototype of the metabolic pathway drift hypothesis. For specific help on each subcommand use: pathmodel {cmd} --help",
     )
     # parent parser
     parent_parser_i = argparse.ArgumentParser(add_help=False)
@@ -38,7 +38,7 @@ def main():
         dest="cmd")
     infer_parser = subparsers.add_parser(
         "infer",
-        help="metabolic network reconstruction",
+        help="PathModel inference on data",
         parents=[
             parent_parser_i, parent_parser_o
         ],
@@ -47,9 +47,9 @@ def main():
         )
     test_parser = subparsers.add_parser(
         "test",
-        help="metabolic network reconstruction",
+        help="test PathModel on data from the article",
         parents=[
-            parent_parser_i, parent_parser_o
+            parent_parser_o
         ],
         description=
         "Test PathModel on the data from the article (sterol and MAA)"
@@ -63,7 +63,6 @@ def main():
         parser.print_help()
         parser.exit()
 
-    input_file = parser_args.input
     output_folder = parser_args.output_folder
 
     if parser_args.cmd == 'test':
@@ -72,22 +71,18 @@ def main():
         maa_input_path = package_path + 'MAA_pwy.lp'
         sterol_out = output_folder + '/sterol'
         maa_out = output_folder + '/MAA'
-        if not os.path.isdir(sterol_out):
-            try:
-                os.makedirs(sterol_out)
-            except OSError:
-                raise OSError('Can not create output folder')
-        if not os.path.isdir(maa_out):
-            try:
-                os.makedirs(maa_out)
-            except OSError:
-                raise OSError('Can not create output folder')
+
+        check_folder(sterol_out)
+        check_folder(maa_out)
+
         pathmodel_analysis(sterol_input_path, sterol_out)
         pathmodel_analysis(maa_input_path, maa_out)
 
         return
 
-    pathmodel_analysis(input_file, output_folder)
+    elif parser_args.cmd == 'infer':
+        input_file = parser_args.input
+        pathmodel_analysis(input_file, output_folder)
 
 if __name__ == "__main__":
     main()
