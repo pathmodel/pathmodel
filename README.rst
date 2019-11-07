@@ -4,6 +4,12 @@
 .. image:: https://travis-ci.org/pathmodel/pathmodel.svg?branch=master
         :target: https://travis-ci.org/pathmodel/pathmodel
 
+.. image:: https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg
+        :target: https://singularity-hub.org/collections/3758
+
+.. image:: https://img.shields.io/docker/cloud/build/pathmodel/pathmodel
+        :target: https://hub.docker.com/r/pathmodel/pathmodel
+
 
 PathModel: metabolic pathway drift prototype
 ============================================
@@ -32,7 +38,7 @@ PathModel requires:
 
 - `clingo <https://github.com/potassco/clingo>`__: which must be installed with Lua compatibility (a good way to have it is with `conda <https://anaconda.org/potassco/clingo>`__).
 
-- `clyngor package <https://github.com/Aluriak/clyngor>`__.
+- `clyngor package <https://github.com/Aluriak/clyngor>`__ (can be isntalled with clingo with `clyngor-with-clingo package <https://github.com/aluriak/clyngor-with-clingo>`__).
 
 - `networkx <https://networkx.github.io/>`__ (with `graphviz <https://www.graphviz.org/>`__ and `pygraphviz <https://github.com/pygraphviz/pygraphviz>`__).
 
@@ -40,6 +46,66 @@ PathModel requires:
 
 - `rdkit package <https://github.com/rdkit/rdkit/>`__
 
+Using Singularity and Singularity Hub
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A Singularity recipe is `available <https://github.com/pathmodel/pathmodel-singularity>`__. you can use it with:
+
+.. code:: sh
+
+    singularity build pathmodel.sif Singularity
+
+Or you can use the container from `Singularity Hub <https://singularity-hub.org/>`__. This containier is build from the previous Singularity recipe.
+
+.. code:: sh
+
+    # Choose your preference to pull the container from Singularity Hub (once)
+    singularity pull shub://pathmodel/pathmodel-singularity
+
+    # Enter it
+    singularity run pathmodel-singularity.sif
+    pathmodel test -o output_folder
+    pathmodel_plot -i output_folder/MAA
+    pathmodel_plot -i output_folder/sterol
+
+    # Or use as a command line
+    singularity exec pathmodel-singularity.sif pathmodel test -o output_folder
+    singularity exec pathmodel-singularity.sif pathmodel_plot -i output_folder/MAA
+    singularity exec pathmodel-singularity.sif pathmodel_plot -i output_folder/sterol
+
+
+Using docker
+~~~~~~~~~~~~
+
+A docker image of pathmodel is available at `dockerhub <https://hub.docker.com/r/pathmodel/pathmodel/>`__. This image is based on the `pathmodel Dockerfile <https://github.com/pathmodel/pathmodel-dockerfile>`__.
+
+.. code:: sh
+
+	docker run -ti -v /path/shared/container:/shared --name="mycontainer" pathmodel/pathmodel bash
+
+This command will download the image and create a container with a shared path. It will launch a bash terminal where you can use the command pathmodel (see `Use`_ and `Example`_).
+
+Using git
+~~~~~~~~~
+
+The package can be installed either using python setup or pip install (see below)
+
+.. code:: sh
+
+    git clone https://github.com/pathmodel/pathmodel.git
+
+    cd PathModel
+
+    python setup.py install
+
+Using pip
+~~~~~~~~~
+
+If you have all the dependencies on your system, you can just download Pathmodel using `pip <https://pypi.org/project/pathmodel/>`__.
+
+.. code:: sh
+
+	pip install pathmodel
 
 Using conda environment (to install all dependencies)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,50 +165,6 @@ You can exit the environment with:
 
     # Deactivate the environment.
     conda deactivate
-
-Using conda package
-~~~~~~~~~~~~~~~~~~~
-
-It will be possible to install pathmodel (and its dependencies) with a conda install. But you have to add some channels.
-
-.. code:: sh
-
-    # Install pathmodel
-    conda install pathmodel -c dyliss -c anaconda -c conda-forge -c rdkit -c potassco
-
-Using docker
-~~~~~~~~~~~~
-
-A docker image of pathmodel is available at `dockerhub <https://hub.docker.com/r/pathmodel/pathmodel/>`__.
-
-
-.. code:: sh
-
-	docker run -ti -v /path/shared/container:/shared --name="mycontainer" pathmodel/pathmodel bash
-
-This command will download the image and create a container with a shared path. It will launch a bash terminal where you can use the command pathmodel (see `Use`_ and `Example`_).
-
-Using git
-~~~~~~~~~
-
-The package can be installed either using python setup or pip install (see below)
-
-.. code:: sh
-
-    git clone https://github.com/pathmodel/pathmodel.git
-
-    cd PathModel
-
-    python setup.py install
-
-Using pip
-~~~~~~~~~
-
-If you have all the dependencies on your system, you can just download Pathmodel using `pip <https://pypi.org/project/pathmodel/>`__.
-
-.. code:: sh
-
-	pip install pathmodel
 
 Description
 -----------
