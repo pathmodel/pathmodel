@@ -49,13 +49,7 @@ PathModel requires:
 Using Singularity and Singularity Hub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Singularity recipe is `available <https://github.com/pathmodel/pathmodel-singularity>`__. you can use it with:
-
-.. code:: sh
-
-    singularity build pathmodel.sif Singularity
-
-Or you can use the container from `Singularity Hub <https://singularity-hub.org/>`__. This containier is build from the previous Singularity recipe.
+You can use the container from `Singularity Hub <https://singularity-hub.org/>`__.
 
 .. code:: sh
 
@@ -63,15 +57,21 @@ Or you can use the container from `Singularity Hub <https://singularity-hub.org/
     singularity pull shub://pathmodel/pathmodel-singularity
 
     # Enter it
-    singularity run pathmodel-singularity.sif
+    singularity run pathmodel-singularity_latest.sif.sif
     pathmodel test -o output_folder
     pathmodel_plot -i output_folder/MAA
     pathmodel_plot -i output_folder/sterol
 
     # Or use as a command line
-    singularity exec pathmodel-singularity.sif pathmodel test -o output_folder
-    singularity exec pathmodel-singularity.sif pathmodel_plot -i output_folder/MAA
-    singularity exec pathmodel-singularity.sif pathmodel_plot -i output_folder/sterol
+    singularity exec pathmodel-singularity_latest.sif.sif pathmodel test -o output_folder
+    singularity exec pathmodel-singularity_latest.sif.sif pathmodel_plot -i output_folder/MAA
+    singularity exec pathmodel-singularity_latest.sif.sif pathmodel_plot -i output_folder/sterol
+
+This container is buildfrom this `Singularity recipe <https://github.com/pathmodel/pathmodel-singularity>`__. If you prefer, you can use this recipe:
+
+.. code:: sh
+
+    singularity build pathmodel.sif Singularity
 
 
 Using docker
@@ -169,7 +169,7 @@ You can exit the environment with:
 Description
 -----------
 
-PathModel is developed in `ASP <https://en.wikipedia.org/wiki/Answer_set_programming>`__. It is divided in three ASP scripts.
+PathModel is developed in `ASP <https://en.wikipedia.org/wiki/Answer_set_programming>`__ using the `clingo grounder and solver <https://github.com/potassco/clingo>`__. It is divided in three ASP scripts.
 
 The first one, `ReactionSiteExtraction.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/ReactionSiteExtraction.lp>`__ creates reaction site.
 
@@ -241,15 +241,19 @@ Command-line:
 
 .. code:: sh
 
-	pathmodel -d data.lp
+	pathmodel infer -i data.lp -o output_folder
 
-In python:
+.. code:: sh
+
+	pathmodel_plot -i output_folder_from_pathmodel
+
+In python (pathmodel_plot is not available in import call):
 
 .. code:: python
 
     import pathmodel
 
-    pathmodel.pathmodel_analysis('data.lp')
+    pathmodel.pathmodel_analysis('data.lp', output_folder)
 
 Output data
 ~~~~~~~~~~~
@@ -259,23 +263,12 @@ Using networkx, inferred pathways are represented as png picture. Also a result.
 Example
 ~~~~~~~
 
-The folder data/ contains example for sterols and mycosporine-like amino-acids pathways.
+The folder pathmodel/data/ contains example for sterols and mycosporine-like amino-acids pathways.
 
 By calling the command:
 
 .. code:: sh
 
-	pathmodel --example
-
-A run of pathmodel will be launched on the sterol data. It will create a folder named pathmodel_example in the directory where you have launched the command.
-
-In this folder, three files will be created:
-
--sterol_pwy.lp: containing the input data.
-
--inferred_sterol.lp: the inferred reactions.
-
--inferred_sterol.png: a png file showing the inferred reactions.
+	pathmodel test -o output_folder
 
 
-Also, the folder test/test_data/ contains an example with fictional molecules to test PathModel.
