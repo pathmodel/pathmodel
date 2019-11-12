@@ -260,13 +260,13 @@ Output
 
 With the `infer command`, pathmodel will use the data file and try to create an output folder:
 
-.. code-block:: html
+.. code-block:: text
 
 	output_folder
-	├── <b>data_pathmodel.lp</b>
-	├── <b>pathmodel_data_transformations.tsv</b>
-	├── <b>pathmodel_incremental_inference.tsv</b>
-	├── <b>pathmodel_output.lp</b>
+	├── data_pathmodel.lp
+	├── pathmodel_data_transformations.tsv
+	├── pathmodel_incremental_inference.tsv
+	├── pathmodel_output.lp
 
 data_pathmodel.lp contains intermediary files for PathModel. Specifically, it contains the input data and the results of **ReactionSiteExtraction.lp** (*diffAtomBeforeReaction*, *diffAtomAfterReaction*, *diffBondBeforeReaction*, *diffBondAfterReaction*, *siteBeforeReaction*, *siteAfterReaction*) and of **MZComputation.lp** (*domain*, *moleculeComposition*, *moleculeNbAtoms*, *numberTotalBonds*, *moleculeMZ*, *reactionMZ*). The python wrapper gives this file to **PathModel.lp** as input.
 
@@ -281,19 +281,16 @@ Then if you use the `pathmodel_plot command` on the output_folder, pathmodel wil
 .. code-block:: text
 
 	output_folder
-	├── data_pathmodel.lp
-	├── **molecules**
-		├── **Molecule1**
-		├── **Molecule2**
+	├── ...
+	├── molecules
+		├── Molecule1
+		├── Molecule2
 		├── ...
-	├── **newmolecules_from_mz**
-		├── **Prediction_...**
-		├── **Prediction_...**
-		├── **...**
-	├── pathmodel_data_transformations.tsv
-	├── pathmodel_incremental_inference.tsv
-	├── pathmodel_output.lp
-	├── **pathmodel_output.svg**
+	├── newmolecules_from_mz
+		├── Prediction_...
+		├── Prediction_...
+		├── ...
+	├── pathmodel_output.svg
 
 molecules contains the structures of each molecules in the input data file.
 
@@ -305,12 +302,6 @@ Tutorial
 --------
 
 For this tutorial, we used the data from `test/pathmodel_test_data.lp <https://github.com/pathmodel/pathmodel/blob/master/test/pathmodel_test_data.lp>`__.
-
-By calling the command:
-
-.. code:: sh
-
-	pathmodel infer -i pathmodel_test_data.lp -o output_folder
 
 In this file there is 5 molecules:
 
@@ -332,10 +323,10 @@ In this file there is 5 molecules:
 
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_2.svg     | atom("molecule_2",1..4,carb).  |
-   |    :width: 400px                     | bond("molecule_1",single,1,2). |
-   |                                      | bond("molecule_1",single,1,3). |
-   |                                      | bond("molecule_1",single,2,3). |
-   |                                      | bond("molecule_1",double,2,4). |
+   |    :width: 400px                     | bond("molecule_2",single,1,2). |
+   |                                      | bond("molecule_2",single,1,3). |
+   |                                      | bond("molecule_2",single,2,3). |
+   |                                      | bond("molecule_2",double,2,4). |
    +--------------------------------------+--------------------------------+
 
 .. table::
@@ -384,7 +375,7 @@ In this file there is 5 molecules:
    |                                      | bond("molecule_5",single,5,6). |
    +--------------------------------------+--------------------------------+
   
-And one reaction:
+One reaction:
 
 .. table::
    :align: center
@@ -395,15 +386,15 @@ And one reaction:
    |    :width: 300px                             |                                                    |
    +----------------------------------------------+----------------------------------------------------+
 
-The deductive reasoning explained in PathModel article:
+One known MZ: 92,1341 (so 921341 for Clingo).
 
-.. image:: images/deductive_reasoning.svg
+By calling the command:
 
-The analog reasoning explained in PathModel article:
+.. code:: sh
 
-.. image:: images/analog_reasoning.svg
+	pathmodel infer -i pathmodel_test_data.lp -o output_folder
 
-This command will create:
+Pathmodel will create output files:
 
 .. code-block:: text
 
@@ -413,7 +404,39 @@ This command will create:
 	├── pathmodel_incremental_inference.tsv
 	├── pathmodel_output.lp
 
-Then the command:
+As explained in Output, data_pathmodel.lp is an intermediary file for Pathmodel.
+
+pathmodel_data_transformations.tsv contains the transformation inferred from the knonw reactions, here:
+
++---------------+-------------------------+--------------------------+
+| reaction_id   | reactant_substructure   |   product_substructure   |
++---------------+-------------------------+--------------------------+
+| saturation    | [('single', '2', '4')]  |   [('double', '2', '4')] |
++---------------+-------------------------+--------------------------+
+
+This means that the saturation transforms a single bond between atoms 2 and 4 into a double bond. These transformations are used by the deductive and analogical reasoning of PathModel:
+
+Deductive reasoning:
+
+.. image:: images/deductive_reasoning.svg
+
+Analogy reasoning:
+
+.. image:: images/analog_reasoning.svg
+
+pathmodel_incremental_inference.tsv shows the new reactions inferred by PathModel and the step in Clingo incremental mode when the new reaction has been inferred.
+
++---------------+-----------------+-----------------+--------------------------------+
+| infer_turn    | new_reaction    |   reactant      |  product                       |
++---------------+-----------------+-----------------+--------------------------------+
+| 2             | saturation      |   "molecule_3"  | "molecule_4"                   |
++---------------+-----------------+-----------------+--------------------------------+
+| 2             | saturation      |   "molecule_5"  | "Prediction_921341_saturation" |
++---------------+-----------------+-----------------+--------------------------------+
+
+Two new saturation variant reactions have been inferred at step two of incremenetal mode. One between Molecule3 and Molecule4 and one between Molecule5 and newly inferred molecule Prediction_921341_saturation.
+
+Then it is possible to have access to graphic representations of molecules and reactions:
 
 .. code:: sh
 
@@ -422,25 +445,22 @@ Then the command:
 .. code-block:: text
 
 	output_folder
-	├── data_pathmodel.lp
-	├── **molecules**
-		├── **molecule_1.svg**
-		├── **molecule_2.svg**
-		├── **molecule_3.svg**
-		├── **molecule_4.svg**
-		├── **molecule_5.svg**
-	├── **newmolecules_from_mz**
-		├── **Prediction_921341_saturation.svg**
-	├── pathmodel_data_transformations.tsv
-	├── pathmodel_incremental_inference.tsv
-	├── pathmodel_output.lp
-	├── **pathmodel_output.svg**
+	├── ...
+	├── molecules
+		├── molecule_1.svg
+		├── molecule_2.svg
+		├── molecule_3.svg
+		├── molecule_4.svg
+		├── molecule_5.svg
+	├── newmolecules_from_mz
+		├── Prediction_921341_saturation.svg
+	├── pathmodel_output.svg
 
-With the Prediction_921341_saturation.svg:
+The newly inferred molecule Prediction_921341_saturation:
 
 .. image:: images/Prediction_921341_saturation.svg
 
-And the pathway inference:
+And the pathway inference (known reactions in green, inferred reaction variant in blue):
 
 .. image:: images/pathmodel_output.svg
     :width: 400px
