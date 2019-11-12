@@ -344,7 +344,7 @@ In this file there is 5 molecules:
 
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_3.svg     | atom("molecule_3",1..6,carb).  |
-   |    :width: 400px                     | bond("molecule_3",single,1,2). |
+   |    :width: 500px                     | bond("molecule_3",single,1,2). |
    |                                      | bond("molecule_3",single,1,3). |
    |                                      | bond("molecule_3",single,1,6). |
    |                                      | bond("molecule_3",single,2,3). |
@@ -353,13 +353,13 @@ In this file there is 5 molecules:
    |                                      | bond("molecule_3",single,5,6). |
    +--------------------------------------+--------------------------------+
   
-  .. table::
-   :align: center
-   :widths: auto
+.. table::
+    :align: center
+    :widths: auto
 
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_4.svg     | atom("molecule_4",1..6,carb).  |
-   |    :width: 400px                     | bond("molecule_4",single,1,2). |
+   |    :width: 500px                     | bond("molecule_4",single,1,2). |
    |                                      | bond("molecule_4",single,1,3). |
    |                                      | bond("molecule_4",single,1,6). |
    |                                      | bond("molecule_4",single,2,3). |
@@ -374,7 +374,7 @@ In this file there is 5 molecules:
 
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_5.svg     | atom("molecule_5",1..7,carb).  |
-   |    :width: 400px                     | bond("molecule_5",single,1,2). |
+   |    :width: 600px                     | bond("molecule_5",single,1,2). |
    |                                      | bond("molecule_5",single,1,3). |
    |                                      | bond("molecule_5",single,1,6). |
    |                                      | bond("molecule_5",single,1,7). |
