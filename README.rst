@@ -428,13 +428,13 @@ pathmodel_incremental_inference.tsv shows the new reactions inferred by PathMode
 
 Two new saturation variant reactions have been inferred at step two of incremenetal mode.
 
-One between Molecule3 and Molecule4 inferred from the saturation between Molecule1 and Molecule2. This is a demonstration of the deductive reasoning of PathModel:
+- one between Molecule3 and Molecule4 inferred from the saturation between Molecule1 and Molecule2. This is a demonstration of the deductive reasoning of PathModel:
 
 .. image:: images/deductive_reasoning.svg
 
-And one between Molecule5 and a newly inferred metabolite with the MZ of 92,1341. To find this, PathModel computes the MZ of Molecule5 (94,1489). Then it applies each transformations from its knowledge database (here saturation) to each molecules from teh same database. With this, PathModel computes the MZ of hypothetical molecules and compared them to the MZ given by the user (here 92,1341). And if a match is found then the reaction and the molecule are inferred. This is an example of the analogical reasoning:
+- one between Molecule5 and a newly inferred metabolite with the MZ of 92,1341. To find this, PathModel computes the MZ of Molecule5 (94,1489). Then it applies each transformations from its knowledge database (here saturation) to each molecules from teh same database. With this, PathModel computes the MZ of hypothetical molecules and compared them to the MZ given by the user (here 92,1341). And if a match is found then the reaction and the molecule are inferred. This is an example of the analogical reasoning:
 
-.. image:: images/analog_reasoning.svg
+.. image:: images/analogical_reasoning.svg
 
 Then it is possible to have access to graphic representations of molecules and reactions:
 
