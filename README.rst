@@ -320,26 +320,62 @@ In this file there is 5 molecules:
 
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_1.svg     | atom("molecule_1",1..4,carb).  |
-   |    :width: 200px                     | bond("molecule_1",single,1,2). |
+   |    :width: 400px                     | bond("molecule_1",single,1,2). |
    |                                      | bond("molecule_1",single,1,3). |
    |                                      | bond("molecule_1",single,2,3). |
    |                                      | bond("molecule_1",single,2,4). |
    +--------------------------------------+--------------------------------+
 
+   +--------------------------------------+--------------------------------+
+   | .. image:: images/molecule_2.svg     | atom("molecule_2",1..4,carb).  |
+   |    :width: 400px                     | bond("molecule_1",single,1,2). |
+   |                                      | bond("molecule_1",single,1,3). |
+   |                                      | bond("molecule_1",single,2,3). |
+   |                                      | bond("molecule_1",double,2,4). |
+   +--------------------------------------+--------------------------------+
 
-.. image:: images/molecule_2.svg
-    :width: 200px
+   +--------------------------------------+--------------------------------+
+   | .. image:: images/molecule_3.svg     | atom("molecule_3",1..6,carb).  |
+   |    :width: 400px                     | bond("molecule_3",single,1,2). |
+   |                                      | bond("molecule_3",single,1,3). |
+   |                                      | bond("molecule_3",single,1,6). |
+   |                                      | bond("molecule_3",single,2,3). |
+   |                                      | bond("molecule_3",single,2,4). |
+   |                                      | bond("molecule_3",single,3,6). |
+   |                                      | bond("molecule_3",single,5,6). |
+   +--------------------------------------+--------------------------------+
+  
+   +--------------------------------------+--------------------------------+
+   | .. image:: images/molecule_4.svg     | atom("molecule_4",1..6,carb).  |
+   |    :width: 400px                     | bond("molecule_4",single,1,2). |
+   |                                      | bond("molecule_4",single,1,3). |
+   |                                      | bond("molecule_4",single,1,6). |
+   |                                      | bond("molecule_4",single,2,3). |
+   |                                      | bond("molecule_4",double,2,4). |
+   |                                      | bond("molecule_4",single,3,6). |
+   |                                      | bond("molecule_4",single,5,6). |
+   +--------------------------------------+--------------------------------+
 
-.. image:: images/molecule_3.svg
-    :width: 200px
+   +--------------------------------------+--------------------------------+
+   | .. image:: images/molecule_5.svg     | atom("molecule_5",1..7,carb).  |
+   |    :width: 400px                     | bond("molecule_5",single,1,2). |
+   |                                      | bond("molecule_5",single,1,3). |
+   |                                      | bond("molecule_5",single,1,6). |
+   |                                      | bond("molecule_5",single,1,7). |
+   |                                      | bond("molecule_5",single,2,3). |
+   |                                      | bond("molecule_5",single,2,4). |
+   |                                      | bond("molecule_5",double,3,6). |
+   |                                      | bond("molecule_5",single,5,6). |
+   +--------------------------------------+--------------------------------+
+  
 
-.. image:: images/molecule_4.svg
-    :width: 200px
-
-.. image:: images/molecule_5.svg
-    :width: 200px
 
 And one reaction:
+
+   +----------------------------------------------+----------------------------------------------------+
+   | .. image:: images/saturation_reaction.svg    | reaction(saturation, "molecule_1", "molecule_2").  |
+   |    :width: 400px                             |                                                    |
+   +----------------------------------------------+----------------------------------------------------+
 
 .. image:: images/saturation_reaction.svg
 
@@ -387,3 +423,7 @@ Then the command:
 With the Prediction_921341_saturation.svg:
 
 .. image:: images/Prediction_921341_saturation.svg
+
+And the pathway inference:
+
+.. image:: images/pathmodel_output.svg
