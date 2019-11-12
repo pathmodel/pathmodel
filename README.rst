@@ -331,11 +331,15 @@ In this file there is 5 molecules:
 
 And one reaction:
 
-.. image:: images/saturation_reaction.png
+.. image:: images/saturation_reaction.svg
 
 The deductive reasoning explained in PathModel article:
 
-.. image:: images/deductive_reasoning.png
+.. image:: images/deductive_reasoning.svg
+
+The analog reasoning explained in PathModel article:
+
+.. image:: images/analog_reasoning.svg
 
 This command will create:
 
@@ -369,3 +373,7 @@ Then the command:
 	├── pathmodel_incremental_inference.tsv
 	├── pathmodel_output.lp
 	├── **pathmodel_output.svg**
+
+With the Prediction_921341_saturation.svg:
+
+.. image:: images/Prediction_921341_saturation.svg

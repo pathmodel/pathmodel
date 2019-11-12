@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   xml:space="preserve"
+   width="440"
+   height="400"
+   id="svg32"
+   sodipodi:docname="deductive_reasoning.svg"
+   inkscape:version="0.92.4 (unknown)"
+   inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/molecule_1 (copy).svg.png"
+   inkscape:export-xdpi="128"
+   inkscape:export-ydpi="128"><metadata
+   id="metadata38"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
+   id="defs36"><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="Arrow1Lend"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       id="path931"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)"
+       inkscape:connector-curvature="0" /></marker><inkscape:path-effect
+     effect="bspline"
+     id="path-effect926"
+     is_visible="true"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false" /><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="Arrow1Lend-6"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path931-7"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="marker1276"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path1274"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><inkscape:path-effect
+     effect="bspline"
+     id="path-effect926-5"
+     is_visible="true"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false" /><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="Arrow1Lend-7"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path931-3"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="marker1517"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path1515"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><inkscape:path-effect
+     effect="bspline"
+     id="path-effect926-6"
+     is_visible="true"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false" /><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="Arrow1Lend-7-4"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path931-3-7"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="marker1845"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path1843"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><inkscape:path-effect
+     effect="bspline"
+     id="path-effect926-6-4"
+     is_visible="true"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false" /><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="Arrow1Lend-7-4-0"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path931-3-7-6"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="marker3189"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path3187"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><inkscape:path-effect
+     effect="bspline"
+     id="path-effect926-6-4-1"
+     is_visible="true"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false" /><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="Arrow1Lend-6-9"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path931-7-3"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="marker1150"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path1148"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><inkscape:path-effect
+     effect="bspline"
+     id="path-effect926-5-6"
+     is_visible="true"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false" /><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="Arrow1Lend-6-9-8"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path931-7-3-0"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="marker1711"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path1709"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><inkscape:path-effect
+     effect="bspline"
+     id="path-effect926-5-6-4"
+     is_visible="true"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false" /><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="Arrow1Lend-6-9-8-0"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path931-7-3-0-4"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><marker
+     inkscape:stockid="Arrow1Lend"
+     orient="auto"
+     refY="0"
+     refX="0"
+     id="marker2201"
+     style="overflow:visible"
+     inkscape:isstock="true"><path
+       inkscape:connector-curvature="0"
+       id="path2199"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+       transform="matrix(-0.8,0,0,-0.8,-10,0)" /></marker><inkscape:path-effect
+     effect="bspline"
+     id="path-effect926-5-6-4-1"
+     is_visible="true"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false" /></defs><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="1"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1163"
+   id="namedview34"
+   showgrid="false"
+   inkscape:zoom="1.18"
+   inkscape:cx="19.830508"
+   inkscape:cy="214.97199"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g901"
+   inkscape:pagecheckerboard="true" />
+
+<g
+   id="g6"
+   transform="translate(0,-400)">  
+</g>
+
+
+
+<g
+   id="g901"
+   transform="translate(156.09754,47.93944)"><path
+     transform="matrix(0.97045057,0.02202261,-0.02871671,1.2654337,-95.459675,114.26288)"
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Lend-6);marker-end:url(#Arrow1Lend-6)"
+     d="m 112.36334,-63.81411 c 32.75964,-0.599262 65.51826,-1.198505 98.27586,-1.79773"
+     id="path924-2"
+     inkscape:connector-curvature="0"
+     inkscape:path-effect="#path-effect926-5"
+     inkscape:original-d="m 112.36334,-63.81411 c 32.75962,-0.60024 65.51824,-1.19948 98.27586,-1.79773"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#2aa1b4;fill-opacity:1;stroke:#000000;stroke-width:0.40492538;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 4.45417871;stroke-dashoffset:0;stroke-opacity:0"
+     id="path1450-2"
+     cx="-69.578827"
+     cy="40.134312"
+     rx="15.684421"
+     ry="20.446289"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#2aa1b4;fill-opacity:1;stroke:#000000;stroke-width:0.40492538;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 4.45417871;stroke-dashoffset:0;stroke-opacity:0"
+     id="path1450-2-8"
+     cx="142.73557"
+     cy="36.321407"
+     rx="15.684421"
+     ry="20.446289"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><g
+     id="g18-1"
+     transform="translate(-331.14321,-422.9451)" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#2aa1b4;fill-opacity:1;stroke:#000000;stroke-width:0.70162225;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 7.71784485;stroke-dashoffset:0;stroke-opacity:0"
+     id="path1450-2-8-9-7-0"
+     cx="78.051231"
+     cy="273.50211"
+     rx="45.103474"
+     ry="21.346659"
+     transform="matrix(-0.99991845,0.01277075,-0.02268733,0.99974261,0,0)"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128" /><flowRoot
+     xml:space="preserve"
+     id="flowRoot3545"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
+       id="flowRegion3547"><rect
+         id="rect3549"
+         width="141.42136"
+         height="67.714462"
+         x="381.11856"
+         y="606.44452" /></flowRegion><flowPara
+       id="flowPara3551" /></flowRoot><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#2aa1b4;fill-opacity:1;stroke:#000000;stroke-width:0.70649177;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 7.77141018;stroke-dashoffset:0;stroke-opacity:0"
+     id="path1450-2-8-9-7-0-5"
+     cx="-177.24194"
+     cy="276.41681"
+     rx="48.150795"
+     ry="20.274212"
+     transform="matrix(-0.99996078,0.00885667,-0.02268733,0.99974261,0,0)"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128" /><g
+     id="g1100"
+     transform="rotate(0.4,2583.8502,-17821.887)"><g
+       transform="translate(-321.18644,-356.77966)"
+       id="g6-0">  <text
+   style="font-size:12px;font-family:helvetica;fill:#7f7f7f"
+   id="text4"
+   y="375.32001"
+   x="387.10001"
+   font-size="12.00">0</text>
+
+
+
+
+</g><g
+       transform="translate(-321.18644,-356.77966)"
+       id="g10-9">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text8-3"
+   y="439.07001"
+   x="360.98001"
+   font-size="12.00">1</text>
+
+
+
+
+</g><g
+       transform="translate(-321.18644,-356.77966)"
+       id="g14-60">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text12-6"
+   y="419.95001"
+   x="394.10001"
+   font-size="12.00">2</text>
+
+
+
+
+</g><g
+       transform="translate(-321.18644,-356.77966)"
+       id="g18-2">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text16-6"
+   y="400.82001"
+   x="360.98001"
+   font-size="12.00">3</text>
+
+
+
+
+</g><g
+       transform="translate(-321.18644,-356.77966)"
+       id="g22-1">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text20-8"
+   y="419.95001"
+   x="432.35001"
+   font-size="12.00">4</text>
+
+
+
+
+</g><line
+       style="stroke:#000000;stroke-width:1"
+       id="line24-7"
+       y2="59.560364"
+       x2="70.033562"
+       y1="71.510376"
+       x1="49.343559" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line26-92"
+       y2="55.970337"
+       x2="108.28356"
+       y1="55.970337"
+       x1="82.463554" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line28-02"
+       y2="40.430359"
+       x2="49.343559"
+       y1="52.380371"
+       x1="70.033562" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line30-3"
+       y2="46.920349"
+       x2="43.123558"
+       y1="65.020325"
+       x1="43.123558" /></g><g
+     id="g1136"
+     transform="rotate(0.4,2963.1198,12649.536)"><g
+       transform="translate(-321.19427,-354.23677)"
+       id="g6-4">  <text
+   style="font-size:12px;font-family:helvetica;fill:#7f7f7f"
+   id="text4-7"
+   y="375.32001"
+   x="387.10001"
+   font-size="12.00">0</text>
+
+
+
+
+</g><g
+       transform="translate(-321.19427,-354.23677)"
+       id="g10-6">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text8-31"
+   y="439.07001"
+   x="360.98001"
+   font-size="12.00">1</text>
+
+
+
+
+</g><g
+       transform="translate(-321.19427,-354.23677)"
+       id="g14-7">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text12-5"
+   y="419.95001"
+   x="394.10001"
+   font-size="12.00">2</text>
+
+
+
+
+</g><g
+       transform="translate(-321.19427,-354.23677)"
+       id="g18-9">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text16-62"
+   y="400.82001"
+   x="360.98001"
+   font-size="12.00">3</text>
+
+
+
+
+</g><g
+       transform="translate(-321.19427,-354.23677)"
+       id="g22-17">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text20-85"
+   y="419.95001"
+   x="432.35001"
+   font-size="12.00">4</text>
+
+
+
+
+</g><line
+       style="stroke:#000000;stroke-width:1"
+       id="line24-74"
+       y2="62.263233"
+       x2="108.27573"
+       y1="62.263233"
+       x1="82.455727" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line26-1"
+       y2="54.763233"
+       x2="108.27573"
+       y1="54.763233"
+       x1="82.455727" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line28-8"
+       y2="62.10323"
+       x2="70.025734"
+       y1="74.053238"
+       x1="49.335732" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line30-5"
+       y2="49.463245"
+       x2="43.11573"
+       y1="67.563217"
+       x1="43.11573" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line32"
+       y2="42.973225"
+       x2="49.335732"
+       y1="54.923237"
+       x1="70.025734" /></g><path
+     transform="matrix(0.97045057,0.02202261,-0.02871671,1.2654337,-97.245215,194.33711)"
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Lend-6-9);marker-end:url(#Arrow1Lend-6-9)"
+     d="m 112.36334,-63.81411 c 32.75964,-0.599262 65.51826,-1.198505 98.27586,-1.79773"
+     id="path924-2-8"
+     inkscape:connector-curvature="0"
+     inkscape:path-effect="#path-effect926-5-6"
+     inkscape:original-d="m 112.36334,-63.81411 c 32.75962,-0.60024 65.51824,-1.19948 98.27586,-1.79773"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#2aa1b4;fill-opacity:1;stroke:#000000;stroke-width:0.40492538;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 4.45417871;stroke-dashoffset:0;stroke-opacity:0"
+     id="path1450-2-0"
+     cx="-69.547241"
+     cy="120.22845"
+     rx="15.684421"
+     ry="20.446289"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#2aa1b4;fill-opacity:1;stroke:#000000;stroke-width:0.40492538;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 4.45417871;stroke-dashoffset:0;stroke-opacity:0"
+     id="path1450-2-8-2"
+     cx="142.76715"
+     cy="116.41556"
+     rx="15.684421"
+     ry="20.446289"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><g
+     id="g1100-1"
+     transform="rotate(0.4,-8886.7848,-18037.61)"><g
+       transform="translate(-321.18644,-356.77966)"
+       id="g6-0-0"><text
+   style="font-size:12px;font-family:helvetica;fill:#7f7f7f"
+   id="text4-5"
+   y="375.32001"
+   x="387.10001"
+   font-size="12.00">0</text>
+
+
+</g><g
+       transform="translate(-321.18644,-356.77966)"
+       id="g10-9-1"><text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text8-3-1"
+   y="439.07001"
+   x="360.98001"
+   font-size="12.00">1</text>
+
+
+</g><g
+       transform="translate(-321.18644,-356.77966)"
+       id="g14-60-0"><text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text12-6-8"
+   y="419.95001"
+   x="394.10001"
+   font-size="12.00">2</text>
+
+
+</g><g
+       transform="translate(-321.18644,-356.77966)"
+       id="g18-2-5"><text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text16-6-0"
+   y="400.82001"
+   x="360.98001"
+   font-size="12.00">3</text>
+
+
+</g><g
+       transform="translate(-321.18644,-356.77966)"
+       id="g22-1-6"><text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text20-8-4"
+   y="419.95001"
+   x="432.35001"
+   font-size="12.00">4</text>
+
+
+</g><line
+       style="stroke:#000000;stroke-width:1"
+       id="line24-7-6"
+       y2="59.560364"
+       x2="70.033562"
+       y1="71.510376"
+       x1="49.343559" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line26-92-2"
+       y2="55.970337"
+       x2="108.28356"
+       y1="55.970337"
+       x1="82.463554" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line28-02-5"
+       y2="40.430359"
+       x2="49.343559"
+       y1="52.380371"
+       x1="70.033562" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line30-3-8"
+       y2="46.920349"
+       x2="43.123558"
+       y1="65.020325"
+       x1="43.123558" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line26-92-2-7"
+       y2="123.61972"
+       x2="110.72366"
+       y1="123.61972"
+       x1="84.903656" /><g
+       transform="translate(-316.6379,-290.29738)"
+       id="g22-1-6-6"><text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text20-8-4-5"
+   y="419.95001"
+   x="432.35001"
+   font-size="12.00">4</text>
+
+
+</g></g><g
+     id="g1136-6"
+     transform="rotate(0.4,-8507.5156,12433.815)"><g
+       transform="translate(-321.19427,-354.23677)"
+       id="g6-4-2"><text
+   style="font-size:12px;font-family:helvetica;fill:#7f7f7f"
+   id="text4-7-8"
+   y="375.32001"
+   x="387.10001"
+   font-size="12.00">0</text>
+
+
+</g><g
+       transform="translate(-321.19427,-354.23677)"
+       id="g10-6-4"><text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text8-31-7"
+   y="439.07001"
+   x="360.98001"
+   font-size="12.00">1</text>
+
+
+</g><g
+       transform="translate(-321.19427,-354.23677)"
+       id="g14-7-2"><text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text12-5-4"
+   y="419.95001"
+   x="394.10001"
+   font-size="12.00">2</text>
+
+
+</g><g
+       transform="translate(-321.19427,-354.23677)"
+       id="g18-9-0"><text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text16-62-6"
+   y="400.82001"
+   x="360.98001"
+   font-size="12.00">3</text>
+
+
+</g><g
+       transform="translate(-321.19427,-354.23677)"
+       id="g22-17-2"><text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text20-85-9"
+   y="419.95001"
+   x="432.35001"
+   font-size="12.00">4</text>
+
+
+</g><line
+       style="stroke:#000000;stroke-width:1"
+       id="line24-74-9"
+       y2="62.263233"
+       x2="108.27573"
+       y1="62.263233"
+       x1="82.455727" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line26-1-0"
+       y2="54.763233"
+       x2="108.27573"
+       y1="54.763233"
+       x1="82.455727" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line28-8-8"
+       y2="62.10323"
+       x2="70.025734"
+       y1="74.053238"
+       x1="49.335732" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line30-5-1"
+       y2="49.463245"
+       x2="43.11573"
+       y1="67.563217"
+       x1="43.11573" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line32-3"
+       y2="42.973225"
+       x2="49.335732"
+       y1="54.923237"
+       x1="70.025734" /><g
+       transform="translate(-318.22942,-286.36749)"
+       id="g22-17-2-2"><text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text20-85-9-6"
+   y="419.95001"
+   x="432.35001"
+   font-size="12.00">4</text>
+
+
+</g><line
+       style="stroke:#000000;stroke-width:1"
+       id="line24-74-9-5"
+       y2="130.13252"
+       x2="111.24057"
+       y1="130.13252"
+       x1="85.420563" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line26-1-0-8"
+       y2="122.63252"
+       x2="111.24057"
+       y1="122.63252"
+       x1="85.420563" /></g><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#439f3f;fill-opacity:1;stroke:#0000ff;stroke-width:0.25105524;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 2.76160786;stroke-dashoffset:0;stroke-opacity:0.2"
+     id="path905-5-9"
+     cx="-28.535475"
+     cy="121.30919"
+     rx="13.419111"
+     ry="8.5814209"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#439f3f;fill-opacity:1;stroke:#0000ff;stroke-width:0.25105524;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 2.76160786;stroke-dashoffset:0;stroke-opacity:0.2"
+     id="path905-3-6-8"
+     cx="185.80492"
+     cy="115.39937"
+     rx="13.419111"
+     ry="8.5814209"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><path
+     transform="matrix(0.97045057,0.02202261,-0.02871671,1.2654337,-93.84992,262.42774)"
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Lend-6-9-8);marker-end:url(#Arrow1Lend-6-9-8)"
+     d="m 112.36334,-63.81411 c 32.75964,-0.599262 65.51826,-1.198505 98.27586,-1.79773"
+     id="path924-2-8-0"
+     inkscape:connector-curvature="0"
+     inkscape:path-effect="#path-effect926-5-6-4"
+     inkscape:original-d="m 112.36334,-63.81411 c 32.75962,-0.60024 65.51824,-1.19948 98.27586,-1.79773"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#2aa1b4;fill-opacity:1;stroke:#000000;stroke-width:0.40492538;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 4.45417871;stroke-dashoffset:0;stroke-opacity:0"
+     id="path1450-2-0-9"
+     cx="-64.608025"
+     cy="188.22452"
+     rx="15.684421"
+     ry="20.446289"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#2aa1b4;fill-opacity:1;stroke:#000000;stroke-width:0.40492538;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 4.45417871;stroke-dashoffset:0;stroke-opacity:0"
+     id="path1450-2-8-2-1"
+     cx="147.70636"
+     cy="184.41162"
+     rx="15.684421"
+     ry="20.446289"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#439f3f;fill-opacity:1;stroke:#0000ff;stroke-width:0.25105524;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 2.76160786;stroke-dashoffset:0;stroke-opacity:0.2"
+     id="path905-5-9-9"
+     cx="-24.470232"
+     cy="187.62387"
+     rx="13.419111"
+     ry="8.5814209"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#439f3f;fill-opacity:1;stroke:#0000ff;stroke-width:0.25105524;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 2.76160786;stroke-dashoffset:0;stroke-opacity:0.2"
+     id="path905-3-6-8-6"
+     cx="189.89679"
+     cy="183.40875"
+     rx="13.419111"
+     ry="8.5814209"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><g
+     id="g2163"
+     transform="rotate(0.4,-31512.854,-21827.977)"><g
+       transform="translate(-313.55932,-355.9322)"
+       id="g6-7">  <text
+   style="font-size:12px;font-family:helvetica;fill:#7f7f7f"
+   id="text4-9"
+   y="375.32001"
+   x="396.66"
+   font-size="12.00">0</text>
+
+
+
+
+</g><g
+       transform="translate(-313.55932,-355.9322)"
+       id="g10">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text8"
+   y="439.07001"
+   x="396.66"
+   font-size="12.00">1</text>
+
+
+
+
+</g><g
+       transform="translate(-313.55932,-355.9322)"
+       id="g14">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text12"
+   y="419.95001"
+   x="429.79001"
+   font-size="12.00">2</text>
+
+
+
+
+</g><g
+       transform="translate(-313.55932,-355.9322)"
+       id="g18">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text16"
+   y="400.82001"
+   x="396.66"
+   font-size="12.00">3</text>
+
+
+
+
+</g><g
+       transform="translate(-313.55932,-355.9322)"
+       id="g22">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text20"
+   y="419.95001"
+   x="468.04001"
+   font-size="12.00">4</text>
+
+
+
+
+</g><g
+       transform="translate(-313.55932,-355.9322)"
+       id="g26">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text24"
+   y="419.95001"
+   x="325.29001"
+   font-size="12.00">5</text>
+
+
+
+
+</g><g
+       transform="translate(-313.55932,-355.9322)"
+       id="g30">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text28"
+   y="419.95001"
+   x="363.54001"
+   font-size="12.00">6</text>
+
+
+
+
+</g><line
+       style="stroke:#000000;stroke-width:1"
+       id="line32-6"
+       y2="47.767811"
+       x2="86.440681"
+       y1="65.867783"
+       x1="86.440681" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line34"
+       y2="41.27779"
+       x2="92.660683"
+       y1="53.227802"
+       x1="113.35068" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line36"
+       y2="56.817799"
+       x2="47.100681"
+       y1="56.817799"
+       x1="21.280674" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line38"
+       y2="56.817799"
+       x2="151.60068"
+       y1="56.817799"
+       x1="125.78068" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line40"
+       y2="60.407795"
+       x2="113.35068"
+       y1="72.357803"
+       x1="92.660683" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line42"
+       y2="60.407795"
+       x2="59.530674"
+       y1="72.357803"
+       x1="80.22068" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line44"
+       y2="53.227802"
+       x2="59.530674"
+       y1="41.27779"
+       x1="80.22068" /></g><path
+     transform="matrix(0.97045057,0.02202261,-0.02871671,1.2654337,-96.980995,354.96416)"
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Lend-6-9-8-0);marker-end:url(#Arrow1Lend-6-9-8-0)"
+     d="m 112.36334,-63.81411 c 32.75964,-0.599262 65.51826,-1.198505 98.27586,-1.79773"
+     id="path924-2-8-0-0"
+     inkscape:connector-curvature="0"
+     inkscape:path-effect="#path-effect926-5-6-4-1"
+     inkscape:original-d="m 112.36334,-63.81411 c 32.75962,-0.60024 65.51824,-1.19948 98.27586,-1.79773"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128" /><g
+     id="g2677"
+     transform="rotate(0.4,-30685.17,14762.283)"><g
+       transform="translate(-312.20562,-353.63753)"
+       id="g6-48">  <text
+   style="font-size:12px;font-family:helvetica;fill:#7f7f7f"
+   id="text4-70"
+   y="375.32001"
+   x="396.66"
+   font-size="12.00">0</text>
+
+
+
+
+</g><g
+       transform="translate(-312.20562,-353.63753)"
+       id="g10-8">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text8-6"
+   y="400.82001"
+   x="396.66"
+   font-size="12.00">1</text>
+
+
+
+
+</g><g
+       transform="translate(-312.20562,-353.63753)"
+       id="g14-2">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text12-4"
+   y="419.95001"
+   x="429.79001"
+   font-size="12.00">2</text>
+
+
+
+
+</g><g
+       transform="translate(-312.20562,-353.63753)"
+       id="g18-7">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text16-9"
+   y="439.07001"
+   x="396.66"
+   font-size="12.00">3</text>
+
+
+
+
+</g><g
+       transform="translate(-312.20562,-353.63753)"
+       id="g22-3">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text20-9"
+   y="419.95001"
+   x="468.04001"
+   font-size="12.00">4</text>
+
+
+
+
+</g><g
+       transform="translate(-312.20562,-353.63753)"
+       id="g26-2">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text24-8"
+   y="419.95001"
+   x="325.29001"
+   font-size="12.00">5</text>
+
+
+
+
+</g><g
+       transform="translate(-312.20562,-353.63753)"
+       id="g30-3">  <text
+   style="font-size:12px;font-family:helvetica;fill:#000000"
+   id="text28-0"
+   y="419.95001"
+   x="363.54001"
+   font-size="12.00">6</text>
+
+
+
+
+</g><line
+       style="stroke:#000000;stroke-width:1"
+       id="line32-1"
+       y2="68.16246"
+       x2="87.79438"
+       y1="50.062489"
+       x1="87.79438" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line34-7"
+       y2="62.862476"
+       x2="152.95438"
+       y1="62.862476"
+       x1="127.13438" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line36-8"
+       y2="55.362476"
+       x2="152.95438"
+       y1="55.362476"
+       x1="127.13438" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line38-9"
+       y2="62.702473"
+       x2="60.884377"
+       y1="74.652481"
+       x1="81.574379" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line40-1"
+       y2="55.52248"
+       x2="114.70438"
+       y1="43.572468"
+       x1="94.014381" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line42-5"
+       y2="59.112476"
+       x2="48.454384"
+       y1="59.112476"
+       x1="22.634375" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line44-4"
+       y2="74.652481"
+       x2="94.014381"
+       y1="62.702473"
+       x1="114.70438" /><line
+       style="stroke:#000000;stroke-width:1"
+       id="line46"
+       y2="55.52248"
+       x2="60.884377"
+       y1="43.572468"
+       x1="81.574379" /></g><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#439f3f;fill-opacity:1;stroke:#0000ff;stroke-width:0.25105524;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 2.76160786;stroke-dashoffset:0;stroke-opacity:0.2"
+     id="path905-5-9-9-9"
+     cx="-8.2784691"
+     cy="277.78995"
+     rx="13.419111"
+     ry="8.5814209"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /><ellipse
+     style="opacity:0.431;vector-effect:none;fill:#439f3f;fill-opacity:1;stroke:#0000ff;stroke-width:0.25105524;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0, 2.76160786;stroke-dashoffset:0;stroke-opacity:0.2"
+     id="path905-5-9-9-9-2"
+     cx="247.56891"
+     cy="270.38055"
+     rx="13.419111"
+     ry="8.5814209"
+     inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
+     inkscape:export-xdpi="128"
+     inkscape:export-ydpi="128"
+     transform="rotate(1.3)" /></g></svg>
