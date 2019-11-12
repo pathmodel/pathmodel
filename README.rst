@@ -326,6 +326,10 @@ In this file there is 5 molecules:
    |                                      | bond("molecule_1",single,2,4). |
    +--------------------------------------+--------------------------------+
 
+.. table::
+   :align: center
+   :widths: auto
+
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_2.svg     | atom("molecule_2",1..4,carb).  |
    |    :width: 400px                     | bond("molecule_1",single,1,2). |
@@ -333,6 +337,10 @@ In this file there is 5 molecules:
    |                                      | bond("molecule_1",single,2,3). |
    |                                      | bond("molecule_1",double,2,4). |
    +--------------------------------------+--------------------------------+
+
+.. table::
+   :align: center
+   :widths: auto
 
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_3.svg     | atom("molecule_3",1..6,carb).  |
@@ -345,6 +353,10 @@ In this file there is 5 molecules:
    |                                      | bond("molecule_3",single,5,6). |
    +--------------------------------------+--------------------------------+
   
+  .. table::
+   :align: center
+   :widths: auto
+
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_4.svg     | atom("molecule_4",1..6,carb).  |
    |    :width: 400px                     | bond("molecule_4",single,1,2). |
@@ -355,6 +367,10 @@ In this file there is 5 molecules:
    |                                      | bond("molecule_4",single,3,6). |
    |                                      | bond("molecule_4",single,5,6). |
    +--------------------------------------+--------------------------------+
+
+.. table::
+   :align: center
+   :widths: auto
 
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_5.svg     | atom("molecule_5",1..7,carb).  |
