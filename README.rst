@@ -196,7 +196,7 @@ Molecules are modelled with atoms (hydrogen excluded) and bonds (single and doub
 	atom("Molecule2",1,carb). atom("Molecule2",2,carb). atom("Molecule2",3,carb).
         bond("Molecule2",single,1,2). bond("Molecule2",single,2,3).
 
-Reaction between molecules are represented as link between two molecules with a name:
+Reactions between molecules are represented as link between two molecules with a name:
 
 .. code:: sh
 
@@ -258,7 +258,48 @@ In python (pathmodel_plot is not available in import call):
 Output data
 ~~~~~~~~~~~
 
-Using networkx, inferred pathways are represented as png picture. Also a result.lp file is created containing all the inferred reactions.
+With the `infer command`, pathmodel will use the data file and try to create an output folder:
+
+.. code-block:: text
+
+	output_folder
+	├── **data_pathmodel.lp**
+	├── **pathmodel_data_transformations.tsv**
+	├── **pathmodel_incremental_inference.tsv**
+	├── **pathmodel_output.lp**
+
+data_pathmodel.lp contains intermediary files for PathModel. Specifically, it contains the input data and the results of **ReactionSiteExtraction.lp** (*diffAtomBeforeReaction*, *diffAtomAfterReaction*, *diffBondBeforeReaction*, *diffBondAfterReaction*, *siteBeforeReaction*, *siteAfterReaction*) and of **MZComputation.lp** (*domain*, *moleculeComposition*, *moleculeNbAtoms*, *numberTotalBonds*, *moleculeMZ*, *reactionMZ*). The python wrapper gives this file to **PathModel.lp** as input.
+
+pathmodel_data_transformations.tsv contains all the transformation inferred from the input data and the **ReactionSiteExtraction.lp** script.
+
+pathmodel_incremental_inference.tsv shows the step of the incremental mode of clingo when a new reaction has been inferred using a known transformation.
+
+pathmodel_output.lp is the output lp file of **PathModel.lp**.
+
+Then if you use the `pathmodel_plot command` on the output_folder, pathmodel will create
+
+.. code-block:: text
+
+	output_folder
+	├── data_pathmodel.lp
+	├── **molecules**
+		├── **Molecule1**
+		├── **Molecule2**
+		├── ...
+	├── **newmolecules_from_mz**
+		├── **Prediction_...**
+		├── **Prediction_...**
+		├── **...**
+	├── pathmodel_data_transformations.tsv
+	├── pathmodel_incremental_inference.tsv
+	├── pathmodel_output.lp
+	├── **pathmodel_output.svg**
+
+molecules contains the structures of each molecules in the input data file.
+
+newmolecules_from_mz contains the structures of inferred molecules using the MZ. It will be empty if no MZ were given or if no molecules were inferred.
+
+pathmodel_output.svg shows the pathway containing the molecules and the reactions (in green) from the input files and the newly inferred molecules and reactions (in blue).
 
 Example
 ~~~~~~~
