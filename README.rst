@@ -314,8 +314,18 @@ By calling the command:
 
 In this file there is 5 molecules:
 
-.. image:: images/molecule_1.svg
-    :width: 200px
+.. table::
+   :align: center
+   :widths: auto
+
+   +--------------------------------------+--------------------------------+
+   | .. image:: images/molecule_1.svg     | atom("molecule_1",1..4,carb).  |
+   |    :width: 200px                     | bond("molecule_1",single,1,2). |
+   |                                      | bond("molecule_1",single,1,3). |
+   |                                      | bond("molecule_1",single,2,3). |
+   |                                      | bond("molecule_1",single,2,4). |
+   +--------------------------------------+--------------------------------+
+
 
 .. image:: images/molecule_2.svg
     :width: 200px
