@@ -22,6 +22,32 @@ There is no guarantee that this script will work, it is a Work In Progress in ea
    :backlinks: top
    :local:
 
+
+Description
+-----------
+
+Metabolic Pathway Drift Hypothesis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Metabolic Pathway Drift hypothesizes that metabolic pathways can be conserved even if their biochemical reactions undergo variations. These variations can be non-orthologous displacement of genes or changes in enzyme order. To test this hypothesis, we develop PathModel to infer possible enzyme order changes in metabolic pathways.
+
+Program
+~~~~~~~
+
+PathModel is developed in `ASP <https://en.wikipedia.org/wiki/Answer_set_programming>`__ using the `clingo grounder and solver <https://github.com/potassco/clingo>`__. It is divided in three ASP scripts.
+
+The first one, `ReactionSiteExtraction.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/ReactionSiteExtraction.lp>`__ creates reaction site.
+
+When a reaction is described between two molecules, the script will compare atoms and bonds of the two molecules of the reaction and will extract a reaction site before the reaction (composed of atoms and bonds that are present in the reactant but absent in the product) and a reaction site after the reaction (composed of atoms and bonds present in the product but absent in the reactant).
+
+ReactionSiteExtraction produces two sites for each reaction (one before and one after the reaction). This corresponds to the biochemical transformation induced by the reaction.
+
+A second script, `MZComputation.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/MZComputation.lp>`__ will compute the MZ for each known molecule.
+
+These data will be used by the third script: `PathModel.lp <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/PathModel.lp>`__.
+
+PathModel will use two inference methods: one creating new metabolites and one infering a reaction between two metabolites.
+
 Installation
 ------------
 
@@ -30,9 +56,9 @@ Requirements
 
 PathModel is a Python3 package using Answer Set Programming (ASP) to infer new biochemical reactions and new metabolites structures. It is divided in two parts:
 
-- a wrapper (pathmodel_wrapper.py) for the ASP programs (MZComputation.lp, ReactionSiteExtraction.lp and PathModel.lp).
+- a wrapper (`pathmodel_wrapper.py <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/pathmodel_wrapper.py>`__) for the ASP programs (`MZComputation.lp <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/MZComputation.lp>`__, `ReactionSiteExtraction.lp <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/ReactionSiteExtraction.lp>`__ and `PathModel.lp <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/PathModel.lp>`__).
 
-- a plotting script (molecule_creation.py) to create pictures of molecules and pathways.
+- a plotting script (`molecule_creation.py <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/plotting.py>`__) to create pictures of molecules and pathways.
 
 PathModel requires:
 
@@ -42,9 +68,9 @@ PathModel requires:
 
 - `networkx <https://networkx.github.io/>`__ (with `graphviz <https://www.graphviz.org/>`__ and `pygraphviz <https://github.com/pygraphviz/pygraphviz>`__).
 
-- `matplotlib packages <https://matplotlib.org/>`__
+- `matplotlib package <https://matplotlib.org/>`__.
 
-- `rdkit package <https://github.com/rdkit/rdkit/>`__
+- `rdkit package <https://github.com/rdkit/rdkit/>`__.
 
 Using Singularity and Singularity Hub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +109,7 @@ A docker image of pathmodel is available at `dockerhub <https://hub.docker.com/r
 
 	docker run -ti -v /path/shared/container:/shared --name="mycontainer" pathmodel/pathmodel bash
 
-This command will download the image and create a container with a shared path. It will launch a bash terminal where you can use the command pathmodel (see `Use`_ and `Example`_).
+This command will download the image and create a container with a shared path. It will launch a bash terminal where you can use the command pathmodel (see `Command and Python call`_ and `Tutorial`_).
 
 Using git
 ~~~~~~~~~
@@ -165,23 +191,6 @@ You can exit the environment with:
 
     # Deactivate the environment.
     conda deactivate
-
-Description
------------
-
-PathModel is developed in `ASP <https://en.wikipedia.org/wiki/Answer_set_programming>`__ using the `clingo grounder and solver <https://github.com/potassco/clingo>`__. It is divided in three ASP scripts.
-
-The first one, `ReactionSiteExtraction.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/ReactionSiteExtraction.lp>`__ creates reaction site.
-
-When a reaction is described between two molecules, the script will compare atoms and bonds of the two molecules of the reaction and will extract a reaction site before the reaction (composed of atoms and bonds that are present in the reactant but absent in the product) and a reaction site after the reaction (composed of atoms and bonds present in the product but absent in the reactant).
-
-ReactionSiteExtraction produces two sites for each reaction (one before and one after the reaction).
-
-A second script, `MZComputation.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/MZComputation.lp>`__ will compute the MZ for each known molecule.
-
-These data will be used by the third script: `PathModel.lp <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/PathModel.lp>`__.
-
-PathModel will use two inference methods: one creating new metabolites and one infering a reaction between two metabolites.
 
 Input
 -----
@@ -386,7 +395,11 @@ One reaction:
    |    :width: 300px                             |                                                    |
    +----------------------------------------------+----------------------------------------------------+
 
-One known MZ: 92,1341 (so 921341 for Clingo).
+One known MZ:
+
++-----------------------------------+--------------------------+
+| 92,1341 (so 921341 for Clingo)    | mzfiltering(921341).     |
++-----------------------------------+--------------------------+
 
 By calling the command:
 
@@ -404,7 +417,7 @@ Pathmodel will create output files:
 	├── pathmodel_incremental_inference.tsv
 	├── pathmodel_output.lp
 
-As explained in Output, data_pathmodel.lp is an intermediary file for Pathmodel.
+As explained in `Output`_, data_pathmodel.lp is an intermediary file for Pathmodel.
 
 pathmodel_data_transformations.tsv contains the transformation inferred from the knonw reactions, here:
 
@@ -426,7 +439,7 @@ pathmodel_incremental_inference.tsv shows the new reactions inferred by PathMode
 | 2             | saturation      |   "molecule_5"  | "Prediction_921341_saturation" |
 +---------------+-----------------+-----------------+--------------------------------+
 
-Two new saturation variant reactions have been inferred at step two of incremenetal mode.
+Two new saturation variant reactions have been inferred at step two of incremenetal mode:
 
 - one between Molecule3 and Molecule4 inferred from the saturation between Molecule1 and Molecule2. This is a demonstration of the deductive reasoning of PathModel:
 
@@ -438,7 +451,7 @@ Two new saturation variant reactions have been inferred at step two of incremene
    | .. image:: images/deductive_reasoning.svg |
    +-------------------------------------------+
 
-- one between Molecule5 and a newly inferred metabolite with the MZ of 92,1341. To find this, PathModel computes the MZ of Molecule5 (94,1489). Then it applies each transformations from its knowledge database (here saturation) to each molecules from teh same database. With this, PathModel computes the MZ of hypothetical molecules and compared them to the MZ given by the user (here 92,1341). And if a match is found then the reaction and the molecule are inferred. This is an example of the analogical reasoning:
+- one between Molecule5 and a newly inferred metabolite with the MZ of 92,1341. To find this, PathModel computes the MZ of Molecule5 (94,1489). Then it applies each transformations from its knowledge database (here saturation) to each molecules from the knowledge database. With this, PathModel computes the MZ of hypothetical molecules and compared them to the MZ given by the user (here 92,1341). And if a match is found then the reaction and the molecule are inferred. This is an example of the analogical reasoning:
 
 .. table::
    :align: center
