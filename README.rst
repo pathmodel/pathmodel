@@ -315,14 +315,19 @@ By calling the command:
 In this file there is 5 molecules:
 
 .. image:: images/molecule_1.svg
+    :width: 200px
 
 .. image:: images/molecule_2.svg
+    :width: 200px
 
 .. image:: images/molecule_3.svg
+    :width: 200px
 
 .. image:: images/molecule_4.svg
+    :width: 200px
 
 .. image:: images/molecule_5.svg
+    :width: 200px
 
 And one reaction:
 
