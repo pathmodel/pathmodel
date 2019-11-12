@@ -314,19 +314,19 @@ By calling the command:
 
 In this file there is 5 molecules:
 
-.. image:: images/molecule_1.jpg
+.. image:: images/molecule_1.svg
 
-.. image:: images/molecule_2.jpg
+.. image:: images/molecule_2.svg
 
-.. image:: images/molecule_3.jpg
+.. image:: images/molecule_3.svg
 
-.. image:: images/molecule_4.jpg
+.. image:: images/molecule_4.svg
 
-.. image:: images/molecule_5.jpg
+.. image:: images/molecule_5.svg
 
 And one reaction:
 
-.. image:: saturation_reaction.png
+.. image:: images/saturation_reaction.png
 
 The deductive reasoning explained in PathModel article:
 
