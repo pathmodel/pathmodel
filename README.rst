@@ -183,8 +183,8 @@ These data will be used by the third script: `PathModel.lp <https://github.com/p
 
 PathModel will use two inference methods: one creating new metabolites and one infering a reaction between two metabolites.
 
-Input data
-~~~~~~~~~~
+Input
+-----
 
 Molecules are modelled with atoms (hydrogen excluded) and bonds (single and double).
 
@@ -234,8 +234,8 @@ Molecules that are not in the organism of study can be added. They will not be t
 
     absentmolecules("Molecule1").
 
-Use
-~~~
+Command and Python call
+-----------------------
 
 Command-line:
 
@@ -255,8 +255,8 @@ In python (pathmodel_plot is not available in import call):
 
     pathmodel.pathmodel_analysis('data.lp', output_folder)
 
-Output data
-~~~~~~~~~~~
+Output
+------
 
 With the `infer command`, pathmodel will use the data file and try to create an output folder:
 
@@ -301,15 +301,66 @@ newmolecules_from_mz contains the structures of inferred molecules using the MZ.
 
 pathmodel_output.svg shows the pathway containing the molecules and the reactions (in green) from the input files and the newly inferred molecules and reactions (in blue).
 
-Example
-~~~~~~~
+Tutorial
+--------
 
-The folder pathmodel/data/ contains example for sterols and mycosporine-like amino-acids pathways.
+For this tutorial, we used the data from `test/pathmodel_test_data.lp <https://github.com/pathmodel/pathmodel/blob/master/test/pathmodel_test_data.lp>`__.
 
 By calling the command:
 
 .. code:: sh
 
-	pathmodel test -o output_folder
+	pathmodel infer -i pathmodel_test_data.lp -o output_folder
 
+In this file there is 5 molecules:
 
+.. image:: images/molecule_1.jpg
+
+.. image:: images/molecule_2.jpg
+
+.. image:: images/molecule_3.jpg
+
+.. image:: images/molecule_4.jpg
+
+.. image:: images/molecule_5.jpg
+
+And one reaction:
+
+.. image:: saturation_reaction.png
+
+The deductive reasoning explained in PathModel article:
+
+.. image:: images/deductive_reasoning.png
+
+This command will create:
+
+.. code-block:: text
+
+	output_folder
+	├── data_pathmodel.lp
+	├── pathmodel_data_transformations.tsv
+	├── pathmodel_incremental_inference.tsv
+	├── pathmodel_output.lp
+
+Then the command:
+
+.. code:: sh
+
+	pathmodel_plot -i output_folder
+
+.. code-block:: text
+
+	output_folder
+	├── data_pathmodel.lp
+	├── **molecules**
+		├── **molecule_1.svg**
+		├── **molecule_2.svg**
+		├── **molecule_3.svg**
+		├── **molecule_4.svg**
+		├── **molecule_5.svg**
+	├── **newmolecules_from_mz**
+		├── **Prediction_921341_saturation.svg**
+	├── pathmodel_data_transformations.tsv
+	├── pathmodel_incremental_inference.tsv
+	├── pathmodel_output.lp
+	├── **pathmodel_output.svg**
