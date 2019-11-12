@@ -1,22 +1,160 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<svg:svg version="1.1" baseProfile="full"
-        xmlns:svg="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xml:space="preserve" width="800px" height="800px" >
-<svg:polygon fill="rgb(255,255,255)" stroke="none" stroke-width="0" points="0.00,0.00 800.00,0.00 800.00,800.00 0.00,800.00 0.00,0.00"></svg:polygon>
-<svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(127,127,127)" x="396.66" y="375.32">0</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="396.66" y="400.82">1</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="429.79" y="419.95">2</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="396.66" y="439.07">3</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="468.04" y="419.95">4</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="325.29" y="419.95">5</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="363.54" y="419.95">6</svg:text>
-</svg:g><svg:line x1="400.00" y1="403.70" x2="400.00" y2="421.80" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="439.34" y1="416.50" x2="465.16" y2="416.50" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="439.34" y1="409.00" x2="465.16" y2="409.00" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="393.78" y1="428.29" x2="373.09" y2="416.34" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="406.22" y1="397.21" x2="426.91" y2="409.16" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="334.84" y1="412.75" x2="360.66" y2="412.75" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="426.91" y1="416.34" x2="406.22" y2="428.29" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="393.78" y1="397.21" x2="373.09" y2="409.16" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-</svg:svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   xml:space="preserve"
+   width="175"
+   height="100"
+   id="svg48"
+   sodipodi:docname="molecule_4.svg"
+   inkscape:version="0.92.4 (unknown)"><metadata
+   id="metadata54"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs52" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1163"
+   id="namedview50"
+   showgrid="false"
+   inkscape:zoom="1.668772"
+   inkscape:cx="289.8259"
+   inkscape:cy="188.36941"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg48" />
+
+<g
+   id="g6"
+   transform="translate(-312.20562,-353.63753)">  <text
+   font-size="12.00"
+   x="396.66"
+   y="375.32001"
+   id="text4"
+   style="font-size:12px;font-family:helvetica;fill:#7f7f7f">0</text>
+
+</g><g
+   id="g10"
+   transform="translate(-312.20562,-353.63753)">  <text
+   font-size="12.00"
+   x="396.66"
+   y="400.82001"
+   id="text8"
+   style="font-size:12px;font-family:helvetica;fill:#000000">1</text>
+
+</g><g
+   id="g14"
+   transform="translate(-312.20562,-353.63753)">  <text
+   font-size="12.00"
+   x="429.79001"
+   y="419.95001"
+   id="text12"
+   style="font-size:12px;font-family:helvetica;fill:#000000">2</text>
+
+</g><g
+   id="g18"
+   transform="translate(-312.20562,-353.63753)">  <text
+   font-size="12.00"
+   x="396.66"
+   y="439.07001"
+   id="text16"
+   style="font-size:12px;font-family:helvetica;fill:#000000">3</text>
+
+</g><g
+   id="g22"
+   transform="translate(-312.20562,-353.63753)">  <text
+   font-size="12.00"
+   x="468.04001"
+   y="419.95001"
+   id="text20"
+   style="font-size:12px;font-family:helvetica;fill:#000000">4</text>
+
+</g><g
+   id="g26"
+   transform="translate(-312.20562,-353.63753)">  <text
+   font-size="12.00"
+   x="325.29001"
+   y="419.95001"
+   id="text24"
+   style="font-size:12px;font-family:helvetica;fill:#000000">5</text>
+
+</g><g
+   id="g30"
+   transform="translate(-312.20562,-353.63753)">  <text
+   font-size="12.00"
+   x="363.54001"
+   y="419.95001"
+   id="text28"
+   style="font-size:12px;font-family:helvetica;fill:#000000">6</text>
+
+</g><line
+   x1="87.79438"
+   y1="50.062489"
+   x2="87.79438"
+   y2="68.16246"
+   id="line32"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="127.13438"
+   y1="62.862476"
+   x2="152.95438"
+   y2="62.862476"
+   id="line34"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="127.13438"
+   y1="55.362476"
+   x2="152.95438"
+   y2="55.362476"
+   id="line36"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="81.574379"
+   y1="74.652481"
+   x2="60.884377"
+   y2="62.702473"
+   id="line38"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="94.014381"
+   y1="43.572468"
+   x2="114.70438"
+   y2="55.52248"
+   id="line40"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="22.634375"
+   y1="59.112476"
+   x2="48.454384"
+   y2="59.112476"
+   id="line42"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="114.70438"
+   y1="62.702473"
+   x2="94.014381"
+   y2="74.652481"
+   id="line44"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="81.574379"
+   y1="43.572468"
+   x2="60.884377"
+   y2="55.52248"
+   id="line46"
+   style="stroke:#000000;stroke-width:1" />
+</svg>

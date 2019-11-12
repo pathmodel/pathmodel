@@ -1,17 +1,121 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<svg:svg version="1.1" baseProfile="full"
-        xmlns:svg="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xml:space="preserve" width="800px" height="800px" >
-<svg:polygon fill="rgb(255,255,255)" stroke="none" stroke-width="0" points="0.00,0.00 800.00,0.00 800.00,800.00 0.00,800.00 0.00,0.00"></svg:polygon>
-<svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(127,127,127)" x="387.10" y="375.32">0</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="360.98" y="439.07">1</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="394.10" y="419.95">2</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="360.98" y="400.82">3</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="432.35" y="419.95">4</svg:text>
-</svg:g><svg:line x1="403.65" y1="416.50" x2="429.47" y2="416.50" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="403.65" y1="409.00" x2="429.47" y2="409.00" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="370.53" y1="428.29" x2="391.22" y2="416.34" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="364.31" y1="421.80" x2="364.31" y2="403.70" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="391.22" y1="409.16" x2="370.53" y2="397.21" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-</svg:svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   xml:space="preserve"
+   width="150"
+   height="100"
+   id="svg34"
+   sodipodi:docname="molecule_2.svg"
+   inkscape:version="0.92.4 (unknown)"><metadata
+   id="metadata40"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs38" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1163"
+   id="namedview36"
+   showgrid="false"
+   inkscape:zoom="1.668772"
+   inkscape:cx="323.59876"
+   inkscape:cy="208.96621"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg34" />
+
+<g
+   id="g6"
+   transform="translate(-321.19427,-354.23677)">  <text
+   font-size="12.00"
+   x="387.10001"
+   y="375.32001"
+   id="text4"
+   style="font-size:12px;font-family:helvetica;fill:#7f7f7f">0</text>
+
+</g><g
+   id="g10"
+   transform="translate(-321.19427,-354.23677)">  <text
+   font-size="12.00"
+   x="360.98001"
+   y="439.07001"
+   id="text8"
+   style="font-size:12px;font-family:helvetica;fill:#000000">1</text>
+
+</g><g
+   id="g14"
+   transform="translate(-321.19427,-354.23677)">  <text
+   font-size="12.00"
+   x="394.10001"
+   y="419.95001"
+   id="text12"
+   style="font-size:12px;font-family:helvetica;fill:#000000">2</text>
+
+</g><g
+   id="g18"
+   transform="translate(-321.19427,-354.23677)">  <text
+   font-size="12.00"
+   x="360.98001"
+   y="400.82001"
+   id="text16"
+   style="font-size:12px;font-family:helvetica;fill:#000000">3</text>
+
+</g><g
+   id="g22"
+   transform="translate(-321.19427,-354.23677)">  <text
+   font-size="12.00"
+   x="432.35001"
+   y="419.95001"
+   id="text20"
+   style="font-size:12px;font-family:helvetica;fill:#000000">4</text>
+
+</g><line
+   x1="82.455727"
+   y1="62.263233"
+   x2="108.27573"
+   y2="62.263233"
+   id="line24"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="82.455727"
+   y1="54.763233"
+   x2="108.27573"
+   y2="54.763233"
+   id="line26"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="49.335732"
+   y1="74.053238"
+   x2="70.025734"
+   y2="62.10323"
+   id="line28"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="43.11573"
+   y1="67.563217"
+   x2="43.11573"
+   y2="49.463245"
+   id="line30"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="70.025734"
+   y1="54.923237"
+   x2="49.335732"
+   y2="42.973225"
+   id="line32"
+   style="stroke:#000000;stroke-width:1" />
+</svg>

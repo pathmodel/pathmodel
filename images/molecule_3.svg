@@ -1,21 +1,153 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<svg:svg version="1.1" baseProfile="full"
-        xmlns:svg="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xml:space="preserve" width="800px" height="800px" >
-<svg:polygon fill="rgb(255,255,255)" stroke="none" stroke-width="0" points="0.00,0.00 800.00,0.00 800.00,800.00 0.00,800.00 0.00,0.00"></svg:polygon>
-<svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(127,127,127)" x="396.66" y="375.32">0</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="396.66" y="439.07">1</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="429.79" y="419.95">2</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="396.66" y="400.82">3</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="468.04" y="419.95">4</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="325.29" y="419.95">5</svg:text>
-</svg:g><svg:g>  <svg:text font-family="helvetica"   font-size="12.00" fill="rgb(0,0,0)" x="363.54" y="419.95">6</svg:text>
-</svg:g><svg:line x1="400.00" y1="421.80" x2="400.00" y2="403.70" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="426.91" y1="409.16" x2="406.22" y2="397.21" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="334.84" y1="412.75" x2="360.66" y2="412.75" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="439.34" y1="412.75" x2="465.16" y2="412.75" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="406.22" y1="428.29" x2="426.91" y2="416.34" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="393.78" y1="428.29" x2="373.09" y2="416.34" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-<svg:line x1="393.78" y1="397.21" x2="373.09" y2="409.16" stroke="rgb(0,0,0)" stroke-width="1"></svg:line>
-</svg:svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   xml:space="preserve"
+   width="175"
+   height="100"
+   id="svg46"
+   sodipodi:docname="molecule_3.svg"
+   inkscape:version="0.92.4 (unknown)"><metadata
+   id="metadata52"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs50" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1163"
+   id="namedview48"
+   showgrid="false"
+   inkscape:zoom="1.18"
+   inkscape:cx="437.94947"
+   inkscape:cy="184.45777"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg46" />
+
+<g
+   id="g6"
+   transform="translate(-313.55932,-355.9322)">  <text
+   font-size="12.00"
+   x="396.66"
+   y="375.32001"
+   id="text4"
+   style="font-size:12px;font-family:helvetica;fill:#7f7f7f">0</text>
+
+</g><g
+   id="g10"
+   transform="translate(-313.55932,-355.9322)">  <text
+   font-size="12.00"
+   x="396.66"
+   y="439.07001"
+   id="text8"
+   style="font-size:12px;font-family:helvetica;fill:#000000">1</text>
+
+</g><g
+   id="g14"
+   transform="translate(-313.55932,-355.9322)">  <text
+   font-size="12.00"
+   x="429.79001"
+   y="419.95001"
+   id="text12"
+   style="font-size:12px;font-family:helvetica;fill:#000000">2</text>
+
+</g><g
+   id="g18"
+   transform="translate(-313.55932,-355.9322)">  <text
+   font-size="12.00"
+   x="396.66"
+   y="400.82001"
+   id="text16"
+   style="font-size:12px;font-family:helvetica;fill:#000000">3</text>
+
+</g><g
+   id="g22"
+   transform="translate(-313.55932,-355.9322)">  <text
+   font-size="12.00"
+   x="468.04001"
+   y="419.95001"
+   id="text20"
+   style="font-size:12px;font-family:helvetica;fill:#000000">4</text>
+
+</g><g
+   id="g26"
+   transform="translate(-313.55932,-355.9322)">  <text
+   font-size="12.00"
+   x="325.29001"
+   y="419.95001"
+   id="text24"
+   style="font-size:12px;font-family:helvetica;fill:#000000">5</text>
+
+</g><g
+   id="g30"
+   transform="translate(-313.55932,-355.9322)">  <text
+   font-size="12.00"
+   x="363.54001"
+   y="419.95001"
+   id="text28"
+   style="font-size:12px;font-family:helvetica;fill:#000000">6</text>
+
+</g><line
+   x1="86.440681"
+   y1="65.867783"
+   x2="86.440681"
+   y2="47.767811"
+   id="line32"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="113.35068"
+   y1="53.227802"
+   x2="92.660683"
+   y2="41.27779"
+   id="line34"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="21.280674"
+   y1="56.817799"
+   x2="47.100681"
+   y2="56.817799"
+   id="line36"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="125.78068"
+   y1="56.817799"
+   x2="151.60068"
+   y2="56.817799"
+   id="line38"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="92.660683"
+   y1="72.357803"
+   x2="113.35068"
+   y2="60.407795"
+   id="line40"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="80.22068"
+   y1="72.357803"
+   x2="59.530674"
+   y2="60.407795"
+   id="line42"
+   style="stroke:#000000;stroke-width:1" />
+<line
+   x1="80.22068"
+   y1="41.27779"
+   x2="59.530674"
+   y2="53.227802"
+   id="line44"
+   style="stroke:#000000;stroke-width:1" />
+</svg>
