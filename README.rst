@@ -430,11 +430,23 @@ Two new saturation variant reactions have been inferred at step two of incremene
 
 - one between Molecule3 and Molecule4 inferred from the saturation between Molecule1 and Molecule2. This is a demonstration of the deductive reasoning of PathModel:
 
-.. image:: images/deductive_reasoning.svg
+.. table::
+   :align: center
+   :widths: auto
+
+   +-------------------------------------------+
+   | .. image:: images/deductive_reasoning.svg |
+   +-------------------------------------------+
 
 - one between Molecule5 and a newly inferred metabolite with the MZ of 92,1341. To find this, PathModel computes the MZ of Molecule5 (94,1489). Then it applies each transformations from its knowledge database (here saturation) to each molecules from teh same database. With this, PathModel computes the MZ of hypothetical molecules and compared them to the MZ given by the user (here 92,1341). And if a match is found then the reaction and the molecule are inferred. This is an example of the analogical reasoning:
 
-.. image:: images/analogical_reasoning.svg
+.. table::
+   :align: center
+   :widths: auto
+
+   +--------------------------------------------+
+   | .. image:: images/analogical_reasoning.svg |
+   +--------------------------------------------+
 
 Then it is possible to have access to graphic representations of molecules and reactions:
 
@@ -458,9 +470,21 @@ Then it is possible to have access to graphic representations of molecules and r
 
 There is a structure inferred by PathModel for the MZ 92.1341:
 
-.. image:: images/Prediction_921341_saturation.svg
+.. table::
+   :align: center
+   :widths: auto
+
+   +----------------------------------------------------+
+   | .. image:: images/Prediction_921341_saturation.svg |
+   +----------------------------------------------------+
 
 PathModel creates also a picture showing all the reactions (known reactions in green, inferred reaction variant in blue):
 
-.. image:: images/pathmodel_output.svg
-    :width: 400px
+.. table::
+   :align: center
+   :widths: auto
+
+   +--------------------------------------------+
+   | .. image:: images/pathmodel_output.svg     |
+   |    :width: 400px                           |
+   +--------------------------------------------+
