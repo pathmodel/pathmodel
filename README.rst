@@ -368,16 +368,16 @@ In this file there is 5 molecules:
    |                                      | bond("molecule_5",single,5,6). |
    +--------------------------------------+--------------------------------+
   
-
-
 And one reaction:
+
+.. table::
+   :align: center
+   :widths: auto
 
    +----------------------------------------------+----------------------------------------------------+
    | .. image:: images/saturation_reaction.svg    | reaction(saturation, "molecule_1", "molecule_2").  |
    |    :width: 400px                             |                                                    |
    +----------------------------------------------+----------------------------------------------------+
-
-.. image:: images/saturation_reaction.svg
 
 The deductive reasoning explained in PathModel article:
 
