@@ -260,13 +260,13 @@ Output
 
 With the `infer command`, pathmodel will use the data file and try to create an output folder:
 
-.. code-block:: text
+.. code-block:: html
 
 	output_folder
-	├── **data_pathmodel.lp**
-	├── **pathmodel_data_transformations.tsv**
-	├── **pathmodel_incremental_inference.tsv**
-	├── **pathmodel_output.lp**
+	├── <b>data_pathmodel.lp</b>
+	├── <b>pathmodel_data_transformations.tsv</b>
+	├── <b>pathmodel_incremental_inference.tsv</b>
+	├── <b>pathmodel_output.lp</b>
 
 data_pathmodel.lp contains intermediary files for PathModel. Specifically, it contains the input data and the results of **ReactionSiteExtraction.lp** (*diffAtomBeforeReaction*, *diffAtomAfterReaction*, *diffBondBeforeReaction*, *diffBondAfterReaction*, *siteBeforeReaction*, *siteAfterReaction*) and of **MZComputation.lp** (*domain*, *moleculeComposition*, *moleculeNbAtoms*, *numberTotalBonds*, *moleculeMZ*, *reactionMZ*). The python wrapper gives this file to **PathModel.lp** as input.
 
@@ -276,7 +276,7 @@ pathmodel_incremental_inference.tsv shows the step of the incremental mode of cl
 
 pathmodel_output.lp is the output lp file of **PathModel.lp**.
 
-Then if you use the `pathmodel_plot command` on the output_folder, pathmodel will create
+Then if you use the `pathmodel_plot command` on the output_folder, pathmodel will create the following structure:
 
 .. code-block:: text
 
@@ -344,7 +344,7 @@ In this file there is 5 molecules:
 
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_3.svg     | atom("molecule_3",1..6,carb).  |
-   |    :width: 500px                     | bond("molecule_3",single,1,2). |
+   |    :width: 700px                     | bond("molecule_3",single,1,2). |
    |                                      | bond("molecule_3",single,1,3). |
    |                                      | bond("molecule_3",single,1,6). |
    |                                      | bond("molecule_3",single,2,3). |
@@ -354,12 +354,12 @@ In this file there is 5 molecules:
    +--------------------------------------+--------------------------------+
   
 .. table::
-    :align: center
-    :widths: auto
+   :align: center
+   :widths: auto
 
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_4.svg     | atom("molecule_4",1..6,carb).  |
-   |    :width: 500px                     | bond("molecule_4",single,1,2). |
+   |    :width: 700px                     | bond("molecule_4",single,1,2). |
    |                                      | bond("molecule_4",single,1,3). |
    |                                      | bond("molecule_4",single,1,6). |
    |                                      | bond("molecule_4",single,2,3). |
@@ -374,7 +374,7 @@ In this file there is 5 molecules:
 
    +--------------------------------------+--------------------------------+
    | .. image:: images/molecule_5.svg     | atom("molecule_5",1..7,carb).  |
-   |    :width: 600px                     | bond("molecule_5",single,1,2). |
+   |    :width: 700px                     | bond("molecule_5",single,1,2). |
    |                                      | bond("molecule_5",single,1,3). |
    |                                      | bond("molecule_5",single,1,6). |
    |                                      | bond("molecule_5",single,1,7). |
@@ -392,7 +392,7 @@ And one reaction:
 
    +----------------------------------------------+----------------------------------------------------+
    | .. image:: images/saturation_reaction.svg    | reaction(saturation, "molecule_1", "molecule_2").  |
-   |    :width: 400px                             |                                                    |
+   |    :width: 300px                             |                                                    |
    +----------------------------------------------+----------------------------------------------------+
 
 The deductive reasoning explained in PathModel article:
@@ -443,3 +443,4 @@ With the Prediction_921341_saturation.svg:
 And the pathway inference:
 
 .. image:: images/pathmodel_output.svg
+    :width: 400px
