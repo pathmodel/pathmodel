@@ -16,7 +16,7 @@
    inkscape:version="0.92.4 (unknown)"><metadata
    id="metadata38"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
    id="defs36"><marker
      inkscape:stockid="Arrow1Lend"
      orient="auto"
@@ -64,8 +64,8 @@
    id="namedview34"
    showgrid="false"
    inkscape:zoom="1.18"
-   inkscape:cx="195.76271"
-   inkscape:cy="241.58492"
+   inkscape:cx="22.881354"
+   inkscape:cy="238.19509"
    inkscape:window-x="0"
    inkscape:window-y="0"
    inkscape:window-maximized="1"
@@ -81,6 +81,7 @@
    style="font-size:12px;font-family:helvetica;fill:#7f7f7f">0</text>
 
 
+
 </g><g
    id="g10"
    transform="translate(-321.18644,-356.77966)">  <text
@@ -89,6 +90,7 @@
    y="439.07001"
    id="text8"
    style="font-size:12px;font-family:helvetica;fill:#000000">1</text>
+
 
 
 </g><g
@@ -101,6 +103,7 @@
    style="font-size:12px;font-family:helvetica;fill:#000000">2</text>
 
 
+
 </g><g
    id="g18"
    transform="translate(-321.18644,-356.77966)">  <text
@@ -111,6 +114,7 @@
    style="font-size:12px;font-family:helvetica;fill:#000000">3</text>
 
 
+
 </g><g
    id="g22"
    transform="translate(-321.18644,-356.77966)">  <text
@@ -119,6 +123,7 @@
    y="419.95001"
    id="text20"
    style="font-size:12px;font-family:helvetica;fill:#000000">4</text>
+
 
 
 </g><line
@@ -161,6 +166,7 @@
    font-size="12.00">0</text>
 
 
+
 </g><g
      transform="translate(-321.19427,-354.23677)"
      id="g10-5">  <text
@@ -169,6 +175,7 @@
    y="439.07001"
    x="360.98001"
    font-size="12.00">1</text>
+
 
 
 </g><g
@@ -181,6 +188,7 @@
    font-size="12.00">2</text>
 
 
+
 </g><g
      transform="translate(-321.19427,-354.23677)"
      id="g18-1">  <text
@@ -191,6 +199,7 @@
    font-size="12.00">3</text>
 
 
+
 </g><g
      transform="translate(-321.19427,-354.23677)"
      id="g22-7">  <text
@@ -199,6 +208,7 @@
    y="419.95001"
    x="432.35001"
    font-size="12.00">4</text>
+
 
 
 </g><line
@@ -241,4 +251,40 @@
    inkscape:original-d="m 112.36334,-63.81411 c 32.75962,-0.60024 65.51824,-1.19948 98.27586,-1.79773"
    inkscape:export-filename="/home/abelcour/Downloads/pathmodel-singularity/out/molecules/g10-1.png"
    inkscape:export-xdpi="128"
-   inkscape:export-ydpi="128" /></svg>
+   inkscape:export-ydpi="128" /><text
+   xml:space="preserve"
+   style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+   x="16.712694"
+   y="96.195419"
+   id="text2009-2"
+   transform="rotate(0.4)"><tspan
+     sodipodi:role="line"
+     id="tspan2007-0"
+     x="16.712694"
+     y="96.195419"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">Molecule1</tspan></text>
+<text
+   xml:space="preserve"
+   style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+   x="209.13673"
+   y="94.004539"
+   id="text2009-2-5"
+   transform="rotate(0.4)"><tspan
+     sodipodi:role="line"
+     id="tspan2007-0-7"
+     x="209.13673"
+     y="94.004539"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">Molecule2</tspan></text>
+<text
+   xml:space="preserve"
+   style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+   x="113.07625"
+   y="41.165203"
+   id="text2009-2-5-3-6"
+   transform="rotate(0.4)"><tspan
+     sodipodi:role="line"
+     id="tspan2007-0-7-0-2"
+     x="113.07625"
+     y="41.165203"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">saturation</tspan></text>
+</svg>
