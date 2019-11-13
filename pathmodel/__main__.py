@@ -67,7 +67,7 @@ def main():
 
     if parser_args.cmd == 'test':
         package_path = '/'.join(os.path.realpath(__file__).split('/')[:-1])+ '/data/'
-        sterol_input_path = package_path + 'new_sterol.lp'
+        sterol_input_path = package_path + 'sterol_pwy.lp'
         maa_input_path = package_path + 'MAA_pwy.lp'
         sterol_out = output_folder + '/sterol'
         maa_out = output_folder + '/MAA'
