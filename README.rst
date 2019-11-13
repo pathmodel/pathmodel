@@ -310,7 +310,7 @@ pathmodel_output.svg shows the pathway containing the molecules and the reaction
 Tutorial
 --------
 
-For this tutorial, we used the data from `test/pathmodel_test_data.lp <https://github.com/pathmodel/pathmodel/blob/master/test/pathmodel_test_data.lp>`__.
+For this tutorial, we have created fictitious data available at `test/pathmodel_test_data.lp <https://github.com/pathmodel/pathmodel/blob/master/test/pathmodel_test_data.lp>`__.
 
 In this file there is 5 molecules:
 
@@ -391,7 +391,7 @@ One reaction:
    :widths: auto
 
    +----------------------------------------------+----------------------------------------------------+
-   | .. image:: images/saturation_reaction.svg    | reaction(saturation, "molecule_1", "molecule_2").  |
+   | .. image:: images/reduction_reaction.svg    | reaction(reduction, "molecule_1", "molecule_2").  |
    |    :width: 300px                             |                                                    |
    +----------------------------------------------+----------------------------------------------------+
 
@@ -424,24 +424,24 @@ pathmodel_data_transformations.tsv contains the transformation inferred from the
 +---------------+-------------------------+--------------------------+
 | reaction_id   | reactant_substructure   |   product_substructure   |
 +---------------+-------------------------+--------------------------+
-| saturation    | [('single', '2', '4')]  |   [('double', '2', '4')] |
+| reduction     | [('single', '2', '4')]  |   [('double', '2', '4')] |
 +---------------+-------------------------+--------------------------+
 
-This means that the saturation transforms a single bond between atoms 2 and 4 into a double bond. These transformations are used by the deductive and analogical reasoning of PathModel.
+This means that the reduction transforms a single bond between atoms 2 and 4 into a double bond. These transformations are used by the deductive and analogical reasoning of PathModel.
 
 pathmodel_incremental_inference.tsv shows the new reactions inferred by PathModel and the step in Clingo incremental mode when the new reaction has been inferred.
 
 +---------------+-----------------+-----------------+--------------------------------+
 | infer_turn    | new_reaction    |   reactant      |  product                       |
 +---------------+-----------------+-----------------+--------------------------------+
-| 2             | saturation      |   "molecule_3"  | "molecule_4"                   |
+| 2             | reduction       |   "molecule_3"  | "molecule_4"                   |
 +---------------+-----------------+-----------------+--------------------------------+
-| 2             | saturation      |   "molecule_5"  | "Prediction_921341_saturation" |
+| 2             | reduction       |   "molecule_5"  | "Prediction_921341_reduction" |
 +---------------+-----------------+-----------------+--------------------------------+
 
-Two new saturation variant reactions have been inferred at step two of incremenetal mode:
+Two new reduction variant reactions have been inferred at step two of incremenetal mode:
 
-- one between Molecule3 and Molecule4 inferred from the saturation between Molecule1 and Molecule2. This is a demonstration of the deductive reasoning of PathModel:
+- one between Molecule3 and Molecule4 inferred from the reduction between Molecule1 and Molecule2. This is a demonstration of the deductive reasoning of PathModel:
 
 .. table::
    :align: center
@@ -451,7 +451,7 @@ Two new saturation variant reactions have been inferred at step two of incremene
    | .. image:: images/deductive_reasoning.svg |
    +-------------------------------------------+
 
-- one between Molecule5 and a newly inferred metabolite with the MZ of 92,1341. To find this, PathModel computes the MZ of Molecule5 (94,1489). Then it applies each transformations from its knowledge database (here saturation) to each molecules from the knowledge database. With this, PathModel computes the MZ of hypothetical molecules and compared them to the MZ given by the user (here 92,1341). And if a match is found then the reaction and the molecule are inferred. This is an example of the analogical reasoning:
+- one between Molecule5 and a newly inferred metabolite with the MZ of 92,1341. To find this, PathModel computes the MZ of Molecule5 (94,1489). Then it applies each transformations from its knowledge database (here reduction) to each molecules from the knowledge database. With this, PathModel computes the MZ of hypothetical molecules and compared them to the MZ given by the user (here 92,1341). And if a match is found then the reaction and the molecule are inferred. This is an example of the analogical reasoning:
 
 .. table::
    :align: center
@@ -478,7 +478,7 @@ Then it is possible to have access to graphic representations of molecules and r
 		├── molecule_4.svg
 		├── molecule_5.svg
 	├── newmolecules_from_mz
-		├── Prediction_921341_saturation.svg
+		├── Prediction_921341_reduction.svg
 	├── pathmodel_output.svg
 
 There is a structure inferred by PathModel for the MZ 92.1341:
@@ -488,7 +488,7 @@ There is a structure inferred by PathModel for the MZ 92.1341:
    :widths: auto
 
    +----------------------------------------------------+
-   | .. image:: images/Prediction_921341_saturation.svg |
+   | .. image:: images/Prediction_921341_reduction.svg |
    +----------------------------------------------------+
 
 PathModel creates also a picture showing all the reactions (known reactions in green, inferred reaction variant in blue):

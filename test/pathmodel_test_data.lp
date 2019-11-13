@@ -34,7 +34,7 @@ bondDomain(triangle,single,2,3).
 
 % Known reaction.
 
-reaction(saturation, "molecule_1", "molecule_2").
+reaction(reduction, "molecule_1", "molecule_2").
 
 % Molecule Source.
 
