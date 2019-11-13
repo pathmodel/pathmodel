@@ -40,11 +40,13 @@ def reaction_creation(input_file, output_folder):
     reaction_results = []
     transformation_reactants = {}
     transformation_products = {}
+    reactions = []
     for atom in next(reaction_solver.parse_args.int_not_parsed.sorted):
         reaction_results.append(atom[0] + '(' + ','.join(atom[1]) + ')')
         if 'diff' in atom[0]:
             reaction_id = atom[1][0]
             substructures = atom[1][1:]
+            reactions.append(reaction_id)
             if 'Before' in atom[0]:
                 if reaction_id not in transformation_reactants:
                     transformation_reactants[reaction_id] = [substructures]
@@ -55,12 +57,12 @@ def reaction_creation(input_file, output_folder):
                     transformation_products[reaction_id] = [substructures]
                 else:
                     transformation_products[reaction_id].append([substructures])
-    
+
+    reactions = set(reactions)
     with open(output_folder + '/' + 'pathmodel_data_transformations.tsv', 'w') as transformation_file:
         csvwriter = csv.writer(transformation_file, delimiter = '\t')
         csvwriter.writerow(['reaction_id', 'reactant_sbustructure', 'product_substructure'])
-        for reaction in transformation_reactants:
-
+        for reaction in reactions:
             if reaction in transformation_reactants:
                 reactant = transformation_reactants[reaction]
             else:
