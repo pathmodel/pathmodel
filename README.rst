@@ -391,7 +391,7 @@ One reaction:
    :widths: auto
 
    +----------------------------------------------+----------------------------------------------------+
-   | .. image:: images/reduction_reaction.svg    | reaction(reduction, "molecule_1", "molecule_2").  |
+   | .. image:: images/reduction_reaction.svg     | reaction(reduction, "molecule_1", "molecule_2").   |
    |    :width: 300px                             |                                                    |
    +----------------------------------------------+----------------------------------------------------+
 
