@@ -31,6 +31,14 @@ Metabolic Pathway Drift Hypothesis
 
 Metabolic Pathway Drift hypothesizes that metabolic pathways can be conserved even if their biochemical reactions undergo variations. These variations can be non-orthologous displacement of genes or changes in enzyme order. To test this hypothesis, we develop PathModel to infer possible enzyme order changes in metabolic pathways.
 
+.. table::
+   :align: center
+   :widths: auto
+
+   +-----------------------------------------------+
+   | .. image:: images/metabolic_pathway_drift.jpg |
+   +-----------------------------------------------+
+
 Program
 ~~~~~~~
 
