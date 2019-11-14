@@ -35,11 +35,13 @@ Metabolic Pathway Drift hypothesizes that metabolic pathways can be conserved ev
    :align: center
    :widths: auto
 
-   +-----------------------------------------------+
-   | .. image:: images/metabolic_pathway_drift.jpg |
-   |                                               |
-   |    Metabolic Pathway Drift Hypothesis         |
-   +-----------------------------------------------+
+   +------------------------------------------------+
+   | .. figure:: images/metabolic_pathway_drift.jpg |
+   |                                                |
+   |    ..                                          |
+   |                                                |
+   |    Metabolic Pathway Drift Hypothesis          |
+   +------------------------------------------------+
 
 To test this hypothesis, we develop PathModel to infer possible enzyme order changes in metabolic pathways.
 
@@ -448,7 +450,7 @@ pathmodel_incremental_inference.tsv shows the new reactions inferred by PathMode
 +---------------+-----------------+-----------------+--------------------------------+
 | 2             | reduction       |   "molecule_3"  | "molecule_4"                   |
 +---------------+-----------------+-----------------+--------------------------------+
-| 2             | reduction       |   "molecule_5"  | "Prediction_921341_reduction" |
+| 2             | reduction       |   "molecule_5"  | "Prediction_921341_reduction"  |
 +---------------+-----------------+-----------------+--------------------------------+
 
 Two new reduction variant reactions have been inferred at step two of incremenetal mode:
