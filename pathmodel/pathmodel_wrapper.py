@@ -25,7 +25,7 @@ def mz_computation(input_file):
     '''
     print('~~~~~Creation of MZ~~~~~')
     mz_solver = clyngor.solve([input_file, root + '/asp/MZComputation.lp'], use_clingo_module=False)
-    mz_result = '\n'.join([atom+'. ' for atom in next(mz_solver.parse_args.atoms_as_string.int_not_parsed.sorted)])
+    mz_result = '\n'.join([atom+'.' for atom in next(mz_solver.parse_args.atoms_as_string.int_not_parsed.sorted)])
 
     return mz_result
 
@@ -74,7 +74,7 @@ def reaction_creation(input_file, output_folder):
             csvwriter.writerow([reaction, reactant, product])
 
 
-    reaction_result = '\n'.join([atom+'. ' for atom in reaction_results])
+    reaction_result = '\n'.join([atom+'.' for atom in reaction_results])
 
     return reaction_result
 

@@ -29,7 +29,7 @@ Description
 Metabolic Pathway Drift Hypothesis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Metabolic Pathway Drift hypothesizes that metabolic pathways can be conserved even if their biochemical reactions undergo variations. These variations can be non-orthologous displacement of genes or changes in enzyme order. To test this hypothesis, we develop PathModel to infer possible enzyme order changes in metabolic pathways.
+Metabolic Pathway Drift hypothesizes that metabolic pathways can be conserved even if their biochemical reactions undergo variations. These variations can be non-orthologous displacement of genes or changes in enzyme order.
 
 .. table::
    :align: center
@@ -37,24 +37,27 @@ Metabolic Pathway Drift hypothesizes that metabolic pathways can be conserved ev
 
    +-----------------------------------------------+
    | .. image:: images/metabolic_pathway_drift.jpg |
+   |    Metabolic Pathway Drift Hypothesis         |
    +-----------------------------------------------+
+
+To test this hypothesis, we develop PathModel to infer possible enzyme order changes in metabolic pathways.
 
 Program
 ~~~~~~~
 
 PathModel is developed in `ASP <https://en.wikipedia.org/wiki/Answer_set_programming>`__ using the `clingo grounder and solver <https://github.com/potassco/clingo>`__. It is divided in three ASP scripts.
 
-The first one, `ReactionSiteExtraction.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/ReactionSiteExtraction.lp>`__ creates reaction site.
+The first one, `ReactionSiteExtraction.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/ReactionSiteExtraction.lp>`__ creates biochemical transformation from reactions. The biochemical transformation of a reaction corresponds to the atoms and bonds changes between the reactant and the product of the reaction.
 
-When a reaction is described between two molecules, the script will compare atoms and bonds of the two molecules of the reaction and will extract a reaction site before the reaction (composed of atoms and bonds that are present in the reactant but absent in the product) and a reaction site after the reaction (composed of atoms and bonds present in the product but absent in the reactant).
+When a reaction occurred between two molecules, the script will compare atoms and bonds of the two molecules of the reaction and will extract a reaction site before the reaction (composed of atoms and bonds that are present in the reactant but absent in the product) and a reaction site after the reaction (composed of atoms and bonds present in the product but absent in the reactant).
 
 ReactionSiteExtraction produces two sites for each reaction (one before and one after the reaction). This corresponds to the biochemical transformation induced by the reaction.
 
-A second script, `MZComputation.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/MZComputation.lp>`__ will compute the MZ for each known molecule.
+A second script, `MZComputation.lp  <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/MZComputation.lp>`__ will compute the MZ for each known molecule. It also computes the MZ changes between the reactant and the product of a reaction.
 
 These data will be used by the third script: `PathModel.lp <https://github.com/pathmodel/pathmodel/blob/master/pathmodel/asp/PathModel.lp>`__.
 
-PathModel will use two inference methods: one creating new metabolites and one infering a reaction between two metabolites.
+PathModel uses the incremental mode from Clingo. Using a source molecule, it will apply two inference methods until it reaches a goal (another molecules).
 
 Installation
 ------------
@@ -496,7 +499,7 @@ There is a structure inferred by PathModel for the MZ 92.1341:
    :widths: auto
 
    +----------------------------------------------------+
-   | .. image:: images/Prediction_921341_reduction.svg |
+   | .. image:: images/Prediction_921341_reduction.svg  |
    +----------------------------------------------------+
 
 PathModel creates also a picture showing all the reactions (known reactions in green, inferred reaction variant in blue):
