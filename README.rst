@@ -37,6 +37,7 @@ Metabolic Pathway Drift hypothesizes that metabolic pathways can be conserved ev
 
    +-----------------------------------------------+
    | .. image:: images/metabolic_pathway_drift.jpg |
+   |                                               |
    |    Metabolic Pathway Drift Hypothesis         |
    +-----------------------------------------------+
 
