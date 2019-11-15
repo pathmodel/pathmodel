@@ -7,7 +7,7 @@ with open(os.path.join(setup_directory, 'README.rst'), encoding='utf-8') as read
 
 setup(
     name='pathmodel',
-    version='0.1.6',
+    version='0.1.7',
     url='https://github.com/pathmodel/pathmodel',
     description='Ab initio pathway inference',
     long_description=long_description,
