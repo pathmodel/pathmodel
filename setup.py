@@ -7,14 +7,14 @@ with open(os.path.join(setup_directory, 'README.rst'), encoding='utf-8') as read
 
 setup(
     name='pathmodel',
-    version='0.1.7',
+    version='0.1.8',
     url='https://github.com/pathmodel/pathmodel',
     description='Ab initio pathway inference',
     long_description=long_description,
     author='A. Belcour',
     packages=['pathmodel'],
     package_dir={'pathmodel': 'pathmodel'},
-    package_data = {'pathmodel' : ['asp/*.lp', 'data/new_sterol.lp', 'data/MAA_pwy.lp']},
+    package_data = {'pathmodel' : ['asp/*.lp', 'data/*.lp']},
     entry_points={
         'console_scripts': [
             'pathmodel = pathmodel.__main__:main',
