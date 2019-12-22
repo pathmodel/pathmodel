@@ -57,7 +57,9 @@ siteBeforeReaction(reduction,"molecule_5")."""
 def test_pathmodel():
 	resultfile_content = pathmodel.pathmodel_analysis('test/pathmodel_test_data.lp', 'test_output')
 
-	result_expected = """newatom("Prediction_921341_reduction",1,carb).
+	result_expected = """newreaction(reduction,"molecule_3","molecule_4").
+newreaction(reduction,"molecule_5","Prediction_921341_reduction").
+predictatom("Prediction_921341_reduction",1,carb).
 predictatom("Prediction_921341_reduction",2,carb).
 predictatom("Prediction_921341_reduction",3,carb).
 predictatom("Prediction_921341_reduction",4,carb).
@@ -72,8 +74,6 @@ predictbond("Prediction_921341_reduction",single,1,6).
 predictbond("Prediction_921341_reduction",single,1,7).
 predictbond("Prediction_921341_reduction",single,2,3).
 predictbond("Prediction_921341_reduction",single,5,6).
-newreaction(reduction,"molecule_3","molecule_4").
-newreaction(reduction,"molecule_5","Prediction_921341_reduction").
 reaction(reduction,"molecule_1","molecule_2").
 reaction(reduction,"molecule_3","molecule_4").
 reaction(reduction,"molecule_5","Prediction_921341_reduction")."""
