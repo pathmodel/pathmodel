@@ -78,7 +78,7 @@ PathModel requires:
 
 - `clingo <https://github.com/potassco/clingo>`__: which must be installed with Lua compatibility (a good way to have it is with `conda <https://anaconda.org/potassco/clingo>`__).
 
-- `clyngor package <https://github.com/Aluriak/clyngor>`__ (can be isntalled with clingo with `clyngor-with-clingo package <https://github.com/aluriak/clyngor-with-clingo>`__).
+- `clyngor package <https://github.com/Aluriak/clyngor>`__ (can be installed with clingo with `clyngor-with-clingo package <https://github.com/aluriak/clyngor-with-clingo>`__).
 
 - `networkx <https://networkx.github.io/>`__ (with `graphviz <https://www.graphviz.org/>`__ and `pygraphviz <https://github.com/pygraphviz/pygraphviz>`__).
 
@@ -107,7 +107,7 @@ You can use the container from `Singularity Hub <https://singularity-hub.org/>`_
     singularity exec pathmodel-singularity_latest.sif pathmodel_plot -i output_folder/MAA
     singularity exec pathmodel-singularity_latest.sif pathmodel_plot -i output_folder/sterol
 
-This container is buildfrom this `Singularity recipe <https://github.com/pathmodel/pathmodel-singularity>`__. If you prefer, you can use this recipe:
+This container is build from this `Singularity recipe <https://github.com/pathmodel/pathmodel-singularity>`__. If you prefer, you can use this recipe:
 
 .. code:: sh
 
@@ -150,7 +150,7 @@ If you have all the dependencies on your system, you can just download Pathmodel
 Using conda environment (to install all dependencies)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Due to all the dependencies required by all the script of Pathmodel, we create a conda environment file that contains all dependencies.
+Due to all the dependencies required by the scripts of Pathmodel, we create a conda environment file that contains all dependencies.
 
 First you need `Conda <https://conda.io/docs/>`__.
 To avoid conflict between the conda python and your system python, you could use a conda environment and `Miniconda <https://conda.io/docs/user-guide/install/download.html>`__.
@@ -206,8 +206,11 @@ You can exit the environment with:
     # Deactivate the environment.
     conda deactivate
 
+PathModel presentation
+----------------------
+
 Input
------
+~~~~~
 
 Molecules are modelled with atoms (hydrogen excluded) and bonds (single and double).
 
@@ -245,26 +248,28 @@ Initiation and goal of the incremental grounding must be defined:
     init(pathway("Molecule1","Molecule2")).
     goal(pathway("Molecule1","Molecule3")).
 
-M/Z ratio can be added to check whether there is a metabolite that can be predict with this ratio. M/Z ratio must be multiplied by 10 000 because Clingo doesn't use decimals.
+M/Z ratio can be added to check whether there is a metabolite that can be predict with this ratio. M/Z ratio must be multiplied by 10 000 because Clingo doesn't use decimals. An example with a M/Z of 270,272:
 
 .. code:: sh
 
     mzfiltering(2702720).
 
-Molecules that are not in the organism of study can be added. They will not be targeted of the inference methods.
+Molecules absent in the organism of study can be specified. They will not be used by the inference method.
 
 .. code:: sh
 
     absentmolecules("Molecule1").
 
-Command and Python call
------------------------
+Commands and Python import
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Command-line:
+Run PathModel prediction:
 
 .. code:: sh
 
 	pathmodel infer -i data.lp -o output_folder
+
+Create picture representing the results (like new molecules inferred from M/Z ratio):
 
 .. code:: sh
 
@@ -279,7 +284,7 @@ In python (pathmodel_plot is not available in import call):
     pathmodel.pathmodel_analysis('data.lp', output_folder)
 
 Output
-------
+~~~~~~
 
 With the `infer command`, pathmodel will use the data file and try to create an output folder:
 
@@ -295,9 +300,9 @@ data_pathmodel.lp contains intermediary files for PathModel. Specifically, it co
 
 pathmodel_data_transformations.tsv contains all the transformation inferred from the input data and the **ReactionSiteExtraction.lp** script.
 
-pathmodel_incremental_inference.tsv shows the step of the incremental mode of clingo when a new reaction has been inferred using a known transformation.
+pathmodel_incremental_inference.tsv shows the step of the incremental mode of clingo when a new reaction has been inferred using a known transformation. It does not show the step when passing through a known reaction, so the first step number in the file scan be superior to 1.
 
-pathmodel_output.lp is the output lp file of **PathModel.lp**.
+pathmodel_output.lp is the output lp file of **PathModel.lp** (*newreaction*, *predictatom*, *predictbond*, *reaction*, *inferred*).
 
 Then if you use the `pathmodel_plot command` on the output_folder, pathmodel will create the following structure:
 
@@ -326,6 +331,9 @@ Tutorial
 
 Tutorial on fictitious data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Input data
+##########
 
 For this tutorial, we have created fictitious data available at `test/pathmodel_test_data.lp <https://github.com/pathmodel/pathmodel/blob/master/test/pathmodel_test_data.lp>`__.
 
@@ -417,6 +425,20 @@ One known MZ:
 +-----------------------------------+--------------------------+
 | 92,1341 (so 921341 for Clingo)    | mzfiltering(921341).     |
 +-----------------------------------+--------------------------+
+
+Commands
+########
+
+.. code:: sh
+
+	pathmodel infer -i pathmodel_test_data.lp -o output_folder
+
+.. code:: sh
+
+	pathmodel_plot -i output_folder
+
+Results
+#######
 
 By calling the command:
 
@@ -525,6 +547,24 @@ Tutorial on Article data (*Chondrus crispus* sterol and Mycosporine-like Amino A
 Input data
 ##########
 
+Commands
+########
+
+.. code:: sh
+
+	pathmodel test -o output_folder
+
+.. code:: sh
+
+    pathmodel_plot -i output_folder/sterol
+
+.. code:: sh
+
+    pathmodel_plot -i output_folder/MAA
+
+Results
+#######
+
 To reproduce the analysis of the Pathmodel article, you can use the 'test' command:
 
 .. code:: sh
@@ -592,6 +632,8 @@ This will create an output folder containing:
         ├── newmolecules_from_mz
             (empty)
 
+No M/Z ratio were given as input so there is no new molecules from M/Z.
+
 .. code:: sh
 
     pathmodel_plot -i output_folder/MAA
@@ -627,10 +669,49 @@ This will create an output folder containing:
    :align: center
    :widths: auto
 
-   +----------------------------------------------------------+
-   | .. image:: images/Prediction_2702720_dehydration.svg     |
-   |    :width: 400px                                         |
-   +----------------------------------------------------------+
+   +----------------------------------------------------------+--------------------------------------------------------------+
+   | .. image:: images/Prediction_2702720_dehydration.svg     | predictatom("Prediction_2702720_dehydration",1,carb).        |
+   |    :width: 400px                                         | predictatom("Prediction_2702720_dehydration",2,carb).        |
+   |                                                          | predictatom("Prediction_2702720_dehydration",3,carb).        |
+   |                                                          | predictatom("Prediction_2702720_dehydration",4,carb).        |
+   |                                                          | predictatom("Prediction_2702720_dehydration",5,carb).        |
+   |                                                          | predictatom("Prediction_2702720_dehydration",6,carb).        |
+   |                                                          | predictatom("Prediction_2702720_dehydration",7,carb).        |
+   |                                                          | predictatom("Prediction_2702720_dehydration",8,nitr).        |
+   |                                                          | predictatom("Prediction_2702720_dehydration",9,oxyg).        |
+   |                                                          | predictatom("Prediction_2702720_dehydration",10,nitr).       |
+   |                                                          | predictatom("Prediction_2702720_dehydration",11,oxyg).       |
+   |                                                          | predictatom("Prediction_2702720_dehydration",12,oxyg).       |
+   |                                                          | predictatom("Prediction_2702720_dehydration",13,carb).       |
+   |                                                          | predictatom("Prediction_2702720_dehydration",14,carb).       |
+   |                                                          | predictatom("Prediction_2702720_dehydration",15,carb).       |
+   |                                                          | predictatom("Prediction_2702720_dehydration",16,oxyg).       |
+   |                                                          | predictatom("Prediction_2702720_dehydration",17,oxyg).       |
+   |                                                          | predictatom("Prediction_2702720_dehydration",18,carb).       |
+   |                                                          | predictatom("Prediction_2702720_dehydration",19,carb).       |
+   |                                                          |                                                              |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,1,6).    |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,1,8).    |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,2,3).    |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,2,9).    |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,3,4).    |
+   |                                                          | predictbond("Prediction_2702720_dehydration",double,3,10).   |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,4,5).    |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,5,6).    |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,5,7).    |
+   |                                                          | predictbond("Prediction_2702720_dehydration",singleS,5,12).  |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,7,11).   |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,8,14).   |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,9,13).   |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,10,18).  |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,14,15).  |
+   |                                                          | predictbond("Prediction_2702720_dehydration",double,15,16).  |
+   |                                                          | predictbond("Prediction_2702720_dehydration",single,15,17).  |
+   |                                                          | predictbond("Prediction_2702720_dehydration",double,18,19).  |
+   +----------------------------------------------------------+--------------------------------------------------------------+
+
+
+
 
 Prediction_2702720_dehydration corresponds to MAA1 of the article.
 
