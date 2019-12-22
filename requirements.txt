@@ -1,4 +1,4 @@
-clyngor>=0.3.25
+clyngor>=0.3.24
 clyngor-with-clingo>=5.3.post1
 matplotlib>=2.2.3
 networkx>=2.1
