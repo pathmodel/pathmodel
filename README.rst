@@ -97,15 +97,15 @@ You can use the container from `Singularity Hub <https://singularity-hub.org/>`_
     singularity pull shub://pathmodel/pathmodel-singularity
 
     # Enter it
-    singularity run pathmodel-singularity_latest.sif.sif
+    singularity run pathmodel-singularity_latest.sif
     pathmodel test -o output_folder
     pathmodel_plot -i output_folder/MAA
     pathmodel_plot -i output_folder/sterol
 
     # Or use as a command line
-    singularity exec pathmodel-singularity_latest.sif.sif pathmodel test -o output_folder
-    singularity exec pathmodel-singularity_latest.sif.sif pathmodel_plot -i output_folder/MAA
-    singularity exec pathmodel-singularity_latest.sif.sif pathmodel_plot -i output_folder/sterol
+    singularity exec pathmodel-singularity_latest.sif pathmodel test -o output_folder
+    singularity exec pathmodel-singularity_latest.sif pathmodel_plot -i output_folder/MAA
+    singularity exec pathmodel-singularity_latest.sif pathmodel_plot -i output_folder/sterol
 
 This container is buildfrom this `Singularity recipe <https://github.com/pathmodel/pathmodel-singularity>`__. If you prefer, you can use this recipe:
 
@@ -324,6 +324,9 @@ pathmodel_output.svg shows the pathway containing the molecules and the reaction
 Tutorial
 --------
 
+Tutorial on fictitious data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 For this tutorial, we have created fictitious data available at `test/pathmodel_test_data.lp <https://github.com/pathmodel/pathmodel/blob/master/test/pathmodel_test_data.lp>`__.
 
 In this file there is 5 molecules:
@@ -515,3 +518,108 @@ PathModel creates also a picture showing all the reactions (known reactions in g
    | .. image:: images/pathmodel_output.svg     |
    |    :width: 400px                           |
    +--------------------------------------------+
+
+Tutorial on Article data (Chondrus crispus sterol and Mycosporine-like amino acids pathways)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To reproduce the analysis of the Pathmodel article, you can use the 'test' command:
+
+.. code:: sh
+
+	pathmodel test -o output_folder
+
+This will create an output folder containing:
+
+.. code-block:: text
+
+	output_folder
+	├── MAA
+		├── data_pathmodel.lp
+		├── pathmodel_data_transformations.tsv
+		├── pathmodel_incremental_inference.tsv
+		├── pathmodel_output.lp
+	├── sterol
+		├── data_pathmodel.lp
+		├── pathmodel_data_transformations.tsv
+		├── pathmodel_incremental_inference.tsv
+		├── pathmodel_output.lp
+
+.. code:: sh
+
+	pathmodel_plot -i output_folder/sterol
+
+.. code-block:: text
+
+	output_folder
+	├── sterol
+		├── data_pathmodel.lp
+		├── pathmodel_data_transformations.tsv
+		├── pathmodel_incremental_inference.tsv
+		├── pathmodel_output.lp
+		├── molecules
+            ├── 22-dehydrocholesterol.svg
+            ├── 24-epicampesterol.svg
+            ├── 24-ethylidenelophenol.svg
+            ├── 24-methyldesmosterol.svg
+            ├── 24-methylenecholesterol.svg
+            ├── 24-methylenecycloartanol.svg
+            ├── 24-methylenelophenol.svg
+            ├── 31-norcycloartanol.svg
+            ├── 31-norcycloartenol.svg
+            ├── 4α,14α-dimethyl-cholesta-8-enol.svg
+            ├── 4α,14α-dimethylcholest-8,24-dien-3β-ol.svg
+            ├── 4α-methyl-5α-cholest-7-en-3β-ol.svg
+            ├── 4α-methyl-5α-cholesta-7,24-dienol.svg
+            ├── 4α-methyl-5α-cholesta-8-en-3-ol.svg
+            ├── 4α-methyl-cholesta-8,14-dienol.svg
+            ├── 4α-methylcholest-8(9),14,24-trien-3β-ol.svg
+            ├── 4α-methylzymosterol.svg
+            ├── 5α-cholesta-7,24-dienol.svg
+            ├── 7-dehydrocholesterol.svg
+            ├── 7-dehydrodesmosterol.svg
+            ├── brassicasterol.svg
+            ├── campesterol.svg
+            ├── cholesterol.svg
+            ├── cycloartanol.svg
+            ├── cycloartenol.svg
+            ├── desmosterol.svg
+            ├── lathosterol.svg
+            ├── sitosterol.svg
+            ├── stigmasterol.svg
+		├── newmolecules_from_mz
+            (empty)
+
+.. code:: sh
+
+    pathmodel_plot -i output_folder/MAA
+
+.. code-block:: text
+
+	output_folder
+	├── MAA
+		├── data_pathmodel.lp
+		├── pathmodel_data_transformations.tsv
+		├── pathmodel_incremental_inference.tsv
+		├── pathmodel_output.lp
+		├── molecules
+            ├── 4-deoxygadusol.svg
+            ├── asterina-330.svg
+            ├── mycosporin-glycine.svg
+            ├── palythene.svg
+            ├── palythine.svg
+            ├── palythinol.svg
+            ├── porphyra-334.svg
+            ├── R-4-deoxygadusol.svg
+            ├── S-desmethyl-4-deoxygadusol.svg
+            ├── sedoheptulose-7-phosphate.svg
+            ├── shinorine.svg
+            ├── z-palythenic acid.svg
+		├── newmolecules_from_mz
+            ├── Prediction_2702720_dehydration.svg
+            ├── Prediction_3023117_decarboxylation_1.svg
+            ├── Prediction_3023117_decarboxylation_2.svg
+            ├── Prediction_3023117_hydrogenation.svg
+
+Prediction_2702720_dehydration corresponds to MAA1 of the article.
+
+Prediction_3023117_decarboxylation_1, Prediction_3023117_decarboxylation_2 and Prediction_3023117_hydrogenation correspond to MAA2.
