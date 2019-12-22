@@ -547,6 +547,23 @@ Tutorial on Article data (*Chondrus crispus* sterol and Mycosporine-like Amino A
 Input data
 ##########
 
+Input data for sterol pathway are in `pathmodel/pathmodel/data/sterol_pwy.lp <https://raw.githubusercontent.com/pathmodel/pathmodel/master/pathmodel/data/sterol_pwy.lp>`__.
+
+For this pathway, known reactions were extracted from:
+
+- `MetaCyc cholesterol biosynthesis (plants) PWY18C3-1 <https://metacyc.org/META/new-image?type=PATHWAY&object=PWY18C3-1>`__.
+- `MetaCyc cholesterol biosynthesis III (via desmosterol) PWY66-4 <https://metacyc.org/META/new-image?type=PATHWAY&object=PWY66-4>`__.
+- `MetaCyc phytosterol biosynthesis (plants) PWY-2541 <https://metacyc.org/META/new-image?type=PATHWAY&object=PWY-2541>`__.
+- simplification of multistep C24-C29 demethylation `Sonawane et al. 2016 <https://www.nature.com/articles/nplants2016205>`__.
+
+Input data for Mycosporine-like Amino Acids (MAA) pathway are in `pathmodel/pathmodel/data/MAA.lp <https://raw.githubusercontent.com/pathmodel/pathmodel/master/pathmodel/data/MAA_pwy.lp>`__.
+
+For this pathway, known reactions were extracted from:
+
+- `MetaCyc shinorine biosynthesis PWY-7751 <https://metacyc.org/META/new-image?type=PATHWAY&object=PWY-7751>`__.
+- Extended reaction from serine to threonine `as proposed in Brawley et al., 2017 <https://www.pnas.org/content/114/31/E6361>`__.
+- Reactions hypothesized by `Carreto and Carignan, 2011 <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3083659/>`__.
+
 Commands
 ########
 
@@ -669,49 +686,10 @@ No M/Z ratio were given as input so there is no new molecules from M/Z.
    :align: center
    :widths: auto
 
-   +----------------------------------------------------------+--------------------------------------------------------------+
-   | .. image:: images/Prediction_2702720_dehydration.svg     | predictatom("Prediction_2702720_dehydration",1,carb).        |
-   |    :width: 400px                                         | predictatom("Prediction_2702720_dehydration",2,carb).        |
-   |                                                          | predictatom("Prediction_2702720_dehydration",3,carb).        |
-   |                                                          | predictatom("Prediction_2702720_dehydration",4,carb).        |
-   |                                                          | predictatom("Prediction_2702720_dehydration",5,carb).        |
-   |                                                          | predictatom("Prediction_2702720_dehydration",6,carb).        |
-   |                                                          | predictatom("Prediction_2702720_dehydration",7,carb).        |
-   |                                                          | predictatom("Prediction_2702720_dehydration",8,nitr).        |
-   |                                                          | predictatom("Prediction_2702720_dehydration",9,oxyg).        |
-   |                                                          | predictatom("Prediction_2702720_dehydration",10,nitr).       |
-   |                                                          | predictatom("Prediction_2702720_dehydration",11,oxyg).       |
-   |                                                          | predictatom("Prediction_2702720_dehydration",12,oxyg).       |
-   |                                                          | predictatom("Prediction_2702720_dehydration",13,carb).       |
-   |                                                          | predictatom("Prediction_2702720_dehydration",14,carb).       |
-   |                                                          | predictatom("Prediction_2702720_dehydration",15,carb).       |
-   |                                                          | predictatom("Prediction_2702720_dehydration",16,oxyg).       |
-   |                                                          | predictatom("Prediction_2702720_dehydration",17,oxyg).       |
-   |                                                          | predictatom("Prediction_2702720_dehydration",18,carb).       |
-   |                                                          | predictatom("Prediction_2702720_dehydration",19,carb).       |
-   |                                                          |                                                              |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,1,6).    |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,1,8).    |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,2,3).    |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,2,9).    |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,3,4).    |
-   |                                                          | predictbond("Prediction_2702720_dehydration",double,3,10).   |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,4,5).    |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,5,6).    |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,5,7).    |
-   |                                                          | predictbond("Prediction_2702720_dehydration",singleS,5,12).  |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,7,11).   |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,8,14).   |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,9,13).   |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,10,18).  |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,14,15).  |
-   |                                                          | predictbond("Prediction_2702720_dehydration",double,15,16).  |
-   |                                                          | predictbond("Prediction_2702720_dehydration",single,15,17).  |
-   |                                                          | predictbond("Prediction_2702720_dehydration",double,18,19).  |
-   +----------------------------------------------------------+--------------------------------------------------------------+
-
-
-
+   +----------------------------------------------------------+
+   | .. image:: images/Prediction_2702720_dehydration.svg     |
+   |    :width: 400px                                         |
+   +----------------------------------------------------------+
 
 Prediction_2702720_dehydration corresponds to MAA1 of the article.
 
