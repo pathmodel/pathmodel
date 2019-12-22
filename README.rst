@@ -532,31 +532,31 @@ This will create an output folder containing:
 
 .. code-block:: text
 
-	output_folder
-	├── MAA
-		├── data_pathmodel.lp
-		├── pathmodel_data_transformations.tsv
-		├── pathmodel_incremental_inference.tsv
-		├── pathmodel_output.lp
-	├── sterol
-		├── data_pathmodel.lp
-		├── pathmodel_data_transformations.tsv
-		├── pathmodel_incremental_inference.tsv
-		├── pathmodel_output.lp
+    output_folder
+    ├── MAA
+        ├── data_pathmodel.lp
+        ├── pathmodel_data_transformations.tsv
+        ├── pathmodel_incremental_inference.tsv
+        ├── pathmodel_output.lp
+    ├── sterol
+        ├── data_pathmodel.lp
+        ├── pathmodel_data_transformations.tsv
+        ├── pathmodel_incremental_inference.tsv
+        ├── pathmodel_output.lp
 
 .. code:: sh
 
-	pathmodel_plot -i output_folder/sterol
+    pathmodel_plot -i output_folder/sterol
 
 .. code-block:: text
 
 	output_folder
 	├── sterol
-		├── data_pathmodel.lp
-		├── pathmodel_data_transformations.tsv
-		├── pathmodel_incremental_inference.tsv
-		├── pathmodel_output.lp
-		├── molecules
+        ├── data_pathmodel.lp
+        ├── pathmodel_data_transformations.tsv
+        ├── pathmodel_incremental_inference.tsv
+        ├── pathmodel_output.lp
+        ├── molecules
             ├── 22-dehydrocholesterol.svg
             ├── 24-epicampesterol.svg
             ├── 24-ethylidenelophenol.svg
@@ -586,7 +586,7 @@ This will create an output folder containing:
             ├── lathosterol.svg
             ├── sitosterol.svg
             ├── stigmasterol.svg
-		├── newmolecules_from_mz
+        ├── newmolecules_from_mz
             (empty)
 
 .. code:: sh
@@ -595,13 +595,13 @@ This will create an output folder containing:
 
 .. code-block:: text
 
-	output_folder
-	├── MAA
-		├── data_pathmodel.lp
-		├── pathmodel_data_transformations.tsv
-		├── pathmodel_incremental_inference.tsv
-		├── pathmodel_output.lp
-		├── molecules
+    output_folder
+    ├── MAA
+        ├── data_pathmodel.lp
+        ├── pathmodel_data_transformations.tsv
+        ├── pathmodel_incremental_inference.tsv
+        ├── pathmodel_output.lp
+        ├── molecules
             ├── 4-deoxygadusol.svg
             ├── asterina-330.svg
             ├── mycosporin-glycine.svg
@@ -614,12 +614,36 @@ This will create an output folder containing:
             ├── sedoheptulose-7-phosphate.svg
             ├── shinorine.svg
             ├── z-palythenic acid.svg
-		├── newmolecules_from_mz
+        ├── newmolecules_from_mz
             ├── Prediction_2702720_dehydration.svg
             ├── Prediction_3023117_decarboxylation_1.svg
             ├── Prediction_3023117_decarboxylation_2.svg
             ├── Prediction_3023117_hydrogenation.svg
 
+.. table::
+   :align: center
+   :widths: auto
+
+   +----------------------------------------------------------+
+   | .. image:: images/Prediction_2702720_dehydration.svg     |
+   |    :width: 400px                                         |
+   +----------------------------------------------------------+
+
 Prediction_2702720_dehydration corresponds to MAA1 of the article.
+
+.. table::
+   :align: center
+   :widths: auto
+
+   +----------------------------------------------------------------+
+   | .. image:: images/Prediction_3023117_decarboxylation_1.svg     |
+   |    :width: 400px                                               |
+   +----------------------------------------------------------------+
+   | .. image:: images/Prediction_3023117_decarboxylation_2.svg     |
+   |    :width: 400px                                               |
+   +----------------------------------------------------------------+
+   | .. image:: images/Prediction_3023117_hydrogenation.svg         |
+   |    :width: 400px                                               |
+   +-----------------------------------------------------------------+
 
 Prediction_3023117_decarboxylation_1, Prediction_3023117_decarboxylation_2 and Prediction_3023117_hydrogenation correspond to MAA2.
