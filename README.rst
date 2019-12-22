@@ -554,15 +554,15 @@ For this pathway, known reactions were extracted from:
 - `MetaCyc cholesterol biosynthesis (plants) PWY18C3-1 <https://metacyc.org/META/new-image?type=PATHWAY&object=PWY18C3-1>`__.
 - `MetaCyc cholesterol biosynthesis III (via desmosterol) PWY66-4 <https://metacyc.org/META/new-image?type=PATHWAY&object=PWY66-4>`__.
 - `MetaCyc phytosterol biosynthesis (plants) PWY-2541 <https://metacyc.org/META/new-image?type=PATHWAY&object=PWY-2541>`__.
-- simplification of multistep C24-C29 demethylation `Sonawane et al. 2016 <https://www.nature.com/articles/nplants2016205>`__.
+- simplification of multistep C24-C29 demethylation from `Sonawane et al. (2016) <https://www.nature.com/articles/nplants2016205>`__.
 
 Input data for Mycosporine-like Amino Acids (MAA) pathway are in `pathmodel/pathmodel/data/MAA.lp <https://raw.githubusercontent.com/pathmodel/pathmodel/master/pathmodel/data/MAA_pwy.lp>`__.
 
 For this pathway, known reactions were extracted from:
 
 - `MetaCyc shinorine biosynthesis PWY-7751 <https://metacyc.org/META/new-image?type=PATHWAY&object=PWY-7751>`__.
-- Extended reaction from serine to threonine `as proposed in Brawley et al., 2017 <https://www.pnas.org/content/114/31/E6361>`__.
-- Reactions hypothesized by `Carreto and Carignan, 2011 <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3083659/>`__.
+- Extended reaction from serine to threonine as proposed in `Brawley et al. (2017) <https://www.pnas.org/content/114/31/E6361>`__.
+- Reactions hypothesized by `Carreto and Carignan (2011) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3083659/>`__.
 
 Commands
 ########
@@ -588,7 +588,7 @@ To reproduce the analysis of the Pathmodel article, you can use the 'test' comma
 
 	pathmodel test -o output_folder
 
-This will create an output folder containing:
+This will create an output folder containing the inference results for the sterol and the MAA pathways:
 
 .. code-block:: text
 
@@ -604,6 +604,8 @@ This will create an output folder containing:
         ├── pathmodel_incremental_inference.tsv
         ├── pathmodel_output.lp
 
+Then you can create pictures representation of the results (pathways and molecules) for the sterol pathway:
+
 .. code:: sh
 
     pathmodel_plot -i output_folder/sterol
@@ -616,6 +618,7 @@ This will create an output folder containing:
         ├── pathmodel_data_transformations.tsv
         ├── pathmodel_incremental_inference.tsv
         ├── pathmodel_output.lp
+        ├── pathmodel_output.svg
         ├── molecules
             ├── 22-dehydrocholesterol.svg
             ├── 24-epicampesterol.svg
@@ -651,6 +654,8 @@ This will create an output folder containing:
 
 No M/Z ratio were given as input so there is no new molecules from M/Z.
 
+And the pictures for the MAA pathway:
+
 .. code:: sh
 
     pathmodel_plot -i output_folder/MAA
@@ -663,6 +668,7 @@ No M/Z ratio were given as input so there is no new molecules from M/Z.
         ├── pathmodel_data_transformations.tsv
         ├── pathmodel_incremental_inference.tsv
         ├── pathmodel_output.lp
+        ├── pathmodel_output.svg
         ├── molecules
             ├── 4-deoxygadusol.svg
             ├── asterina-330.svg
@@ -680,7 +686,19 @@ No M/Z ratio were given as input so there is no new molecules from M/Z.
             ├── Prediction_2702720_dehydration.svg
             ├── Prediction_3023117_decarboxylation_1.svg
             ├── Prediction_3023117_decarboxylation_2.svg
-            ├── Prediction_3023117_hydrogenation.svg
+
+pathmodel_output.svg contains the pathway with the known reactions and the reactions inferred by PathModel.
+
+.. table::
+   :align: center
+   :widths: auto
+
+   +----------------------------------------------------------+
+   | .. image:: images/maa_pathmodel_output.svg               |
+   |    :width: 400px                                         |
+   +----------------------------------------------------------+
+
+The structures of the predicted molecules from M/Z can be found in newmolecules_from_mz:
 
 .. table::
    :align: center
