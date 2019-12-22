@@ -644,6 +644,6 @@ Prediction_2702720_dehydration corresponds to MAA1 of the article.
    +----------------------------------------------------------------+
    | .. image:: images/Prediction_3023117_hydrogenation.svg         |
    |    :width: 400px                                               |
-   +-----------------------------------------------------------------+
+   +----------------------------------------------------------------+
 
 Prediction_3023117_decarboxylation_1, Prediction_3023117_decarboxylation_2 and Prediction_3023117_hydrogenation correspond to MAA2.
