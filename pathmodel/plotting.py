@@ -52,7 +52,7 @@ def run_pathway_creation():
     print('~~~~~Creating result picture~~~~~')
     pathmodel_pathway_picture(asp_code, picture_name)
 
-    if 'newatom' in asp_code and 'newbond' in asp_code:
+    if 'predictatom' in asp_code and 'predictbond' in asp_code:
         create_2dmolecule(pathmodel_output_file, new_output_repository, align_domain=None)
 
     print('~~~~~Creating molecules pictures~~~~~')
@@ -211,7 +211,7 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
     # Parse ASP input file and extract molecules, atoms and bonds.
     for predicate in ASP(asp_code, use_clingo_module=False).parse_args.discard_quotes:
         for variable in predicate:
-            if variable[0] == 'atom' or variable[0] == 'newatom':
+            if variable[0] == 'atom' or variable[0] == 'predictatom':
                 atom_molecule = variable[1][0]
                 atom_number = variable[1][1]
                 atom_type = atomicNumber[variable[1][2]]
@@ -222,7 +222,7 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
                     molecules[atom_molecule].append((atom_number, atom_type))
                     molecule_numberings[atom_molecule].append(atom_number)
 
-            elif variable[0] == 'bond' or variable[0] == 'newbond':
+            elif variable[0] == 'bond' or variable[0] == 'predictbond':
                 atom_molecule = variable[1][0]
                 bond_number_1 = variable[1][2]
                 bond_number_2 = variable[1][3]

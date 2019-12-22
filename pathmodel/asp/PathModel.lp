@@ -142,10 +142,10 @@ newmetabolite(MoleculeName):- possibleMetabolite(MoleculeName,ReactantInferred, 
 
 % Create new metabolite atoms and bonds.
 
-newatom(MoleculeName,AtomNumber,AtomType):-atom(ReactantInferred,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType),possibleMetabolite(MoleculeName,ReactantInferred, Reaction,Domain).
+newatom(MoleculeName,AtomNumber,AtomType):- atom(ReactantInferred,AtomNumber,AtomType), not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType),possibleMetabolite(MoleculeName,ReactantInferred, Reaction,Domain).
 newatom(MoleculeName,AtomNumber,AtomType):- diffAtomAfterReaction(Reaction,AtomNumber,AtomType),possibleMetabolite(MoleculeName,ReactantInferred, Reaction,Domain).
 
-newbond(MoleculeName,BondType,FirstAtom,SecondAtom):-bond(ReactantInferred,BondType,FirstAtom,SecondAtom), not diffBondBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom),possibleMetabolite(MoleculeName,ReactantInferred,Reaction,Domain).
+newbond(MoleculeName,BondType,FirstAtom,SecondAtom):- bond(ReactantInferred,BondType,FirstAtom,SecondAtom), not diffBondBeforeReaction(Reaction,BondType,FirstAtom,SecondAtom),possibleMetabolite(MoleculeName,ReactantInferred,Reaction,Domain).
 newbond(MoleculeName,BondType,FirstAtom,SecondAtom):- diffBondAfterReaction(Reaction,BondType,FirstAtom,SecondAtom),possibleMetabolite(MoleculeName,ReactantInferred, Reaction,Domain).
 
 newbond2(MoleculeName,BondType,FirstAtom,SecondAtom):- newbond(MoleculeName,BondType,FirstAtom,SecondAtom).
@@ -208,6 +208,10 @@ alreadyKnownMolecule(NewMoleculeName):- possibleKnownMolecule(NewMoleculeName); 
 % Keep only new metabolite having the M/Z required.
 testmetabolite(NewMoleculeName, t):- newmetabolite(NewMoleculeName), newmoleculeMZ(NewMoleculeName, MZFilter), mzfiltering(MZFilter),
 									not alreadyKnownMolecule(NewMoleculeName).
+
+predictatom(MoleculeName,AtomNumber,AtomType):- newatom(MoleculeName,AtomNumber,AtomType), testmetabolite(MoleculeName, t).
+
+predictbond(MoleculeName,BondType,FirstAtom,SecondAtom):- newbond(MoleculeName,BondType,FirstAtom,SecondAtom), testmetabolite(MoleculeName, t).
 
 % Create newreaction from inferred metabolite.
 analogicalReasoningInference(Reaction,ReactantInferred,NewProduct):- testmetabolite(NewProduct, t), possibleMetabolite(NewProduct,ReactantInferred,Reaction,Domain).
@@ -290,8 +294,8 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 #show newreaction/3.
 #show reaction/3.
 #show inferred/2.
-#show newatom/3.
-#show newbond/4.
+#show predictatom/3.
+#show predictbond/4.
 %#show domain/2.
 %#show moleculeMZ/2.
 

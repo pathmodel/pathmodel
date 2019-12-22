@@ -519,8 +519,11 @@ PathModel creates also a picture showing all the reactions (known reactions in g
    |    :width: 400px                           |
    +--------------------------------------------+
 
-Tutorial on Article data (Chondrus crispus sterol and Mycosporine-like amino acids pathways)
+Tutorial on Article data (*Chondrus crispus* sterol and Mycosporine-like Amino Acids pathways)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Input data
+##########
 
 To reproduce the analysis of the Pathmodel article, you can use the 'test' command:
 
@@ -642,8 +645,5 @@ Prediction_2702720_dehydration corresponds to MAA1 of the article.
    | .. image:: images/Prediction_3023117_decarboxylation_2.svg     |
    |    :width: 400px                                               |
    +----------------------------------------------------------------+
-   | .. image:: images/Prediction_3023117_hydrogenation.svg         |
-   |    :width: 400px                                               |
-   +----------------------------------------------------------------+
 
-Prediction_3023117_decarboxylation_1, Prediction_3023117_decarboxylation_2 and Prediction_3023117_hydrogenation correspond to MAA2.
+Prediction_3023117_decarboxylation_1 and Prediction_3023117_decarboxylation_2 correspond to MAA2.
