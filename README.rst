@@ -722,20 +722,18 @@ pathmodel_output.svg contains the pathway with the known reactions and the react
 The structures of the predicted molecules from M/Z can be found in newmolecules_from_mz:
 
 - Prediction_2702720_dehydration corresponds to MAA1 of the article:
+
 .. table::
    :align: center
    :widths: auto
 
-   +----------------------------------------------------------+
-   | .. image:: images/Prediction_2702720_dehydration.svg     |
-   |    :width: 400px                                         |
-   +----------------------------------------------------------+
-
-And the predicted molecule in ASP code:
-.. table::
-   :align: center
-   :widths: auto
-
+   +--------------------------------------------------------------+
+   | Prediction_2702720_dehydration                               |
+   +--------------------------------------------------------------+
+   |from reaction(dehydration,"porphyra-334","z-palythenic acid").|
+   +--------------------------------------------------------------+
+   | .. image:: images/Prediction_2702720_dehydration.svg         |
+   |    :width: 400px                                             |
    +--------------------------------------------------------------+
    | predictatom("Prediction_2702720_dehydration",1,carb).        |
    | predictatom("Prediction_2702720_dehydration",2,carb).        |
@@ -778,16 +776,61 @@ And the predicted molecule in ASP code:
    | predictbond("Prediction_2702720_dehydration",double,18,19).  |
    +--------------------------------------------------------------+
 
-- Prediction_3023117_decarboxylation_1 and Prediction_3023117_decarboxylation_2 correspond to MAA2:
+- Prediction_3023117_decarboxylation_1 and Prediction_3023117_decarboxylation_2 (which are the same molecule) correspond to MAA2:
 
 .. table::
    :align: center
    :widths: auto
 
-   +----------------------------------------------------------------+
-   | .. image:: images/Prediction_3023117_decarboxylation_1.svg     |
-   |    :width: 400px                                               |
-   +----------------------------------------------------------------+
-   | .. image:: images/Prediction_3023117_decarboxylation_2.svg     |
-   |    :width: 400px                                               |
-   +----------------------------------------------------------------+
+   +-------------------------------------------------------------------+-------------------------------------------------------------------+
+   | Prediction_3023117_decarboxylation_1                              | Prediction_3023117_decarboxylation_2                              |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------+
+   | from reaction(decarboxylation_1,"z-palythenic acid","palythene"). | from reaction(decarboxylation_2,"shinorine","asterina-330").      |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------+
+   | .. image:: images/Prediction_3023117_decarboxylation_1.svg        | .. image:: images/Prediction_3023117_decarboxylation_2.svg        |
+   |    :width: 400px                                                  |  :width: 400px                                                    |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------+
+   | predictatom("Prediction_3023117_decarboxylation_1",1,carb).       | predictatom("Prediction_3023117_decarboxylation_2",1,carb).       |
+   | predictatom("Prediction_3023117_decarboxylation_1",2,carb).       | predictatom("Prediction_3023117_decarboxylation_2",2,carb).       |
+   | predictatom("Prediction_3023117_decarboxylation_1",3,carb).       | predictatom("Prediction_3023117_decarboxylation_2",3,carb).       |
+   | predictatom("Prediction_3023117_decarboxylation_1",4,carb).       | predictatom("Prediction_3023117_decarboxylation_2",4,carb).       |
+   | predictatom("Prediction_3023117_decarboxylation_1",5,carb).       | predictatom("Prediction_3023117_decarboxylation_2",5,carb).       |
+   | predictatom("Prediction_3023117_decarboxylation_1",6,carb).       | predictatom("Prediction_3023117_decarboxylation_2",6,carb).       |
+   | predictatom("Prediction_3023117_decarboxylation_1",7,carb).       | predictatom("Prediction_3023117_decarboxylation_2",7,carb).       |
+   | predictatom("Prediction_3023117_decarboxylation_1",8,nitr).       | predictatom("Prediction_3023117_decarboxylation_2",8,nitr).       |
+   | predictatom("Prediction_3023117_decarboxylation_1",9,oxyg).       | predictatom("Prediction_3023117_decarboxylation_2",9,oxyg).       |
+   | predictatom("Prediction_3023117_decarboxylation_1",10,nitr).      | predictatom("Prediction_3023117_decarboxylation_2",10,nitr).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",11,oxyg).      | predictatom("Prediction_3023117_decarboxylation_2",11,oxyg).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",12,oxyg).      | predictatom("Prediction_3023117_decarboxylation_2",12,oxyg).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",13,carb).      | predictatom("Prediction_3023117_decarboxylation_2",13,carb).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",14,carb).      | predictatom("Prediction_3023117_decarboxylation_2",14,carb).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",15,carb).      | predictatom("Prediction_3023117_decarboxylation_2",15,carb).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",16,oxyg).      | predictatom("Prediction_3023117_decarboxylation_2",16,oxyg).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",17,oxyg).      | predictatom("Prediction_3023117_decarboxylation_2",17,oxyg).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",18,carb).      | predictatom("Prediction_3023117_decarboxylation_2",18,carb).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",19,carb).      | predictatom("Prediction_3023117_decarboxylation_2",19,carb).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",20,oxyg).      | predictatom("Prediction_3023117_decarboxylation_2",20,oxyg).      |
+   | predictatom("Prediction_3023117_decarboxylation_1",24,carb).      | predictatom("Prediction_3023117_decarboxylation_2",24,carb).      |
+   |                                                                   |                                                                   |
+   | predictbond("Prediction_3023117_decarboxylation_1",double,1,2).   | predictbond("Prediction_3023117_decarboxylation_2",double,1,2).   |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,1,6).   | predictbond("Prediction_3023117_decarboxylation_2",single,1,6).   |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,1,8).   | predictbond("Prediction_3023117_decarboxylation_2",single,1,8).   |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,2,3).   | predictbond("Prediction_3023117_decarboxylation_2",single,2,3).   |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,2,9).   | predictbond("Prediction_3023117_decarboxylation_2",single,2,9).   |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,3,4).   | predictbond("Prediction_3023117_decarboxylation_2",single,3,4).   |
+   | predictbond("Prediction_3023117_decarboxylation_1",double,3,10).  | predictbond("Prediction_3023117_decarboxylation_2",double,3,10).  |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,4,5).   | predictbond("Prediction_3023117_decarboxylation_2",single,4,5).   |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,5,6).   | predictbond("Prediction_3023117_decarboxylation_2",single,5,6).   |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,5,7).   | predictbond("Prediction_3023117_decarboxylation_2",single,5,7).   |
+   | predictbond("Prediction_3023117_decarboxylation_1",singleS,5,12). | predictbond("Prediction_3023117_decarboxylation_2",singleS,5,12). |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,7,11).  | predictbond("Prediction_3023117_decarboxylation_2",single,7,11).  |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,8,14).  | predictbond("Prediction_3023117_decarboxylation_2",single,8,14).  |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,9,13).  | predictbond("Prediction_3023117_decarboxylation_2",single,9,13).  |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,10,18). | predictbond("Prediction_3023117_decarboxylation_2",single,10,18). |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,14,15). | predictbond("Prediction_3023117_decarboxylation_2",single,14,15). |
+   | predictbond("Prediction_3023117_decarboxylation_1",double,15,16). | predictbond("Prediction_3023117_decarboxylation_2",double,15,16). |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,15,17). | predictbond("Prediction_3023117_decarboxylation_2",single,15,17). |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,18,19). | predictbond("Prediction_3023117_decarboxylation_2",single,18,19). |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,19,20). | predictbond("Prediction_3023117_decarboxylation_2",single,19,20). |
+   | predictbond("Prediction_3023117_decarboxylation_1",single,19,24). | predictbond("Prediction_3023117_decarboxylation_2",single,19,24). |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------+
