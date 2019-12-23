@@ -5,7 +5,6 @@ Search of metabolic pathways
 allowing to reach  output metabolites from a set of input metabolites
 *%
 
-
 #script (lua)
 
 function concat(reaction_name, mz)
@@ -29,11 +28,6 @@ valence(carb, 4). valence(nitr, 3). valence(oxyg, 2). valence(phos, 5).
 % Symmetric bonds.
 bond2(A,B,C,D):- bond(A,B,C,D).
 bond2(A,B,C,D):- bond(A,B,D,C).
-
-% A side chain in a compound M is a maximal suite of carbons starting from atom number 1. It ends at atom number End
-sidechain(M,1,End):-  atom(M,End,carb); atom(M,End+1,A); A!=carb; atom(M,X,carb):X=1..End.
-%sidechain(M,Start1+1,End):-  atom(M,End,carb), atom(M,End+1,A), A!=carb, 
-%	atom(M,Start1,B), B!=carb, Start1>0, atom(M,X,carb): X=Start1+1..End-1.
 
 %* Definition of input and output from reaction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -59,6 +53,7 @@ testeddif("4α-methylcholest-8(9),14,24,trien-3β-ol", "4α-methylzymosterol").
 testeddif(B,A):-testeddif(A,B).
 
 *%
+
 %* Browse reactions
 %%%%%%%%%%%%%%%%%%%%
 Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway is here described as the path from a molecule to another through reactions.
@@ -66,15 +61,15 @@ Use to check if we have achieved our goal.
 *%
 
 % Create metabolite, bond, atom and reaction of the inferred metabolite.
-metabolite(NewMoleculeName):- testmetabolite(NewMoleculeName, t).
+metabolite(NewMoleculeName):- predictmetabolite(NewMoleculeName, t).
 
-atom(MoleculeName,AtomNumber,AtomType):- testmetabolite(MoleculeName, t), newatom(MoleculeName,AtomNumber,AtomType).
+atom(MoleculeName,AtomNumber,AtomType):- predictmetabolite(MoleculeName, t), newatom(MoleculeName,AtomNumber,AtomType).
 
-bond(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t), newbond(MoleculeName,BondType,FirstAtom,SecondAtom).
+bond(MoleculeName,BondType,FirstAtom,SecondAtom):- predictmetabolite(MoleculeName, t), newbond(MoleculeName,BondType,FirstAtom,SecondAtom).
 
-bond2(MoleculeName,BondType,FirstAtom,SecondAtom):- testmetabolite(MoleculeName, t), newbond2(MoleculeName,BondType,FirstAtom,SecondAtom).
+bond2(MoleculeName,BondType,FirstAtom,SecondAtom):- predictmetabolite(MoleculeName, t), newbond2(MoleculeName,BondType,FirstAtom,SecondAtom).
 
-moleculeMZ(MoleculeName, MZRatio) :-  testmetabolite(MoleculeName, t), newmoleculeMZ(MoleculeName, MZRatio).
+moleculeMZ(MoleculeName, MZRatio):-  predictmetabolite(MoleculeName, t), newmoleculeMZ(MoleculeName, MZRatio).
 
 newreaction(Reaction,ReactantInferred,NewProduct):- analogicalReasoningInference(Reaction,ReactantInferred,NewProduct), reached(ReactantInferred, t-1).
 
@@ -97,11 +92,6 @@ inferred(pathway(Molecule1,ProductInferred), t):- reaction(ReactionName,Molecule
 % Error with inferred (need to keep older inferred?)
 inferred(pathway(Molecule1,ProductInferred), t):-inferred(pathway(Molecule1,ProductInferred), t-1).
 
-%*
-solution(M1,M2,t):- inferred(pathway(M1, M2),t).
-solution(M1,M3,t):- inferred(pathway(M2,M3),t+1), inferred(pathway(M1,M2),t).
-*%
-
 
 %* Metabolite Inference Method
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -118,7 +108,7 @@ solution(M1,M3,t):- inferred(pathway(M2,M3),t+1), inferred(pathway(M1,M2),t).
 % First we search for a reference reaction. Then we take two metabolite and look if the reference reaction doesn't exist between them.
 % A known reaction is used to infer a new reaction between a known molecule and a new molecule.
 
-newmetaboliteName(@concat(Reaction, MZHypothetic),ReactantInferred, Reaction, Domain):-
+newmetaboliteName(@concat(Reaction, MZHypothetic),ReactantInferred,Reaction,Domain):-
 							reaction(Reaction,ReactantReference,ProductReference); metabolite(ReactantInferred); reached(ReactantInferred, t);
 							% Check if the three molecules have the same domain.
 							domain(ReactantInferred,Domain);domain(ReactantReference,Domain);domain(ProductReference,Domain);
@@ -206,18 +196,18 @@ alreadyKnownMolecule(NewMoleculeName):- possibleKnownMolecule(NewMoleculeName); 
 
 % Filtering using M/Z and already known metabolites.
 % Keep only new metabolite having the M/Z required.
-testmetabolite(NewMoleculeName, t):- newmetabolite(NewMoleculeName), newmoleculeMZ(NewMoleculeName, MZFilter), mzfiltering(MZFilter),
+predictmetabolite(NewMoleculeName, t):- newmetabolite(NewMoleculeName), newmoleculeMZ(NewMoleculeName, MZFilter), mzfiltering(MZFilter),
 									not alreadyKnownMolecule(NewMoleculeName).
 
-predictatom(MoleculeName,AtomNumber,AtomType):- newatom(MoleculeName,AtomNumber,AtomType), testmetabolite(MoleculeName, t).
+predictatom(MoleculeName,AtomNumber,AtomType):- newatom(MoleculeName,AtomNumber,AtomType), predictmetabolite(MoleculeName, t).
 
-predictbond(MoleculeName,BondType,FirstAtom,SecondAtom):- newbond(MoleculeName,BondType,FirstAtom,SecondAtom), testmetabolite(MoleculeName, t).
+predictbond(MoleculeName,BondType,FirstAtom,SecondAtom):- newbond(MoleculeName,BondType,FirstAtom,SecondAtom), predictmetabolite(MoleculeName, t).
 
 % Create newreaction from inferred metabolite.
-analogicalReasoningInference(Reaction,ReactantInferred,NewProduct):- testmetabolite(NewProduct, t), possibleMetabolite(NewProduct,ReactantInferred,Reaction,Domain).
+analogicalReasoningInference(Reaction,ReactantInferred,NewProduct):- predictmetabolite(NewProduct, t), possibleMetabolite(NewProduct,ReactantInferred,Reaction,Domain).
 
 % Create the siteBeforeReaction for the new metabolite.
-siteBeforeReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newmetabolite(MoleculeName); testmetabolite(MoleculeName, t);
+siteBeforeReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newmetabolite(MoleculeName); predictmetabolite(MoleculeName, t);
                                                     newatom(MoleculeName,AtomNumber,AtomType): diffAtomBeforeReaction(ReactionType, AtomNumber, AtomType);
 			                                        newbond(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
                                                         diffBondBeforeReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber);
@@ -225,7 +215,7 @@ siteBeforeReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newm
                                                         diffBondAfterReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber).
 
 % Create the siteAfterReaction for the new metabolite.
-siteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newmetabolite(MoleculeName); testmetabolite(MoleculeName, t);
+siteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newmetabolite(MoleculeName); predictmetabolite(MoleculeName, t);
                                                     newatom(MoleculeName,AtomNumber,AtomType): diffAtomAfterReaction(ReactionType, AtomNumber, AtomType);
 			                                        newbond(MoleculeName,BondType,FirstAtomNumber,SecondAtomNumber):
                                                         diffBondAfterReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber);
@@ -233,10 +223,10 @@ siteAfterReaction(ReactionType,MoleculeName):- reactionType(ReactionType); newme
                                                         diffBondBeforeReaction(ReactionType, BondType, FirstAtomNumber, SecondAtomNumber).
 
 % New metabolite found by the Metabolite Inference Method can be reach.
-reached(ProductInferred, t):- testmetabolite(ProductInferred, t), possibleMetabolite(ProductInferred,Reactant,Reaction,Domain), reached(Reactant, t).
+reached(ProductInferred, t):- predictmetabolite(ProductInferred, t), possibleMetabolite(ProductInferred,Reactant,Reaction,Domain), reached(Reactant, t).
 
 % New metabolite is associated to the domain of its reactant.
-domain(ProductInferred,Domain):- testmetabolite(ProductInferred, t), possibleMetabolite(ProductInferred,Reactant,Reaction,Domain).
+domain(ProductInferred,Domain):- predictmetabolite(ProductInferred, t), possibleMetabolite(ProductInferred,Reactant,Reaction,Domain).
 
 %* Reaction Inference Method
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -296,22 +286,3 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 #show inferred/2.
 #show predictatom/3.
 #show predictbond/4.
-%#show domain/2.
-%#show moleculeMZ/2.
-
-%* Expected output
-
-newreaction(c22_desaturation,"cholesterol", "22-dehydrocholesterol"). #### Already OK
-
-# Hypothese 1 (minimize unkown steps)
-newreaction(dehydration,"palythinol","palythine").
-
-# Hypothese 2 (minimize unkown reaction types)
-newreaction(decarboxylation,"shinorine","asterina-330").  #### Already present (extracted from "Mycosporine-Like Amino Acids: Relevant Secondary Metabolites. Chemical and Ecological Aspects" Carreto & Carignan 2011)
-newreaction(dehydration,"asterina-330","hypothetic_MAA_1").  #### Already OK
-hypothetic_MAA_1
-newreaction(decarboxylation,"porphyra-334","hypothetic_MAA_2").  #### Already OK
-hypothetic_MAA_2
-mz(hypothetic_MAA_1)=270,2720  #### Already OK
-mz(hypothetic_MAA_2)=302,3117  #### Already OK
-*%
