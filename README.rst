@@ -547,6 +547,9 @@ Tutorial on Article data (*Chondrus crispus* sterol and Mycosporine-like Amino A
 Input data
 ##########
 
+Sterol pathway
+**************
+
 Input data for sterol pathway are in `pathmodel/pathmodel/data/sterol_pwy.lp <https://raw.githubusercontent.com/pathmodel/pathmodel/master/pathmodel/data/sterol_pwy.lp>`__.
 
 For this pathway, known reactions were extracted from:
@@ -556,6 +559,9 @@ For this pathway, known reactions were extracted from:
 - `MetaCyc phytosterol biosynthesis (plants) PWY-2541 <https://metacyc.org/META/new-image?type=PATHWAY&object=PWY-2541>`__.
 - simplification of multistep C24-C29 demethylation from `Sonawane et al. (2016) <https://www.nature.com/articles/nplants2016205>`__.
 
+MAA pathway
+***********
+
 Input data for Mycosporine-like Amino Acids (MAA) pathway are in `pathmodel/pathmodel/data/MAA.lp <https://raw.githubusercontent.com/pathmodel/pathmodel/master/pathmodel/data/MAA_pwy.lp>`__.
 
 For this pathway, known reactions were extracted from:
@@ -564,12 +570,21 @@ For this pathway, known reactions were extracted from:
 - Extended reaction from serine to threonine as proposed in `Brawley et al. (2017) <https://www.pnas.org/content/114/31/E6361>`__.
 - Reactions hypothesized by `Carreto and Carignan (2011) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3083659/>`__.
 
+Two unknown M/Z ratios were given as input for MAA pathway:
+
+- 270,2720
+- 302,3117
+
 Commands
 ########
+
+Article data are stored in PathModel code. So they can be used with the 'test' command, to run the prediction:
 
 .. code:: sh
 
 	pathmodel test -o output_folder
+
+Then, it is possible to create pictures representation of the results:
 
 .. code:: sh
 
@@ -604,6 +619,9 @@ This will create an output folder containing the inference results for the stero
         ├── pathmodel_incremental_inference.tsv
         ├── pathmodel_output.lp
 
+Sterol pathway
+**************
+
 Then you can create pictures representation of the results (pathways and molecules) for the sterol pathway:
 
 .. code:: sh
@@ -613,7 +631,7 @@ Then you can create pictures representation of the results (pathways and molecul
 .. code-block:: text
 
 	output_folder
-	├── sterol
+    ├── sterol
         ├── data_pathmodel.lp
         ├── pathmodel_data_transformations.tsv
         ├── pathmodel_incremental_inference.tsv
@@ -653,6 +671,9 @@ Then you can create pictures representation of the results (pathways and molecul
             (empty)
 
 No M/Z ratio were given as input so there is no new molecules from M/Z.
+
+MAA pathway
+***********
 
 And the pictures for the MAA pathway:
 
@@ -695,11 +716,12 @@ pathmodel_output.svg contains the pathway with the known reactions and the react
 
    +----------------------------------------------------------+
    | .. image:: images/maa_pathmodel_output.svg               |
-   |    :width: 400px                                         |
+   |    :width: 800px                                         |
    +----------------------------------------------------------+
 
 The structures of the predicted molecules from M/Z can be found in newmolecules_from_mz:
 
+- Prediction_2702720_dehydration corresponds to MAA1 of the article:
 .. table::
    :align: center
    :widths: auto
@@ -709,7 +731,54 @@ The structures of the predicted molecules from M/Z can be found in newmolecules_
    |    :width: 400px                                         |
    +----------------------------------------------------------+
 
-Prediction_2702720_dehydration corresponds to MAA1 of the article.
+And the predicted molecule in ASP code:
+.. table::
+   :align: center
+   :widths: auto
+
+   +--------------------------------------------------------------+
+   | predictatom("Prediction_2702720_dehydration",1,carb).        |
+   | predictatom("Prediction_2702720_dehydration",2,carb).        |
+   | predictatom("Prediction_2702720_dehydration",3,carb).        |
+   | predictatom("Prediction_2702720_dehydration",4,carb).        |
+   | predictatom("Prediction_2702720_dehydration",5,carb).        |
+   | predictatom("Prediction_2702720_dehydration",6,carb).        |
+   | predictatom("Prediction_2702720_dehydration",7,carb).        |
+   | predictatom("Prediction_2702720_dehydration",8,nitr).        |
+   | predictatom("Prediction_2702720_dehydration",9,oxyg).        |
+   | predictatom("Prediction_2702720_dehydration",10,nitr).       |
+   | predictatom("Prediction_2702720_dehydration",11,oxyg).       |
+   | predictatom("Prediction_2702720_dehydration",12,oxyg).       |
+   | predictatom("Prediction_2702720_dehydration",13,carb).       |
+   | predictatom("Prediction_2702720_dehydration",14,carb).       |
+   | predictatom("Prediction_2702720_dehydration",15,carb).       |
+   | predictatom("Prediction_2702720_dehydration",16,oxyg).       |
+   | predictatom("Prediction_2702720_dehydration",17,oxyg).       |
+   | predictatom("Prediction_2702720_dehydration",18,carb).       |
+   | predictatom("Prediction_2702720_dehydration",19,carb).       |
+   |                                                              |
+   | predictbond("Prediction_2702720_dehydration",double,1,2).    |
+   | predictbond("Prediction_2702720_dehydration",single,1,6).    |
+   | predictbond("Prediction_2702720_dehydration",single,1,8).    |
+   | predictbond("Prediction_2702720_dehydration",single,2,3).    |
+   | predictbond("Prediction_2702720_dehydration",single,2,9).    |
+   | predictbond("Prediction_2702720_dehydration",single,3,4).    |
+   | predictbond("Prediction_2702720_dehydration",double,3,10).   |
+   | predictbond("Prediction_2702720_dehydration",single,4,5).    |
+   | predictbond("Prediction_2702720_dehydration",single,5,6).    |
+   | predictbond("Prediction_2702720_dehydration",single,5,7).    |
+   | predictbond("Prediction_2702720_dehydration",singleS,5,12).  |
+   | predictbond("Prediction_2702720_dehydration",single,7,11).   |
+   | predictbond("Prediction_2702720_dehydration",single,8,14).   |
+   | predictbond("Prediction_2702720_dehydration",single,9,13).   |
+   | predictbond("Prediction_2702720_dehydration",single,10,18).  |
+   | predictbond("Prediction_2702720_dehydration",single,14,15).  |
+   | predictbond("Prediction_2702720_dehydration",single,15,17).  |
+   | predictbond("Prediction_2702720_dehydration",double,15,16).  |
+   | predictbond("Prediction_2702720_dehydration",double,18,19).  |
+   +--------------------------------------------------------------+
+
+- Prediction_3023117_decarboxylation_1 and Prediction_3023117_decarboxylation_2 correspond to MAA2:
 
 .. table::
    :align: center
@@ -722,5 +791,3 @@ Prediction_2702720_dehydration corresponds to MAA1 of the article.
    | .. image:: images/Prediction_3023117_decarboxylation_2.svg     |
    |    :width: 400px                                               |
    +----------------------------------------------------------------+
-
-Prediction_3023117_decarboxylation_1 and Prediction_3023117_decarboxylation_2 correspond to MAA2.
