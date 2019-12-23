@@ -672,6 +672,60 @@ Then you can create pictures representation of the results (pathways and molecul
 
 No M/Z ratio were given as input so there is no new molecules from M/Z.
 
+.. table::
+   :align: center
+   :widths: auto
+
+   +---------------------------------------------------------------------------------+
+   | .. image:: images/maa_patsterol_pathmodel_outputhmodel_output.svg               |
+   |    :width: 800px                                                                |
+   +---------------------------------------------------------------------------------+
+
+Inferred reactions:
+
+.. table::
+   :align: center
+   :widths: auto
+
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | infer_step	| new_reaction	          | reactant	                              | product                                    |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 2	        |	c24_c29_demethylation |	"cycloartenol"                            | "31-norcycloartenol"                       |
+   | 2	        |	rxn66_28              |	"cycloartenol"                            |	"cycloartanol"                             |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 3	        |	rxn_4282              |	"31-norcycloartenol"	                  | "31-norcycloartanol"                       |
+   | 3	        |	rxn_20436             |	"31-norcycloartenol"	                  | "4α,14α-dimethylcholest-8,24-dien-3β-ol"   |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 4	        |	rxn_4282              |	"4α,14α-dimethylcholest-8,24-dien-3β-ol"  |	"4α,14α-dimethyl-cholesta-8-enol"          |
+   | 4	        |	rxn_20438             |	"4α,14α-dimethylcholest-8,24-dien-3β-ol"  |	"4α-methylcholest-8(9),14,24-trien-3β-ol"  |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 5	        |	rxn_4282              |	"4α-methylcholest-8(9),14,24-trien-3β-ol" |	"4α-methyl-cholesta-8,14-dienol"           |
+   | 5	        |	rxn_20439             |	"4α-methylcholest-8(9),14,24-trien-3β-ol" |	"4α-methylzymosterol"                      |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 6	        |	rxn_4286              |	"4α-methylzymosterol"                     |	"4α-methyl-5α-cholesta-7,24-dienol"        |
+   | 6	        |	rxn_4282              |	"4α-methylzymosterol"	                  | "4α-methyl-5α-cholesta-8-en-3-ol"          |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 7	        |	rxn_4021              |	"4α-methyl-5α-cholesta-7,24-dienol"       |	"24-methylenelophenol"                     |
+   | 7	        |	rxn_4282              |	"4α-methyl-5α-cholesta-7,24-dienol"       |	"4α-methyl-5α-cholest-7-en-3β-ol"          |
+   | 7	        |	c24_c28_demethylation |	"4α-methyl-5α-cholesta-7,24-dienol"       |	"5α-cholesta-7,24-dienol"                  |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 8	        |	rxn_1_14_21_6         |	"5α-cholesta-7,24-dienol"	              | "7-dehydrodesmosterol"                     |
+   | 8	        |	rxn_4282              |	"5α-cholesta-7,24-dienol"                 |	"lathosterol"                              |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 9	        |	rxn_4282              |	"7-dehydrodesmosterol"	                  | "7-dehydrocholesterol"                     |
+   | 9	        |	rxn66_323             |	"7-dehydrodesmosterol"	                  | "desmosterol"                              |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 10	        |	rxn_4021              |	"desmosterol"	                          | "24-methylenecholesterol"                  |
+   | 10	        |	rxn_4282              |	"desmosterol"	                          | "cholesterol"                              |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 11	        |	rxn_20131             |	"24-methylenecholesterol"	              | "24-epicampesterol"                        |
+   | 11	        |	c22_desaturation      |	"cholesterol"	                          | "22-dehydrocholesterol"                    |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 12	        |	c22_desaturation      |	"24-epicampesterol"	                      | "brassicasterol"                           |
+   | 12	        |	rxn_2_1_1_143         |	"24-epicampesterol"	                      | "sitosterol"                               |
+   | 12	        |	rxn_2_1_1_143         |	"campesterol"	                          | "sitosterol"                               |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+
 MAA pathway
 ***********
 
@@ -719,6 +773,24 @@ pathmodel_output.svg contains the pathway with the known reactions and the react
    |    :width: 800px                                         |
    +----------------------------------------------------------+
 
+Inferred reactions:
+
+.. table::
+   :align: center
+   :widths: auto
+
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | infer_step	| new_reaction	          | reactant	                              | product                                    |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 6          |	dehydration           |	"Prediction_3023117_decarboxylation_1"    |	"palythene"                                |
+   | 6          |	dehydration           |	"Prediction_3023117_decarboxylation_2"    |	"palythene"                                |
+   | 6          |	decarboxylation_2     |	"porphyra-334"                            |	"Prediction_3023117_decarboxylation_1"     |
+   | 6          |	decarboxylation_2     |	"porphyra-334"                            |	"Prediction_3023117_decarboxylation_2"     |
+   | 6          |	decarboxylation_1     |	"shinorine"	                              | "asterina-330"                             |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+   | 7          |	dehydration           |	"asterina-330"	                          | "Prediction_2702720_dehydration"           |
+   +------------+-------------------------+-------------------------------------------+--------------------------------------------+
+
 The structures of the predicted molecules from M/Z can be found in newmolecules_from_mz:
 
 - Prediction_2702720_dehydration corresponds to MAA1 of the article:
@@ -733,7 +805,7 @@ The structures of the predicted molecules from M/Z can be found in newmolecules_
    |from reaction(dehydration,"porphyra-334","z-palythenic acid").|
    +--------------------------------------------------------------+
    | .. image:: images/Prediction_2702720_dehydration.svg         |
-   |    :width: 400px                                             |
+   |    :width: 300px                                             |
    +--------------------------------------------------------------+
    | predictatom("Prediction_2702720_dehydration",1,carb).        |
    | predictatom("Prediction_2702720_dehydration",2,carb).        |
@@ -788,7 +860,7 @@ The structures of the predicted molecules from M/Z can be found in newmolecules_
    | from reaction(decarboxylation_1,"z-palythenic acid","palythene"). | from reaction(decarboxylation_2,"shinorine","asterina-330").      |
    +-------------------------------------------------------------------+-------------------------------------------------------------------+
    | .. image:: images/Prediction_3023117_decarboxylation_1.svg        | .. image:: images/Prediction_3023117_decarboxylation_2.svg        |
-   |    :width: 400px                                                  |  :width: 400px                                                    |
+   |    :width: 300px                                                  |  :width: 300px                                                    |
    +-------------------------------------------------------------------+-------------------------------------------------------------------+
    | predictatom("Prediction_3023117_decarboxylation_1",1,carb).       | predictatom("Prediction_3023117_decarboxylation_2",1,carb).       |
    | predictatom("Prediction_3023117_decarboxylation_1",2,carb).       | predictatom("Prediction_3023117_decarboxylation_2",2,carb).       |

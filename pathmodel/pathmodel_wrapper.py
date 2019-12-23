@@ -94,13 +94,13 @@ def pathmodel_inference(input_string, output_folder):
 
     for atom in next(pathmodel_solver.parse_args.int_not_parsed.sorted):
         if 'inferred' in atom[0]:
-            infer_turn = int(atom[1][1])
+            infer_step = int(atom[1][1])
             reactant = atom[1][0][1][0]
             product = atom[1][0][1][1]
-            if infer_turn not in pathways:
-                pathways[infer_turn] = [(reactant, product)]
+            if infer_step not in pathways:
+                pathways[infer_step] = [(reactant, product)]
             else:
-                pathways[infer_turn].append((reactant, product))
+                pathways[infer_step].append((reactant, product))
         else:
             best_model.append(atom[0] + '(' + ','.join(atom[1]) + ')')
             if 'newreaction' in atom[0]:
@@ -111,11 +111,11 @@ def pathmodel_inference(input_string, output_folder):
     already_inferreds = []
     with open(output_folder + '/' + 'pathmodel_incremental_inference.tsv', 'w') as outfile:
         csvwriter = csv.writer(outfile, delimiter='\t')
-        csvwriter.writerow(["infer_turn", "new_reaction", "reactant", "product"])
-        for i in sorted(list(pathways.keys())):
-            for reaction in pathways[i]:
+        csvwriter.writerow(["infer_step", "new_reaction", "reactant", "product"])
+        for infer_step in sorted(list(pathways.keys())):
+            for reaction in pathways[infer_step]:
                 if reaction in reactions and reaction not in already_inferreds:
-                    csvwriter.writerow([i, reactions[reaction], *reaction])
+                    csvwriter.writerow([infer_step, reactions[reaction], *reaction])
                     already_inferreds.append(reaction)
 
     return pathmodel_result
