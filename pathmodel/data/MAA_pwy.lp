@@ -166,13 +166,9 @@ reaction(rxn_17372, "sedoheptulose-7-phosphate", "R-demethyl-4-deoxygadusol").
 
 reaction(rxn_17895, "R-demethyl-4-deoxygadusol", "S-demethyl-4-deoxygadusol").
 
-reaction(rxn_17895, "S-demethyl-4-deoxygadusol", "R-demethyl-4-deoxygadusol").
-
 reaction(rxn_17366, "R-demethyl-4-deoxygadusol", "R-4-deoxygadusol").
 
 reaction(rxn_17370, "R-4-deoxygadusol", "S-4-deoxygadusol").
-
-reaction(rxn_17370, "S-4-deoxygadusol", "R-4-deoxygadusol").
 
 reaction(rxn_17896, "S-demethyl-4-deoxygadusol", "S-4-deoxygadusol").
 
@@ -181,7 +177,7 @@ reaction(aminoacid_C_1_transfer, "S-4-deoxygadusol", "mycosporin-glycine").
 reaction(aminoacid_C_3_transfer_serine,"mycosporin-glycine","shinorine").
 
 % Extended reaction from serine to threonine (as proposed in Brawley et al., 2017)
-reaction(aminoacid_C_3_transfer_threonine,"mycosporin-glycine","porphyra-334"). % 
+reaction(aminoacid_C_3_transfer_threonine,"mycosporin-glycine","porphyra-334").
 
 % Other reactions from bibliography (Carreto and Carignan, 2011)
 reaction(hydrogenation,"shinorine","palythinol").
