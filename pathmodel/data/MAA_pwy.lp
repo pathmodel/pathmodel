@@ -174,9 +174,9 @@ reaction(rxn_17370, "R-4-deoxygadusol", "S-4-deoxygadusol").
 
 reaction(rxn_17370, "S-4-deoxygadusol", "R-4-deoxygadusol").
 
-reaction(rxn_17896, "S-demethyl-4-deoxygadusol", "4-deoxygadusol").
+reaction(rxn_17896, "S-demethyl-4-deoxygadusol", "S-4-deoxygadusol").
 
-reaction(aminoacid_C_1_transfer, "4-deoxygadusol", "mycosporin-glycine").
+reaction(aminoacid_C_1_transfer, "S-4-deoxygadusol", "mycosporin-glycine").
 
 reaction(aminoacid_C_3_transfer_serine,"mycosporin-glycine","shinorine").
 
