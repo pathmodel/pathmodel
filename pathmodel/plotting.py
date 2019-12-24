@@ -108,14 +108,14 @@ def pathmodel_pathway_picture(asp_code, picture_name, input_filename):
                            node_color="green",
                            node_size=3000,
                            node_shape='s',
-                           alpha=0.2)
+                           alpha=0.5)
     nx.draw_networkx_nodes(DG,
                            graphviz_layout(DG, prog='neato'),
                            nodelist=inferred_compounds,
                            node_color="blue",
                            node_size=2000,
                            node_shape='s',
-                           alpha=0.2)
+                           alpha=0.5)
 
     nx.draw_networkx_edges(DG,
                            graphviz_layout(DG, prog='neato'),

@@ -544,6 +544,8 @@ PathModel creates also a picture showing all the reactions (known reactions in g
 Tutorial on Article data (*Chondrus crispus* sterol and Mycosporine-like Amino Acids pathways)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+PathModel contains script to reproduce the experience run in the article: analysis of *Chondrus crispus* sterol and Mycosporine-like Amino Acids (MAA) pathways.
+
 Input data
 ##########
 
@@ -562,7 +564,7 @@ For this pathway, known reactions were extracted from:
 MAA pathway
 ***********
 
-Input data for Mycosporine-like Amino Acids (MAA) pathway are in `pathmodel/pathmodel/data/MAA.lp <https://raw.githubusercontent.com/pathmodel/pathmodel/master/pathmodel/data/MAA_pwy.lp>`__.
+Input data for MAA pathway are in `pathmodel/pathmodel/data/MAA_pwy.lp <https://raw.githubusercontent.com/pathmodel/pathmodel/master/pathmodel/data/MAA_pwy.lp>`__.
 
 For this pathway, known reactions were extracted from:
 
@@ -578,7 +580,7 @@ Two unknown M/Z ratios were given as input for MAA pathway:
 Commands
 ########
 
-Article data are stored in PathModel code. So they can be used with the 'test' command, to run the prediction:
+Article data are stored in PathModel code. By calling the 'test' command, you can reproduce PathModel article experience. First run the inference on the sterol and MAA pathways:
 
 .. code:: sh
 
@@ -597,13 +599,11 @@ Then, it is possible to create pictures representation of the results:
 Results
 #######
 
-To reproduce the analysis of the Pathmodel article, you can use the 'test' command:
-
 .. code:: sh
 
 	pathmodel test -o output_folder
 
-This will create an output folder containing the inference results for the sterol and the MAA pathways:
+This test command will create an output folder containing the inference results for the sterol and the MAA pathways:
 
 .. code-block:: text
 
@@ -670,9 +670,9 @@ Then you can create pictures representation of the results (pathways and molecul
         ├── newmolecules_from_mz
             (empty)
 
-No M/Z ratio were given as input so there is no new molecules from M/Z.
+No M/Z ratio were given as input for the sterol so there is no new molecules from M/Z.
 
-pathmodel_output.svg shows the predicted reactions in blue and the predicted molecules in blue:
+'pathmodel_output.svg' shows the predicted reactions in blue and the predicted molecules in blue (the picture form can change but it contains the same result):
 
 .. table::
    :align: center
@@ -683,7 +683,7 @@ pathmodel_output.svg shows the predicted reactions in blue and the predicted mol
    |    :width: 800px                                                                |
    +---------------------------------------------------------------------------------+
 
-Inferred reactions:
+Inferred reactions are listed in 'pathmodel_incremental_inference.tsv':
 
 .. table::
    :align: center
@@ -736,7 +736,7 @@ Inferred reactions:
 MAA pathway
 ***********
 
-And the pictures for the MAA pathway:
+And the pictures for the MAA pathway are created with:
 
 .. code:: sh
 
@@ -780,7 +780,7 @@ pathmodel_output.svg contains the pathway with the known reactions (green), the 
    |    :width: 800px                                         |
    +----------------------------------------------------------+
 
-Inferred reactions:
+Inferred reactions are listed in 'pathmodel_incremental_inference.tsv':
 
 .. table::
    :align: center
