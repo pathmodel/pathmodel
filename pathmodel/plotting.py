@@ -89,12 +89,14 @@ def pathmodel_pathway_picture(asp_code, picture_name, input_filename):
                     if product not in absent_molecules:
                         known_compounds.append(product)
 
-                    if product not in absent_molecules or reactant not in absent_molecules:
+                    if product not in absent_molecules and reactant not in absent_molecules:
                         known_reactions.append((reactant, product))
                         DG.add_edge(reactant, product, label=reaction)
                 elif predicate == "newreaction":
-                    inferred_compounds.append(reactant)
-                    inferred_compounds.append(product)
+                    if 'Prediction_' in reactant:
+                        inferred_compounds.append(reactant)
+                    if 'Prediction_' in product:
+                        inferred_compounds.append(product)
 
                     inferred_reactions.append((reactant, product))
                     DG.add_edge(reactant, product, label=reaction)

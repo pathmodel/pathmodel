@@ -468,7 +468,6 @@ reaction(rxn66_323,"7-dehydrocholesterol","cholesterol").
 % PWY66-4
 reaction(rxn66_28,"desmosterol","cholesterol").
 
-
 % PWY-2541
 reaction(rxn_4021,"cycloartenol","24-methylenecycloartanol").
 
@@ -486,6 +485,10 @@ reaction(c22_desaturation,"sitosterol","stigmasterol").
 absentmolecules("ergosterol").
 absentmolecules("fucosterol").
 absentmolecules("zymosterol").
+absentmolecules("24-ethylidenelophenol").
+absentmolecules("24-methylenelophenol").
+absentmolecules("24-methylenecycloartanol").
+absentmolecules("24-epicampesterol").
 
 % Source molecule for inference.
 
