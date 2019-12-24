@@ -18,11 +18,17 @@ bond("sedoheptulose-7-phosphate",singleR,1,8). bond("sedoheptulose-7-phosphate",
 bond("sedoheptulose-7-phosphate",singleS,2,9). bond("sedoheptulose-7-phosphate",single,9,26). bond("sedoheptulose-7-phosphate",single,26,30).
 bond("sedoheptulose-7-phosphate",single,27,30). bond("sedoheptulose-7-phosphate",double,28,30). bond("sedoheptulose-7-phosphate",single,29,30).
 
-atom("S-desmethyl-4-deoxygadusol",1..7,carb). atom("S-desmethyl-4-deoxygadusol",8,oxyg). atom("S-desmethyl-4-deoxygadusol",9..12,oxyg).
-bond("S-desmethyl-4-deoxygadusol",double,1,2). bond("S-desmethyl-4-deoxygadusol",single,2,3). bond("S-desmethyl-4-deoxygadusol",single,3,4).
-bond("S-desmethyl-4-deoxygadusol",single,4,5). bond("S-desmethyl-4-deoxygadusol",single,5,6). bond("S-desmethyl-4-deoxygadusol",single,1,6).
-bond("S-desmethyl-4-deoxygadusol",single,5,7). bond("S-desmethyl-4-deoxygadusol",double,3,10). bond("S-desmethyl-4-deoxygadusol",single,1,8).
-bond("S-desmethyl-4-deoxygadusol",singleS,5,12). bond("S-desmethyl-4-deoxygadusol",single,7,11). bond("S-desmethyl-4-deoxygadusol",single,2,9).
+atom("R-demethyl-4-deoxygadusol",1..7,carb). atom("R-demethyl-4-deoxygadusol",8,oxyg). atom("R-demethyl-4-deoxygadusol",9..12,oxyg).
+bond("R-demethyl-4-deoxygadusol",double,1,2). bond("R-demethyl-4-deoxygadusol",single,2,3). bond("R-demethyl-4-deoxygadusol",single,3,4).
+bond("R-demethyl-4-deoxygadusol",single,4,5). bond("R-demethyl-4-deoxygadusol",single,5,6). bond("R-demethyl-4-deoxygadusol",single,1,6).
+bond("R-demethyl-4-deoxygadusol",single,5,7). bond("R-demethyl-4-deoxygadusol",double,3,10). bond("R-demethyl-4-deoxygadusol",single,1,8).
+bond("R-demethyl-4-deoxygadusol",singleR,5,12). bond("R-demethyl-4-deoxygadusol",single,7,11). bond("R-demethyl-4-deoxygadusol",single,2,9).
+
+atom("S-demethyl-4-deoxygadusol",1..7,carb). atom("S-demethyl-4-deoxygadusol",8,oxyg). atom("S-demethyl-4-deoxygadusol",9..12,oxyg).
+bond("S-demethyl-4-deoxygadusol",double,1,2). bond("S-demethyl-4-deoxygadusol",single,2,3). bond("S-demethyl-4-deoxygadusol",single,3,4).
+bond("S-demethyl-4-deoxygadusol",single,4,5). bond("S-demethyl-4-deoxygadusol",single,5,6). bond("S-demethyl-4-deoxygadusol",single,1,6).
+bond("S-demethyl-4-deoxygadusol",single,5,7). bond("S-demethyl-4-deoxygadusol",double,3,10). bond("S-demethyl-4-deoxygadusol",single,1,8).
+bond("S-demethyl-4-deoxygadusol",singleS,5,12). bond("S-demethyl-4-deoxygadusol",single,7,11). bond("S-demethyl-4-deoxygadusol",single,2,9).
 
 atom("R-4-deoxygadusol",1..7,carb). atom("R-4-deoxygadusol",8,oxyg). atom("R-4-deoxygadusol",9..12,oxyg).
 atom("R-4-deoxygadusol",13,carb).
@@ -32,13 +38,13 @@ bond("R-4-deoxygadusol",single,5,7). bond("R-4-deoxygadusol",double,3,10). bond(
 bond("R-4-deoxygadusol",singleR,5,12). bond("R-4-deoxygadusol",single,7,11). bond("R-4-deoxygadusol",single,2,9).
 bond("R-4-deoxygadusol",single,9,13).
 
-atom("4-deoxygadusol",1..7,carb). atom("4-deoxygadusol",8,oxyg). atom("4-deoxygadusol",9..12,oxyg).
-atom("4-deoxygadusol",13,carb).
-bond("4-deoxygadusol",double,1,2). bond("4-deoxygadusol",single,2,3). bond("4-deoxygadusol",single,3,4).
-bond("4-deoxygadusol",single,4,5). bond("4-deoxygadusol",single,5,6). bond("4-deoxygadusol",single,1,6).
-bond("4-deoxygadusol",single,5,7). bond("4-deoxygadusol",double,3,10). bond("4-deoxygadusol",single,1,8).
-bond("4-deoxygadusol",singleS,5,12). bond("4-deoxygadusol",single,7,11). bond("4-deoxygadusol",single,2,9).
-bond("4-deoxygadusol",single,9,13).
+atom("S-4-deoxygadusol",1..7,carb). atom("S-4-deoxygadusol",8,oxyg). atom("S-4-deoxygadusol",9..12,oxyg).
+atom("S-4-deoxygadusol",13,carb).
+bond("S-4-deoxygadusol",double,1,2). bond("S-4-deoxygadusol",single,2,3). bond("S-4-deoxygadusol",single,3,4).
+bond("S-4-deoxygadusol",single,4,5). bond("S-4-deoxygadusol",single,5,6). bond("S-4-deoxygadusol",single,1,6).
+bond("S-4-deoxygadusol",single,5,7). bond("S-4-deoxygadusol",double,3,10). bond("S-4-deoxygadusol",single,1,8).
+bond("S-4-deoxygadusol",singleS,5,12). bond("S-4-deoxygadusol",single,7,11). bond("S-4-deoxygadusol",single,2,9).
+bond("S-4-deoxygadusol",single,9,13).
 
 atom("mycosporin-glycine",1..7,carb). atom("mycosporin-glycine",8,nitr). atom("mycosporin-glycine",9..12,oxyg).
 atom("mycosporin-glycine",13..15,carb). atom("mycosporin-glycine",16..17,oxyg).
@@ -156,13 +162,19 @@ reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound
 
 % Reactions from PWY-7751.
 
-reaction(mysa, "sedoheptulose-7-phosphate", "S-desmethyl-4-deoxygadusol").
+reaction(rxn_17372, "sedoheptulose-7-phosphate", "R-demethyl-4-deoxygadusol").
 
-reaction(rxn_17366, "sedoheptulose-7-phosphate", "R-4-deoxygadusol").
+reaction(rxn_17895, "R-demethyl-4-deoxygadusol", "S-demethyl-4-deoxygadusol").
 
-reaction(rxn_17370, "R-4-deoxygadusol", "4-deoxygadusol").
+reaction(rxn_17895, "S-demethyl-4-deoxygadusol", "R-demethyl-4-deoxygadusol").
 
-reaction(rxn_17896, "S-desmethyl-4-deoxygadusol", "4-deoxygadusol").
+reaction(rxn_17366, "R-demethyl-4-deoxygadusol", "R-4-deoxygadusol").
+
+reaction(rxn_17370, "R-4-deoxygadusol", "S-4-deoxygadusol").
+
+reaction(rxn_17370, "S-4-deoxygadusol", "R-4-deoxygadusol").
+
+reaction(rxn_17896, "S-demethyl-4-deoxygadusol", "4-deoxygadusol").
 
 reaction(aminoacid_C_1_transfer, "4-deoxygadusol", "mycosporin-glycine").
 

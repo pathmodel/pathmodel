@@ -50,7 +50,7 @@ def run_pathway_creation():
     check_folder(new_output_repository)
 
     print('~~~~~Creating result picture~~~~~')
-    pathmodel_pathway_picture(asp_code, picture_name)
+    pathmodel_pathway_picture(asp_code, picture_name, input_filename)
 
     if 'predictatom' in asp_code and 'predictbond' in asp_code:
         create_2dmolecule(pathmodel_output_file, new_output_repository, align_domain=None)
@@ -59,7 +59,7 @@ def run_pathway_creation():
     create_2dmolecule(input_filename, output_repository, False)
 
 
-def pathmodel_pathway_picture(asp_code, picture_name):
+def pathmodel_pathway_picture(asp_code, picture_name, input_filename):
     DG = nx.DiGraph()
 
     known_compounds = []
@@ -68,6 +68,13 @@ def pathmodel_pathway_picture(asp_code, picture_name):
     known_reactions = []
     inferred_reactions = []
 
+    absent_molecules = []
+
+    for answer in ASP(input_filename, use_clingo_module=False).parse_args.by_predicate.discard_quotes:
+        for predicate in answer:
+            if predicate == "absentmolecules":
+                absent_molecules.append(answer[predicate][0])
+
     for answer in ASP(asp_code, use_clingo_module=False).parse_args.by_predicate.discard_quotes:
         for predicate in answer:
             for atom in answer[predicate]:
@@ -75,11 +82,14 @@ def pathmodel_pathway_picture(asp_code, picture_name):
                 reactant = atom[1]
                 product = atom[2]
                 if predicate == "reaction":
-                    known_compounds.append(reactant)
-                    known_compounds.append(product)
+                    if reactant not in absent_molecules:
+                        known_compounds.append(reactant)
+                    if product not in absent_molecules:
+                        known_compounds.append(product)
 
-                    known_reactions.append((reactant, product))
-                    DG.add_edge(reactant, product, label=reaction)
+                    if product not in absent_molecules or reactant not in absent_molecules:
+                        known_reactions.append((reactant, product))
+                        DG.add_edge(reactant, product, label=reaction)
                 elif predicate == "newreaction":
                     inferred_compounds.append(reactant)
                     inferred_compounds.append(product)
