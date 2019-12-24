@@ -74,7 +74,8 @@ def pathmodel_pathway_picture(asp_code, picture_name, input_filename):
         for answer in ASP(intermediate_file.read(), use_clingo_module=False).parse_args.by_predicate.discard_quotes:
             for predicate in answer:
                 if predicate == "absentmolecules":
-                    absent_molecules.append(answer[predicate][0])
+                    for atom in answer[predicate]:
+                        absent_molecules.append(atom[0])
 
     for answer in ASP(asp_code, use_clingo_module=False).parse_args.by_predicate.discard_quotes:
         for predicate in answer:
