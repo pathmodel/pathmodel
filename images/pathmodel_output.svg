@@ -16,7 +16,7 @@
    width="400pt"
    id="svg284"
    sodipodi:docname="pathmodel_output.svg"
-   inkscape:version="0.92.4 (unknown)">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
      id="metadata288">
     <rdf:RDF>
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -39,14 +39,14 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1163"
+     inkscape:window-height="1017"
      id="namedview286"
      showgrid="false"
      inkscape:zoom="0.78666667"
      inkscape:cx="653.67858"
      inkscape:cy="113.42582"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg284" />
   <defs
@@ -213,33 +213,6 @@
      width="100%"
      height="100%"
      transform="translate(-959.16071,-1348.4279)" />
-  <use
-     style="fill:#0000ff;fill-opacity:0.2;stroke:#0000ff;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0.2"
-     x="1176.8337"
-     xlink:href="#md9370fc85f"
-     y="336.27274"
-     id="use55"
-     width="100%"
-     height="100%"
-     transform="translate(-1135.021,-147.58622)" />
-  <use
-     style="fill:#0000ff;fill-opacity:0.2;stroke:#0000ff;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0.2"
-     x="1498.9463"
-     xlink:href="#md9370fc85f"
-     y="415.59866"
-     id="use57"
-     width="100%"
-     height="100%"
-     transform="translate(-1135.021,-147.58622)" />
-  <use
-     style="fill:#0000ff;fill-opacity:0.2;stroke:#0000ff;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0.2"
-     x="346.05371"
-     xlink:href="#md9370fc85f"
-     y="820.87665"
-     id="use59"
-     width="100%"
-     height="100%"
-     transform="translate(-312.42645,-539.73048)" />
   <use
      style="fill:#0000ff;fill-opacity:0.2;stroke:#0000ff;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0.2"
      x="668.17535"

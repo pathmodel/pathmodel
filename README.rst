@@ -530,7 +530,7 @@ There is a structure inferred by PathModel for the MZ 92.1341:
    | .. image:: images/Prediction_921341_reduction.svg  |
    +----------------------------------------------------+
 
-PathModel creates also a picture showing all the reactions (known reactions in green, inferred reaction variant in blue):
+PathModel creates also a picture showing all the reactions (known reactions in green, inferred reaction variant in blue and blue square for predicted molecules):
 
 .. table::
    :align: center
@@ -672,6 +672,8 @@ Then you can create pictures representation of the results (pathways and molecul
 
 No M/Z ratio were given as input so there is no new molecules from M/Z.
 
+pathmodel_output.svg shows the predicted reactions in blue and the predicted molecules in blue:
+
 .. table::
    :align: center
    :widths: auto
@@ -767,7 +769,7 @@ And the pictures for the MAA pathway:
             ├── Prediction_3023117_decarboxylation_1.svg
             ├── Prediction_3023117_decarboxylation_2.svg
 
-pathmodel_output.svg contains the pathway with the known reactions and the reactions inferred by PathModel.
+pathmodel_output.svg contains the pathway with the known reactions (green), the reactions inferred by PathModel (blue) and the metabolites inferred (blue).
 
 .. table::
    :align: center
