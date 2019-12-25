@@ -561,6 +561,8 @@ For this pathway, known reactions were extracted from:
 - `MetaCyc phytosterol biosynthesis (plants) PWY-2541 <https://metacyc.org/META/new-image?type=PATHWAY&object=PWY-2541>`__.
 - simplification of multistep C24-C29 demethylation from `Sonawane et al. (2016) <https://www.nature.com/articles/nplants2016205>`__.
 
+The source molecule is the cycloartenol and the goal molecules are: 22-dehydrocholesterol, brassicasterol and sitosterol.
+
 MAA pathway
 ***********
 
@@ -576,6 +578,8 @@ Two unknown M/Z ratios were given as input for MAA pathway:
 
 - 270,2720
 - 302,3117
+
+The source molecule is the sedoheptulose-7-phosphate and the goal molecule is the palythine.
 
 Commands
 ########
@@ -670,6 +674,8 @@ Then you can create pictures representation of the results (pathways and molecul
         ├── newmolecules_from_mz
             (empty)
 
+In the molecules folder, each input molecules are represented as a svg file.
+
 No M/Z ratio were given as input for the sterol so there is no new molecules from M/Z.
 
 'pathmodel_output.svg' shows the predicted reactions in blue and the predicted molecules in blue (the picture form can change but it contains the same result):
@@ -683,7 +689,7 @@ No M/Z ratio were given as input for the sterol so there is no new molecules fro
    |    :width: 800px                                                                |
    +---------------------------------------------------------------------------------+
 
-Inferred reactions are listed in 'pathmodel_incremental_inference.tsv':
+Inferred reactions are listed in 'pathmodel_incremental_inference.tsv', with the step of the incremental mode from the source molecule (cycloartenol) to the goal molecules:
 
 .. table::
    :align: center
@@ -752,7 +758,6 @@ And the pictures for the MAA pathway are created with:
         ├── pathmodel_output.lp
         ├── pathmodel_output.svg
         ├── molecules
-            ├── 4-deoxygadusol.svg
             ├── asterina-330.svg
             ├── mycosporin-glycine.svg
             ├── palythene.svg
@@ -760,7 +765,9 @@ And the pictures for the MAA pathway are created with:
             ├── palythinol.svg
             ├── porphyra-334.svg
             ├── R-4-deoxygadusol.svg
-            ├── S-desmethyl-4-deoxygadusol.svg
+            ├── R-demethyl-4-deoxygadusol.svg
+            ├── S-4-deoxygadusol.svg
+            ├── S-demethyl-4-deoxygadusol.svg
             ├── sedoheptulose-7-phosphate.svg
             ├── shinorine.svg
             ├── z-palythenic acid.svg
@@ -780,7 +787,9 @@ pathmodel_output.svg contains the pathway with the known reactions (green), the 
    |    :width: 800px                                         |
    +----------------------------------------------------------+
 
-Inferred reactions are listed in 'pathmodel_incremental_inference.tsv':
+Inferred reactions are listed in 'pathmodel_incremental_inference.tsv', with the step of the incremental mode from the source molecule (sedoheptulose-7-phosphate) to the goal molecule (palythine).
+
+Incremental step 2 is not showed because it is already known (between 'sedoheptulose-7-phosphate' and 'R-demethyl-4-deoxygadusol') and no new predictions have been inferred.
 
 .. table::
    :align: center
