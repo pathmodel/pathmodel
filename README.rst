@@ -123,7 +123,7 @@ A docker image of pathmodel is available at `dockerhub <https://hub.docker.com/r
 
 	docker run -ti -v /path/shared/container:/shared --name="mycontainer" pathmodel/pathmodel bash
 
-This command will download the image and create a container with a shared path. It will launch a bash terminal where you can use the command pathmodel (see `Command and Python call`_ and `Tutorial`_).
+This command will download the image and create a container with a shared path. It will launch a bash terminal where you can use the command pathmodel (see `Commands and Python import`_ and `Tutorial`_).
 
 Using git
 ~~~~~~~~~
@@ -542,12 +542,12 @@ PathModel creates also a picture showing all the reactions (known reactions in g
    +--------------------------------------------+
 
 Tutorial on Article data (*Chondrus crispus* sterol and Mycosporine-like Amino Acids pathways)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 PathModel contains script to reproduce the experience run in the article: analysis of *Chondrus crispus* sterol and Mycosporine-like Amino Acids (MAA) pathways.
 
-Input data
-##########
+Article data
+############
 
 Sterol pathway
 **************
@@ -581,8 +581,8 @@ Two unknown M/Z ratios were given as input for MAA pathway:
 
 The source molecule is the sedoheptulose-7-phosphate and the goal molecule is the palythine.
 
-Commands
-########
+Article commands
+################
 
 Article data are stored in PathModel code. By calling the 'test' command, you can reproduce PathModel article experience. First run the inference on the sterol and MAA pathways:
 
@@ -600,8 +600,8 @@ Then, it is possible to create pictures representation of the results:
 
     pathmodel_plot -i output_folder/MAA
 
-Results
-#######
+Article results
+###############
 
 .. code:: sh
 
@@ -623,8 +623,8 @@ This test command will create an output folder containing the inference results 
         ├── pathmodel_incremental_inference.tsv
         ├── pathmodel_output.lp
 
-Sterol pathway
-**************
+Sterol pathway results
+**********************
 
 Then you can create pictures representation of the results (pathways and molecules) for the sterol pathway:
 
@@ -739,8 +739,8 @@ Inferred reactions are listed in 'pathmodel_incremental_inference.tsv', with the
    | 12         | rxn_2_1_1_143           | "campesterol"                             | "sitosterol"                               |
    +------------+-------------------------+-------------------------------------------+--------------------------------------------+
 
-MAA pathway
-***********
+MAA pathway results
+*******************
 
 And the pictures for the MAA pathway are created with:
 
