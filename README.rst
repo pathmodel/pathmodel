@@ -35,15 +35,23 @@ Metabolic Pathway Drift hypothesizes that metabolic pathways can be conserved ev
    :align: center
    :widths: auto
 
-   +------------------------------------------------+
-   | .. figure:: images/metabolic_pathway_drift.jpg |
-   |                                                |
-   |    ..                                          |
-   |                                                |
-   |    Metabolic Pathway Drift Hypothesis          |
-   +------------------------------------------------+
+   +--------------------------------------------------+
+   | .. figure:: images/metabolic_pathway_drift_1.jpg |
+   |                                                  |
+   |    ..                                            |
+   |                                                  |
+   |    Metabolic Pathway Drift Hypothesis            |
+   +--------------------------------------------------+
 
-To test this hypothesis, we develop PathModel to infer possible enzyme order changes in metabolic pathways.
+To test the hypothesis on the enzyme order drift, we develop PathModel to infer possible enzyme order changes in metabolic pathways.
+
+   +--------------------------------------------------+
+   | .. figure:: images/metabolic_pathway_drift_2.jpg |
+   |                                                  |
+   |    ..                                            |
+   |                                                  |
+   |    Metabolic Pathway Drift Hypothesis            |
+   +--------------------------------------------------+
 
 Program
 ~~~~~~~
