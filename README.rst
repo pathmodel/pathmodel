@@ -615,6 +615,8 @@ Then, it is possible to create pictures representation of the results:
 Article results
 ###############
 
+This prototype has been used to analyse to pathways from the red alga *Chondrus crispus*, the sterol and the Mycopsorine-like Amino-Acids.
+
 .. code:: sh
 
 	pathmodel test -o output_folder
@@ -888,7 +890,10 @@ The structures of the predicted molecules from M/Z can be found in newmolecules_
    | predictbond("Prediction_2702720_dehydration",double,18,19).  |
    +--------------------------------------------------------------+
 
-- Prediction_3023117_decarboxylation_1 and Prediction_3023117_decarboxylation_2 (which are the same molecule) correspond to MAA2:
+- Prediction_3023117_decarboxylation_1 and Prediction_3023117_decarboxylation_2 (which are the same molecule) correspond to MAA2.
+
+This molecule has been identified as the Aplysiapalythine A found in *Aplysia californica* by `Kamio et al. (2011) <https://onlinelibrary.wiley.com/doi/abs/10.1002/hlca.201100117>`__.
+Furthermore, Aplysiapalythine A has been detected in red algae (the group in which *Chondrus crispus* is classified) by `Orfanoudaki et al. (2019) <https://onlinelibrary.wiley.com/doi/full/10.1111/jpy.12827>`__.
 
 .. table::
    :align: center
@@ -946,3 +951,17 @@ The structures of the predicted molecules from M/Z can be found in newmolecules_
    | predictbond("Prediction_3023117_decarboxylation_1",single,19,20). | predictbond("Prediction_3023117_decarboxylation_2",single,19,20). |
    | predictbond("Prediction_3023117_decarboxylation_1",single,19,24). | predictbond("Prediction_3023117_decarboxylation_2",single,19,24). |
    +-------------------------------------------------------------------+-------------------------------------------------------------------+
+
+Citation
+--------
+
+Arnaud Belcour, Jean Girard, Méziane Aite, Ludovic Delage, Camille Trottier, Charlotte Marteau, Cédric Leroux, Simon M. Dittami, Pierre Sauleau, Erwan Corre, Jacques Nicolas, Catherine Boyen, Catherine Leblanc, Jonas Collén, Anne Siegel, Gabriel V. Markov. (2020). Inferring biochemical reactions and metabolite structures to understand metabolic pathway drift, *iScience*, 2020, 23(2): 100849, `https://doi.org/10.1016/j.isci.2020.100849 <https://doi.org/10.1016/j.isci.2020.100849>`__.
+
+`Citation in BibTeX format <https://hal.inria.fr/hal-01943880v2/bibtex>`__.
+
+Bibliography
+------------
+
+Kamio, M., Kicklighter, C.E., Nguyen, L., Germann, M.W. and Derby, C.D. (2011). Isolation and Structural Elucidation of Novel Mycosporine‐Like Amino Acids as Alarm Cues in the Defensive Ink Secretion of the Sea Hare *Aplysia californica*. *Helvetica Chimica Acta*, 94: 1012-1018. `doi:10.1002/hlca.201100117 <https://doi.org/10.1002/hlca.201100117>`__.
+
+Orfanoudaki, M., Hartmann, A., Karsten, U. and Ganzera, M. (2019). Chemical profiling of mycosporine‐like amino acids in twenty‐three red algal species. *Journal of Phycology*, 55: 393-403. `doi:10.1111/jpy.12827 <https://doi.org/10.1111/jpy.12827>`__.
