@@ -10,7 +10,7 @@
 .. image:: https://img.shields.io/docker/cloud/build/pathmodel/pathmodel
         :target: https://hub.docker.com/r/pathmodel/pathmodel
 
-.. image:: https://img.shields.io/badge/doi.org/10.1016/j.isci.2020.100849-blueviolet.svg
+.. image:: https://img.shields.io/badge/doi-10.1016/j.isci.2020.100849-blueviolet.svg
         :target: https://www.cell.com/iscience/fulltext/S2589-0042(20)30032-8
 
 
