@@ -282,7 +282,17 @@ Run PathModel prediction:
 
 .. code:: sh
 
-	pathmodel infer -i data.lp -o output_folder
+	pathmodel infer -i data.lp -o output_folder -s 100
+
+PathModel arguments:
+
+- -i: input file
+
+- -o: output folder
+
+- -s: number of maximal steps before PathModel stops (to avoid endless run), by default at 100
+
+If PathModel does not find the goal molecules before it reaches the number of maximal steps, it will send an error message.
 
 Create picture representing the results (like new molecules inferred from M/Z ratio):
 
@@ -296,7 +306,7 @@ In python (pathmodel_plot is not available in import call):
 
     import pathmodel
 
-    pathmodel.pathmodel_analysis('data.lp', output_folder)
+    pathmodel.pathmodel_analysis('data.lp', output_folder, step_limit=100)
 
 Output
 ~~~~~~
