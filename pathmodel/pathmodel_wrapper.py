@@ -3,6 +3,7 @@
 import clyngor
 import csv
 import os
+import sys
 import time
 
 # Path to package scripts.
@@ -10,6 +11,10 @@ global root
 root = __file__.rsplit('/', 1)[0]
 
 def check_folder(folder_in):
+    '''
+    Args:
+        folder_in (str): folder to check
+    '''
     if not os.path.isdir(folder_in):
         try:
             os.makedirs(folder_in)
@@ -22,6 +27,11 @@ def mz_computation(input_file):
     Compute MZ for all known molecules and MZ for reaction.
     Return the result as a string.
     Use next because for these analysis, we expect only one answer.
+
+    Args:
+        input_file (str): path to the input data file
+    Returns:
+        mz_result (str): ASP answer as str
     '''
     print('~~~~~Creation of MZ~~~~~')
     mz_solver = clyngor.solve([input_file, root + '/asp/MZComputation.lp'], use_clingo_module=False)
@@ -34,6 +44,12 @@ def reaction_creation(input_file, output_folder):
     '''
     Detect reaction sites by comparing molecules implied in a reaction.
     Return the result as a string.
+
+    Args:
+        input_file (str): path to the input data file
+        output_folder (str): path to the output folder
+    Returns:
+        reaction_result (str): ASP answer as str
     '''
     print('~~~~~Creation of Reaction~~~~~')
     reaction_solver = clyngor.solve([input_file, root + '/asp/ReactionSiteExtraction.lp'], use_clingo_module=False)
@@ -79,9 +95,16 @@ def reaction_creation(input_file, output_folder):
     return reaction_result
 
 
-def pathmodel_inference(input_string, output_folder):
+def pathmodel_inference(input_string, output_folder, step_limit):
     '''
     Infer reactions and metabolites from known reactions and metabolites.
+
+    Args:
+        input_file (str): path to the input data file
+        output_folder (str): path to the output folder
+        step_limit (int): if PathModel reaches this step limit, it will stop its inference and returns an error
+    Returns:
+        pathmodel_result (str): ASP answer as str
     '''
     print('~~~~~Inference of reactions and metabolites~~~~~')
     pathmodel_solver = clyngor.solve(inline=input_string, files=root + '/asp/PathModel.lp', use_clingo_module=False)
@@ -101,6 +124,11 @@ def pathmodel_inference(input_string, output_folder):
                 pathways[infer_step] = [(reactant, product)]
             else:
                 pathways[infer_step].append((reactant, product))
+        elif 'query' in atom[0]:
+            step = int(atom[1][0])
+            if step_limit:
+                if int(step_limit) == step:
+                    sys.exit('Step limit ('+str(step_limit)+') reached, the goal is not reachable in ' + str(step_limit) + 'steps or there is an error in the data.')
         else:
             best_model.append(atom[0] + '(' + ','.join(atom[1]) + ')')
             if 'newreaction' in atom[0]:
@@ -121,21 +149,37 @@ def pathmodel_inference(input_string, output_folder):
     return pathmodel_result
 
 
-def pathmodel_analysis(input_file, output_folder):
+def pathmodel_analysis(input_file, output_folder, step_limit=None):
+    '''
+    Run all PathModel functions.
+
+    Args:
+        input_file (str): path to the input data file
+        output_folder (str): path to the output folder
+        step_limit (int): if PathModel reaches this step limit, it will stop its inference and returns an error
+    Returns:
+        pathmodel_result (str): ASP answer as str
+    '''
     check_folder(output_folder)
 
     mz_result = mz_computation(input_file)
 
     reaction_result = reaction_creation(input_file, output_folder)
 
+    # Create step limit.
+    if step_limit:
+        str_step_limit = "step_limit("+str(step_limit)+")."
+    else:
+        str_step_limit = "step_limit(100)."
+
     # Merge input files + result from MZ prediction and reaction creation into a string, which will be the input file for PathModel.
-    input_string = open(input_file, 'r').read() + '\n' + mz_result + '\n' + reaction_result
+    input_string = open(input_file, 'r').read() + '\n' + str_step_limit + '\n' + mz_result + '\n' + reaction_result
 
     with open(output_folder + '/' + 'data_pathmodel.lp', 'w') as intermediate_file:
         intermediate_file.write(input_string)
         intermediate_file.write('\n')
 
-    pathmodel_result = pathmodel_inference(input_string, output_folder)
+    pathmodel_result = pathmodel_inference(input_string, output_folder, step_limit)
 
     output_lp = output_folder + '/' + 'pathmodel_output.lp'
 

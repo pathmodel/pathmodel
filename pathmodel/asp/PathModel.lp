@@ -279,10 +279,11 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reaction,ReactantName,ProductName); diffBondAfterReaction(Reaction,BondType,FirstAtomeNumber,SecondAtomeNumber).
 
 #program check(t).
-:- goal(F), query(t), not inferred(F,t).
+:- goal(F), query(t), not inferred(F,t), t<Tlimit, step_limit(Tlimit).
 
 #show newreaction/3.
 #show reaction/3.
 #show inferred/2.
 #show predictatom/3.
 #show predictbond/4.
+#show query/1.
