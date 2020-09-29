@@ -87,10 +87,14 @@ reached(KnownProduct, t):- source(KnownReactant), reaction(ReactionName, KnownRe
 % Add product found by inference methods.
 source(ProductInferred):- source(Reactant), reaction(ReactionName, Reactant, ProductInferred), reached(ProductInferred, t).
 
+% Add inference steps from previous step.
+inferred(pathway(Molecule1,ProductInferred), t):- inferred(pathway(Molecule1,ProductInferred), t-1).
+
+% Add inference when we reach a new molecule.
 inferred(pathway(Molecule1,Molecule2), t):- reaction(ReactionName,Molecule1,Molecule2), reached(Molecule2, t).
-inferred(pathway(Molecule1,ProductInferred), t):- reaction(ReactionName,Molecule2,ProductInferred), reached(ProductInferred, t), inferred(pathway(Molecule1,Molecule2), t-1).
-% Error with inferred (need to keep older inferred?)
-inferred(pathway(Molecule1,ProductInferred), t):-inferred(pathway(Molecule1,ProductInferred), t-1).
+
+% Add inference when we reach the product of a previous inference.
+inferred(pathway(Molecule1,ProductInferred), t):- reaction(ReactionName,Molecule2,ProductInferred), reached(ProductInferred, t), inferred(pathway(Molecule1,Molecule2), T2), T2 < t.
 
 
 %* Metabolite Inference Method
