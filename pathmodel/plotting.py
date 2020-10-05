@@ -30,7 +30,11 @@ try:
 except ImportError:
     raise ImportError("Requires graphviz (https://www.graphviz.org/) and pygraphviz (https://pygraphviz.github.io/).")
 
+
 def run_pathway_creation():
+    """
+    Functions handling the argument parsing of pathmodel_plot.
+    """
     parser = argparse.ArgumentParser(description="Plot molecules and reactions inferred by PathModel.")
     parser.add_argument("-i", "--input", dest="input_folder", metavar="FILE", help="Input folder corresponds to the output folder of pathmodel.")
 
@@ -60,6 +64,14 @@ def run_pathway_creation():
 
 
 def pathmodel_pathway_picture(asp_code, picture_name, input_filename):
+    """
+    Create the pathway picture using ASP results code from PathModel inference.
+
+    Args:
+        asp_code (str): string containing PathModel results
+        picture_name (str): path to the output picture file
+        input_filename (str): path to PathModel intermediary file
+    """
     DG = nx.DiGraph()
 
     known_compounds = []
@@ -145,9 +157,18 @@ def pathmodel_pathway_picture(asp_code, picture_name, input_filename):
     extension = os.path.splitext(picture_name)[1].strip('.')
     plt.savefig(picture_name, dpi=144, format=extension)
 
+
 def create_rdkit_molecule(molecule_name, molecules, molecule_numberings, bonds):
     '''
     Using dictionaries containing molecule structure create a rdkit molecule.
+
+    Args:
+        molecule_name (str): name of a molecule
+        molecules (dict): dictionary containing for each molecules a list with a atom numbers and types in the molecule
+        molecule_numberings (dict): dictionary containing for each molecules a list with a atom numbers in the molecule
+        bonds (dict): dictionary containing for each molecules the list of its bond in utpels (bond_number_1, bond_number_2, bond_type)
+    Returns:
+        rdmol (Mol): the molecule in rdkit Molecule
     '''
     # Create an editable molecule.
     rdmol = Chem.Mol()
@@ -195,6 +216,11 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
     From an ASP input file create 2d representation of molecules.
     To use align_domain, you need the intermediate file creates by pathmodel_wrapper.py.
     With align_domain, rdkit will use domain to align molecules.
+
+    Args:
+        input_filename (str): path to PathMoldel output file
+        output_directory (str): output folder containing pictures of the molecuels and of the infered pathway
+        align_domain (bool): if True, rdkit will use domain to align molecules
     '''
     with open(input_filename, 'r') as input_file:
         asp_code = input_file.read()
