@@ -156,18 +156,20 @@ reaction(rxn_21830, "(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3
 
 % Information necessary to infer new Δ1-2 reduction
 % PWY-6944: androstenedione degradation I (aerobic)
-reaction(rxn_12714,"androst-4-ene-3,17-dione","androsta-1,4-diene-3,17-dione). 
+reaction(rxn_12714,"androst-4-ene-3,17-dione","androsta-1,4-diene-3,17-dione").
 % corresponding metacyc general reactions (EC 1.3.99.4)
-reaction(3-OXOSTEROID-1-DEHYDROGENASE-RXN,"a 3-oxosteroid", "a 3-oxo-Δ1-steroid").
+reaction(rxn_3_OXOSTEROID_1_DEHYDROGENASE_RXN,"a 3-oxosteroid", "a 3-oxo-Δ1-steroid").
 
 % Information necessary to infer new 23 hydroxylation
 reaction(rxn_11530, "(22α)-hydroxy-campest-4-en-3-one", "(22R,23R)-22,23-dihydroxy-campest-4-en-3-one").
 
-% Information necessary to infer new 23 dehydrogenation
+%*
+Information necessary to infer new 23 dehydrogenation
 Here we have to define the general concept of steroid dehydrogenation based on the numerous occurrences on various positions: 3, 7, 11, 12, 17, 20 
 https://metacyc.org/META/substring-search?type=NIL&object=hydroxysteroid+dehydrogenase&quickSearch=Quick+Search#ENZYME
 The candidate enzyme could belong either to the short-chain dehydrogenase family (SDR) or to the aldo-ketoreductases. 
 Alternatively, the reaction could also be performed by a CYP enzyme in a CYP85 or CYP90A-like manner.
+*%
 
 % PWY66-4 and PWY-8191
 reaction(rxn66_28, "desmosterol", "cholesterol").
