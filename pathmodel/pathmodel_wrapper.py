@@ -170,6 +170,7 @@ def pathmodel_analysis(input_file, output_folder, step_limit=None):
     if step_limit:
         str_step_limit = "step_limit("+str(step_limit)+")."
     else:
+        step_limit = 100
         str_step_limit = "step_limit(100)."
 
     # Merge input files + result from MZ prediction and reaction creation into a string, which will be the input file for PathModel.
