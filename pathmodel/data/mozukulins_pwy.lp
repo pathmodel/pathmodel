@@ -28,13 +28,38 @@ bond("cycloartenol",single,25,26). bond("cycloartenol",single,25,27).
 
 % Sterols from PWY-8191
 
+atom("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",1..30,carb). atom("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",31,oxyg). atom("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",33,oxyg).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,1,2). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,1,10). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,2,3).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,3,4). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,3,31). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,4,5).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,4,29). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleS,4,28). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,5,6).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,5,10). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,6,7). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,7,8).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,8,9). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,8,14). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,9,10).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,9,11).bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,9,19). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,10,19).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,11,12). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,12,13). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,13,14).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,14,15). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleS,14,30). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,15,16).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,16,17). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,13,17). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,13,18).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,17,20). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleS,20,21). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,20,22).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,22,23). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,23,24). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",double,24,25).
+bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,25,26). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,25,27). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,29,33).
+
+atom("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",1..30,carb). atom("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",31,oxyg). atom("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",33,oxyg).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,1,2). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,1,10). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,2,3).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,3,4). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,3,31). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,4,5).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,4,29). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleS,4,28). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,5,6).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,5,10). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,6,7). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,7,8).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,8,9). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,8,14). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,9,10).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,9,11).bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,9,19). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,10,19).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,11,12). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,12,13). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,13,14).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,14,15). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleS,14,30). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,15,16).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,16,17). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,13,17). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,13,18).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,17,20). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleS,20,21). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,20,22).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,22,23). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,23,24). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",double,24,25).
+bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,25,26). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,25,27). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",double,29,33).
+
 atom("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",1..30,carb). atom("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",31..33,oxyg).
 bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,1,2). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,1,10). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,2,3).
 bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,3,4). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleR,3,31). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,4,5).
-bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleR,4,29). 
-bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,29,32). 
-bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",double,29,33). 
-bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleS,4,28). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,5,6).
+bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleR,4,29). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleS,4,28). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,5,6).
 bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,5,10). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,6,7). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,7,8).
 bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,8,9). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,8,14). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,9,10).
 bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,9,11).bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleR,9,19). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleR,10,19).
@@ -43,21 +68,103 @@ bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,14,
 bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,16,17). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,13,17). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleR,13,18).
 bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleR,17,20). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleS,20,21). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,20,22).
 bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,22,23). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,23,24). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",double,24,25).
-bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,25,26). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,25,27).
+bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,25,26). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,25,27). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,29,32).
+bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",double,29,33).
 
 atom("31-norcycloartenone",1..28,carb). atom("31-norcycloartenone",30,carb). atom("31-norcycloartenone",31,oxyg).
 bond("31-norcycloartenone",single,1,2). bond("31-norcycloartenone",single,1,10). bond("31-norcycloartenone",single,2,3).
 bond("31-norcycloartenone",single,3,4). bond("31-norcycloartenone",double,3,31). bond("31-norcycloartenone",single,4,5).
-bond("31-norcycloartenone",singleS,4,28). bond("31-norcycloartenone",single,5,6).
-bond("31-norcycloartenone",single,5,10). bond("31-norcycloartenone",single,6,7). bond("31-norcycloartenone",single,7,8).
-bond("31-norcycloartenone",single,8,9). bond("31-norcycloartenone",single,8,14). bond("31-norcycloartenone",single,9,10).
-bond("31-norcycloartenone",single,9,11).bond("31-norcycloartenone",singleR,9,19). bond("31-norcycloartenone",singleR,10,19).
-bond("31-norcycloartenone",single,11,12). bond("31-norcycloartenone",single,12,13). bond("31-norcycloartenone",single,13,14).
-bond("31-norcycloartenone",single,14,15). bond("31-norcycloartenone",singleS,14,30). bond("31-norcycloartenone",single,15,16).
-bond("31-norcycloartenone",single,16,17). bond("31-norcycloartenone",single,13,17). bond("31-norcycloartenone",singleR,13,18).
-bond("31-norcycloartenone",singleR,17,20). bond("31-norcycloartenone",singleS,20,21). bond("31-norcycloartenone",single,20,22).
-bond("31-norcycloartenone",single,22,23). bond("31-norcycloartenone",single,23,24). bond("31-norcycloartenone",double,24,25).
-bond("31-norcycloartenone",single,25,26). bond("31-norcycloartenone",single,25,27).
+bond("31-norcycloartenone",singleS,4,28). bond("31-norcycloartenone",single,5,6). bond("31-norcycloartenone",single,5,10).
+bond("31-norcycloartenone",single,6,7). bond("31-norcycloartenone",single,7,8). bond("31-norcycloartenone",single,8,9).
+bond("31-norcycloartenone",single,8,14). bond("31-norcycloartenone",single,9,10). bond("31-norcycloartenone",single,9,11).
+bond("31-norcycloartenone",singleR,9,19). bond("31-norcycloartenone",singleR,10,19). bond("31-norcycloartenone",single,11,12).
+bond("31-norcycloartenone",single,12,13). bond("31-norcycloartenone",single,13,14). bond("31-norcycloartenone",single,14,15).
+bond("31-norcycloartenone",singleS,14,30). bond("31-norcycloartenone",single,15,16). bond("31-norcycloartenone",single,16,17).
+bond("31-norcycloartenone",single,13,17). bond("31-norcycloartenone",singleR,13,18). bond("31-norcycloartenone",singleR,17,20).
+bond("31-norcycloartenone",singleS,20,21). bond("31-norcycloartenone",single,20,22). bond("31-norcycloartenone",single,22,23).
+bond("31-norcycloartenone",single,23,24). bond("31-norcycloartenone",double,24,25). bond("31-norcycloartenone",single,25,26).
+bond("31-norcycloartenone",single,25,27).
+
+atom("desmosterol",1..27,carb). atom("desmosterol",31,oxyg).
+bond("desmosterol",single,1,2). bond("desmosterol",single,1,10). bond("desmosterol",single,2,3).
+bond("desmosterol",single,3,4). bond("desmosterol",singleR,3,31). bond("desmosterol",single,4,5).
+bond("desmosterol",double,5,6). bond("desmosterol",single,5,10). bond("desmosterol",single,6,7).
+bond("desmosterol",single,7,8). bond("desmosterol",single,8,9). bond("desmosterol",single,8,14).
+bond("desmosterol",single,9,10). bond("desmosterol",single,9,11). bond("desmosterol",singleR,10,19).
+bond("desmosterol",single,11,12). bond("desmosterol",single,12,13). bond("desmosterol",single,13,14).
+bond("desmosterol",single,14,15). bond("desmosterol",single,15,16). bond("desmosterol",single,16,17).
+bond("desmosterol",single,13,17). bond("desmosterol",singleR,13,18). bond("desmosterol",singleR,17,20).
+bond("desmosterol",singleS,20,21). bond("desmosterol",single,20,22). bond("desmosterol",single,22,23).
+bond("desmosterol",single,23,24). bond("desmosterol",double,24,25). bond("desmosterol",single,25,26).
+bond("desmosterol",single,25,27).
+
+atom("cholesterol",1..27,carb). atom("cholesterol",31,oxyg).
+bond("cholesterol",single,1,2). bond("cholesterol",single,1,10). bond("cholesterol",single,2,3).
+bond("cholesterol",single,3,4). bond("cholesterol",singleR,3,31). bond("cholesterol",single,4,5).
+bond("cholesterol",double,5,6). bond("cholesterol",single,5,10). bond("cholesterol",single,6,7).
+bond("cholesterol",single,7,8). bond("cholesterol",single,8,9). bond("cholesterol",single,8,14).
+bond("cholesterol",single,9,10). bond("cholesterol",single,9,11). bond("cholesterol",singleR,10,19).
+bond("cholesterol",single,11,12). bond("cholesterol",single,12,13). bond("cholesterol",single,13,14).
+bond("cholesterol",single,14,15). bond("cholesterol",single,15,16). bond("cholesterol",single,16,17).
+bond("cholesterol",single,13,17). bond("cholesterol",singleR,13,18). bond("cholesterol",singleR,17,20).
+bond("cholesterol",singleS,20,21). bond("cholesterol",single,20,22). bond("cholesterol",single,22,23).
+bond("cholesterol",single,23,24). bond("cholesterol",single,24,25). bond("cholesterol",single,25,26).
+bond("cholesterol",single,25,27).
+
+% PWY-6944: androstenedione degradation I (aerobic)
+
+atom("androst-4-ene-3,17-dione",1..19,carb). atom("androst-4-ene-3,17-dione",20,oxyg). atom("androst-4-ene-3,17-dione",31,oxyg).
+bond("androst-4-ene-3,17-dione",single,1,2). bond("androst-4-ene-3,17-dione",single,1,10). bond("androst-4-ene-3,17-dione",single,2,3).
+bond("androst-4-ene-3,17-dione",single,3,4). bond("androst-4-ene-3,17-dione",double,3,31). bond("androst-4-ene-3,17-dione",double,4,5).
+bond("androst-4-ene-3,17-dione",single,5,6). bond("androst-4-ene-3,17-dione",single,5,10). bond("androst-4-ene-3,17-dione",single,6,7).
+bond("androst-4-ene-3,17-dione",single,7,8). bond("androst-4-ene-3,17-dione",single,8,9). bond("androst-4-ene-3,17-dione",single,8,14).
+bond("androst-4-ene-3,17-dione",single,9,10). bond("androst-4-ene-3,17-dione",single,9,11). ond("androst-4-ene-3,17-dione",singleR,10,19).
+bond("androst-4-ene-3,17-dione",single,11,12). bond("androst-4-ene-3,17-dione",single,12,13). bond("androst-4-ene-3,17-dione",single,13,14).
+bond("androst-4-ene-3,17-dione",single,14,15). bond("androst-4-ene-3,17-dione",singleS,14,30). bond("androst-4-ene-3,17-dione",single,15,16).
+bond("androst-4-ene-3,17-dione",single,16,17). bond("androst-4-ene-3,17-dione",single,13,17). bond("androst-4-ene-3,17-dione",singleR,13,18).
+bond("androst-4-ene-3,17-dione",double,17,20).
+
+atom("androsta-1,4-diene-3,17-dione",1..19,carb). atom("androsta-1,4-diene-3,17-dione",20,oxyg). atom("androsta-1,4-diene-3,17-dione",31,oxyg).
+bond("androsta-1,4-diene-3,17-dione",double,1,2). bond("androsta-1,4-diene-3,17-dione",single,1,10). bond("androsta-1,4-diene-3,17-dione",single,2,3).
+bond("androsta-1,4-diene-3,17-dione",single,3,4). bond("androsta-1,4-diene-3,17-dione",double,3,31). bond("androsta-1,4-diene-3,17-dione",double,4,5).
+bond("androsta-1,4-diene-3,17-dione",single,5,6). bond("androsta-1,4-diene-3,17-dione",single,5,10). bond("androsta-1,4-diene-3,17-dione",single,6,7).
+bond("androsta-1,4-diene-3,17-dione",single,7,8). bond("androsta-1,4-diene-3,17-dione",single,8,9). bond("androsta-1,4-diene-3,17-dione",single,8,14).
+bond("androsta-1,4-diene-3,17-dione",single,9,10). bond("androsta-1,4-diene-3,17-dione",single,9,11). ond("androsta-1,4-diene-3,17-dione",singleR,10,19).
+bond("androsta-1,4-diene-3,17-dione",single,11,12). bond("androsta-1,4-diene-3,17-dione",single,12,13). bond("androsta-1,4-diene-3,17-dione",single,13,14).
+bond("androsta-1,4-diene-3,17-dione",single,14,15). bond("androsta-1,4-diene-3,17-dione",singleS,14,30). bond("androsta-1,4-diene-3,17-dione",single,15,16).
+bond("androsta-1,4-diene-3,17-dione",single,16,17). bond("androsta-1,4-diene-3,17-dione",single,13,17). bond("androsta-1,4-diene-3,17-dione",singleR,13,18).
+bond("androsta-1,4-diene-3,17-dione",double,17,20).
+
+% Information necessary to infer new 23 hydroxylation
+atom("(22α)-hydroxy-campest-4-en-3-one",1..27,carb).  atom("(22α)-hydroxy-campest-4-en-3-one",30,carb). atom("(22α)-hydroxy-campest-4-en-3-one",31,oxyg).
+atom("(22α)-hydroxy-campest-4-en-3-one",34,oxyg). atom("(22α)-hydroxy-campest-4-en-3-one",35,carb).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,1,2). bond("(22α)-hydroxy-campest-4-en-3-one",single,1,10). bond("(22α)-hydroxy-campest-4-en-3-one",single,2,3).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,3,4). bond("(22α)-hydroxy-campest-4-en-3-one",double,3,31). bond("(22α)-hydroxy-campest-4-en-3-one",single,4,5).
+bond("(22α)-hydroxy-campest-4-en-3-one",double,5,6). bond("(22α)-hydroxy-campest-4-en-3-one",single,5,10). bond("(22α)-hydroxy-campest-4-en-3-one",single,6,7).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,7,8). bond("(22α)-hydroxy-campest-4-en-3-one",single,8,9). bond("(22α)-hydroxy-campest-4-en-3-one",single,8,14).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,9,10). bond("(22α)-hydroxy-campest-4-en-3-one",single,9,11). bond("(22α)-hydroxy-campest-4-en-3-one",singleR,10,19).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,11,12). bond("(22α)-hydroxy-campest-4-en-3-one",single,12,13). bond("(22α)-hydroxy-campest-4-en-3-one",single,13,14).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,14,15). bond("(22α)-hydroxy-campest-4-en-3-one",singleS,14,30). bond("(22α)-hydroxy-campest-4-en-3-one",single,15,16).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,16,17). bond("(22α)-hydroxy-campest-4-en-3-one",single,13,17). bond("(22α)-hydroxy-campest-4-en-3-one",singleR,13,18).
+bond("(22α)-hydroxy-campest-4-en-3-one",singleR,17,20). bond("(22α)-hydroxy-campest-4-en-3-one",singleS,20,21). bond("(22α)-hydroxy-campest-4-en-3-one",single,20,22).
+bond("(22α)-hydroxy-campest-4-en-3-one",singleR,22,34). bond("(22α)-hydroxy-campest-4-en-3-one",single,22,23). bond("(22α)-hydroxy-campest-4-en-3-one",single,23,24).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,24,25). bond("(22α)-hydroxy-campest-4-en-3-one",singleR,24,35). bond("(22α)-hydroxy-campest-4-en-3-one",single,25,26).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,25,27).
+
+atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",1..27,carb).  atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",30,carb). atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",31,oxyg).
+atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",32,oxyg). atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",34,oxyg). atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",35,carb).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,1,2). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,1,10). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,2,3).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,3,4). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",double,3,31). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,4,5).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",double,5,6). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,5,10). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,6,7).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,7,8). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,8,9). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,8,14).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,9,10). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,9,11). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,10,19).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,11,12). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,12,13). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,13,14).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,14,15). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleS,14,30). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,15,16).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,16,17). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,13,17). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,13,18).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,17,20). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleS,20,21). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,20,22).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,22,34). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,22,23). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,23,24).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,23,32). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,24,25). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,24,35). 
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,25,26). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,25,27).
 
 % New inferred intermediates
 
@@ -86,8 +193,8 @@ bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,11,12). bond("23-hydroxy-Δ1-
 bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,14,15). bond("23-hydroxy-Δ1-2-31-norcycloartenone",singleS,14,30). bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,15,16).
 bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,16,17). bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,13,17). bond("23-hydroxy-Δ1-2-31-norcycloartenone",singleR,13,18).
 bond("23-hydroxy-Δ1-2-31-norcycloartenone",singleR,17,20). bond("23-hydroxy-Δ1-2-31-norcycloartenone",singleS,20,21). bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,20,22).
-bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,22,23). bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,23,24). bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,23,32). bond("23-hydroxy-Δ1-2-31-norcycloartenone",double,24,25).
-bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,25,26). bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,25,27).
+bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,22,23). bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,23,24). bond("23-hydroxy-Δ1-2-31-norcycloartenone",singleR,23,32).
+bond("23-hydroxy-Δ1-2-31-norcycloartenone",double,24,25). bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,25,26). bond("23-hydroxy-Δ1-2-31-norcycloartenone",single,25,27).
 
 % Mozukulins A and B from Chen et al., 2016
 
@@ -154,6 +261,8 @@ reaction(rxn_21827, "(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-2
 reaction(rxn_21828, "(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol", "(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol").
 reaction(rxn_21830, "(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol", "31-norcycloartenone").
 
+reaction(rxn66_28, "desmosterol", "cholesterol").
+
 % Information necessary to infer new Δ1-2 reduction
 % PWY-6944: androstenedione degradation I (aerobic)
 reaction(rxn_12714,"androst-4-ene-3,17-dione","androsta-1,4-diene-3,17-dione").
@@ -170,6 +279,7 @@ https://metacyc.org/META/substring-search?type=NIL&object=hydroxysteroid+dehydro
 The candidate enzyme could belong either to the short-chain dehydrogenase family (SDR) or to the aldo-ketoreductases. 
 Alternatively, the reaction could also be performed by a CYP enzyme in a CYP85 or CYP90A-like manner.
 *%
+reaction(new_23_dehydrogenation, "23-hydroxy-Δ1-2-31-norcycloartenone", "mozukulin A").
 
 % PWY66-4 and PWY-8191
 reaction(rxn66_28, "desmosterol", "cholesterol").
