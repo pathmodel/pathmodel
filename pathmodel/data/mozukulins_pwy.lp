@@ -261,6 +261,7 @@ reaction(rxn_21827, "(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-2
 reaction(rxn_21828, "(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol", "(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol").
 reaction(rxn_21830, "(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol", "31-norcycloartenone").
 
+% PWY66-4 and PWY-8191
 reaction(rxn66_28, "desmosterol", "cholesterol").
 
 % Information necessary to infer new Δ1-2 reduction
@@ -280,10 +281,6 @@ The candidate enzyme could belong either to the short-chain dehydrogenase family
 Alternatively, the reaction could also be performed by a CYP enzyme in a CYP85 or CYP90A-like manner.
 *%
 reaction(new_23_dehydrogenation, "23-hydroxy-Δ1-2-31-norcycloartenone", "mozukulin A").
-
-% PWY66-4 and PWY-8191
-reaction(rxn66_28, "desmosterol", "cholesterol").
-
 
 % Source molecule for inference.
 
