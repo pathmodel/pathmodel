@@ -174,7 +174,7 @@ def create_rdkit_molecule(molecule_name, molecules, molecule_numberings, bonds):
     rdmol = Chem.Mol()
     rdedmol = Chem.EditableMol(rdmol)
 
-    atoms = sorted(molecules[molecule_name])
+    atoms = {atom_tuple[0]: atom_tuple[1] for atom_tuple in sorted(molecules[molecule_name])}
     atom_numberings = sorted(molecule_numberings[molecule_name])
     # Renumber atom so there is no atom with a number superior to the number of atoms in the molecule.
     atom_replaces = {}
@@ -188,18 +188,18 @@ def create_rdkit_molecule(molecule_name, molecules, molecule_numberings, bonds):
     rdedmol.AddAtom(rdatom)
 
     # Add atoms from the molecule.
-    for atom in atoms:
-        rdatom = Chem.Atom(atom[1])
+    # Add absent atoms to keep the atom numbering.
+    for atom_number in range(max(atom_numberings)):
+        atom_number += 1
+        if atom_number in atoms:
+            atom = atoms[atom_number]
+        else:
+            atom = 0
+        rdatom = Chem.Atom(atom)
         rdedmol.AddAtom(rdatom)
 
     # Add bonds from the molecule.
     for bond in bonds[molecule_name]:
-        # Renumber the bond with the changes made in atom numbering.
-        bond = list(bond)
-        if bond[0] in atom_replaces:
-            bond[0] = atom_replaces[bond[0]]
-        if bond[1] in atom_replaces:
-            bond[1] = atom_replaces[bond[1]]
         bond = tuple(bond)
         rdedmol.AddBond(bond[0],
                         bond[1],
