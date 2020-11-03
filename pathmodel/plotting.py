@@ -36,7 +36,7 @@ def run_pathway_creation():
     Functions handling the argument parsing of pathmodel_plot.
     """
     parser = argparse.ArgumentParser(description="Plot molecules and reactions inferred by PathModel.")
-    parser.add_argument("-i", "--input", dest="input_folder", metavar="FILE", help="Input folder corresponds to the output folder of pathmodel.")
+    parser.add_argument("-i", "--input", dest="input_folder", metavar="FOLDER", help="Input folder corresponds to the output folder of pathmodel.")
 
     parser_args = parser.parse_args()
 
