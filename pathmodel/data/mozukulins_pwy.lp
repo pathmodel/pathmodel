@@ -85,6 +85,178 @@ bond("31-norcycloartenone",singleS,20,21). bond("31-norcycloartenone",single,20,
 bond("31-norcycloartenone",single,23,24). bond("31-norcycloartenone",double,24,25). bond("31-norcycloartenone",single,25,26).
 bond("31-norcycloartenone",single,25,27).
 
+atom("31-norcycloartenol",1..28,carb). atom("31-norcycloartenol",30,carb). atom("31-norcycloartenol",31,oxyg).
+bond("31-norcycloartenol",single,1,2). bond("31-norcycloartenol",single,1,10). bond("31-norcycloartenol",single,2,3).
+bond("31-norcycloartenol",single,3,4). bond("31-norcycloartenol",double,3,31). bond("31-norcycloartenol",single,4,5).
+bond("31-norcycloartenol",singleS,4,28). bond("31-norcycloartenol",single,5,6). bond("31-norcycloartenol",single,5,10).
+bond("31-norcycloartenol",single,6,7). bond("31-norcycloartenol",single,7,8). bond("31-norcycloartenol",double,8,9).
+bond("31-norcycloartenol",single,8,14). bond("31-norcycloartenol",single,9,10). bond("31-norcycloartenol",single,9,11).
+bond("31-norcycloartenol",singleR,10,19). bond("31-norcycloartenol",single,11,12). bond("31-norcycloartenol",single,12,13).
+bond("31-norcycloartenol",single,13,14). bond("31-norcycloartenol",single,14,15). bond("31-norcycloartenol",single,15,16).
+bond("31-norcycloartenol",single,16,17). bond("31-norcycloartenol",single,13,17). bond("31-norcycloartenol",singleR,13,18).
+bond("31-norcycloartenol",singleR,17,20). bond("31-norcycloartenol",singleS,20,21). bond("31-norcycloartenol",single,20,22).
+bond("31-norcycloartenol",single,22,23). bond("31-norcycloartenol",single,23,24). bond("31-norcycloartenol",double,24,25).
+bond("31-norcycloartenol",single,25,26). bond("31-norcycloartenol",single,25,27).
+
+atom("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",1..28,carb). atom("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",30,carb). atom("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",31,oxyg).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,1,2). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,1,10). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,2,3).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,3,4). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",double,3,31). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,4,5).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",singleS,4,28). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,5,6). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,5,10).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,6,7). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,7,8). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",double,8,9).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,8,14). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,9,10). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,9,11).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",singleR,10,19). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,11,12). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,12,13).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,13,14). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,14,15). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,15,16).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,16,17). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,13,17). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",singleR,13,18).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",singleR,17,20). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",singleS,20,21). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,20,22).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,22,23). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,23,24). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",double,24,25).
+bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,25,26). bond("4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol",single,25,27).
+
+atom("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",1..28,carb). atom("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",30,carb). atom("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",31,oxyg).
+atom("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",34,oxyg).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,1,2). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,1,10). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,2,3).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,3,4). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",double,3,31). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,4,5).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",singleS,4,28). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,5,6). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,5,10).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,6,7). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,7,8). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",double,8,9).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,8,14). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,9,10). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,9,11).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",singleR,10,19). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,11,12). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,12,13).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,13,14). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,14,15). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,15,16).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,16,17). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,13,17). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",singleR,13,18).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",singleR,17,20). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",singleS,20,21). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,20,22).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,22,23). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,23,24). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",double,24,25).
+bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,25,26). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,25,27). bond("4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,29,34).
+
+atom("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",1..28,carb). atom("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",30,carb). atom("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",31,oxyg).
+atom("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",34,oxyg).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,1,2). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,1,10). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,2,3).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,3,4). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",double,3,31). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,4,5).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",singleS,4,28). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,5,6). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,5,10).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,6,7). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,7,8). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",double,8,9).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,8,14). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,9,10). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,9,11).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",singleR,10,19). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,11,12). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,12,13).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,13,14). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,14,15). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,15,16).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,16,17). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,13,17). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",singleR,13,18).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",singleR,17,20). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",singleS,20,21). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,20,22).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,22,23). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,23,24). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",double,24,25).
+bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,25,26). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",single,25,27). bond("4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol",double,29,34).
+
+atom("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",1..28,carb). atom("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",31,oxyg).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,1,2). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,1,10). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,2,3).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,3,4). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",double,3,31). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,4,5).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",singleS,4,28). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,5,6). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,5,10).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,6,7). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,7,8). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",double,8,9).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,8,14). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,9,10). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,9,11).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",singleR,10,19). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,11,12). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,12,13).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,13,14). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",double,14,15). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,15,16).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,16,17). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,13,17). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",singleR,13,18).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",singleR,17,20). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",singleS,20,21). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,20,22).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,22,23). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,23,24). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",double,24,25).
+bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,25,26). bond("4α-methyl-5α-cholesta-8,14,24-trien-3β-ol",single,25,27).
+
+atom("4α-methyl-5α-cholesta-8,24-dien-3β-ol",1..28,carb). atom("4α-methyl-5α-cholesta-8,24-dien-3β-ol",31,oxyg).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,1,2). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,1,10). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,2,3).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,3,4). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",double,3,31). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,4,5).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",singleS,4,28). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,5,6). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,5,10).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,6,7). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,7,8). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",double,8,9).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,8,14). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,9,10). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,9,11).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",singleR,10,19). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,11,12). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,12,13).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,13,14). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,14,15). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,15,16).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,16,17). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,13,17). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",singleR,13,18).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",singleR,17,20). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",singleS,20,21). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,20,22).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,22,23). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,23,24). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",double,24,25).
+bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,25,26). bond("4α-methyl-5α-cholesta-8,24-dien-3β-ol",single,25,27).
+
+atom("4α-methyl-5α-cholesta-7,24-dien-3β-ol",1..28,carb). atom("4α-methyl-5α-cholesta-7,24-dien-3β-ol",31,oxyg).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,1,2). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,1,10). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,2,3).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,3,4). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",double,3,31). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,4,5).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",singleS,4,28). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,5,6). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,5,10).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,6,7). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",double,7,8). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,8,9).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,8,14). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,9,10). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,9,11).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",singleR,10,19). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,11,12). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,12,13).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,13,14). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,14,15). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,15,16).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,16,17). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,13,17). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",singleR,13,18).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",singleR,17,20). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",singleS,20,21). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,20,22).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,22,23). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,23,24). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",double,24,25).
+bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,25,26). bond("4α-methyl-5α-cholesta-7,24-dien-3β-ol",single,25,27).
+
+atom("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",1..28,carb). atom("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",31,oxyg). atom("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",34,oxyg).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,1,2). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,1,10). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,2,3).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,3,4). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",double,3,31). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,4,5).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",singleS,4,28). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,5,6). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,5,10).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,6,7). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",double,7,8). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,8,9).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,8,14). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,9,10). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,9,11).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",singleR,10,19). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,11,12). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,12,13).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,13,14). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,14,15). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,15,16).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,16,17). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,13,17). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",singleR,13,18).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",singleR,17,20). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",singleS,20,21). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,20,22).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,22,23). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,23,24). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",double,24,25).
+bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,25,26). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,25,27). bond("4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol",single,29,34).
+
+atom("4α-formyl-5α-cholest-7,24-dien-3β-ol",1..28,carb). atom("4α-formyl-5α-cholest-7,24-dien-3β-ol",31,oxyg). atom("4α-formyl-5α-cholest-7,24-dien-3β-ol",34,oxyg).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,1,2). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,1,10). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,2,3).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,3,4). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",double,3,31). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,4,5).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",singleS,4,28). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,5,6). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,5,10).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,6,7). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",double,7,8). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,8,9).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,8,14). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,9,10). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,9,11).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",singleR,10,19). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,11,12). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,12,13).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,13,14). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,14,15). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,15,16).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,16,17). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,13,17). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",singleR,13,18).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",singleR,17,20). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",singleS,20,21). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,20,22).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,22,23). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,23,24). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",double,24,25).
+bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,25,26). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",single,25,27). bond("4α-formyl-5α-cholest-7,24-dien-3β-ol",double,29,34).
+
+atom("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",1..28,carb). atom("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",31,oxyg). atom("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",34..35,oxyg).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,1,2). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,1,10). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,2,3).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,3,4). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",double,3,31). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,4,5).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",singleS,4,28). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,5,6). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,5,10).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,6,7). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",double,7,8). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,8,9).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,8,14). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,9,10). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,9,11).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",singleR,10,19). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,11,12). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,12,13).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,13,14). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,14,15). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,15,16).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,16,17). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,13,17). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",singleR,13,18).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",singleR,17,20). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",singleS,20,21). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,20,22).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,22,23). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,23,24). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",double,24,25).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,25,26). bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,25,27).bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",double,29,34).
+bond("4α-carboxy-5α-cholesta-7,24-dien-3β-ol",single,29,35).
+
+atom("5α-cholesta-7,24-dien-3-one",1..27,carb). atom("5α-cholesta-7,24-dien-3-one",31,oxyg).
+bond("5α-cholesta-7,24-dien-3-one",single,1,2). bond("5α-cholesta-7,24-dien-3-one",single,1,10). bond("5α-cholesta-7,24-dien-3-one",single,2,3).
+bond("5α-cholesta-7,24-dien-3-one",single,3,4). bond("5α-cholesta-7,24-dien-3-one",double,3,31). bond("5α-cholesta-7,24-dien-3-one",single,4,5).
+bond("5α-cholesta-7,24-dien-3-one",single,5,6). bond("5α-cholesta-7,24-dien-3-one",single,5,10). bond("5α-cholesta-7,24-dien-3-one",single,6,7).
+bond("5α-cholesta-7,24-dien-3-one",double,7,8). bond("5α-cholesta-7,24-dien-3-one",single,8,9). bond("5α-cholesta-7,24-dien-3-one",single,8,14).
+bond("5α-cholesta-7,24-dien-3-one",single,9,10). bond("5α-cholesta-7,24-dien-3-one",single,9,11). bond("5α-cholesta-7,24-dien-3-one",singleR,10,19).
+bond("5α-cholesta-7,24-dien-3-one",single,11,12). bond("5α-cholesta-7,24-dien-3-one",single,12,13). bond("5α-cholesta-7,24-dien-3-one",single,13,14).
+bond("5α-cholesta-7,24-dien-3-one",single,14,15). bond("5α-cholesta-7,24-dien-3-one",single,15,16). bond("5α-cholesta-7,24-dien-3-one",single,16,17).
+bond("5α-cholesta-7,24-dien-3-one",single,13,17). bond("5α-cholesta-7,24-dien-3-one",singleR,13,18). bond("5α-cholesta-7,24-dien-3-one",singleR,17,20).
+bond("5α-cholesta-7,24-dien-3-one",singleS,20,21). bond("5α-cholesta-7,24-dien-3-one",single,20,22). bond("5α-cholesta-7,24-dien-3-one",single,22,23).
+bond("5α-cholesta-7,24-dien-3-one",single,23,24). bond("5α-cholesta-7,24-dien-3-one",double,24,25). bond("5α-cholesta-7,24-dien-3-one",single,25,26).
+bond("5α-cholesta-7,24-dien-3-one",single,25,27).
+
+atom("5α-cholesta-7,24-dienol",1..27,carb). atom("5α-cholesta-7,24-dienol",31,oxyg).
+bond("5α-cholesta-7,24-dienol",single,1,2). bond("5α-cholesta-7,24-dienol",single,1,10). bond("5α-cholesta-7,24-dienol",single,2,3).
+bond("5α-cholesta-7,24-dienol",single,3,4). bond("5α-cholesta-7,24-dienol",singleR,3,31). bond("5α-cholesta-7,24-dienol",single,4,5).
+bond("5α-cholesta-7,24-dienol",single,5,6). bond("5α-cholesta-7,24-dienol",single,5,10). bond("5α-cholesta-7,24-dienol",single,6,7).
+bond("5α-cholesta-7,24-dienol",double,7,8). bond("5α-cholesta-7,24-dienol",single,8,9). bond("5α-cholesta-7,24-dienol",single,8,14).
+bond("5α-cholesta-7,24-dienol",single,9,10). bond("5α-cholesta-7,24-dienol",single,9,11). bond("5α-cholesta-7,24-dienol",singleR,10,19).
+bond("5α-cholesta-7,24-dienol",single,11,12). bond("5α-cholesta-7,24-dienol",single,12,13). bond("5α-cholesta-7,24-dienol",single,13,14).
+bond("5α-cholesta-7,24-dienol",single,14,15). bond("5α-cholesta-7,24-dienol",single,15,16). bond("5α-cholesta-7,24-dienol",single,16,17).
+bond("5α-cholesta-7,24-dienol",single,13,17). bond("5α-cholesta-7,24-dienol",singleR,13,18). bond("5α-cholesta-7,24-dienol",singleR,17,20).
+bond("5α-cholesta-7,24-dienol",singleS,20,21). bond("5α-cholesta-7,24-dienol",single,20,22). bond("5α-cholesta-7,24-dienol",single,22,23).
+bond("5α-cholesta-7,24-dienol",single,23,24). bond("5α-cholesta-7,24-dienol",double,24,25). bond("5α-cholesta-7,24-dienol",single,25,26).
+bond("5α-cholesta-7,24-dienol",single,25,27).
+
+atom("7-dehydrodesmosterol",1..27,carb). atom("7-dehydrodesmosterol",31,oxyg).
+bond("7-dehydrodesmosterol",single,1,2). bond("7-dehydrodesmosterol",single,1,10). bond("7-dehydrodesmosterol",single,2,3).
+bond("7-dehydrodesmosterol",single,3,4). bond("7-dehydrodesmosterol",singleR,3,31). bond("7-dehydrodesmosterol",single,4,5).
+bond("7-dehydrodesmosterol",double,5,6). bond("7-dehydrodesmosterol",single,5,10). bond("7-dehydrodesmosterol",single,6,7).
+bond("7-dehydrodesmosterol",double,7,8). bond("7-dehydrodesmosterol",single,8,9). bond("7-dehydrodesmosterol",single,8,14).
+bond("7-dehydrodesmosterol",single,9,10). bond("7-dehydrodesmosterol",single,9,11). bond("7-dehydrodesmosterol",singleR,10,19).
+bond("7-dehydrodesmosterol",single,11,12). bond("7-dehydrodesmosterol",single,12,13). bond("7-dehydrodesmosterol",single,13,14).
+bond("7-dehydrodesmosterol",single,14,15). bond("7-dehydrodesmosterol",single,15,16). bond("7-dehydrodesmosterol",single,16,17).
+bond("7-dehydrodesmosterol",single,13,17). bond("7-dehydrodesmosterol",singleR,13,18). bond("7-dehydrodesmosterol",singleR,17,20).
+bond("7-dehydrodesmosterol",singleS,20,21). bond("7-dehydrodesmosterol",single,20,22). bond("7-dehydrodesmosterol",single,22,23).
+bond("7-dehydrodesmosterol",single,23,24). bond("7-dehydrodesmosterol",double,24,25). bond("7-dehydrodesmosterol",single,25,26).
+bond("7-dehydrodesmosterol",single,25,27).
+
 atom("desmosterol",1..27,carb). atom("desmosterol",31,oxyg).
 bond("desmosterol",single,1,2). bond("desmosterol",single,1,10). bond("desmosterol",single,2,3).
 bond("desmosterol",single,3,4). bond("desmosterol",singleR,3,31). bond("desmosterol",single,4,5).
@@ -120,9 +292,8 @@ bond("androst-4-ene-3,17-dione",single,5,6). bond("androst-4-ene-3,17-dione",sin
 bond("androst-4-ene-3,17-dione",single,7,8). bond("androst-4-ene-3,17-dione",single,8,9). bond("androst-4-ene-3,17-dione",single,8,14).
 bond("androst-4-ene-3,17-dione",single,9,10). bond("androst-4-ene-3,17-dione",single,9,11). ond("androst-4-ene-3,17-dione",singleR,10,19).
 bond("androst-4-ene-3,17-dione",single,11,12). bond("androst-4-ene-3,17-dione",single,12,13). bond("androst-4-ene-3,17-dione",single,13,14).
-bond("androst-4-ene-3,17-dione",single,14,15). bond("androst-4-ene-3,17-dione",singleS,14,30). bond("androst-4-ene-3,17-dione",single,15,16).
-bond("androst-4-ene-3,17-dione",single,16,17). bond("androst-4-ene-3,17-dione",single,13,17). bond("androst-4-ene-3,17-dione",singleR,13,18).
-bond("androst-4-ene-3,17-dione",double,17,20).
+bond("androst-4-ene-3,17-dione",single,14,15). bond("androst-4-ene-3,17-dione",single,15,16). bond("androst-4-ene-3,17-dione",single,16,17).
+bond("androst-4-ene-3,17-dione",single,13,17). bond("androst-4-ene-3,17-dione",singleR,13,18). bond("androst-4-ene-3,17-dione",double,17,20).
 
 atom("androsta-1,4-diene-3,17-dione",1..19,carb). atom("androsta-1,4-diene-3,17-dione",20,oxyg). atom("androsta-1,4-diene-3,17-dione",31,oxyg).
 bond("androsta-1,4-diene-3,17-dione",double,1,2). bond("androsta-1,4-diene-3,17-dione",single,1,10). bond("androsta-1,4-diene-3,17-dione",single,2,3).
@@ -131,9 +302,8 @@ bond("androsta-1,4-diene-3,17-dione",single,5,6). bond("androsta-1,4-diene-3,17-
 bond("androsta-1,4-diene-3,17-dione",single,7,8). bond("androsta-1,4-diene-3,17-dione",single,8,9). bond("androsta-1,4-diene-3,17-dione",single,8,14).
 bond("androsta-1,4-diene-3,17-dione",single,9,10). bond("androsta-1,4-diene-3,17-dione",single,9,11). ond("androsta-1,4-diene-3,17-dione",singleR,10,19).
 bond("androsta-1,4-diene-3,17-dione",single,11,12). bond("androsta-1,4-diene-3,17-dione",single,12,13). bond("androsta-1,4-diene-3,17-dione",single,13,14).
-bond("androsta-1,4-diene-3,17-dione",single,14,15). bond("androsta-1,4-diene-3,17-dione",singleS,14,30). bond("androsta-1,4-diene-3,17-dione",single,15,16).
-bond("androsta-1,4-diene-3,17-dione",single,16,17). bond("androsta-1,4-diene-3,17-dione",single,13,17). bond("androsta-1,4-diene-3,17-dione",singleR,13,18).
-bond("androsta-1,4-diene-3,17-dione",double,17,20).
+bond("androsta-1,4-diene-3,17-dione",single,13,17). bond("androsta-1,4-diene-3,17-dione",singleR,13,18). bond("androsta-1,4-diene-3,17-dione",single,14,15).
+bond("androsta-1,4-diene-3,17-dione",single,15,16). bond("androsta-1,4-diene-3,17-dione",single,16,17). bond("androsta-1,4-diene-3,17-dione",double,17,20).
 
 % Information necessary to infer new 23 hydroxylation
 atom("(22α)-hydroxy-campest-4-en-3-one",1..27,carb).  atom("(22α)-hydroxy-campest-4-en-3-one",30,carb). atom("(22α)-hydroxy-campest-4-en-3-one",31,oxyg).
@@ -261,6 +431,21 @@ reaction(rxn_21827, "(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-2
 reaction(rxn_21828, "(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol", "(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol").
 reaction(rxn_21830, "(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol", "31-norcycloartenone").
 
+reaction(rxn_21831, "31-norcycloartenone", "31-norcycloartenol").
+reaction(rxn_11876, "31-norcycloartenol", "4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol").
+reaction(rxn_21165, "4α,14α-dimethyl-5α-cholesta-8,24-dien-3β-ol", "4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol").
+reaction(rxn_21166, "4α-hydroxymethyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol", "4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol").
+reaction(rxn_21167, "4α-formyl-14α-methyl-5α-cholesta-8,24-dien-3β-ol", "4α-methyl-5α-cholesta-8,14,24-trien-3β-ol").
+reaction(rxn_11878, "4α-methyl-5α-cholesta-8,14,24-trien-3β-ol", "4α-methyl-5α-cholesta-8,24-dien-3β-ol").
+reaction(rxn_11884, "4α-methyl-5α-cholesta-8,24-dien-3β-ol", "4α-methyl-5α-cholesta-7,24-dien-3β-ol").
+reaction(rxn_21833, "4α-methyl-5α-cholesta-7,24-dien-3β-ol", "4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol").
+reaction(rxn_21834, "4α-methylhydroxy-5α-cholest-7,24-dien-3β-ol", "4α-formyl-5α-cholest-7,24-dien-3β-ol").
+reaction(rxn_21835, "4α-formyl-5α-cholest-7,24-dien-3β-ol", "4α-carboxy-5α-cholesta-7,24-dien-3β-ol").
+reaction(rxn_11959, "4α-carboxy-5α-cholesta-7,24-dien-3β-ol", "5α-cholesta-7,24-dien-3-one").
+
+reaction(rxn_21837, "5α-cholesta-7,24-dien-3-one", "5α-cholesta-7,24-dienol").
+reaction(rxn_11887, "5α-cholesta-7,24-dienol", "7-dehydrodesmosterol").
+reaction(rxn66_27, "7-dehydrodesmosterol", "desmosterol").
 % PWY66-4 and PWY-8191
 reaction(rxn66_28, "desmosterol", "cholesterol").
 
