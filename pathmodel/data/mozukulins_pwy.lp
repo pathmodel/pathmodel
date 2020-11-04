@@ -283,6 +283,28 @@ bond("cholesterol",singleS,20,21). bond("cholesterol",single,20,22). bond("chole
 bond("cholesterol",single,23,24). bond("cholesterol",single,24,25). bond("cholesterol",single,25,26).
 bond("cholesterol",single,25,27).
 
+% Class compounds for rxn_3_OXOSTEROID_1_DEHYDROGENASE_RXN
+
+atom("a 3-oxosteroid",1..19,carb). atom("a 3-oxosteroid",20,variable). atom("a 3-oxosteroid",31,oxyg).
+bond("a 3-oxosteroid",single,1,2). bond("a 3-oxosteroid",single,1,10). bond("a 3-oxosteroid",single,2,3).
+bond("a 3-oxosteroid",single,3,4). bond("a 3-oxosteroid",double,3,31). bond("a 3-oxosteroid",single,4,5).
+bond("a 3-oxosteroid",single,5,6). bond("a 3-oxosteroid",single,5,10). bond("a 3-oxosteroid",single,6,7).
+bond("a 3-oxosteroid",single,7,8). bond("a 3-oxosteroid",single,8,9). bond("a 3-oxosteroid",single,8,14).
+bond("a 3-oxosteroid",single,9,10). bond("a 3-oxosteroid",single,9,11). bond("a 3-oxosteroid",single,10,19).
+bond("a 3-oxosteroid",single,11,12). bond("a 3-oxosteroid",single,12,13). bond("a 3-oxosteroid",single,13,14).
+bond("a 3-oxosteroid",single,14,15). bond("a 3-oxosteroid",single,15,16). bond("a 3-oxosteroid",single,16,17).
+bond("a 3-oxosteroid",single,13,17). bond("a 3-oxosteroid",single,13,18). bond("a 3-oxosteroid",single,17,20).
+
+atom("a 3-oxo-Δ1-steroid",1..19,carb). atom("a 3-oxo-Δ1-steroid",20,variable). atom("a 3-oxo-Δ1-steroid",31,oxyg).
+bond("a 3-oxo-Δ1-steroid",double,1,2). bond("a 3-oxo-Δ1-steroid",single,1,10). bond("a 3-oxo-Δ1-steroid",single,2,3).
+bond("a 3-oxo-Δ1-steroid",single,3,4). bond("a 3-oxo-Δ1-steroid",double,3,31). bond("a 3-oxo-Δ1-steroid",single,4,5).
+bond("a 3-oxo-Δ1-steroid",single,5,6). bond("a 3-oxo-Δ1-steroid",single,5,10). bond("a 3-oxo-Δ1-steroid",single,6,7).
+bond("a 3-oxo-Δ1-steroid",single,7,8). bond("a 3-oxo-Δ1-steroid",single,8,9). bond("a 3-oxo-Δ1-steroid",single,8,14).
+bond("a 3-oxo-Δ1-steroid",single,9,10). bond("a 3-oxo-Δ1-steroid",single,9,11). bond("a 3-oxo-Δ1-steroid",single,10,19).
+bond("a 3-oxo-Δ1-steroid",single,11,12). bond("a 3-oxo-Δ1-steroid",single,12,13). bond("a 3-oxo-Δ1-steroid",single,13,14).
+bond("a 3-oxo-Δ1-steroid",single,14,15). bond("a 3-oxo-Δ1-steroid",single,15,16). bond("a 3-oxo-Δ1-steroid",single,16,17).
+bond("a 3-oxo-Δ1-steroid",single,13,17). bond("a 3-oxo-Δ1-steroid",single,13,18). bond("a 3-oxo-Δ1-steroid",single,17,20).
+
 % PWY-6944: androstenedione degradation I (aerobic)
 
 atom("androst-4-ene-3,17-dione",1..19,carb). atom("androst-4-ene-3,17-dione",20,oxyg). atom("androst-4-ene-3,17-dione",31,oxyg).
@@ -309,8 +331,8 @@ bond("androsta-1,4-diene-3,17-dione",single,15,16). bond("androsta-1,4-diene-3,1
 atom("(22α)-hydroxy-campest-4-en-3-one",1..27,carb).  atom("(22α)-hydroxy-campest-4-en-3-one",30,carb). atom("(22α)-hydroxy-campest-4-en-3-one",31,oxyg).
 atom("(22α)-hydroxy-campest-4-en-3-one",34,oxyg). atom("(22α)-hydroxy-campest-4-en-3-one",35,carb).
 bond("(22α)-hydroxy-campest-4-en-3-one",single,1,2). bond("(22α)-hydroxy-campest-4-en-3-one",single,1,10). bond("(22α)-hydroxy-campest-4-en-3-one",single,2,3).
-bond("(22α)-hydroxy-campest-4-en-3-one",single,3,4). bond("(22α)-hydroxy-campest-4-en-3-one",double,3,31). bond("(22α)-hydroxy-campest-4-en-3-one",single,4,5).
-bond("(22α)-hydroxy-campest-4-en-3-one",double,5,6). bond("(22α)-hydroxy-campest-4-en-3-one",single,5,10). bond("(22α)-hydroxy-campest-4-en-3-one",single,6,7).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,3,4). bond("(22α)-hydroxy-campest-4-en-3-one",double,3,31). bond("(22α)-hydroxy-campest-4-en-3-one",double,4,5).
+bond("(22α)-hydroxy-campest-4-en-3-one",single,5,6). bond("(22α)-hydroxy-campest-4-en-3-one",single,5,10). bond("(22α)-hydroxy-campest-4-en-3-one",single,6,7).
 bond("(22α)-hydroxy-campest-4-en-3-one",single,7,8). bond("(22α)-hydroxy-campest-4-en-3-one",single,8,9). bond("(22α)-hydroxy-campest-4-en-3-one",single,8,14).
 bond("(22α)-hydroxy-campest-4-en-3-one",single,9,10). bond("(22α)-hydroxy-campest-4-en-3-one",single,9,11). bond("(22α)-hydroxy-campest-4-en-3-one",singleR,10,19).
 bond("(22α)-hydroxy-campest-4-en-3-one",single,11,12). bond("(22α)-hydroxy-campest-4-en-3-one",single,12,13). bond("(22α)-hydroxy-campest-4-en-3-one",single,13,14).
@@ -324,8 +346,8 @@ bond("(22α)-hydroxy-campest-4-en-3-one",single,25,27).
 atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",1..27,carb).  atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",30,carb). atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",31,oxyg).
 atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",32,oxyg). atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",34,oxyg). atom("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",35,carb).
 bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,1,2). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,1,10). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,2,3).
-bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,3,4). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",double,3,31). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,4,5).
-bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",double,5,6). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,5,10). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,6,7).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,3,4). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",double,3,31). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",double,4,5).
+bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,5,6). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,5,10). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,6,7).
 bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,7,8). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,8,9). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,8,14).
 bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,9,10). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,9,11). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,10,19).
 bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,11,12). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,12,13). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,13,14).
@@ -451,9 +473,9 @@ reaction(rxn66_28, "desmosterol", "cholesterol").
 
 % Information necessary to infer new Δ1-2 reduction
 % PWY-6944: androstenedione degradation I (aerobic)
-reaction(rxn_12714,"androst-4-ene-3,17-dione","androsta-1,4-diene-3,17-dione").
+reaction(rxn_12714, "androst-4-ene-3,17-dione", "androsta-1,4-diene-3,17-dione").
 % corresponding metacyc general reactions (EC 1.3.99.4)
-reaction(rxn_3_OXOSTEROID_1_DEHYDROGENASE_RXN,"a 3-oxosteroid", "a 3-oxo-Δ1-steroid").
+reaction(rxn_3_OXOSTEROID_1_DEHYDROGENASE_RXN, "a 3-oxosteroid", "a 3-oxo-Δ1-steroid").
 
 % Information necessary to infer new 23 hydroxylation
 reaction(rxn_11530, "(22α)-hydroxy-campest-4-en-3-one", "(22R,23R)-22,23-dihydroxy-campest-4-en-3-one").
