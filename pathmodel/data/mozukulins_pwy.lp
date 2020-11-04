@@ -327,6 +327,153 @@ bond("androsta-1,4-diene-3,17-dione",single,11,12). bond("androsta-1,4-diene-3,1
 bond("androsta-1,4-diene-3,17-dione",single,13,17). bond("androsta-1,4-diene-3,17-dione",singleR,13,18). bond("androsta-1,4-diene-3,17-dione",single,14,15).
 bond("androsta-1,4-diene-3,17-dione",single,15,16). bond("androsta-1,4-diene-3,17-dione",single,16,17). bond("androsta-1,4-diene-3,17-dione",double,17,20).
 
+%
+
+atom("campesterol",1..27,carb).  atom("campesterol",30,carb). atom("campesterol",31,oxyg).
+atom("campesterol",35,carb).
+bond("campesterol",single,1,2). bond("campesterol",single,1,10). bond("campesterol",single,2,3).
+bond("campesterol",single,3,4). bond("campesterol",singleR,3,31). bond("campesterol",single,4,5).
+bond("campesterol",double,5,6). bond("campesterol",single,5,10). bond("campesterol",single,6,7).
+bond("campesterol",single,7,8). bond("campesterol",single,8,9). bond("campesterol",single,8,14).
+bond("campesterol",single,9,10). bond("campesterol",single,9,11). bond("campesterol",singleR,10,19).
+bond("campesterol",single,11,12). bond("campesterol",single,12,13). bond("campesterol",single,13,14).
+bond("campesterol",single,14,15). bond("campesterol",singleS,14,30). bond("campesterol",single,15,16).
+bond("campesterol",single,16,17). bond("campesterol",single,13,17). bond("campesterol",singleR,13,18).
+bond("campesterol",singleR,17,20). bond("campesterol",singleS,20,21). bond("campesterol",single,20,22).
+bond("campesterol",single,22,23). bond("campesterol",single,23,24). bond("campesterol",single,24,25).
+bond("campesterol",singleR,24,35). bond("campesterol",single,25,26). bond("campesterol",single,25,27).
+
+atom("(22α)-hydroxy-campesterol",1..27,carb).  atom("(22α)-hydroxy-campesterol",30,carb). atom("(22α)-hydroxy-campesterol",31,oxyg).
+atom("(22α)-hydroxy-campesterol",34,oxyg). atom("(22α)-hydroxy-campesterol",35,carb).
+bond("(22α)-hydroxy-campesterol",single,1,2). bond("(22α)-hydroxy-campesterol",single,1,10). bond("(22α)-hydroxy-campesterol",single,2,3).
+bond("(22α)-hydroxy-campesterol",single,3,4). bond("(22α)-hydroxy-campesterol",singleR,3,31). bond("(22α)-hydroxy-campesterol",single,4,5).
+bond("(22α)-hydroxy-campesterol",double,5,6). bond("(22α)-hydroxy-campesterol",single,5,10). bond("(22α)-hydroxy-campesterol",single,6,7).
+bond("(22α)-hydroxy-campesterol",single,7,8). bond("(22α)-hydroxy-campesterol",single,8,9). bond("(22α)-hydroxy-campesterol",single,8,14).
+bond("(22α)-hydroxy-campesterol",single,9,10). bond("(22α)-hydroxy-campesterol",single,9,11). bond("(22α)-hydroxy-campesterol",singleR,10,19).
+bond("(22α)-hydroxy-campesterol",single,11,12). bond("(22α)-hydroxy-campesterol",single,12,13). bond("(22α)-hydroxy-campesterol",single,13,14).
+bond("(22α)-hydroxy-campesterol",single,14,15). bond("(22α)-hydroxy-campesterol",singleS,14,30). bond("(22α)-hydroxy-campesterol",single,15,16).
+bond("(22α)-hydroxy-campesterol",single,16,17). bond("(22α)-hydroxy-campesterol",single,13,17). bond("(22α)-hydroxy-campesterol",singleR,13,18).
+bond("(22α)-hydroxy-campesterol",singleR,17,20). bond("(22α)-hydroxy-campesterol",singleS,20,21). bond("(22α)-hydroxy-campesterol",single,20,22).
+bond("(22α)-hydroxy-campesterol",singleR,22,34). bond("(22α)-hydroxy-campesterol",single,22,23). bond("(22α)-hydroxy-campesterol",single,23,24).
+bond("(22α)-hydroxy-campesterol",single,24,25). bond("(22α)-hydroxy-campesterol",singleR,24,35). bond("(22α)-hydroxy-campesterol",single,25,26).
+bond("(22α)-hydroxy-campesterol",single,25,27).
+
+atom("(22R,23R)-22,23-dihydroxycampesterol",1..27,carb).  atom("(22R,23R)-22,23-dihydroxycampesterol",30,carb). atom("(22R,23R)-22,23-dihydroxycampesterol",31,oxyg).
+atom("(22R,23R)-22,23-dihydroxycampesterol",32,oxyg). atom("(22R,23R)-22,23-dihydroxycampesterol",34,oxyg). atom("(22R,23R)-22,23-dihydroxycampesterol",35,carb).
+bond("(22R,23R)-22,23-dihydroxycampesterol",single,1,2). bond("(22R,23R)-22,23-dihydroxycampesterol",single,1,10). bond("(22R,23R)-22,23-dihydroxycampesterol",single,2,3).
+bond("(22R,23R)-22,23-dihydroxycampesterol",single,3,4). bond("(22R,23R)-22,23-dihydroxycampesterol",singleR,3,31). bond("(22R,23R)-22,23-dihydroxycampesterol",single,4,5).
+bond("(22R,23R)-22,23-dihydroxycampesterol",double,5,6). bond("(22R,23R)-22,23-dihydroxycampesterol",single,5,10). bond("(22R,23R)-22,23-dihydroxycampesterol",single,6,7).
+bond("(22R,23R)-22,23-dihydroxycampesterol",single,7,8). bond("(22R,23R)-22,23-dihydroxycampesterol",single,8,9). bond("(22R,23R)-22,23-dihydroxycampesterol",single,8,14).
+bond("(22R,23R)-22,23-dihydroxycampesterol",single,9,10). bond("(22R,23R)-22,23-dihydroxycampesterol",single,9,11). bond("(22R,23R)-22,23-dihydroxycampesterol",singleR,10,19).
+bond("(22R,23R)-22,23-dihydroxycampesterol",single,11,12). bond("(22R,23R)-22,23-dihydroxycampesterol",single,12,13). bond("(22R,23R)-22,23-dihydroxycampesterol",single,13,14).
+bond("(22R,23R)-22,23-dihydroxycampesterol",single,14,15). bond("(22R,23R)-22,23-dihydroxycampesterol",singleS,14,30). bond("(22R,23R)-22,23-dihydroxycampesterol",single,15,16).
+bond("(22R,23R)-22,23-dihydroxycampesterol",single,16,17). bond("(22R,23R)-22,23-dihydroxycampesterol",single,13,17). bond("(22R,23R)-22,23-dihydroxycampesterol",singleR,13,18).
+bond("(22R,23R)-22,23-dihydroxycampesterol",singleR,17,20). bond("(22R,23R)-22,23-dihydroxycampesterol",singleS,20,21). bond("(22R,23R)-22,23-dihydroxycampesterol",single,20,22).
+bond("(22R,23R)-22,23-dihydroxycampesterol",singleR,22,34). bond("(22R,23R)-22,23-dihydroxycampesterol",single,22,23). bond("(22R,23R)-22,23-dihydroxycampesterol",single,23,24).
+bond("(22R,23R)-22,23-dihydroxycampesterol",singleR,23,32). bond("(22R,23R)-22,23-dihydroxycampesterol",single,24,25). bond("(22R,23R)-22,23-dihydroxycampesterol",singleR,24,35).
+bond("(22R,23R)-22,23-dihydroxycampesterol",single,25,26). bond("(22R,23R)-22,23-dihydroxycampesterol",single,25,27).
+
+atom("campest-4-en-3β-ol",1..27,carb).  atom("campest-4-en-3β-ol",30,carb). atom("campest-4-en-3β-ol",31,oxyg).
+atom("campest-4-en-3β-ol",35,carb).
+bond("campest-4-en-3β-ol",single,1,2). bond("campest-4-en-3β-ol",single,1,10). bond("campest-4-en-3β-ol",single,2,3).
+bond("campest-4-en-3β-ol",single,3,4). bond("campest-4-en-3β-ol",singleR,3,31). bond("campest-4-en-3β-ol",double,4,5).
+bond("campest-4-en-3β-ol",single,5,6). bond("campest-4-en-3β-ol",single,5,10). bond("campest-4-en-3β-ol",single,6,7).
+bond("campest-4-en-3β-ol",single,7,8). bond("campest-4-en-3β-ol",single,8,9). bond("campest-4-en-3β-ol",single,8,14).
+bond("campest-4-en-3β-ol",single,9,10). bond("campest-4-en-3β-ol",single,9,11). bond("campest-4-en-3β-ol",singleR,10,19).
+bond("campest-4-en-3β-ol",single,11,12). bond("campest-4-en-3β-ol",single,12,13). bond("campest-4-en-3β-ol",single,13,14).
+bond("campest-4-en-3β-ol",single,14,15). bond("campest-4-en-3β-ol",singleS,14,30). bond("campest-4-en-3β-ol",single,15,16).
+bond("campest-4-en-3β-ol",single,16,17). bond("campest-4-en-3β-ol",single,13,17). bond("campest-4-en-3β-ol",singleR,13,18).
+bond("campest-4-en-3β-ol",singleR,17,20). bond("campest-4-en-3β-ol",singleS,20,21). bond("campest-4-en-3β-ol",single,20,22).
+bond("campest-4-en-3β-ol",single,22,23). bond("campest-4-en-3β-ol",single,23,24). bond("campest-4-en-3β-ol",single,24,25).
+bond("campest-4-en-3β-ol",singleR,24,35). bond("campest-4-en-3β-ol",single,25,26). bond("campest-4-en-3β-ol",single,25,27).
+
+atom("campest-4-en-3-one",1..27,carb).  atom("campest-4-en-3-one",30,carb). atom("campest-4-en-3-one",31,oxyg).
+atom("campest-4-en-3-one",35,carb).
+bond("campest-4-en-3-one",single,1,2). bond("campest-4-en-3-one",single,1,10). bond("campest-4-en-3-one",single,2,3).
+bond("campest-4-en-3-one",single,3,4). bond("campest-4-en-3-one",double,3,31). bond("campest-4-en-3-one",double,4,5).
+bond("campest-4-en-3-one",single,5,6). bond("campest-4-en-3-one",single,5,10). bond("campest-4-en-3-one",single,6,7).
+bond("campest-4-en-3-one",single,7,8). bond("campest-4-en-3-one",single,8,9). bond("campest-4-en-3-one",single,8,14).
+bond("campest-4-en-3-one",single,9,10). bond("campest-4-en-3-one",single,9,11). bond("campest-4-en-3-one",singleR,10,19).
+bond("campest-4-en-3-one",single,11,12). bond("campest-4-en-3-one",single,12,13). bond("campest-4-en-3-one",single,13,14).
+bond("campest-4-en-3-one",single,14,15). bond("campest-4-en-3-one",singleS,14,30). bond("campest-4-en-3-one",single,15,16).
+bond("campest-4-en-3-one",single,16,17). bond("campest-4-en-3-one",single,13,17). bond("campest-4-en-3-one",singleR,13,18).
+bond("campest-4-en-3-one",singleR,17,20). bond("campest-4-en-3-one",singleS,20,21). bond("campest-4-en-3-one",single,20,22).
+bond("campest-4-en-3-one",single,22,23). bond("campest-4-en-3-one",single,23,24). bond("campest-4-en-3-one",single,24,25).
+bond("campest-4-en-3-one",singleR,24,35). bond("campest-4-en-3-one",single,25,26). bond("campest-4-en-3-one",single,25,27).
+
+atom("(5α)-campestan-3-one",1..27,carb).  atom("(5α)-campestan-3-one",30,carb). atom("(5α)-campestan-3-one",31,oxyg).
+atom("(5α)-campestan-3-one",35,carb).
+bond("(5α)-campestan-3-one",single,1,2). bond("(5α)-campestan-3-one",single,1,10). bond("(5α)-campestan-3-one",single,2,3).
+bond("(5α)-campestan-3-one",single,3,4). bond("(5α)-campestan-3-one",double,3,31). bond("(5α)-campestan-3-one",single,4,5).
+bond("(5α)-campestan-3-one",single,5,6). bond("(5α)-campestan-3-one",single,5,10). bond("(5α)-campestan-3-one",single,6,7).
+bond("(5α)-campestan-3-one",single,7,8). bond("(5α)-campestan-3-one",single,8,9). bond("(5α)-campestan-3-one",single,8,14).
+bond("(5α)-campestan-3-one",single,9,10). bond("(5α)-campestan-3-one",single,9,11). bond("(5α)-campestan-3-one",singleR,10,19).
+bond("(5α)-campestan-3-one",single,11,12). bond("(5α)-campestan-3-one",single,12,13). bond("(5α)-campestan-3-one",single,13,14).
+bond("(5α)-campestan-3-one",single,14,15). bond("(5α)-campestan-3-one",singleS,14,30). bond("(5α)-campestan-3-one",single,15,16).
+bond("(5α)-campestan-3-one",single,16,17). bond("(5α)-campestan-3-one",single,13,17). bond("(5α)-campestan-3-one",singleR,13,18).
+bond("(5α)-campestan-3-one",singleR,17,20). bond("(5α)-campestan-3-one",singleS,20,21). bond("(5α)-campestan-3-one",single,20,22).
+bond("(5α)-campestan-3-one",single,22,23). bond("(5α)-campestan-3-one",single,23,24). bond("(5α)-campestan-3-one",single,24,25).
+bond("(5α)-campestan-3-one",singleR,24,35). bond("(5α)-campestan-3-one",single,25,26). bond("(5α)-campestan-3-one",single,25,27).
+
+atom("campestanol",1..27,carb).  atom("campestanol",30,carb). atom("campestanol",31,oxyg).
+atom("campestanol",35,carb).
+bond("campestanol",single,1,2). bond("campestanol",single,1,10). bond("campestanol",single,2,3).
+bond("campestanol",single,3,4). bond("campestanol",singleR,3,31). bond("campestanol",single,4,5).
+bond("campestanol",single,5,6). bond("campestanol",single,5,10). bond("campestanol",single,6,7).
+bond("campestanol",single,7,8). bond("campestanol",single,8,9). bond("campestanol",single,8,14).
+bond("campestanol",single,9,10). bond("campestanol",single,9,11). bond("campestanol",singleR,10,19).
+bond("campestanol",single,11,12). bond("campestanol",single,12,13). bond("campestanol",single,13,14).
+bond("campestanol",single,14,15). bond("campestanol",singleS,14,30). bond("campestanol",single,15,16).
+bond("campestanol",single,16,17). bond("campestanol",single,13,17). bond("campestanol",singleR,13,18).
+bond("campestanol",singleR,17,20). bond("campestanol",singleS,20,21). bond("campestanol",single,20,22).
+bond("campestanol",single,22,23). bond("campestanol",single,23,24). bond("campestanol",single,24,25).
+bond("campestanol",singleR,24,35). bond("campestanol",single,25,26). bond("campestanol",single,25,27).
+
+atom("6-deoxocathasterone",1..27,carb).  atom("6-deoxocathasterone",30,carb). atom("6-deoxocathasterone",31,oxyg).
+atom("6-deoxocathasterone",34,oxyg). atom("6-deoxocathasterone",35,carb).
+bond("6-deoxocathasterone",single,1,2). bond("6-deoxocathasterone",single,1,10). bond("6-deoxocathasterone",single,2,3).
+bond("6-deoxocathasterone",single,3,4). bond("6-deoxocathasterone",singleR,3,31). bond("6-deoxocathasterone",single,4,5).
+bond("6-deoxocathasterone",single,5,6). bond("6-deoxocathasterone",single,5,10). bond("6-deoxocathasterone",single,6,7).
+bond("6-deoxocathasterone",single,7,8). bond("6-deoxocathasterone",single,8,9). bond("6-deoxocathasterone",single,8,14).
+bond("6-deoxocathasterone",single,9,10). bond("6-deoxocathasterone",single,9,11). bond("6-deoxocathasterone",singleR,10,19).
+bond("6-deoxocathasterone",single,11,12). bond("6-deoxocathasterone",single,12,13). bond("6-deoxocathasterone",single,13,14).
+bond("6-deoxocathasterone",single,14,15). bond("6-deoxocathasterone",singleS,14,30). bond("6-deoxocathasterone",single,15,16).
+bond("6-deoxocathasterone",single,16,17). bond("6-deoxocathasterone",single,13,17). bond("6-deoxocathasterone",singleR,13,18).
+bond("6-deoxocathasterone",singleR,17,20). bond("6-deoxocathasterone",singleS,20,21). bond("6-deoxocathasterone",single,20,22).
+bond("6-deoxocathasterone",single,22,23). bond("6-deoxocathasterone",singleR,22,34). bond("6-deoxocathasterone",single,23,24).
+bond("6-deoxocathasterone",single,24,25). bond("6-deoxocathasterone",singleR,24,35). bond("6-deoxocathasterone",single,25,26).
+bond("6-deoxocathasterone",single,25,27).
+
+atom("6-deoxoteasterone",1..27,carb).  atom("6-deoxoteasterone",30,carb). atom("6-deoxoteasterone",31,oxyg).
+atom("6-deoxoteasterone",32,oxyg). atom("6-deoxoteasterone",34,oxyg). atom("6-deoxoteasterone",35,carb).
+bond("6-deoxoteasterone",single,1,2). bond("6-deoxoteasterone",single,1,10). bond("6-deoxoteasterone",single,2,3).
+bond("6-deoxoteasterone",single,3,4). bond("6-deoxoteasterone",singleR,3,31). bond("6-deoxoteasterone",single,4,5).
+bond("6-deoxoteasterone",single,5,6). bond("6-deoxoteasterone",single,5,10). bond("6-deoxoteasterone",single,6,7).
+bond("6-deoxoteasterone",single,7,8). bond("6-deoxoteasterone",single,8,9). bond("6-deoxoteasterone",single,8,14).
+bond("6-deoxoteasterone",single,9,10). bond("6-deoxoteasterone",single,9,11). bond("6-deoxoteasterone",singleR,10,19).
+bond("6-deoxoteasterone",single,11,12). bond("6-deoxoteasterone",single,12,13). bond("6-deoxoteasterone",single,13,14).
+bond("6-deoxoteasterone",single,14,15). bond("6-deoxoteasterone",singleS,14,30). bond("6-deoxoteasterone",single,15,16).
+bond("6-deoxoteasterone",single,16,17). bond("6-deoxoteasterone",single,13,17). bond("6-deoxoteasterone",singleR,13,18).
+bond("6-deoxoteasterone",singleR,17,20). bond("6-deoxoteasterone",singleS,20,21). bond("6-deoxoteasterone",single,20,22).
+bond("6-deoxoteasterone",single,22,23). bond("6-deoxoteasterone",singleR,22,34). bond("6-deoxoteasterone",single,23,24).
+bond("6-deoxoteasterone",singleR,23,32). bond("6-deoxoteasterone",single,24,25). bond("6-deoxoteasterone",singleR,24,35).
+bond("6-deoxoteasterone",single,25,26). bond("6-deoxoteasterone",single,25,27).
+
+atom("3-dehydro-6-deoxoteasterone",1..27,carb).  atom("3-dehydro-6-deoxoteasterone",30,carb). atom("3-dehydro-6-deoxoteasterone",31,oxyg).
+atom("3-dehydro-6-deoxoteasterone",32,oxyg). atom("3-dehydro-6-deoxoteasterone",34,oxyg). atom("3-dehydro-6-deoxoteasterone",35,carb).
+bond("3-dehydro-6-deoxoteasterone",single,1,2). bond("3-dehydro-6-deoxoteasterone",single,1,10). bond("3-dehydro-6-deoxoteasterone",single,2,3).
+bond("3-dehydro-6-deoxoteasterone",single,3,4). bond("3-dehydro-6-deoxoteasterone",double,3,31). bond("3-dehydro-6-deoxoteasterone",single,4,5).
+bond("3-dehydro-6-deoxoteasterone",single,5,6). bond("3-dehydro-6-deoxoteasterone",single,5,10). bond("3-dehydro-6-deoxoteasterone",single,6,7).
+bond("3-dehydro-6-deoxoteasterone",single,7,8). bond("3-dehydro-6-deoxoteasterone",single,8,9). bond("3-dehydro-6-deoxoteasterone",single,8,14).
+bond("3-dehydro-6-deoxoteasterone",single,9,10). bond("3-dehydro-6-deoxoteasterone",single,9,11). bond("3-dehydro-6-deoxoteasterone",singleR,10,19).
+bond("3-dehydro-6-deoxoteasterone",single,11,12). bond("3-dehydro-6-deoxoteasterone",single,12,13). bond("3-dehydro-6-deoxoteasterone",single,13,14).
+bond("3-dehydro-6-deoxoteasterone",single,14,15). bond("3-dehydro-6-deoxoteasterone",singleS,14,30). bond("3-dehydro-6-deoxoteasterone",single,15,16).
+bond("3-dehydro-6-deoxoteasterone",single,16,17). bond("3-dehydro-6-deoxoteasterone",single,13,17). bond("3-dehydro-6-deoxoteasterone",singleR,13,18).
+bond("3-dehydro-6-deoxoteasterone",singleR,17,20). bond("3-dehydro-6-deoxoteasterone",singleS,20,21). bond("3-dehydro-6-deoxoteasterone",single,20,22).
+bond("3-dehydro-6-deoxoteasterone",single,22,23). bond("3-dehydro-6-deoxoteasterone",singleR,22,34). bond("3-dehydro-6-deoxoteasterone",single,23,24).
+bond("3-dehydro-6-deoxoteasterone",singleR,23,32). bond("3-dehydro-6-deoxoteasterone",single,24,25). bond("3-dehydro-6-deoxoteasterone",singleR,24,35).
+bond("3-dehydro-6-deoxoteasterone",single,25,26). bond("3-dehydro-6-deoxoteasterone",single,25,27).
+
 % Information necessary to infer new 23 hydroxylation
 atom("(22α)-hydroxy-campest-4-en-3-one",1..27,carb).  atom("(22α)-hydroxy-campest-4-en-3-one",30,carb). atom("(22α)-hydroxy-campest-4-en-3-one",31,oxyg).
 atom("(22α)-hydroxy-campest-4-en-3-one",34,oxyg). atom("(22α)-hydroxy-campest-4-en-3-one",35,carb).
@@ -357,6 +504,51 @@ bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,17,20). bond("(22R,2
 bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,22,34). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,22,23). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,23,24).
 bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,23,32). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,24,25). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",singleR,24,35). 
 bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,25,26). bond("(22R,23R)-22,23-dihydroxy-campest-4-en-3-one",single,25,27).
+
+atom("(22S,24R)-22-hydroxy-5α-ergostan-3-one",1..27,carb).  atom("(22S,24R)-22-hydroxy-5α-ergostan-3-one",30,carb). atom("(22S,24R)-22-hydroxy-5α-ergostan-3-one",31,oxyg).
+atom("(22S,24R)-22-hydroxy-5α-ergostan-3-one",34,oxyg). atom("(22S,24R)-22-hydroxy-5α-ergostan-3-one",35,carb).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,1,2). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,1,10). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,2,3).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,3,4). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",double,3,31). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,4,5).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,5,6). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,5,10). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,6,7).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,7,8). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,8,9). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,8,14).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,9,10). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,9,11). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",singleR,10,19).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,11,12). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,12,13). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,13,14).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,14,15). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",singleS,14,30). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,15,16).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,16,17). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,13,17). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",singleR,13,18).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",singleR,17,20). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",singleS,20,21). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,20,22).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",singleR,22,34). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,22,23). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,23,24).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,24,25). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",singleR,24,35). bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,25,26).
+bond("(22S,24R)-22-hydroxy-5α-ergostan-3-one",single,25,27).
+
+atom("3-epi-6-deoxocathasterone",1..27,carb).  atom("3-epi-6-deoxocathasterone",30,carb). atom("3-epi-6-deoxocathasterone",31,oxyg).
+atom("3-epi-6-deoxocathasterone",34,oxyg). atom("3-epi-6-deoxocathasterone",35,carb).
+bond("3-epi-6-deoxocathasterone",single,1,2). bond("3-epi-6-deoxocathasterone",single,1,10). bond("3-epi-6-deoxocathasterone",single,2,3).
+bond("3-epi-6-deoxocathasterone",single,3,4). bond("3-epi-6-deoxocathasterone",singleS,3,31). bond("3-epi-6-deoxocathasterone",single,4,5).
+bond("3-epi-6-deoxocathasterone",single,5,6). bond("3-epi-6-deoxocathasterone",single,5,10). bond("3-epi-6-deoxocathasterone",single,6,7).
+bond("3-epi-6-deoxocathasterone",single,7,8). bond("3-epi-6-deoxocathasterone",single,8,9). bond("3-epi-6-deoxocathasterone",single,8,14).
+bond("3-epi-6-deoxocathasterone",single,9,10). bond("3-epi-6-deoxocathasterone",single,9,11). bond("3-epi-6-deoxocathasterone",singleR,10,19).
+bond("3-epi-6-deoxocathasterone",single,11,12). bond("3-epi-6-deoxocathasterone",single,12,13). bond("3-epi-6-deoxocathasterone",single,13,14).
+bond("3-epi-6-deoxocathasterone",single,14,15). bond("3-epi-6-deoxocathasterone",singleS,14,30). bond("3-epi-6-deoxocathasterone",single,15,16).
+bond("3-epi-6-deoxocathasterone",single,16,17). bond("3-epi-6-deoxocathasterone",single,13,17). bond("3-epi-6-deoxocathasterone",singleR,13,18).
+bond("3-epi-6-deoxocathasterone",singleR,17,20). bond("3-epi-6-deoxocathasterone",singleS,20,21). bond("3-epi-6-deoxocathasterone",single,20,22).
+bond("3-epi-6-deoxocathasterone",singleR,22,34). bond("3-epi-6-deoxocathasterone",single,22,23). bond("3-epi-6-deoxocathasterone",single,23,24).
+bond("3-epi-6-deoxocathasterone",single,24,25). bond("3-epi-6-deoxocathasterone",singleR,24,35). bond("3-epi-6-deoxocathasterone",single,25,26).
+bond("3-epi-6-deoxocathasterone",single,25,27).
+
+atom("6-deoxotyphasterol",1..27,carb).  atom("6-deoxotyphasterol",30,carb). atom("6-deoxotyphasterol",31,oxyg).
+atom("6-deoxotyphasterol",32,oxyg). atom("6-deoxotyphasterol",34,oxyg). atom("6-deoxotyphasterol",35,carb).
+bond("6-deoxotyphasterol",single,1,2). bond("6-deoxotyphasterol",single,1,10). bond("6-deoxotyphasterol",single,2,3).
+bond("6-deoxotyphasterol",single,3,4). bond("6-deoxotyphasterol",singleS,3,31). bond("6-deoxotyphasterol",single,4,5).
+bond("6-deoxotyphasterol",single,5,6). bond("6-deoxotyphasterol",single,5,10). bond("6-deoxotyphasterol",single,6,7).
+bond("6-deoxotyphasterol",single,7,8). bond("6-deoxotyphasterol",single,8,9). bond("6-deoxotyphasterol",single,8,14).
+bond("6-deoxotyphasterol",single,9,10). bond("6-deoxotyphasterol",single,9,11). bond("6-deoxotyphasterol",singleR,10,19).
+bond("6-deoxotyphasterol",single,11,12). bond("6-deoxotyphasterol",single,12,13). bond("6-deoxotyphasterol",single,13,14).
+bond("6-deoxotyphasterol",single,14,15). bond("6-deoxotyphasterol",singleS,14,30). bond("6-deoxotyphasterol",single,15,16).
+bond("6-deoxotyphasterol",single,16,17). bond("6-deoxotyphasterol",single,13,17). bond("6-deoxotyphasterol",singleR,13,18).
+bond("6-deoxotyphasterol",singleR,17,20). bond("6-deoxotyphasterol",singleS,20,21). bond("6-deoxotyphasterol",single,20,22).
+bond("6-deoxotyphasterol",single,22,23). bond("6-deoxotyphasterol",singleR,22,34). bond("6-deoxotyphasterol",single,23,24).
+bond("6-deoxotyphasterol",singleR,23,32). bond("6-deoxotyphasterol",single,24,25). bond("6-deoxotyphasterol",singleR,24,35).
+bond("6-deoxotyphasterol",single,25,26). bond("6-deoxotyphasterol",single,25,27).
 
 % New inferred intermediates
 
@@ -477,8 +669,35 @@ reaction(rxn_12714, "androst-4-ene-3,17-dione", "androsta-1,4-diene-3,17-dione")
 % corresponding metacyc general reactions (EC 1.3.99.4)
 reaction(rxn_3_OXOSTEROID_1_DEHYDROGENASE_RXN, "a 3-oxosteroid", "a 3-oxo-Δ1-steroid").
 
+% PWY-2582: brassinosteroid biosynthesis II
+reaction(rxn_4225,"campesterol","(22α)-hydroxy-campesterol").
+reaction(rxn_4226,"(22α)-hydroxy-campesterol","(22α)-hydroxy-campest-4-en-3-one").
+reaction(rxn_11529,"(22α)-hydroxy-campest-4-en-3-one","(22R,23R)-22,23-dihydroxycampesterol").
+reaction(rxn_11533,"(22R,23R)-22,23-dihydroxycampesterol","(22R,23R)-22,23-dihydroxy-campest-4-en-3-one").
+
+reaction(rxn_709,"campesterol","campest-4-en-3β-ol").
+reaction(rxn_710,"campest-4-en-3β-ol","campest-4-en-3-one").
+reaction(rxn_4231,"campest-4-en-3-one","(22α)-hydroxy-campest-4-en-3-one").
+reaction(rxn_711,"campest-4-en-3-one","(5α)-campestan-3-one").
+reaction(rxn_712,"(5α)-campestan-3-one","campestanol").
+reaction(rxn_773,"campestanol","6-deoxocathasterone").
+reaction(rxn_4228,"(22S,24R)-22-hydroxy-5α-ergostan-3-one","6-deoxocathasterone").
+reaction(rxn_774,"6-deoxocathasterone","6-deoxoteasterone").
+reaction(rxn_775,"6-deoxoteasterone","3-dehydro-6-deoxoteasterone").
+reaction(rxn_11101,"(22S,24R)-22-hydroxy-5α-ergostan-3-one","3-dehydro-6-deoxoteasterone").
+
 % Information necessary to infer new 23 hydroxylation
 reaction(rxn_11530, "(22α)-hydroxy-campest-4-en-3-one", "(22R,23R)-22,23-dihydroxy-campest-4-en-3-one").
+
+reaction(rxn_11534,"(22R,23R)-22,23-dihydroxy-campest-4-en-3-one","3-dehydro-6-deoxoteasterone").
+
+reaction(rxn_4230,"(5α)-campestan-3-one","(22S,24R)-22-hydroxy-5α-ergostan-3-one").
+reaction(rxn_4229,"(22α)-hydroxy-campest-4-en-3-one","(22S,24R)-22-hydroxy-5α-ergostan-3-one").
+
+reaction(rxn_11532,"(22S,24R)-22-hydroxy-5α-ergostan-3-one","3-epi-6-deoxocathasterone").
+
+reaction(rxn_776,"3-dehydro-6-deoxoteasterone","6-deoxotyphasterol").
+reaction(rxn_11531,"3-epi-6-deoxocathasterone","6-deoxotyphasterol").
 
 %*
 Information necessary to infer new 23 dehydrogenation

@@ -236,7 +236,8 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
     atomicNumber = {'carb': 6,
                     'nitr': 7,
                     'oxyg': 8,
-                    'phos': 15}
+                    'phos': 15,
+                    'variable': 0}
 
     if align_domain:
         domain_molecules = {}
