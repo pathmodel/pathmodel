@@ -905,8 +905,8 @@ The structures of the predicted molecules from M/Z can be found in newmolecules_
 
 - Prediction_3023117_decarboxylation_1 and Prediction_3023117_decarboxylation_2 (which are the same molecule) correspond to MAA2.
 
-This molecule has been identified as the Aplysiapalythine A found in *Aplysia californica* by `Kamio et al. (2011) <https://onlinelibrary.wiley.com/doi/abs/10.1002/hlca.201100117>`__.
-Furthermore, Aplysiapalythine A has been detected in red algae (the group in which *Chondrus crispus* is classified) by `Orfanoudaki et al. (2019) <https://onlinelibrary.wiley.com/doi/full/10.1111/jpy.12827>`__.
+This molecule has been identified as the Aplysiapalythine A found in *Aplysia californica* by [Kamio2011]_.
+Furthermore, Aplysiapalythine A has been detected in red algae (the group in which *Chondrus crispus* is classified) by [Orfanoudaki2019]_.
 
 .. table::
    :align: center
@@ -975,6 +975,6 @@ Arnaud Belcour, Jean Girard, Méziane Aite, Ludovic Delage, Camille Trottier, Ch
 Bibliography
 ------------
 
-Kamio, M., Kicklighter, C.E., Nguyen, L., Germann, M.W. and Derby, C.D. (2011). Isolation and Structural Elucidation of Novel Mycosporine‐Like Amino Acids as Alarm Cues in the Defensive Ink Secretion of the Sea Hare *Aplysia californica*. *Helvetica Chimica Acta*, 94: 1012-1018. `doi:10.1002/hlca.201100117 <https://doi.org/10.1002/hlca.201100117>`__.
+.. [Kamio2011] Kamio, M., Kicklighter, C.E., Nguyen, L., Germann, M.W. and Derby, C.D. (2011). Isolation and Structural Elucidation of Novel Mycosporine‐Like Amino Acids as Alarm Cues in the Defensive Ink Secretion of the Sea Hare *Aplysia californica*. *Helvetica Chimica Acta*, 94: 1012-1018. `doi:10.1002/hlca.201100117 <https://doi.org/10.1002/hlca.201100117>`__.
 
-Orfanoudaki, M., Hartmann, A., Karsten, U. and Ganzera, M. (2019). Chemical profiling of mycosporine‐like amino acids in twenty‐three red algal species. *Journal of Phycology*, 55: 393-403. `doi:10.1111/jpy.12827 <https://doi.org/10.1111/jpy.12827>`__.
+.. [Orfanoudaki2019] Orfanoudaki, M., Hartmann, A., Karsten, U. and Ganzera, M. (2019). Chemical profiling of mycosporine‐like amino acids in twenty‐three red algal species. *Journal of Phycology*, 55: 393-403. `doi:10.1111/jpy.12827 <https://doi.org/10.1111/jpy.12827>`__.
