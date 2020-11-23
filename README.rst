@@ -905,8 +905,8 @@ The structures of the predicted molecules from M/Z can be found in newmolecules_
 
 - Prediction_3023117_decarboxylation_1 and Prediction_3023117_decarboxylation_2 (which are the same molecule) correspond to MAA2.
 
-This molecule has been identified as the Aplysiapalythine A found in *Aplysia californica* by [Kamio2011]_.
-Furthermore, Aplysiapalythine A has been detected in red algae (the group in which *Chondrus crispus* is classified) by [Orfanoudaki2019]_.
+This molecule has been identified as the Aplysiapalythine A found in *Aplysia californica* [Kamio2011]_.
+Furthermore, Aplysiapalythine A has been detected in red algae (the group in which *Chondrus crispus* is classified) [Orfanoudaki2019]_.
 
 .. table::
    :align: center
