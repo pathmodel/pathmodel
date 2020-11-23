@@ -40,20 +40,6 @@ metabolite(MoleculeName):- atom(MoleculeName,_,_).
 
 #program step(t).
 
-%* Test to see difference between two molecules
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-*%
-%*
-difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,direct):-
-		    bond(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber),
-		not bond(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), testeddif(MoleculeName1, MoleculeName2).
-
-testeddif("z-palythenic acid", "palythene").
-testeddif("4α-methylcholest-8(9),14,24,trien-3β-ol", "4α-methylzymosterol").
-testeddif(B,A):-testeddif(A,B).
-
-*%
-
 %* Browse reactions
 %%%%%%%%%%%%%%%%%%%%
 Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway is here described as the path from a molecule to another through reactions.
