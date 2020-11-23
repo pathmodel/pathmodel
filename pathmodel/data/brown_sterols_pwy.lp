@@ -235,21 +235,6 @@ bond("24-methylenelophenol",singleR,17,20). bond("24-methylenelophenol",singleS,
 bond("24-methylenelophenol",single,22,23). bond("24-methylenelophenol",single,23,24). bond("24-methylenelophenol",double,24,241).
 bond("24-methylenelophenol",single,24,25). bond("24-methylenelophenol",single,25,26). bond("24-methylenelophenol",single,25,27).
 
-atom("24-ethylenelophenol",1..24,carb). atom("24-ethylenelophenol",241,carb).  atom("24-ethylenelophenol",242,carb).
-atom("24-ethylenelophenol",25..28,carb). atom("24-ethylenelophenol",31,oxyg).
-bond("24-ethylenelophenol",single,1,2). bond("24-ethylenelophenol",single,1,10). bond("24-ethylenelophenol",single,2,3).
-bond("24-ethylenelophenol",single,3,4). bond("24-ethylenelophenol",singleR,3,31). bond("24-ethylenelophenol",single,4,5).
-bond("24-ethylenelophenol",singleS,4,28). bond("24-ethylenelophenol",single,5,6). bond("24-ethylenelophenol",single,5,10).
-bond("24-ethylenelophenol",single,6,7). bond("24-ethylenelophenol",double,7,8). bond("24-ethylenelophenol",single,8,9).
-bond("24-ethylenelophenol",single,8,14). bond("24-ethylenelophenol",single,9,10). bond("24-ethylenelophenol",single,9,11).
-bond("24-ethylenelophenol",singleR,10,19). bond("24-ethylenelophenol",single,11,12). bond("24-ethylenelophenol",single,12,13).
-bond("24-ethylenelophenol",single,13,14). bond("24-ethylenelophenol",single,14,15). bond("24-ethylenelophenol",single,15,16).
-bond("24-ethylenelophenol",single,16,17). bond("24-ethylenelophenol",single,13,17). bond("24-ethylenelophenol",singleR,13,18).
-bond("24-ethylenelophenol",singleR,17,20). bond("24-ethylenelophenol",singleS,20,21). bond("24-ethylenelophenol",single,20,22).
-bond("24-ethylenelophenol",single,22,23). bond("24-ethylenelophenol",single,23,24). bond("24-ethylenelophenol",double,24,241).
-bond("24-ethylenelophenol",single,24,25). bond("24-ethylenelophenol",single,241,242). bond("24-ethylenelophenol",single,25,26).
-bond("24-ethylenelophenol",single,25,27).
-
 % 24-ethylidenelophenol branch
 
 atom("24-ethylidenelophenol",1..24,carb). atom("24-ethylidenelophenol",241,carb). atom("24-ethylidenelophenol",242,carb).
@@ -781,8 +766,6 @@ reaction(rxn_11936,"4α-hydroxymethyl-stigmasta-7,24(241)-dien-3β-ol","4α-form
 reaction(rxn_11937,"4α-formyl-stigmasta-7,24(241)-dien-3β-ol","4α-carboxy-stigmasta-7,24(241)-dien-3β-ol").
 reaction(rxn_11938,"4α-carboxy-stigmasta-7,24(241)-dien-3β-ol","avenastenone").
 reaction(rxn_11939,"avenastenone","avenasterol").
-reaction(c28_methylation,"24-methylenelophenol","24-ethylenelophenol").
-reaction(c4_demethylation,"24-ethylenelophenol","avenasterol").
 reaction(rxn_4209,"avenasterol","5-dehydroavenasterol").
 reaction(rxn_4210,"5-dehydroavenasterol","fucosterol").
 reaction(rxn_11930,"24-methylenelophenol","4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol").
