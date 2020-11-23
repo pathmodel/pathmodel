@@ -235,6 +235,21 @@ bond("24-methylenelophenol",singleR,17,20). bond("24-methylenelophenol",singleS,
 bond("24-methylenelophenol",single,22,23). bond("24-methylenelophenol",single,23,24). bond("24-methylenelophenol",double,24,241).
 bond("24-methylenelophenol",single,24,25). bond("24-methylenelophenol",single,25,26). bond("24-methylenelophenol",single,25,27).
 
+atom("24-ethylenelophenol",1..24,carb). atom("24-ethylenelophenol",241,carb).  atom("24-ethylenelophenol",242,carb).
+atom("24-ethylenelophenol",25..28,carb). atom("24-ethylenelophenol",31,oxyg).
+bond("24-ethylenelophenol",single,1,2). bond("24-ethylenelophenol",single,1,10). bond("24-ethylenelophenol",single,2,3).
+bond("24-ethylenelophenol",single,3,4). bond("24-ethylenelophenol",singleR,3,31). bond("24-ethylenelophenol",single,4,5).
+bond("24-ethylenelophenol",singleS,4,28). bond("24-ethylenelophenol",single,5,6). bond("24-ethylenelophenol",single,5,10).
+bond("24-ethylenelophenol",single,6,7). bond("24-ethylenelophenol",double,7,8). bond("24-ethylenelophenol",single,8,9).
+bond("24-ethylenelophenol",single,8,14). bond("24-ethylenelophenol",single,9,10). bond("24-ethylenelophenol",single,9,11).
+bond("24-ethylenelophenol",singleR,10,19). bond("24-ethylenelophenol",single,11,12). bond("24-ethylenelophenol",single,12,13).
+bond("24-ethylenelophenol",single,13,14). bond("24-ethylenelophenol",single,14,15). bond("24-ethylenelophenol",single,15,16).
+bond("24-ethylenelophenol",single,16,17). bond("24-ethylenelophenol",single,13,17). bond("24-ethylenelophenol",singleR,13,18).
+bond("24-ethylenelophenol",singleR,17,20). bond("24-ethylenelophenol",singleS,20,21). bond("24-ethylenelophenol",single,20,22).
+bond("24-ethylenelophenol",single,22,23). bond("24-ethylenelophenol",single,23,24). bond("24-ethylenelophenol",double,24,241).
+bond("24-ethylenelophenol",single,24,25). bond("24-ethylenelophenol",single,241,242). bond("24-ethylenelophenol",single,25,26).
+bond("24-ethylenelophenol",single,25,27).
+
 % 24-ethylidenelophenol branch
 
 atom("24-ethylidenelophenol",1..24,carb). atom("24-ethylidenelophenol",241,carb). atom("24-ethylidenelophenol",242,carb).
@@ -699,6 +714,25 @@ bond("cholesterol",singleS,20,21). bond("cholesterol",single,20,22). bond("chole
 bond("cholesterol",single,23,24). bond("cholesterol",single,24,25). bond("cholesterol",single,25,26).
 bond("cholesterol",single,25,27).
 
+%*
+Shared domain
+Definition of sterane
+Based on the wikipedia structure: https://fr.wikipedia.org/wiki/St%C3%A9rane#/media/File:Steran_num_ABCD.svg
+*%
+
+atomDomain(sterane,1,carb). atomDomain(sterane,2,carb). atomDomain(sterane,3,carb).
+atomDomain(sterane,4,carb). atomDomain(sterane,5,carb). atomDomain(sterane,6,carb).
+atomDomain(sterane,7,carb). atomDomain(sterane,8,carb). atomDomain(sterane,9,carb).
+atomDomain(sterane,10,carb). atomDomain(sterane,11,carb). atomDomain(sterane,12,carb).
+atomDomain(sterane,13,carb). atomDomain(sterane,14,carb). atomDomain(sterane,15,carb).
+atomDomain(sterane,16,carb). atomDomain(sterane,17,carb).
+bondDomain(sterane,variable,1,2). bondDomain(sterane,variable,1,10). bondDomain(sterane,variable,2,3).
+bondDomain(sterane,variable,3,4). bondDomain(sterane,variable,4,5). bondDomain(sterane,variable,5,6).
+bondDomain(sterane,variable,5,10). bondDomain(sterane,variable,6,7). bondDomain(sterane,variable,7,8).
+bondDomain(sterane,variable,8,9). bondDomain(sterane,variable,8,14). bondDomain(sterane,variable,9,10).
+bondDomain(sterane,variable,9,11). bondDomain(sterane,variable,11,12). bondDomain(sterane,variable,12,13).
+bondDomain(sterane,variable,13,14). bondDomain(sterane,variable,13,17). bondDomain(sterane,variable,14,15).
+bondDomain(sterane,variable,15,16). bondDomain(sterane,variable,16,17).
 
 %* Known reactions
 %%%%%%%%%%%%%%%%%%%
@@ -732,7 +766,6 @@ reaction(rxn66_28, "desmosterol", "cholesterol").
 
 % PWY-2541
 reaction(rxn_4021,"cycloartenol","24-methylenecycloartanol").
-reaction(rxn_4021,"cycloartenol","24-methylenecycloartanol").
 reaction(rxn_11926,"24-methylenecycloartanol","4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol").
 reaction(rxn_11925,"4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol","4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol").
 reaction(rxn_11927,"4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol","4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol").
@@ -748,6 +781,8 @@ reaction(rxn_11936,"4α-hydroxymethyl-stigmasta-7,24(241)-dien-3β-ol","4α-form
 reaction(rxn_11937,"4α-formyl-stigmasta-7,24(241)-dien-3β-ol","4α-carboxy-stigmasta-7,24(241)-dien-3β-ol").
 reaction(rxn_11938,"4α-carboxy-stigmasta-7,24(241)-dien-3β-ol","avenastenone").
 reaction(rxn_11939,"avenastenone","avenasterol").
+reaction(c28_methylation,"24-methylenelophenol","24-ethylenelophenol").
+reaction(c4_demethylation,"24-ethylenelophenol","avenasterol").
 reaction(rxn_4209,"avenasterol","5-dehydroavenasterol").
 reaction(rxn_4210,"5-dehydroavenasterol","fucosterol").
 reaction(rxn_11930,"24-methylenelophenol","4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol").
@@ -783,7 +818,6 @@ source("cycloartenol").
 init(pathway("cycloartenol","cholesterol")).
 goal(pathway("cycloartenol","stigmasterol")).
 goal(pathway("cycloartenol","fucosterol")).
-
 
 %* Expected inferred reactions: 
 
