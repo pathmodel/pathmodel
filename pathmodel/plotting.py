@@ -41,13 +41,13 @@ def run_pathway_creation():
     parser_args = parser.parse_args()
 
     input_folder = parser_args.input_folder
-    pathmodel_output_file = input_folder + '/' + 'pathmodel_output.lp'
+    pathmodel_output_file = os.path.join(input_folder, 'pathmodel_output.lp')
     with open(pathmodel_output_file, 'r') as pathmodel_output:
         asp_code = pathmodel_output.read()
-    picture_name = input_folder + '/' + 'pathmodel_output.svg'
-    input_filename = input_folder + '/' + 'data_pathmodel.lp'
-    output_repository = input_folder + '/molecules'
-    new_output_repository = input_folder + '/newmolecules_from_mz'
+    picture_name = os.path.join(input_folder, 'pathmodel_output.svg')
+    input_filename = os.path.join(input_folder, 'data_pathmodel.lp')
+    output_repository = os.path.join(input_folder, 'molecules')
+    new_output_repository = os.path.join(input_folder, 'newmolecules_from_mz')
 
     # Check if output folder exists if not create it.
     check_folder(output_repository)
@@ -322,7 +322,8 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
         # Draw molecule.
         molecule_name = molecule_name
         print(molecule_name)
-        Draw.MolToFile(rdmol, output_directory+'/'+molecule_name+'.svg', size=(800, 800), includeAtomNumbers=True)
+        output_molecule_path = os.path.join(output_directory, molecule_name+'.svg')
+        Draw.MolToFile(rdmol, output_molecule_path, size=(800, 800), includeAtomNumbers=True)
 
     input_file.close()
 

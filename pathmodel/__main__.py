@@ -74,11 +74,12 @@ def main():
     output_folder = parser_args.output_folder
 
     if parser_args.cmd == 'test':
-        package_path = '/'.join(os.path.realpath(__file__).split('/')[:-1])+ '/data/'
-        sterol_input_path = package_path + 'sterol_pwy.lp'
-        maa_input_path = package_path + 'MAA_pwy.lp'
-        sterol_out = output_folder + '/sterol'
-        maa_out = output_folder + '/MAA'
+        package_path = os.path.dirname(os.path.realpath(__file__))
+        data_package_path = os.path.join(package_path, 'data')
+        sterol_input_path = os.path.join(data_package_path, 'sterol_pwy.lp')
+        maa_input_path = os.path.join(data_package_path, 'MAA_pwy.lp')
+        sterol_out = os.path.join(output_folder, 'sterol')
+        maa_out = os.path.join(output_folder, 'MAA')
 
         check_folder(sterol_out)
         check_folder(maa_out)
