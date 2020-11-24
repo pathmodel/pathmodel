@@ -660,6 +660,21 @@ bond("5α-cholesta-7,24-dienol",singleS,20,21). bond("5α-cholesta-7,24-dienol",
 bond("5α-cholesta-7,24-dienol",single,23,24). bond("5α-cholesta-7,24-dienol",double,24,25). bond("5α-cholesta-7,24-dienol",single,25,26).
 bond("5α-cholesta-7,24-dienol",single,25,27).
 
+atom("24-methyldesmosterol",1..24,carb). atom("24-methyldesmosterol",241,carb). atom("24-methyldesmosterol",25..27,carb).
+atom("24-methyldesmosterol",31,oxyg).
+bond("24-methyldesmosterol",single,1,2). bond("24-methyldesmosterol",single,1,10). bond("24-methyldesmosterol",single,2,3).
+bond("24-methyldesmosterol",single,3,4). bond("24-methyldesmosterol",singleR,3,31). bond("24-methyldesmosterol",single,4,5).
+bond("24-methyldesmosterol",double,5,6). bond("24-methyldesmosterol",single,5,10). bond("24-methyldesmosterol",single,6,7).
+bond("24-methyldesmosterol",single,7,8). bond("24-methyldesmosterol",single,8,9). bond("24-methyldesmosterol",single,8,14).
+bond("24-methyldesmosterol",single,9,10). bond("24-methyldesmosterol",single,9,11). bond("24-methyldesmosterol",singleR,10,19).
+bond("24-methyldesmosterol",single,11,12). bond("24-methyldesmosterol",single,12,13). bond("24-methyldesmosterol",single,13,14).
+bond("24-methyldesmosterol",single,14,15). bond("24-methyldesmosterol",single,15,16). bond("24-methyldesmosterol",single,16,17).
+bond("24-methyldesmosterol",single,13,17). bond("24-methyldesmosterol",singleR,13,18). bond("24-methyldesmosterol",singleR,17,20).
+bond("24-methyldesmosterol",singleS,20,21). bond("24-methyldesmosterol",single,20,22). bond("24-methyldesmosterol",single,22,23).
+bond("24-methyldesmosterol",single,23,24). bond("24-methyldesmosterol",singleR,24,241). bond("24-methyldesmosterol",double,24,25).
+bond("24-methyldesmosterol",single,25,26). bond("24-methyldesmosterol",single,25,27).
+
+
 atom("7-dehydrodesmosterol",1..27,carb). atom("7-dehydrodesmosterol",31,oxyg).
 bond("7-dehydrodesmosterol",single,1,2). bond("7-dehydrodesmosterol",single,1,10). bond("7-dehydrodesmosterol",single,2,3).
 bond("7-dehydrodesmosterol",single,3,4). bond("7-dehydrodesmosterol",singleR,3,31). bond("7-dehydrodesmosterol",single,4,5).
