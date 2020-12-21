@@ -566,7 +566,7 @@ PathModel creates also a picture showing all the reactions (known reactions in g
    |    :width: 400px                           |
    +--------------------------------------------+
 
-Tutorial on Article data (*Chondrus crispus* sterol and Mycosporine-like Amino Acids pathways)
+Tutorial on *iScience* Article data (*Chondrus crispus* sterol and Mycosporine-like Amino Acids pathways)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 PathModel contains script to reproduce the experience run in the article: analysis of *Chondrus crispus* sterol and Mycosporine-like Amino Acids (MAA) pathways.
@@ -968,12 +968,12 @@ Furthermore, Aplysiapalythine A has been detected in red algae (the group in whi
 Data
 ----
 
-In the GitHub repository (`pathmodel/pathmodel/data/ <https://github.com/pathmodel/pathmodel/tree/master/pathmodel/data>`__), there is 4 data files:
+In the GitHub repository (`pathmodel/pathmodel/data/ <https://github.com/pathmodel/pathmodel/tree/master/pathmodel/data>`__), there are 4 data files:
 
 - ``MAA_pwy.lp``: Mycosporine Amino-Acids Like pathways according to data from *Chondrus crispus* (`Belcour et al, 2020 <https://doi.org/10.1016/j.isci.2020.100849>`__).
 - ``sterol_pwy.lp``: Sterol pathways according to data from *Chondrus crispus* (`Belcour et al, 2020 <https://doi.org/10.1016/j.isci.2020.100849>`__).
-- ``brown_sterols_pwy.lp``: Sterol pathways in Brown algae.
-- ``mozukulins_pwy.lp``: Mozukulins and sterol pathway.
+- ``brown_sterols_pwy.lp``: Sterol pathways in Brown algae (Girard et al., *paper in preparation*).
+- ``mozukulins_pwy.lp``: Mozukulins and sterol pathway in the brown alga *Cladosiphon okamuranus* (Girard et al., *paper in preparation*).
 
 
 Citation
