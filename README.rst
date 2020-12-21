@@ -965,6 +965,17 @@ Furthermore, Aplysiapalythine A has been detected in red algae (the group in whi
    | predictbond("Prediction_3023117_decarboxylation_1",single,19,24). | predictbond("Prediction_3023117_decarboxylation_2",single,19,24). |
    +-------------------------------------------------------------------+-------------------------------------------------------------------+
 
+Data
+----
+
+In the GitHub repository (`pathmodel/pathmodel/data/ <https://github.com/pathmodel/pathmodel/tree/master/pathmodel/data>`__), there is 4 data files:
+
+- ``MAA_pwy.lp``: Mycosporine Amino-Acids Like pathways according to data from *Chondrus crispus* (`Belcour et al, 2020 <https://doi.org/10.1016/j.isci.2020.100849>`__).
+- ``sterol_pwy.lp``: Sterol pathways according to data from *Chondrus crispus* (`Belcour et al, 2020 <https://doi.org/10.1016/j.isci.2020.100849>`__).
+- ``brown_sterols_pwy.lp``: Sterol pathways in Brown algae.
+- ``mozukulins_pwy.lp``: Mozukulins and sterol pathway.
+
+
 Citation
 --------
 
