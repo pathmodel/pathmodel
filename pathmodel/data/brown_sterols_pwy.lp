@@ -51,7 +51,7 @@ bond("24-methylenecholesterol",single,11,12). bond("24-methylenecholesterol",sin
 bond("24-methylenecholesterol",single,14,15). bond("24-methylenecholesterol",single,15,16). bond("24-methylenecholesterol",single,16,17).
 bond("24-methylenecholesterol",single,13,17). bond("24-methylenecholesterol",singleR,13,18). bond("24-methylenecholesterol",singleR,17,20).
 bond("24-methylenecholesterol",singleS,20,21). bond("24-methylenecholesterol",single,20,22). bond("24-methylenecholesterol",single,22,23).
-bond("24-methylenecholesterol",single,23,24). bond("24-methylenecholesterol",doubleE,24,241). bond("24-methylenecholesterol",single,24,25).
+bond("24-methylenecholesterol",single,23,24). bond("24-methylenecholesterol",double,24,241). bond("24-methylenecholesterol",single,24,25).
 bond("24-methylenecholesterol",single,25,26). bond("24-methylenecholesterol",single,25,27).
 
 
@@ -97,7 +97,7 @@ bond("24-methylenecycloartanol",single,11,12). bond("24-methylenecycloartanol",s
 bond("24-methylenecycloartanol",single,14,15). bond("24-methylenecycloartanol",singleS,14,30). bond("24-methylenecycloartanol",single,15,16).
 bond("24-methylenecycloartanol",single,16,17). bond("24-methylenecycloartanol",single,13,17). bond("24-methylenecycloartanol",singleR,13,18).
 bond("24-methylenecycloartanol",singleR,17,20). bond("24-methylenecycloartanol",singleS,20,21). bond("24-methylenecycloartanol",single,20,22).
-bond("24-methylenecycloartanol",single,22,23). bond("24-methylenecycloartanol",single,23,24). bond("24-methylenecycloartanol",doubleE,24,241).
+bond("24-methylenecycloartanol",single,22,23). bond("24-methylenecycloartanol",single,23,24). bond("24-methylenecycloartanol",double,24,241).
 bond("24-methylenecycloartanol",single,24,25). bond("24-methylenecycloartanol",single,25,26). bond("24-methylenecycloartanol",single,25,27).
 
 atom("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",1..24,carb). atom("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",241,carb). atom("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",25..30,carb).
@@ -112,7 +112,7 @@ bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β
 bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,14,15). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleS,14,30). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,15,16).
 bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,16,17). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,13,17). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleR,13,18).
 bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleR,17,20). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleS,20,21). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,20,22).
-bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,22,23). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,23,24). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",doubleE,24,241).
+bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,22,23). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,23,24). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",double,24,241).
 bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,24,25). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,25,26). bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,25,27).
 bond("4α-hydroxymethyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,28,32).
 
@@ -128,7 +128,7 @@ bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",si
 bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,14,15). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleS,14,30). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,15,16).
 bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,16,17). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,13,17). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleR,13,18).
 bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleR,17,20). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleS,20,21). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,20,22).
-bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,22,23). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,23,24). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",doubleE,24,241).
+bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,22,23). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,23,24). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",double,24,241).
 bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,24,25). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,25,26). bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,25,27).
 bond("4α-formyl,4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",double,28,32).
 
@@ -144,7 +144,7 @@ bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",s
 bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,14,15). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleS,14,30). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,15,16).
 bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,16,17). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,13,17). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleR,13,18).
 bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleR,17,20). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",singleS,20,21). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,20,22).
-bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,22,23). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,23,24). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",doubleE,24,241).
+bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,22,23). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,23,24). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",double,24,241).
 bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,24,25). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,25,26). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,25,27).
 bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",double,28,32). bond("4α-carboxy-4β,14α-dimethyl-9β,19-cyclo-5α-ergost-24(241)-en-3β-ol",single,28,33).
 
@@ -160,7 +160,7 @@ bond("cycloeucalenone",single,12,13). bond("cycloeucalenone",single,13,14). bond
 bond("cycloeucalenone",singleS,14,30). bond("cycloeucalenone",single,15,16). bond("cycloeucalenone",single,16,17).
 bond("cycloeucalenone",single,13,17). bond("cycloeucalenone",singleR,13,18). bond("cycloeucalenone",singleR,17,20).
 bond("cycloeucalenone",singleS,20,21). bond("cycloeucalenone",single,20,22). bond("cycloeucalenone",single,22,23).
-bond("cycloeucalenone",single,23,24). bond("cycloeucalenone",doubleE,24,241). bond("cycloeucalenone",single,24,25).
+bond("cycloeucalenone",single,23,24). bond("cycloeucalenone",double,24,241). bond("cycloeucalenone",single,24,25).
 bond("cycloeucalenone",single,25,26). bond("cycloeucalenone",single,25,27).
 
 atom("cycloeucalenol",1..24,carb). atom("cycloeucalenol",241,carb). atom("cycloeucalenol",25..28,carb).
@@ -175,7 +175,7 @@ bond("cycloeucalenol",single,12,13). bond("cycloeucalenol",single,13,14). bond("
 bond("cycloeucalenol",singleS,14,30). bond("cycloeucalenol",single,15,16). bond("cycloeucalenol",single,16,17).
 bond("cycloeucalenol",single,13,17). bond("cycloeucalenol",singleR,13,18). bond("cycloeucalenol",singleR,17,20).
 bond("cycloeucalenol",singleS,20,21). bond("cycloeucalenol",single,20,22). bond("cycloeucalenol",single,22,23).
-bond("cycloeucalenol",single,23,24). bond("cycloeucalenol",doubleE,24,241). bond("cycloeucalenol",single,24,25).
+bond("cycloeucalenol",single,23,24). bond("cycloeucalenol",double,24,241). bond("cycloeucalenol",single,24,25).
 bond("cycloeucalenol",single,25,26). bond("cycloeucalenol",single,25,27).
 
 atom("obtusifoliol",1..24,carb). atom("obtusifoliol",241,carb). atom("obtusifoliol",25..28,carb).
@@ -190,7 +190,7 @@ bond("obtusifoliol",single,13,14). bond("obtusifoliol",single,14,15). bond("obtu
 bond("obtusifoliol",single,15,16). bond("obtusifoliol",single,16,17). bond("obtusifoliol",single,13,17).
 bond("obtusifoliol",singleR,13,18). bond("obtusifoliol",singleR,17,20). bond("obtusifoliol",singleS,20,21).
 bond("obtusifoliol",single,20,22). bond("obtusifoliol",single,22,23). bond("obtusifoliol",single,23,24).
-bond("obtusifoliol",doubleE,24,241). bond("obtusifoliol",single,24,25). bond("obtusifoliol",single,25,26).
+bond("obtusifoliol",double,24,241). bond("obtusifoliol",single,24,25). bond("obtusifoliol",single,25,26).
 bond("obtusifoliol",single,25,27).
 
 atom("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",1..24,carb). atom("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",241,carb). atom("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",25..28,carb).
@@ -204,7 +204,7 @@ bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",singleR,10,19). bond("4α
 bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,13,14). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",double,14,15). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,15,16).
 bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,16,17). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,13,17). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",singleR,13,18).
 bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",singleR,17,20). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",singleS,20,21). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,20,22).
-bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,22,23). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,23,24). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",doubleE,24,241).
+bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,22,23). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,23,24). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",double,24,241).
 bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,24,25). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,25,26). bond("4α-methyl-5α-ergosta-8,14,24(28)-trien-3β-ol",single,25,27).
 
 atom("4α-methyl-5α-ergosta-8,24-dien-3β-ol",1..24,carb). atom("4α-methyl-5α-ergosta-8,24-dien-3β-ol",241,carb). atom("4α-methyl-5α-ergosta-8,24-dien-3β-ol",25..28,carb).
@@ -218,7 +218,7 @@ bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",singleR,10,19). bond("4α-methyl-
 bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,13,14). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,14,15). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,15,16).
 bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,16,17). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,13,17). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",singleR,13,18).
 bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",singleR,17,20). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",singleS,20,21). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,20,22).
-bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,22,23). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,23,24). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",doubleE,24,241).
+bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,22,23). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,23,24). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",double,24,241).
 bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,24,25). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,25,26). bond("4α-methyl-5α-ergosta-8,24-dien-3β-ol",single,25,27).
 
 atom("24-methylenelophenol",1..24,carb). atom("24-methylenelophenol",241,carb). atom("24-methylenelophenol",25..28,carb).
@@ -232,8 +232,23 @@ bond("24-methylenelophenol",singleR,10,19). bond("24-methylenelophenol",single,1
 bond("24-methylenelophenol",single,13,14). bond("24-methylenelophenol",single,14,15). bond("24-methylenelophenol",single,15,16).
 bond("24-methylenelophenol",single,16,17). bond("24-methylenelophenol",single,13,17). bond("24-methylenelophenol",singleR,13,18).
 bond("24-methylenelophenol",singleR,17,20). bond("24-methylenelophenol",singleS,20,21). bond("24-methylenelophenol",single,20,22).
-bond("24-methylenelophenol",single,22,23). bond("24-methylenelophenol",single,23,24). bond("24-methylenelophenol",doubleE,24,241).
+bond("24-methylenelophenol",single,22,23). bond("24-methylenelophenol",single,23,24). bond("24-methylenelophenol",double,24,241).
 bond("24-methylenelophenol",single,24,25). bond("24-methylenelophenol",single,25,26). bond("24-methylenelophenol",single,25,27).
+
+atom("24-ethylidenelophenol",1..24,carb). atom("24-ethylidenelophenol",241,carb). atom("24-ethylidenelophenol",242,carb).
+atom("24-ethylidenelophenol",25..28,carb). atom("24-ethylidenelophenol",31,oxyg).
+bond("24-ethylidenelophenol",single,1,2). bond("24-ethylidenelophenol",single,1,10). bond("24-ethylidenelophenol",single,2,3).
+bond("24-ethylidenelophenol",single,3,4). bond("24-ethylidenelophenol",singleR,3,31). bond("24-ethylidenelophenol",single,4,5).
+bond("24-ethylidenelophenol",singleS,4,28). bond("24-ethylidenelophenol",single,5,6). bond("24-ethylidenelophenol",single,5,10).
+bond("24-ethylidenelophenol",single,6,7). bond("24-ethylidenelophenol",double,7,8). bond("24-ethylidenelophenol",single,8,9).
+bond("24-ethylidenelophenol",single,8,14). bond("24-ethylidenelophenol",single,9,10). bond("24-ethylidenelophenol",single,9,11).
+bond("24-ethylidenelophenol",singleR,10,19). bond("24-ethylidenelophenol",single,11,12). bond("24-ethylidenelophenol",single,12,13).
+bond("24-ethylidenelophenol",single,13,14). bond("24-ethylidenelophenol",single,14,15). bond("24-ethylidenelophenol",single,15,16).
+bond("24-ethylidenelophenol",single,16,17). bond("24-ethylidenelophenol",single,13,17). bond("24-ethylidenelophenol",singleR,13,18).
+bond("24-ethylidenelophenol",singleR,17,20). bond("24-ethylidenelophenol",singleS,20,21). bond("24-ethylidenelophenol",single,20,22).
+bond("24-ethylidenelophenol",single,22,23). bond("24-ethylidenelophenol",single,23,24). bond("24-ethylidenelophenol",double,24,241).
+bond("24-ethylidenelophenol",single,241,242). bond("24-ethylidenelophenol",single,24,25). bond("24-ethylidenelophenol",single,25,26).
+bond("24-ethylidenelophenol",single,25,27).
 
 % 24-ethylenelophenol branch (PWY-8238)
 
@@ -248,7 +263,7 @@ bond("24-ethylenelophenol",singleR,10,19). bond("24-ethylenelophenol",single,11,
 bond("24-ethylenelophenol",single,13,14). bond("24-ethylenelophenol",single,14,15). bond("24-ethylenelophenol",single,15,16).
 bond("24-ethylenelophenol",single,16,17). bond("24-ethylenelophenol",single,13,17). bond("24-ethylenelophenol",singleR,13,18).
 bond("24-ethylenelophenol",singleR,17,20). bond("24-ethylenelophenol",singleS,20,21). bond("24-ethylenelophenol",single,20,22).
-bond("24-ethylenelophenol",single,22,23). bond("24-ethylenelophenol",single,23,24). bond("24-ethylenelophenol",doubleE,24,241).
+bond("24-ethylenelophenol",single,22,23). bond("24-ethylenelophenol",single,23,24). bond("24-ethylenelophenol",double,24,241).
 bond("24-ethylenelophenol",single,241,242). bond("24-ethylenelophenol",single,24,25). bond("24-ethylenelophenol",single,25,26).
 bond("24-ethylenelophenol",single,25,27).
 
@@ -263,7 +278,7 @@ bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",singleR,10,19). bond("(
 bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,13,14). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,14,15). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,15,16).
 bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,16,17). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,13,17). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",singleR,13,18).
 bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",singleR,17,20). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",singleS,20,21). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,20,22).
-bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,22,23). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,23,24). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",doubleE,24,241).
+bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,22,23). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,23,24). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",double,24,241).
 bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,241,242). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,24,25). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,25,26).
 bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,25,27). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",double,28,32). bond("(24E)-4α-carboxy-stigmasta-7,24(241)-dien-3β-ol",single,28,33).
 
@@ -278,7 +293,7 @@ bond("isoavenastenone",single,11,12). bond("isoavenastenone",single,12,13). bond
 bond("isoavenastenone",single,14,15). bond("isoavenastenone",single,15,16). bond("isoavenastenone",single,16,17).
 bond("isoavenastenone",single,13,17). bond("isoavenastenone",singleR,13,18). bond("isoavenastenone",singleR,17,20).
 bond("isoavenastenone",singleS,20,21). bond("isoavenastenone",single,20,22). bond("isoavenastenone",single,22,23).
-bond("isoavenastenone",single,23,24). bond("isoavenastenone",doubleE,24,241). bond("isoavenastenone",single,241,242).
+bond("isoavenastenone",single,23,24). bond("isoavenastenone",double,24,241). bond("isoavenastenone",single,241,242).
 bond("isoavenastenone",single,24,25). bond("isoavenastenone",single,25,26). bond("isoavenastenone",single,25,27).
 
 atom("isoavenasterol",1..24,carb). atom("isoavenasterol",241,carb). atom("isoavenasterol",242,carb).
@@ -292,7 +307,7 @@ bond("isoavenasterol",single,11,12). bond("isoavenasterol",single,12,13). bond("
 bond("isoavenasterol",single,14,15). bond("isoavenasterol",single,15,16). bond("isoavenasterol",single,16,17).
 bond("isoavenasterol",single,13,17). bond("isoavenasterol",singleR,13,18). bond("isoavenasterol",singleR,17,20).
 bond("isoavenasterol",singleS,20,21). bond("isoavenasterol",single,20,22). bond("isoavenasterol",single,22,23).
-bond("isoavenasterol",single,23,24). bond("isoavenasterol",doubleE,24,241). bond("isoavenasterol",single,241,242).
+bond("isoavenasterol",single,23,24). bond("isoavenasterol",double,24,241). bond("isoavenasterol",single,241,242).
 bond("isoavenasterol",single,24,25). bond("isoavenasterol",single,25,26). bond("isoavenasterol",single,25,27).
 
 atom("5-dehydroisoavenasterol",1..24,carb). atom("5-dehydroisoavenasterol",241,carb). atom("5-dehydroisoavenasterol",242,carb).
@@ -306,7 +321,7 @@ bond("5-dehydroisoavenasterol",single,11,12). bond("5-dehydroisoavenasterol",sin
 bond("5-dehydroisoavenasterol",single,14,15). bond("5-dehydroisoavenasterol",single,15,16). bond("5-dehydroisoavenasterol",single,16,17).
 bond("5-dehydroisoavenasterol",single,13,17). bond("5-dehydroisoavenasterol",singleR,13,18). bond("5-dehydroisoavenasterol",singleR,17,20).
 bond("5-dehydroisoavenasterol",singleS,20,21). bond("5-dehydroisoavenasterol",single,20,22). bond("5-dehydroisoavenasterol",single,22,23).
-bond("5-dehydroisoavenasterol",single,23,24). bond("5-dehydroisoavenasterol",doubleE,24,241). bond("5-dehydroisoavenasterol",single,241,242).
+bond("5-dehydroisoavenasterol",single,23,24). bond("5-dehydroisoavenasterol",double,24,241). bond("5-dehydroisoavenasterol",single,241,242).
 bond("5-dehydroisoavenasterol",single,24,25). bond("5-dehydroisoavenasterol",single,25,26). bond("5-dehydroisoavenasterol",single,25,27).
 
 atom("fucosterol",1..24,carb). atom("fucosterol",241,carb). atom("fucosterol",242,carb).
@@ -320,7 +335,7 @@ bond("fucosterol",single,11,12). bond("fucosterol",single,12,13). bond("fucoster
 bond("fucosterol",single,14,15). bond("fucosterol",single,15,16). bond("fucosterol",single,16,17).
 bond("fucosterol",single,13,17). bond("fucosterol",singleR,13,18). bond("fucosterol",singleR,17,20).
 bond("fucosterol",singleS,20,21). bond("fucosterol",single,20,22). bond("fucosterol",single,22,23).
-bond("fucosterol",single,23,24). bond("fucosterol",doubleE,24,241). bond("fucosterol",single,241,242).
+bond("fucosterol",single,23,24). bond("fucosterol",double,24,241). bond("fucosterol",single,241,242).
 bond("fucosterol",single,24,25). bond("fucosterol",single,25,26). bond("fucosterol",single,25,27).
 
 % episterol branch
@@ -336,7 +351,7 @@ bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",singleR,10,19). bond("4α
 bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,13,14). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,14,15). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,15,16).
 bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,16,17). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,13,17). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",singleR,13,18).
 bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",singleR,17,20). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",singleS,20,21). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,20,22).
-bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,22,23). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,23,24). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",doubleE,24,241).
+bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,22,23). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,23,24). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",double,24,241).
 bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,24,25). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,25,26). bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,25,27).
 bond("4α-hydroxymethyl-ergosta-7,24(241)-dien-3β-ol",single,28,32).
 
@@ -351,7 +366,7 @@ bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",singleR,10,19). bond("4α-formyl
 bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,13,14). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,14,15). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,15,16).
 bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,16,17). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,13,17). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",singleR,13,18).
 bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",singleR,17,20). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",singleS,20,21). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,20,22).
-bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,22,23). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,23,24). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",doubleE,24,241).
+bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,22,23). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,23,24). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",double,24,241).
 bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,24,25). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,25,26). bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",single,25,27).
 bond("4α-formyl-ergosta-7,24(241)-dien-3β-ol",double,28,32).
 
@@ -366,7 +381,7 @@ bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",singleR,10,19). bond("4α-carbo
 bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,13,14). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,14,15). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,15,16).
 bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,16,17). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,13,17). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",singleR,13,18).
 bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",singleR,17,20). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",singleS,20,21). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,20,22).
-bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,22,23). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,23,24). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",doubleE,24,241).
+bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,22,23). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,23,24). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",double,24,241).
 bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,24,25). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,25,26). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",single,25,27).
 bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",double,28,32). bond("4α-carboxy-ergosta-7,24(241)-dien-3β-ol",double,28,33).
 
@@ -381,7 +396,7 @@ bond("episterone",single,11,12). bond("episterone",single,12,13). bond("epistero
 bond("episterone",single,14,15). bond("episterone",single,15,16). bond("episterone",single,16,17).
 bond("episterone",single,13,17). bond("episterone",singleR,13,18). bond("episterone",singleR,17,20).
 bond("episterone",singleS,20,21). bond("episterone",single,20,22). bond("episterone",single,22,23).
-bond("episterone",single,23,24). bond("episterone",doubleE,24,241). bond("episterone",single,24,25).
+bond("episterone",single,23,24). bond("episterone",double,24,241). bond("episterone",single,24,25).
 bond("episterone",single,25,26). bond("episterone",single,25,27).
 
 atom("episterol",1..24,carb). atom("episterol",241,carb). atom("episterol",25..27,carb).
@@ -395,7 +410,7 @@ bond("episterol",single,11,12). bond("episterol",single,12,13). bond("episterol"
 bond("episterol",single,14,15). bond("episterol",single,15,16). bond("episterol",single,16,17).
 bond("episterol",single,13,17). bond("episterol",singleR,13,18). bond("episterol",singleR,17,20).
 bond("episterol",singleS,20,21). bond("episterol",single,20,22). bond("episterol",single,22,23).
-bond("episterol",single,23,24). bond("episterol",doubleE,24,241). bond("episterol",single,24,25).
+bond("episterol",single,23,24). bond("episterol",double,24,241). bond("episterol",single,24,25).
 bond("episterol",single,25,26). bond("episterol",single,25,27).
 
 atom("ergosta-5,7,24(28)-trien-3β-ol",1..24,carb). atom("ergosta-5,7,24(28)-trien-3β-ol",241,carb). atom("ergosta-5,7,24(28)-trien-3β-ol",25..27,carb).
@@ -409,7 +424,7 @@ bond("ergosta-5,7,24(28)-trien-3β-ol",single,11,12). bond("ergosta-5,7,24(28)-t
 bond("ergosta-5,7,24(28)-trien-3β-ol",single,14,15). bond("ergosta-5,7,24(28)-trien-3β-ol",single,15,16). bond("ergosta-5,7,24(28)-trien-3β-ol",single,16,17).
 bond("ergosta-5,7,24(28)-trien-3β-ol",single,13,17). bond("ergosta-5,7,24(28)-trien-3β-ol",singleR,13,18). bond("ergosta-5,7,24(28)-trien-3β-ol",singleR,17,20).
 bond("ergosta-5,7,24(28)-trien-3β-ol",singleS,20,21). bond("ergosta-5,7,24(28)-trien-3β-ol",single,20,22). bond("ergosta-5,7,24(28)-trien-3β-ol",single,22,23).
-bond("ergosta-5,7,24(28)-trien-3β-ol",single,23,24). bond("ergosta-5,7,24(28)-trien-3β-ol",doubleE,24,241). bond("ergosta-5,7,24(28)-trien-3β-ol",single,24,25).
+bond("ergosta-5,7,24(28)-trien-3β-ol",single,23,24). bond("ergosta-5,7,24(28)-trien-3β-ol",double,24,241). bond("ergosta-5,7,24(28)-trien-3β-ol",single,24,25).
 bond("ergosta-5,7,24(28)-trien-3β-ol",single,25,26). bond("ergosta-5,7,24(28)-trien-3β-ol",single,25,27).
 
 % Sterols from PWY-8191
@@ -720,7 +735,7 @@ reaction(rxn3o_218,"episterol","ergosta-5,7,24(28)-trien-3β-ol").
 reaction(rxn_707,"ergosta-5,7,24(28)-trien-3β-ol","24-methylenecholesterol").
 reaction(rxn_4222,"24-methylenecholesterol","24-methyldesmosterol").
 reaction(rxn_708,"24-methyldesmosterol","campesterol").
-reaction(rxn_2_1_1_143,"24-methylenelophenol","24-ethylenelophenol").
+reaction(rxn_2_1_1_143,"24-methylenelophenol","24-ethylidenelophenol").
 reaction(rxn_20131,"24-methylenecholesterol","campesterol").
 reaction(c22_desaturation,"campesterol","brassicasterol").
 
