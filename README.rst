@@ -14,8 +14,8 @@
         :target: https://www.cell.com/iscience/fulltext/S2589-0042(20)30032-8
 
 
-PathModel: metabolic pathway drift prototype
-============================================
+PathModel: inferring new biochemical reactions and metabolite structures to understand metabolic pathway drift 
+==============================================================================================================
 
 PathModel is a prototype to infer new biochemical reactions and new metabolite structures. The biological motivation for developing it is described in this `article <https://doi.org/10.1016/j.isci.2020.100849>`__, published in `iScience <https://www.cell.com/iscience/home>`__.  You can also watch the `associated presentation <https://relaiswebcasting.mediasite.com/mediasite/Play/55fa04573fd14bd5bf3b31acff74cb131d?catalog=e534823f0c954836bf85bfa80af2290921>`__ at the `JOBIM2020 conference <https://jobim2020.sciencesconf.org/>`__.
 
