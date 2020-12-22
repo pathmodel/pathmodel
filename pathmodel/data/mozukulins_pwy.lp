@@ -28,34 +28,6 @@ bond("cycloartenol",single,25,26). bond("cycloartenol",single,25,27).
 
 % Sterols from PWY-8191
 
-atom("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",1..30,carb). atom("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",31,oxyg). atom("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",33,oxyg).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,1,2). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,1,10). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,2,3).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,3,4). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,3,31). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,4,5).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,4,29). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleS,4,28). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,5,6).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,5,10). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,6,7). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,7,8).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,8,9). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,8,14). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,9,10).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,9,11).bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,9,19). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,10,19).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,11,12). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,12,13). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,13,14).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,14,15). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleS,14,30). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,15,16).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,16,17). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,13,17). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,13,18).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleR,17,20). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",singleS,20,21). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,20,22).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,22,23). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,23,24). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",double,24,25).
-bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,25,26). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,25,27). bond("(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol",single,29,33).
-
-atom("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",1..30,carb). atom("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",31,oxyg). atom("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",33,oxyg).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,1,2). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,1,10). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,2,3).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,3,4). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,3,31). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,4,5).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,4,29). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleS,4,28). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,5,6).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,5,10). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,6,7). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,7,8).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,8,9). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,8,14). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,9,10).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,9,11).bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,9,19). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,10,19).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,11,12). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,12,13). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,13,14).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,14,15). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleS,14,30). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,15,16).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,16,17). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,13,17). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,13,18).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleR,17,20). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",singleS,20,21). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,20,22).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,22,23). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,23,24). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",double,24,25).
-bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,25,26). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",single,25,27). bond("(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol",double,29,33).
-
 atom("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",1..30,carb). atom("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",31..33,oxyg).
 bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,1,2). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,1,10). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,2,3).
 bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,3,4). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",singleR,3,31). bond("(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol",single,4,5).
@@ -640,9 +612,7 @@ reaction(Reaction type (name), Compound 1 [, Active site atom number], [Compound
 
 % Reactions from PWY-8191: cholesterol biosynthesis (algae, late side-chain reductase) 
 
-reaction(rxn_21826, "cycloartenol","(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol").
-reaction(rxn_21827, "(3β,9β)-4α-demethyl-4α-methylhydroxy-9,19-cyclolanost-24-en-3-ol", "(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol").
-reaction(rxn_21828, "(3β,9β)-4α-demethyl-4α-formyl-9,19-cyclolanost-24-en-3-ol", "(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol").
+reaction(rxn_21829, "cycloartenol", "(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol").
 reaction(rxn_21830, "(3β,9β)-4α-demethyl-4α-carboxy-9,19-cyclolanost-24-en-3-ol", "31-norcycloartenone").
 
 reaction(rxn_21831, "31-norcycloartenone", "31-norcycloartenol").
