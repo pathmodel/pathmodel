@@ -747,10 +747,10 @@ reaction(rxn_11934,"episterone","episterol").
 reaction(rxn3o_218,"episterol","ergosta-5,7,24(28)-trien-3β-ol").
 reaction(rxn_707,"ergosta-5,7,24(28)-trien-3β-ol","24-methylenecholesterol").
 reaction(rxn_4222,"24-methylenecholesterol","24-methyldesmosterol").
-reaction(rxn_708,"24-methyldesmosterol","campesterol").
+reaction(rxn_708,"24-methyldesmosterol","24-methylcholesterol").
 reaction(rxn_2_1_1_143,"24-methylenelophenol","24-ethylidenelophenol").
-reaction(rxn_20131,"24-methylenecholesterol","campesterol").
-reaction(c22_desaturation,"campesterol","brassicasterol").
+reaction(rxn_20131,"24-methylenecholesterol","24-methylcholesterol").
+reaction(c22_desaturation,"24-methylcholesterol","24-methylcholest-22-enol").
 
 %PWY-8238
 reaction(rxn_22199,"24-methylenelophenol","24-ethylenelophenol").
