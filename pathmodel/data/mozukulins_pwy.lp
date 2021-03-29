@@ -1,4 +1,4 @@
-%*This is work in progress for a paper by Girard et al., to be submitted to Frontiers in Plant Science, and has not yet been peer reviewed. 
+%*This file correspond to the encoding of the data shown in Fig 3 from a paper by Girard et al., for which revision are being finalized for Frontiers in Plant Science. 
 *%
 
 
@@ -633,7 +633,7 @@ reaction(rxn66_27, "7-dehydrodesmosterol", "desmosterol").
 % PWY66-4 and PWY-8191
 reaction(rxn66_28, "desmosterol", "cholesterol").
 
-% Information necessary to infer new Δ1-2 reduction
+% Information necessary to infer new Δ1-2 desaturation
 % PWY-6944: androstenedione degradation I (aerobic)
 reaction(rxn_12714, "androst-4-ene-3,17-dione", "androsta-1,4-diene-3,17-dione").
 % corresponding metacyc general reactions (EC 1.3.99.4)
@@ -690,7 +690,7 @@ goal(pathway("cycloartenol","mozukulin B")).
 
 %* Expected inferred reactions: 
 
-reaction(delta1_2_ketoreduction,31-norcycloartenone,"Δ1-2,31-norcycloartenone").
+reaction(delta1_2_desaturation,31-norcycloartenone,"Δ1-2,31-norcycloartenone").
 reaction(23-hydroxylation, "Δ1-2,31-norcycloartenone", "23-hydroxy-Δ1-2-31-norcycloartenone").
 reaction(23_hydroxysteroid_reduction, "23-hydroxy-Δ1-2-31-norcycloartenone", "mozukulin A").
 reaction(delta24reduction, "mozukulin A", "mozukulin B"). 
