@@ -4,7 +4,7 @@ import shutil
 import pathmodel
 
 def test_MZcomputation():
-	result = pathmodel.mz_computation('test/pathmodel_test_data.lp')
+	result = pathmodel.mz_computation('pathmodel_test_data.lp')
 
 	result_expected = """domain("molecule_1",triangle).
 domain("molecule_2",triangle).
@@ -42,7 +42,7 @@ reactionMZ(reduction,20148)."""
 
 def test_transformation():
 	pathmodel.check_folder('test_output')
-	result = pathmodel.reaction_creation('test/pathmodel_test_data.lp', 'test_output')
+	result = pathmodel.reaction_creation('pathmodel_test_data.lp', 'test_output')
 
 	result_expected = """diffBondAfterReaction(reduction,double,2,4).
 diffBondBeforeReaction(reduction,single,2,4).
@@ -55,7 +55,7 @@ siteBeforeReaction(reduction,"molecule_5")."""
 	assert result == result_expected
 
 def test_pathmodel():
-	resultfile_content = pathmodel.pathmodel_analysis('test/pathmodel_test_data.lp', 'test_output')
+	resultfile_content = pathmodel.pathmodel_analysis('pathmodel_test_data.lp', 'test_output')
 
 	result_expected = """newreaction(reduction,"molecule_3","molecule_4").
 newreaction(reduction,"molecule_5","Prediction_921341_reduction").
