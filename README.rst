@@ -1,8 +1,8 @@
 .. image:: https://img.shields.io/pypi/v/pathmodel.svg
 	:target: https://pypi.python.org/pypi/pathmodel
 
-.. image:: https://travis-ci.org/pathmodel/pathmodel.svg?branch=master
-        :target: https://travis-ci.org/pathmodel/pathmodel
+.. image:: https://github.com/pathmodel/pathmodel/workflows/Python%20package/badge.svg
+        :target: https://github.com/pathmodel/pathmodel/actions
 
 .. image:: https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg
         :target: https://singularity-hub.org/collections/3758
