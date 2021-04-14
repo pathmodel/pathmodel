@@ -567,7 +567,7 @@ PathModel creates also a picture showing all the reactions (known reactions in g
    +--------------------------------------------+
 
 Tutorial on *iScience* Article data (*Chondrus crispus* sterol and Mycosporine-like Amino Acids pathways)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 PathModel contains script to reproduce the experience run in the article: analysis of *Chondrus crispus* sterol and Mycosporine-like Amino Acids (MAA) pathways.
 
