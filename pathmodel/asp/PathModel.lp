@@ -40,20 +40,6 @@ metabolite(MoleculeName):- atom(MoleculeName,_,_).
 
 #program step(t).
 
-%* Test to see difference between two molecules
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-*%
-%*
-difmolecules(MoleculeName1, MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber,direct):-
-		    bond(MoleculeName1, BondType, FirstAtomNumber, SecondAtomNumber),
-		not bond(MoleculeName2, BondType, FirstAtomNumber, SecondAtomNumber), testeddif(MoleculeName1, MoleculeName2).
-
-testeddif("z-palythenic acid", "palythene").
-testeddif("4α-methylcholest-8(9),14,24,trien-3β-ol", "4α-methylzymosterol").
-testeddif(B,A):-testeddif(A,B).
-
-*%
-
 %* Browse reactions
 %%%%%%%%%%%%%%%%%%%%
 Move from molecule A to molecule B using reaction(ReactionName,A,B). A pathway is here described as the path from a molecule to another through reactions.
@@ -87,10 +73,14 @@ reached(KnownProduct, t):- source(KnownReactant), reaction(ReactionName, KnownRe
 % Add product found by inference methods.
 source(ProductInferred):- source(Reactant), reaction(ReactionName, Reactant, ProductInferred), reached(ProductInferred, t).
 
+% Add inference steps from previous step.
+inferred(pathway(Molecule1,ProductInferred), t):- inferred(pathway(Molecule1,ProductInferred), t-1).
+
+% Add inference when we reach a new molecule.
 inferred(pathway(Molecule1,Molecule2), t):- reaction(ReactionName,Molecule1,Molecule2), reached(Molecule2, t).
-inferred(pathway(Molecule1,ProductInferred), t):- reaction(ReactionName,Molecule2,ProductInferred), reached(ProductInferred, t), inferred(pathway(Molecule1,Molecule2), t-1).
-% Error with inferred (need to keep older inferred?)
-inferred(pathway(Molecule1,ProductInferred), t):-inferred(pathway(Molecule1,ProductInferred), t-1).
+
+% Add inference when we reach the product of a previous inference.
+inferred(pathway(Molecule1,ProductInferred), t):- reaction(ReactionName,Molecule2,ProductInferred), reached(ProductInferred, t), inferred(pathway(Molecule1,Molecule2), T2), T2 < t.
 
 
 %* Metabolite Inference Method
@@ -279,10 +269,11 @@ bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reactio
 bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reaction,ReactantName,ProductName); diffBondAfterReaction(Reaction,BondType,FirstAtomeNumber,SecondAtomeNumber).
 
 #program check(t).
-:- goal(F), query(t), not inferred(F,t).
+:- goal(F), query(t), not inferred(F,t), t<Tlimit, step_limit(Tlimit).
 
 #show newreaction/3.
 #show reaction/3.
 #show inferred/2.
 #show predictatom/3.
 #show predictbond/4.
+#show query/1.

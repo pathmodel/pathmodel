@@ -30,6 +30,14 @@ def main():
         required=True,
         help="output directory path",
         metavar="OUPUT_DIR")
+    parent_parser_s = argparse.ArgumentParser(add_help=False)
+    parent_parser_s.add_argument(
+        "-s",
+        "--step-limit",
+        dest="step_limit",
+        required=False,
+        help="set a maximal number of step to avoid endless run of pathmodel (by default at 100)",
+        metavar="INT")
 
     # subparsers
     subparsers = parser.add_subparsers(
@@ -40,7 +48,7 @@ def main():
         "infer",
         help="PathModel inference on data",
         parents=[
-            parent_parser_i, parent_parser_o
+            parent_parser_i, parent_parser_o, parent_parser_s
         ],
         description=
         "Run PathModel on input data lp file"
@@ -66,23 +74,25 @@ def main():
     output_folder = parser_args.output_folder
 
     if parser_args.cmd == 'test':
-        package_path = '/'.join(os.path.realpath(__file__).split('/')[:-1])+ '/data/'
-        sterol_input_path = package_path + 'sterol_pwy.lp'
-        maa_input_path = package_path + 'MAA_pwy.lp'
-        sterol_out = output_folder + '/sterol'
-        maa_out = output_folder + '/MAA'
+        package_path = os.path.dirname(os.path.realpath(__file__))
+        data_package_path = os.path.join(package_path, 'data')
+        sterol_input_path = os.path.join(data_package_path, 'sterol_pwy.lp')
+        maa_input_path = os.path.join(data_package_path, 'MAA_pwy.lp')
+        sterol_out = os.path.join(output_folder, 'sterol')
+        maa_out = os.path.join(output_folder, 'MAA')
 
         check_folder(sterol_out)
         check_folder(maa_out)
 
-        pathmodel_analysis(sterol_input_path, sterol_out)
-        pathmodel_analysis(maa_input_path, maa_out)
+        pathmodel_analysis(sterol_input_path, sterol_out, None)
+        pathmodel_analysis(maa_input_path, maa_out, None)
 
         return
 
     elif parser_args.cmd == 'infer':
         input_file = parser_args.input
-        pathmodel_analysis(input_file, output_folder)
+        step_limit = parser_args.step_limit
+        pathmodel_analysis(input_file, output_folder, step_limit)
 
 if __name__ == "__main__":
     main()

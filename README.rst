@@ -14,10 +14,10 @@
         :target: https://www.cell.com/iscience/fulltext/S2589-0042(20)30032-8
 
 
-PathModel: metabolic pathway drift prototype
-============================================
+PathModel: inferring new biochemical reactions and metabolite structures to understand metabolic pathway drift 
+==============================================================================================================
 
-PathModel is a prototype to infer new biochemical reactions and new metabolite structures. The biological motivation for developing it is described in this `article <https://doi.org/10.1016/j.isci.2020.100849>`__, published in `iScience <https://www.cell.com/iscience/home>`__.
+PathModel is a prototype to infer new biochemical reactions and new metabolite structures. The biological motivation for developing it is described in this `article <https://doi.org/10.1016/j.isci.2020.100849>`__, published in `iScience <https://www.cell.com/iscience/home>`__.  You can also watch the `associated presentation <https://relaiswebcasting.mediasite.com/mediasite/Play/55fa04573fd14bd5bf3b31acff74cb131d?catalog=e534823f0c954836bf85bfa80af2290921>`__ at the `JOBIM2020 conference <https://jobim2020.sciencesconf.org/>`__.
 
 There is no guarantee that this script will work, it is a Work In Progress in early state.
 
@@ -282,7 +282,17 @@ Run PathModel prediction:
 
 .. code:: sh
 
-	pathmodel infer -i data.lp -o output_folder
+	pathmodel infer -i data.lp -o output_folder -s 100
+
+PathModel arguments:
+
+- -i: input file
+
+- -o: output folder
+
+- -s: number of maximal steps before PathModel stops (to avoid endless run), by default at 100
+
+If PathModel does not find the goal molecules before it reaches the number of maximal steps, it will send an error message.
 
 Create picture representing the results (like new molecules inferred from M/Z ratio):
 
@@ -296,7 +306,7 @@ In python (pathmodel_plot is not available in import call):
 
     import pathmodel
 
-    pathmodel.pathmodel_analysis('data.lp', output_folder)
+    pathmodel.pathmodel_analysis('data.lp', output_folder, step_limit=100)
 
 Output
 ~~~~~~
@@ -556,7 +566,7 @@ PathModel creates also a picture showing all the reactions (known reactions in g
    |    :width: 400px                           |
    +--------------------------------------------+
 
-Tutorial on Article data (*Chondrus crispus* sterol and Mycosporine-like Amino Acids pathways)
+Tutorial on *iScience* Article data (*Chondrus crispus* sterol and Mycosporine-like Amino Acids pathways)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 PathModel contains script to reproduce the experience run in the article: analysis of *Chondrus crispus* sterol and Mycosporine-like Amino Acids (MAA) pathways.
@@ -895,8 +905,8 @@ The structures of the predicted molecules from M/Z can be found in newmolecules_
 
 - Prediction_3023117_decarboxylation_1 and Prediction_3023117_decarboxylation_2 (which are the same molecule) correspond to MAA2.
 
-This molecule has been identified as the Aplysiapalythine A found in *Aplysia californica* by `Kamio et al. (2011) <https://onlinelibrary.wiley.com/doi/abs/10.1002/hlca.201100117>`__.
-Furthermore, Aplysiapalythine A has been detected in red algae (the group in which *Chondrus crispus* is classified) by `Orfanoudaki et al. (2019) <https://onlinelibrary.wiley.com/doi/full/10.1111/jpy.12827>`__.
+This molecule has been identified as the Aplysiapalythine A found in *Aplysia californica* [Kamio2011]_.
+Furthermore, Aplysiapalythine A has been detected in red algae (the group in which *Chondrus crispus* is classified) [Orfanoudaki2019]_.
 
 .. table::
    :align: center
@@ -955,6 +965,17 @@ Furthermore, Aplysiapalythine A has been detected in red algae (the group in whi
    | predictbond("Prediction_3023117_decarboxylation_1",single,19,24). | predictbond("Prediction_3023117_decarboxylation_2",single,19,24). |
    +-------------------------------------------------------------------+-------------------------------------------------------------------+
 
+Data
+----
+
+In the GitHub repository (`pathmodel/pathmodel/data/ <https://github.com/pathmodel/pathmodel/tree/master/pathmodel/data>`__), there are 4 data files:
+
+- ``MAA_pwy.lp``: Mycosporine Amino-Acids Like pathways according to data from *Chondrus crispus* (`Belcour et al, 2020 <https://doi.org/10.1016/j.isci.2020.100849>`__).
+- ``sterol_pwy.lp``: Sterol pathways according to data from *Chondrus crispus* (`Belcour et al, 2020 <https://doi.org/10.1016/j.isci.2020.100849>`__).
+- ``brown_sterols_pwy.lp``: Sterol pathways in Brown algae (`Girard et al., 2021 <https://doi.org/10.3389/fpls.2021.648426>`__).
+- ``mozukulins_pwy.lp``: Mozukulins and sterol pathway in the brown alga *Cladosiphon okamuranus* (`Girard et al., 2021 <https://doi.org/10.3389/fpls.2021.648426>`__).
+
+
 Citation
 --------
 
@@ -965,6 +986,6 @@ Arnaud Belcour, Jean Girard, Méziane Aite, Ludovic Delage, Camille Trottier, Ch
 Bibliography
 ------------
 
-Kamio, M., Kicklighter, C.E., Nguyen, L., Germann, M.W. and Derby, C.D. (2011). Isolation and Structural Elucidation of Novel Mycosporine‐Like Amino Acids as Alarm Cues in the Defensive Ink Secretion of the Sea Hare *Aplysia californica*. *Helvetica Chimica Acta*, 94: 1012-1018. `doi:10.1002/hlca.201100117 <https://doi.org/10.1002/hlca.201100117>`__.
+.. [Kamio2011] Kamio, M., Kicklighter, C.E., Nguyen, L., Germann, M.W. and Derby, C.D. (2011). Isolation and Structural Elucidation of Novel Mycosporine‐Like Amino Acids as Alarm Cues in the Defensive Ink Secretion of the Sea Hare *Aplysia californica*. *Helvetica Chimica Acta*, 94: 1012-1018. `doi:10.1002/hlca.201100117 <https://doi.org/10.1002/hlca.201100117>`__.
 
-Orfanoudaki, M., Hartmann, A., Karsten, U. and Ganzera, M. (2019). Chemical profiling of mycosporine‐like amino acids in twenty‐three red algal species. *Journal of Phycology*, 55: 393-403. `doi:10.1111/jpy.12827 <https://doi.org/10.1111/jpy.12827>`__.
+.. [Orfanoudaki2019] Orfanoudaki, M., Hartmann, A., Karsten, U. and Ganzera, M. (2019). Chemical profiling of mycosporine‐like amino acids in twenty‐three red algal species. *Journal of Phycology*, 55: 393-403. `doi:10.1111/jpy.12827 <https://doi.org/10.1111/jpy.12827>`__.

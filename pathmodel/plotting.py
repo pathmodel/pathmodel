@@ -30,20 +30,24 @@ try:
 except ImportError:
     raise ImportError("Requires graphviz (https://www.graphviz.org/) and pygraphviz (https://pygraphviz.github.io/).")
 
+
 def run_pathway_creation():
+    """
+    Functions handling the argument parsing of pathmodel_plot.
+    """
     parser = argparse.ArgumentParser(description="Plot molecules and reactions inferred by PathModel.")
-    parser.add_argument("-i", "--input", dest="input_folder", metavar="FILE", help="Input folder corresponds to the output folder of pathmodel.")
+    parser.add_argument("-i", "--input", dest="input_folder", metavar="FOLDER", help="Input folder corresponds to the output folder of pathmodel.")
 
     parser_args = parser.parse_args()
 
     input_folder = parser_args.input_folder
-    pathmodel_output_file = input_folder + '/' + 'pathmodel_output.lp'
+    pathmodel_output_file = os.path.join(input_folder, 'pathmodel_output.lp')
     with open(pathmodel_output_file, 'r') as pathmodel_output:
         asp_code = pathmodel_output.read()
-    picture_name = input_folder + '/' + 'pathmodel_output.svg'
-    input_filename = input_folder + '/' + 'data_pathmodel.lp'
-    output_repository = input_folder + '/molecules'
-    new_output_repository = input_folder + '/newmolecules_from_mz'
+    picture_name = os.path.join(input_folder, 'pathmodel_output.svg')
+    input_filename = os.path.join(input_folder, 'data_pathmodel.lp')
+    output_repository = os.path.join(input_folder, 'molecules')
+    new_output_repository = os.path.join(input_folder, 'newmolecules_from_mz')
 
     # Check if output folder exists if not create it.
     check_folder(output_repository)
@@ -60,6 +64,14 @@ def run_pathway_creation():
 
 
 def pathmodel_pathway_picture(asp_code, picture_name, input_filename):
+    """
+    Create the pathway picture using ASP results code from PathModel inference.
+
+    Args:
+        asp_code (str): string containing PathModel results
+        picture_name (str): path to the output picture file
+        input_filename (str): path to PathModel intermediary file
+    """
     DG = nx.DiGraph()
 
     known_compounds = []
@@ -145,15 +157,24 @@ def pathmodel_pathway_picture(asp_code, picture_name, input_filename):
     extension = os.path.splitext(picture_name)[1].strip('.')
     plt.savefig(picture_name, dpi=144, format=extension)
 
+
 def create_rdkit_molecule(molecule_name, molecules, molecule_numberings, bonds):
     '''
     Using dictionaries containing molecule structure create a rdkit molecule.
+
+    Args:
+        molecule_name (str): name of a molecule
+        molecules (dict): dictionary containing for each molecules a list with a atom numbers and types in the molecule
+        molecule_numberings (dict): dictionary containing for each molecules a list with a atom numbers in the molecule
+        bonds (dict): dictionary containing for each molecules the list of its bond in utpels (bond_number_1, bond_number_2, bond_type)
+    Returns:
+        rdmol (Mol): the molecule in rdkit Molecule
     '''
     # Create an editable molecule.
     rdmol = Chem.Mol()
     rdedmol = Chem.EditableMol(rdmol)
 
-    atoms = sorted(molecules[molecule_name])
+    atoms = {atom_tuple[0]: atom_tuple[1] for atom_tuple in sorted(molecules[molecule_name])}
     atom_numberings = sorted(molecule_numberings[molecule_name])
     # Renumber atom so there is no atom with a number superior to the number of atoms in the molecule.
     atom_replaces = {}
@@ -167,18 +188,18 @@ def create_rdkit_molecule(molecule_name, molecules, molecule_numberings, bonds):
     rdedmol.AddAtom(rdatom)
 
     # Add atoms from the molecule.
-    for atom in atoms:
-        rdatom = Chem.Atom(atom[1])
+    # Add absent atoms to keep the atom numbering.
+    for atom_number in range(max(atom_numberings)):
+        atom_number += 1
+        if atom_number in atoms:
+            atom = atoms[atom_number]
+        else:
+            atom = 0
+        rdatom = Chem.Atom(atom)
         rdedmol.AddAtom(rdatom)
 
     # Add bonds from the molecule.
     for bond in bonds[molecule_name]:
-        # Renumber the bond with the changes made in atom numbering.
-        bond = list(bond)
-        if bond[0] in atom_replaces:
-            bond[0] = atom_replaces[bond[0]]
-        if bond[1] in atom_replaces:
-            bond[1] = atom_replaces[bond[1]]
         bond = tuple(bond)
         rdedmol.AddBond(bond[0],
                         bond[1],
@@ -195,6 +216,11 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
     From an ASP input file create 2d representation of molecules.
     To use align_domain, you need the intermediate file creates by pathmodel_wrapper.py.
     With align_domain, rdkit will use domain to align molecules.
+
+    Args:
+        input_filename (str): path to PathMoldel output file
+        output_directory (str): output folder containing pictures of the molecuels and of the infered pathway
+        align_domain (bool): if True, rdkit will use domain to align molecules
     '''
     with open(input_filename, 'r') as input_file:
         asp_code = input_file.read()
@@ -210,7 +236,8 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
     atomicNumber = {'carb': 6,
                     'nitr': 7,
                     'oxyg': 8,
-                    'phos': 15}
+                    'phos': 15,
+                    'variable': 0}
 
     if align_domain:
         domain_molecules = {}
@@ -295,7 +322,8 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
         # Draw molecule.
         molecule_name = molecule_name
         print(molecule_name)
-        Draw.MolToFile(rdmol, output_directory+'/'+molecule_name+'.svg', size=(800, 800), includeAtomNumbers=True)
+        output_molecule_path = os.path.join(output_directory, molecule_name+'.svg')
+        Draw.MolToFile(rdmol, output_molecule_path, size=(800, 800), includeAtomNumbers=True)
 
     input_file.close()
 
