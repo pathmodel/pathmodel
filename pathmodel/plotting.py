@@ -135,7 +135,7 @@ def pathmodel_pathway_picture(asp_code, picture_name, input_filename):
                            edge_color="green",
                            alpha=0.5,
                            width=2.0,
-                           arrow=True,
+                           arrows=True,
                            arrowstyle='->',
                            arrowsize=14)
     nx.draw_networkx_edges(DG,
@@ -144,7 +144,7 @@ def pathmodel_pathway_picture(asp_code, picture_name, input_filename):
                            edge_color="blue",
                            alpha=0.5,
                            width=2.0,
-                           arrow=True,
+                           arrows=True,
                            arrowstyle='->',
                            arrowsize=14)
     nx.draw_networkx_labels(DG,
@@ -319,11 +319,23 @@ def create_2dmolecule(input_filename, output_directory, align_domain=None):
             AllChem.Compute2DCoords(template)
             AllChem.GenerateDepictionMatching2DStructure(rdmol, template)
 
+        # Add atom numbering to molecule.
+        # Source: https://iwatobipen.wordpress.com/2017/02/25/draw-molecule-with-atom-index-in-rdkit/
+        def mol_with_atom_index(mol):
+            atoms = mol.GetNumAtoms()
+            for idx in range(atoms):
+                mol.GetAtomWithIdx(idx).SetProp( 'molAtomMapNumber', str(sorted(molecule_numberings[molecule_name])[idx]))
+            return mol
+
+        # Remove Atom with atomic number == 0
+        # Source: https://sourceforge.net/p/rdkit/mailman/message/28157259/
+        rdmol = Chem.DeleteSubstructs(rdmol, Chem.MolFromSmarts('[#0]'))
+
         # Draw molecule.
         molecule_name = molecule_name
         print(molecule_name)
         output_molecule_path = os.path.join(output_directory, molecule_name+'.svg')
-        Draw.MolToFile(rdmol, output_molecule_path, size=(800, 800), includeAtomNumbers=True)
+        Draw.MolToFile(mol_with_atom_index(rdmol), output_molecule_path, size=(800, 800), includeAtomNumbers=True)
 
     input_file.close()
 
