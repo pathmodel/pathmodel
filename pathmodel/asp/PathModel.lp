@@ -262,7 +262,7 @@ deductiveReasoningInference(Reaction,ReactantInferred,ProductInferred):- reactio
 atom(ProductName,AtomNumber,AtomType):- reaction(Reaction,ReactantName,ProductName); atom(ReactantName,AtomNumber,AtomType); not diffAtomBeforeReaction(Reaction,AtomNumber,AtomType).
 % Map atoms in the reaction.
 atom(ProductName,AtomNumber,AtomType):- reaction(Reaction,ReactantName,ProductName); atom(ReactantName,AtomNumber,AtomType); diffAtomAfterReaction(Reaction,AtomNumber,AtomType).
-% Map all the bonds of Reactant in Product except bonds occruing in reaction.
+% Map all the bonds of Reactant in Product except bonds occuring in reaction.
 bond(ProductName,BondType,FirstAtomeNumber,SecondAtomeNumber):- reaction(Reaction,ReactantName,ProductName); bond(ReactantName,BondType,FirstAtomeNumber,SecondAtomeNumber);
 																	not diffBondBeforeReaction(Reaction,BondType,FirstAtomeNumber,SecondAtomeNumber).
 % Map bonds in the reaction.
